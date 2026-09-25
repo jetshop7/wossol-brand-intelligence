@@ -18,7 +18,7 @@
 
 ### Review corrections applied
 
-The Home review trail was located in the Codex task history and reconciled against the reviewed product branch. The canonical record now reflects these applied corrections: blockers and actionable attention precede actions and summaries; Home has exactly three Today metrics (created, confirmed, delivered); the obsolete trend chart/range controls and ring-based performance presentation are absent; duplicate stock attention is not repeated in Current Work; recent updates are bounded to three; non-primary performance outcomes are shown only when non-zero; canonical recommendations remain Analytics-owned; and scope, authorization, request-race protection, partial-failure handling, manual refresh, and merchant-safe copy remain intact. No new product change was required in this intelligence-repository correction.
+The authoritative review record `04-review-history/HOME_REVIEW_2026-09-25.md` identified a contract contradiction and requires qualification, not a re-audit. The canonical record therefore preserves the reviewed current executable truth—blockers and actionable attention precede actions and summaries; Home has exactly three Today metrics; the trend chart/range controls and ring presentation are absent from the reviewed build; duplicate stock attention is not repeated in Current Work; recent updates are bounded to three; non-primary performance outcomes are conditional; and owner boundaries remain intact—while explicitly leaving unresolved whether the conflicting final specification is superseded or the implementation is incomplete against it.
 
 ## 2. Audit Coverage Map
 
@@ -77,7 +77,8 @@ It is **LIVE in the current codebase and covered by focused tests**, but live pr
 | Workspace notification summary | LIVE, dependent | 1 | Keeps recent work context visible while preserving notification ownership. |
 | Permission-aware quick actions | LIVE | 2 | Reduces navigation friction for only already-permitted actions. |
 | Manual refresh, scoped freshness, focus recovery | LIVE | 1 | Makes read freshness visible and rechecks stale composition after returning to the tab, without polling. |
-| Trend chart / Home-owned insight calculation / Finance | NOT PRESENT BY DESIGN | n/a | Explicitly excluded from current executable Home. |
+| Trend chart | UNCERTAIN / CONTRACT CONFLICT | n/a | Not present in the reviewed executable build, while the current-looking final UI specification explicitly requires it. Do not call the absence intentional or market either state as settled. |
+| Home-owned insight calculation / Finance | NOT PRESENT IN HOME IMPLEMENTATION | n/a | Home delegates recommendations to Analytics and excludes Finance; this is an observed ownership boundary, not a conclusion that the conflicting trend specification was superseded. |
 
 ## 6. Workflow & Lifecycle
 
@@ -278,7 +279,7 @@ Evidence supports the implementation direction, not the proposition's superiorit
 
 | ID | Finding | Impact | Classification / action |
 |---|---|---|---|
-| H-R01 | **Material documentation contradiction remains.** The current Home spec still describes an Orders trend, four Today cards, up to three operational groups including stock, and six recent notifications; the reviewed executable code/tests remove the trend, show three Today facts, return two current-work groups, and slice notifications to three. | Stakeholders, QA, and marketing could evaluate or promise a superseded product shape even after the UX corrections are implemented. | **MUST FIX** documentation/source-of-truth reconciliation. See C-HOME-001. |
+| H-R01 | **Material implementation-contract contradiction remains.** The current-looking final Home spec requires an Orders trend, four Today cards, up to three operational groups including stock, and six recent notifications; the reviewed executable code/tests show three Today facts, no trend, two current-work groups, and three notifications. | Stakeholders, QA, and marketing could treat either an incomplete implementation as complete or a required feature as superseded without an explicit decision. | **MUST FIX**: either mark the specification superseded or bring implementation into compliance; do not silently choose. See C-HOME-001. |
 | H-R02 | Home performance has percentages but no causal explanation, comparative baseline, or intervention effect. | A merchant can see an outcome without learning why it changed. | **POST-LAUNCH / WHITESPACE**; do not overclaim intelligence. |
 | H-R03 | Recommended actions have no Home-level explanation/evidence/feedback; this is intentional, but users must leave Home to understand them. | Guidance may feel opaque on the landing surface. | **WORTH ADOPTING** only after Analytics audit; preserve canonical ownership. |
 | H-R04 | No live authenticated runtime or representative data was available. | Rendering, real data shape, role behavior, latency and deployment status are not verified. | **OPEN VERIFICATION**; not a code defect. |
@@ -289,7 +290,7 @@ Evidence supports the implementation direction, not the proposition's superiorit
 | Layer | Evidence / status | Safe interpretation |
 |---|---|---|
 | Current foundation | Scoped operational composition, historical state, Inventory and Analytics seams, immutable recommendation evidence models | A credible substrate for richer orientation and guided action |
-| Approved/documented direction | Older Dashboard document describes charts, inventory snapshot, insights, best product, and V2 readiness | **P3 only** and contradicted in part by current executable Home; not current capability |
+| Approved/documented direction | Older Dashboard document and current-looking Home spec describe broader charts/insights than the reviewed executable surface | **P3 / contract conflict**; whether this is superseded direction or incomplete implementation is unresolved |
 | Inferred opportunity | Explain priority causes and effect, connect ads/stock/confirmation/delivery, let merchants act then evaluate outcome | Strategic opportunity, not approved Home work |
 | Long-term territory | A command surface that proceeds from fact → explanation → recommendation → execution → outcome learning | **BLUE — future territory**; requires validated Analytics and owner-domain controls |
 
@@ -301,7 +302,7 @@ Evidence supports the implementation direction, not the proposition's superiorit
 | “See today's created, confirmed, and delivered Order facts using Workspace time.” | GREEN | Direct code supports it; availability remains permission/store dependent. |
 | “Home gives you recommendations.” | YELLOW | Only canonical Analytics recommendations, at most three, when authorized/available. |
 | “Home tells you why performance changed or what action will improve it.” | RED | No Home-owned causal explanation, predicted impact, or automated execution. |
-| “Wossol's Home is a complete command center with charts, stock forecasts, best products and insights.” | RED | Older design intent is not current executable truth. |
+| “Wossol's Home is a complete command center with charts, stock forecasts, best products and insights.” | RED | The reviewed build does not substantiate this, while the current-looking specification requires some broader elements. The contract conflict is unresolved; do not market either interpretation as settled. |
 | “Home provides financial health.” | RED | Finance is intentionally forbidden. |
 
 ## 24. Commercial Magnitude
@@ -321,7 +322,7 @@ Evidence supports the implementation direction, not the proposition's superiorit
 |---|---|
 | Compact merchant operational landing view | TABLE STAKES / PARITY target |
 | Exact historical semantics, scope and safe degradation | POTENTIAL DIFFERENTIATOR in execution quality |
-| Home-owned intelligence | WOSSOL WEAKER / NOT PRESENT by design; belongs to Analytics |
+| Home-owned intelligence | WOSSOL WEAKER / NOT PRESENT IN HOME IMPLEMENTATION; Analytics owns recommendations |
 | Canonical guidance distribution | POTENTIAL DIFFERENTIATOR in combination |
 | Full command center / decision loop | WHITESPACE / future territory |
 
@@ -329,7 +330,7 @@ Evidence supports the implementation direction, not the proposition's superiorit
 
 | Action | Classification | Rationale |
 |---|---|---|
-| Reconcile `MERCHANT_HOME_SHELL_UI_SPEC.md` with code/tests or explicitly mark superseded requirements | MUST FIX | Prevents false acceptance criteria and premature claims. |
+| Resolve `MERCHANT_HOME_SHELL_UI_SPEC.md` against code/tests | MUST FIX | The owning team must either mark the specification superseded or bring implementation into compliance; this audit must not choose silently. |
 | Keep Home's historical metrics and exact deep links aligned with Orders contract as Orders evolves | MUST BEAT | This is a trust asset easily lost through shallow dashboard changes. |
 | Audit Analytics / Decision Center before using Home recommendation handoff in primary messaging | MUST MATCH | Home cannot substantiate decision-intelligence positioning alone. |
 | Consider an Analytics-owned explanation affordance reachable from Home, not a duplicate engine | WORTH ADOPTING | Can reduce opacity while retaining source-of-truth boundaries. |
@@ -424,17 +425,17 @@ Evidence supports the implementation direction, not the proposition's superiorit
 - **Claim / finding:** Older Dashboard System direction is broader than current Home implementation.
 - **Evidence type:** P3 vs P1/P2
 - **Files / symbols:** `docs/wossol-system-design/01-system-design/core-systems/Dashboard System.md:22-44,258-387`; `MERCHANT_HOME_SHELL_UI_SPEC.md:49-100`; `merchant-home-v1.spec.ts` test “Home removes the large trend chart...”
-- **Observed behavior:** Older document specifies chart/inventory/insights layout; current code/tests intentionally omit the trend and hold a narrower operational composition.
+- **Observed behavior:** Older document specifies chart/inventory/insights layout; current code/tests omit the trend and hold a narrower operational composition, while the specification/code contract remains unresolved.
 - **Status / confidence:** Contradiction documented / High.
 
 ### EV-HOME-012
 
 - **Claim / finding:** The final Home review corrections are present in the reviewed product branch.
 - **Evidence type:** P1 + P2
-- **Repository / commit:** `jetshop7/wossol-platform` / `e842e8e4e45ba4748412232c914fdeb20063b8ab`
+- **Repository / commit:** `jetshop7/wossol-platform` / `d52fd3e8db087d914efa0d56ad12d9b56f28cb2f` (the product evidence commit named by the authoritative review record)
 - **Files / symbols:** `apps/frontend/src/app/merchant/page.tsx:222-234`; `apps/frontend/src/app/merchant/home-data.ts:1-17`; `apps/backend/src/modules/merchant-portal/merchant-portal.service.ts:150-622`; `apps/frontend/src/app/merchant/merchant-home-v1.spec.ts:7-148`; `apps/backend/src/modules/merchant-portal/merchant-home-summary.service.spec.ts`
 - **Observed behavior:** The reviewed surface has three Today facts, no trend/ring UI or trend contract, bounded three-item updates, non-zero secondary performance outcomes, dedicated attention, and Analytics-owned recommendation projection. Focused review validation reported 9/9 frontend and 10/10 backend checks plus both typechecks and `git diff --check`.
-- **Status / confidence:** LIVE in code / High. The review task reported focused validation; this intelligence correction did not rerun product tests.
+- **Status / confidence:** LIVE in reviewed code / High for current executable behavior; contract resolution remains UNCERTAIN. The authoritative review record reports focused validation; this correction did not re-audit Home or rerun product tests.
 
 ## 28. Contradictions & Uncertainty
 
@@ -442,12 +443,12 @@ Evidence supports the implementation direction, not the proposition's superiorit
 
 | Field | Record |
 |---|---|
-| Source A | `MERCHANT_HOME_SHELL_UI_SPEC.md` says Home has an Orders trend, four Today cards, up to three current-work groups including Waiting for stock, and Recent Updates bounded to six. |
+| Source A | `MERCHANT_HOME_SHELL_UI_SPEC.md` is titled **Merchant Home V1 - Final Functional UI Specification** and says Home has an Orders trend, four Today cards, up to three current-work groups including Waiting for stock, and Recent Updates bounded to six. |
 | Source B | Current service/UI/tests have no trend endpoint/chart, three Today facts, two current-work groups, and notification `.slice(0, 3)`. Frontend test explicitly asserts the large trend chart is removed. |
-| Evidence strength | Source A: P3/current design documentation but stale/inconsistent in these points. Source B: P1 executable code + P2 passing tests. |
-| Working conclusion | The current executable Home is the narrower implementation described in this audit. Do not treat absent spec elements as live. |
-| Remaining uncertainty | It is unclear whether the spec should be updated to match implementation or the removed elements are planned to return. |
-| Required verification | Product owner/maintainer should designate the current authoritative UX contract, then reconcile docs and acceptance tests accordingly. |
+| Evidence strength | Source A: current-looking P3 specification with explicit acceptance criteria. Source B: P1 executable code + P2 passing tests. |
+| Working conclusion | The reviewed executable Home is the narrower live implementation. The contradiction is unresolved: the specification may be superseded, or implementation may be incomplete against the current functional contract. |
+| Remaining uncertainty | No evidence in the review record establishes that Source A was superseded. |
+| Required verification | Product owner/maintainer must explicitly choose the governing contract, then update either the specification or implementation and acceptance tests. |
 
 ### C-HOME-002 — “Command Center” terminology could overstate current depth
 
@@ -461,7 +462,7 @@ The older Dashboard document calls the dashboard a command center, while current
 
 ## 29. Open Questions
 
-1. Should the Home UI specification be reconciled to the intentional no-trend/three-notification implementation, or are those features still approved near-term work?
+1. Is the final Home specification superseded, or must the implementation be brought into compliance with its trend/card/current-work/notification acceptance criteria?
 2. Which canonical Analytics recommendations currently materialize against representative merchant data, and how useful/explainable are they in real use? (Requires Analytics audit/runtime access.)
 3. Does production preserve the focused-test authorization, scope, timezone, and safe-degradation behavior under real database volume and authentic sessions?
 
@@ -471,8 +472,8 @@ No reusable methodology change was identified. The existing contradiction protoc
 
 ## 31. Retroactive Review Impact
 
-No methodology change. The Home review correction record is captured in `04-review-history/HOME_REVIEW_CORRECTIONS.md`; the retroactive methodology queue remains unchanged.
+No methodology change. Corrections were applied from the authoritative `04-review-history/HOME_REVIEW_2026-09-25.md` record and cross-recorded in `04-review-history/HOME_REVIEW_CORRECTIONS.md`; the retroactive methodology queue remains unchanged.
 
 ## 32. Canonical Section Takeaway
 
-**Home is not Wossol's intelligence proposition by itself. It is a tested, merchant-safe orientation layer that preserves operational truth: the right scope, the right time basis, explicit exceptions, and routes back to the system that owns the action.** Its strongest brand contribution is evidence for clarity and trustworthy operational visibility. Its future strategic value depends on whether Analytics and the connected owner domains can turn that orientation into explainable, actionable, and measurable guidance without breaking the disciplined boundaries already present.
+**Home is not Wossol's intelligence proposition by itself. The reviewed executable build is a tested, merchant-safe orientation layer that preserves operational truth: the right scope, the right time basis, explicit exceptions, and routes back to the system that owns the action.** The conflicting final specification prevents treating the narrower shape as definitively intentional: the owning team must either supersede that contract or complete the implementation. Its strongest current brand evidence is clarity and trustworthy operational visibility; no absent feature may be marketed as live until the contradiction is resolved.
