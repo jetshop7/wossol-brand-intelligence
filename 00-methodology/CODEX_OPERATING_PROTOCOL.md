@@ -297,6 +297,8 @@ Do not prematurely decide naming, tagline, archetype, logo, colors, visual conce
 
 Codex is not the final reviewer.
 
+`05-director/` contains ChatGPT Director governance and is **not part of Codex's operating instruction set**. Do not read it as a source of audit methodology or self-review rules during normal Codex work. Director decisions that require Codex action are persisted under `04-review-history/`; those review records are the authoritative correction input for Codex.
+
 A separate ChatGPT review layer may inspect the audit after completion.
 
 Make the work reviewer-friendly:
