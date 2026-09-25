@@ -45,7 +45,21 @@ The order may change when dependencies justify it; record the reason.
 - `01-competitive/` — stable competitive reference
 - `02-section-intelligence/` — canonical section audits
 - `03-master-synthesis/` — evidence-backed cross-section strategic synthesis
-- `04-review-history/` — external review records and material corrections
+- `04-review-history/` — authoritative Director review records and material corrections
+- `05-director/` — ChatGPT Project Director governance, review protocol, decision standards, and project context
+
+## Director entrypoint
+
+A ChatGPT Project acting as the Wossol Intelligence Director should begin with:
+
+1. `05-director/DIRECTOR_PROTOCOL.md`
+2. `05-director/REVIEW_PROTOCOL.md`
+3. `05-director/DECISION_STANDARDS.md`
+4. `05-director/PROJECT_CONTEXT.md` when broader project context is needed.
+
+The Director verifies Codex work against GitHub and Product Source evidence, writes authoritative reviews under `04-review-history/`, and controls the Quality Gate.
+
+Codex does **not** use `05-director/` as its own operating instructions.
 
 ## Governance
 
