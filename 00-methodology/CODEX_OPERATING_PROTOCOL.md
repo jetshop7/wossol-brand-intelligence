@@ -37,7 +37,7 @@ During intelligence audits:
 ## Intelligence Source of Truth
 `jetshop7/wossol-brand-intelligence`
 
-Write methodology, competitive intelligence, section audits, synthesis, and review history here.
+**GitHub is the shared canonical state of this Intelligence repository.** The local clone is only Codex's working copy/cache. Write methodology, competitive intelligence, section audits, synthesis, and review history here, then commit and push coherent completed work to the configured GitHub upstream.
 
 ---
 
@@ -68,7 +68,24 @@ If the command is unambiguous, **do not ask for confirmation**.
 
 # 3. MANDATORY STARTUP SEQUENCE
 
-At the start of every new audit task:
+At the start of **every intelligence task** — including audit, re-audit, continuation, reviewer correction, retroactive review, or synthesis — first synchronize the Intelligence repository from GitHub.
+
+## 3.1 GitHub synchronization gate
+
+Before interpreting repository state or claiming that a review/correction file does not exist:
+
+1. Identify the current Intelligence branch, its upstream, and working-tree status.
+2. Fetch the configured GitHub remote.
+3. If the Intelligence working tree is clean, fast-forward the current branch to its upstream (normally `origin/main`). Do not create merge commits merely to synchronize.
+4. If local Intelligence changes or commits would make fast-forward unsafe, **do not reset, discard, overwrite, or force-push them**. Preserve the work and reconcile safely; if reconciliation is not unambiguous, report the blocker and exact divergence.
+5. Verify the local HEAD/upstream state after synchronization.
+6. Only then resolve the task and read repository instructions/review records.
+
+The user must not be required to run routine `git pull` commands between ChatGPT reviews and Codex tasks. Codex owns this synchronization step when network/authentication are available.
+
+If GitHub/network/authentication is unavailable, continue only when the task can be completed safely from the available state and explicitly report that the shared canonical state could not be refreshed.
+
+## 3.2 Required reads after synchronization
 
 1. Read this `CODEX_OPERATING_PROTOCOL.md`.
 2. Read `MASTER_INSTRUCTIONS.md` completely.
@@ -83,7 +100,7 @@ At the start of every new audit task:
 
 Do not rely on remembered methodology from a previous Codex conversation.
 
-Always use the repository's latest committed operating documents.
+Always use the repository's latest committed operating documents **after the synchronization gate**. For reviewer-correction tasks, also read the referenced/latest applicable record under `04-review-history/` before changing the section audit.
 
 ---
 
@@ -309,7 +326,7 @@ During an audit:
 
 # 16. COMMIT PROTOCOL
 
-When the audit reaches a coherent completion point:
+When an audit, reviewer correction, retroactive review, or synthesis task reaches a coherent completion point:
 
 1. verify the changed files;
 2. ensure no product-repository modifications were made;
@@ -319,7 +336,7 @@ When the audit reaches a coherent completion point:
 5. verify the push succeeded;
 6. record/report the resulting intelligence commit SHA and pushed branch.
 
-GitHub is the shared Intelligence Source of Truth. Do not leave completed audit work only in the local clone when push access is available.
+GitHub is the shared canonical Intelligence Source of Truth. Do not leave completed intelligence work only in the local clone when push access is available. After pushing, verify that the remote branch contains the resulting commit. A later task must begin from the synchronization gate rather than assuming the local clone is current.
 
 Do not make meaningless commits merely to show progress.
 
