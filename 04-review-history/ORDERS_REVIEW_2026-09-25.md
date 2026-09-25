@@ -5,7 +5,7 @@
 - Reviewed intelligence commit: `9e8c44cf6b5f4c00f85f378a7f6339e1b57aac36`
 - Product evidence commit: `e3912a967827bde06450d3510228e5a5ca9e78a7`
 - Reviewer: ChatGPT — Strategic Reviewer / Quality Gate
-- Decision: **NEEDS TARGETED CORRECTION**
+- Decision: **ACCEPT WITH OPEN PRODUCT ISSUE**
 - Full re-audit required: No
 
 ## What passes
@@ -56,3 +56,27 @@ No retroactive correction required. The cancellation boundary should inform Conf
 **Targeted correction only. No full re-audit.**
 
 Codex should apply this authoritative Orders review record, update the canonical Orders audit, verify internal consistency, commit, and push.
+
+
+## Final Quality Gate — 2026-09-25
+
+### Re-verification metadata
+- Corrected intelligence commit: `ad7ec1e9402edc95539fba8556ee49faf066f812`
+- Product evidence commit re-checked: `e3912a967827bde06450d3510228e5a5ca9e78a7`
+- Director decision: **ACCEPT WITH OPEN PRODUCT ISSUE**
+- Full re-audit required: **No**
+
+### Correction verification
+1. **Cancellation contract discipline — PASS.** The corrected audit now states the exact P1 ordinary cancellation gates, preserves the Final V1 “before processing starts” rule as P3 intent, and does not infer that the two are equivalent. It explicitly preserves both possible resolutions: Product authority may amend/clarify the contract to match P1, or P1 may be incomplete/misaligned with the current contract.
+2. **Provider-shipment deletion boundary — PASS.** The corrected audit clearly separates the separately permissioned Tracking/provider-shipment deletion path from ordinary merchant cancellation authority.
+3. **Evidence-tier discipline — PASS.** `EV-ORD-008`, `EV-ORD-009`, and `EV-ORD-013` now distinguish P1 source evidence from P2 test-source references and explicitly state that no passing Orders test execution was observed during this audit.
+4. **Claim safety — PASS.** Cancellation/control claims are now P1-qualified and the broader contract statement is marked unresolved. No delivery outcome, provider reliability, duplicate-prevention, profitability, autonomous-order-management, or end-to-end intelligence claim was introduced.
+5. **Traceability and consistency — PASS.** The correction is linked to this review record and carried through capability inventory, lifecycle, risks, claim safety, evidence register, contradictions, open questions, and the canonical takeaway.
+
+### Open product issue retained
+The relationship between the Final V1 phrase “merchant may cancel only before processing starts” and the executable P1 cancellation predicates remains unresolved. This is a Product contract/implementation issue, not an Intelligence audit defect. Later synthesis and marketing must stay bounded to the verified P1 lifecycle gates until Product authority resolves the contract.
+
+### Acceptance
+**Orders passes the Director Quality Gate and is accepted with the open cancellation Product issue above.**
+
+The next section in the canonical sequence is **Confirmation**.
