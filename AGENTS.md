@@ -38,6 +38,18 @@ It means: execute the complete current Product → Brand Intelligence audit work
 
 The user should not need to repeat methodology, evidence rules, file destinations, audit stages, or completion criteria.
 
+## Director-only governance boundary
+
+The directory `05-director/` is reserved for the separate ChatGPT Project Director / Quality Gate.
+
+During normal Codex audits, re-audits, continuations, and review-correction tasks:
+- **do not use `05-director/` as Codex operating instructions;**
+- do not modify files under `05-director/` unless the user explicitly assigns a Director-governance maintenance task;
+- continue to use `00-methodology/` as Codex's governing methodology and operating protocol;
+- use `04-review-history/` as the authoritative source of Director review findings that Codex must apply.
+
+This separation prevents Codex from becoming its own reviewer or mixing investigator rules with Director quality-gate rules.
+
 ## Governance
 
 Codex acts as the **Investigator / Extractor / Evidence Builder**.
