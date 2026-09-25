@@ -6,15 +6,19 @@
 |---|---|
 | Audit date | 2026-09-25 |
 | Product source | `jetshop7/wossol-platform` — local workspace `C:\Users\Global Tech\Documents\wossol-platform` |
-| Product branch / commit | `dev/wossol-integration` / `d52fd3e8db087d914efa0d56ad12d9b56f28cb2f` |
-| Product local state | **Dirty:** `extensions/wossol-cod-form/assets/wossol-cod-form-runtime.js`, `shopify/theme-extension-source/wossol-cod-form/wossol-cod-form.js`, and `tests/shopify/wossol-cod-form.test.cjs` were modified before this audit. They are Shopify COD-form changes, outside the inspected Home surface. No product files were modified by this audit. |
-| Local vs committed GitHub state | Local product workspace differs from the recorded commit because of the three uncommitted files above. Home findings are based on the current checked-out code; the dirty files do not overlap the Home evidence paths searched. Remote state was not fetched during this audit. |
+| Product branch / commit | `dev/wossol-integration` / `e842e8e4e45ba4748412232c914fdeb20063b8ab` |
+| Product local state | Clean at the reviewed source-state check. The current commit contains only the unrelated Shopify COD-form follow-up after the Home review work; no product files were modified by this intelligence correction. |
+| Local vs committed GitHub state | `origin/dev/wossol-integration` resolves to the same reviewed product commit. Home findings include the approved Home review corrections already present in the branch. |
 | Intelligence source | `jetshop7/wossol-brand-intelligence`, `main`, starting commit `a9c0b45783b750852338e49410ffbc47e12a735c`; clean at audit start |
 | Methodology | Master Instructions v1.1; no queued retroactive items |
 | Competitive reference | `WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.0 (2026-09-09) |
 | Verification performed | Focused backend Home suite: 18/18 passing. Focused frontend Home suite: 14/14 passing. Frontend test emitted only Node's module-type parsing warning. No running authenticated deployment or production data was available for inspection. |
 
 **Audit status:** Complete for the current code and directly related documentation. Runtime deployment/real-data behavior remains **NOT VERIFIED**.
+
+### Review corrections applied
+
+The Home review trail was located in the Codex task history and reconciled against the reviewed product branch. The canonical record now reflects these applied corrections: blockers and actionable attention precede actions and summaries; Home has exactly three Today metrics (created, confirmed, delivered); the obsolete trend chart/range controls and ring-based performance presentation are absent; duplicate stock attention is not repeated in Current Work; recent updates are bounded to three; non-primary performance outcomes are shown only when non-zero; canonical recommendations remain Analytics-owned; and scope, authorization, request-race protection, partial-failure handling, manual refresh, and merchant-safe copy remain intact. No new product change was required in this intelligence-repository correction.
 
 ## 2. Audit Coverage Map
 
@@ -274,7 +278,7 @@ Evidence supports the implementation direction, not the proposition's superiorit
 
 | ID | Finding | Impact | Classification / action |
 |---|---|---|---|
-| H-R01 | **Material documentation contradiction.** The current Home spec describes an Orders trend, four Today cards, up to three operational groups including stock, and six recent notifications; executable code/tests remove the trend, show three Today facts, return two current-work groups, and slice notifications to three. | Stakeholders, QA, and marketing could evaluate or promise a superseded product shape. | **MUST FIX** documentation/source-of-truth reconciliation. See C-HOME-001. |
+| H-R01 | **Material documentation contradiction remains.** The current Home spec still describes an Orders trend, four Today cards, up to three operational groups including stock, and six recent notifications; the reviewed executable code/tests remove the trend, show three Today facts, return two current-work groups, and slice notifications to three. | Stakeholders, QA, and marketing could evaluate or promise a superseded product shape even after the UX corrections are implemented. | **MUST FIX** documentation/source-of-truth reconciliation. See C-HOME-001. |
 | H-R02 | Home performance has percentages but no causal explanation, comparative baseline, or intervention effect. | A merchant can see an outcome without learning why it changed. | **POST-LAUNCH / WHITESPACE**; do not overclaim intelligence. |
 | H-R03 | Recommended actions have no Home-level explanation/evidence/feedback; this is intentional, but users must leave Home to understand them. | Guidance may feel opaque on the landing surface. | **WORTH ADOPTING** only after Analytics audit; preserve canonical ownership. |
 | H-R04 | No live authenticated runtime or representative data was available. | Rendering, real data shape, role behavior, latency and deployment status are not verified. | **OPEN VERIFICATION**; not a code defect. |
@@ -423,6 +427,15 @@ Evidence supports the implementation direction, not the proposition's superiorit
 - **Observed behavior:** Older document specifies chart/inventory/insights layout; current code/tests intentionally omit the trend and hold a narrower operational composition.
 - **Status / confidence:** Contradiction documented / High.
 
+### EV-HOME-012
+
+- **Claim / finding:** The final Home review corrections are present in the reviewed product branch.
+- **Evidence type:** P1 + P2
+- **Repository / commit:** `jetshop7/wossol-platform` / `e842e8e4e45ba4748412232c914fdeb20063b8ab`
+- **Files / symbols:** `apps/frontend/src/app/merchant/page.tsx:222-234`; `apps/frontend/src/app/merchant/home-data.ts:1-17`; `apps/backend/src/modules/merchant-portal/merchant-portal.service.ts:150-622`; `apps/frontend/src/app/merchant/merchant-home-v1.spec.ts:7-148`; `apps/backend/src/modules/merchant-portal/merchant-home-summary.service.spec.ts`
+- **Observed behavior:** The reviewed surface has three Today facts, no trend/ring UI or trend contract, bounded three-item updates, non-zero secondary performance outcomes, dedicated attention, and Analytics-owned recommendation projection. Focused review validation reported 9/9 frontend and 10/10 backend checks plus both typechecks and `git diff --check`.
+- **Status / confidence:** LIVE in code / High. The review task reported focused validation; this intelligence correction did not rerun product tests.
+
 ## 28. Contradictions & Uncertainty
 
 ### C-HOME-001 — Home design/specification is not fully aligned with executable behavior
@@ -458,7 +471,7 @@ No reusable methodology change was identified. The existing contradiction protoc
 
 ## 31. Retroactive Review Impact
 
-None. This is the first canonical section audit and no methodology change was made. The retroactive review queue remains unchanged.
+No methodology change. The Home review correction record is captured in `04-review-history/HOME_REVIEW_CORRECTIONS.md`; the retroactive methodology queue remains unchanged.
 
 ## 32. Canonical Section Takeaway
 
