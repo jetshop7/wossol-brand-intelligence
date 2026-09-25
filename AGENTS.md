@@ -21,6 +21,7 @@ During Product → Brand Intelligence audits:
 - Inspect/read `wossol-platform` deeply enough to establish product truth.
 - **Do not modify `wossol-platform`.**
 - Write audit, methodology, competitive-intelligence, synthesis, and review artifacts only to `wossol-brand-intelligence`, according to the operating protocol.
+- Completed audit work must be committed and pushed to GitHub when authentication/permissions are available so GitHub remains the shared Intelligence Source of Truth.
 - Do not copy application code into this repository.
 
 ## Short-command contract
@@ -31,7 +32,7 @@ A short instruction such as:
 
 is sufficient.
 
-It means: execute the complete current Product → Brand Intelligence audit workflow for that section as defined by `00-methodology/CODEX_OPERATING_PROTOCOL.md` and the latest methodology, continue until the applicable Definition of Done is satisfied or blockers are explicitly documented, commit the intelligence-repository changes, and return the standard handoff report.
+It means: execute the complete current Product → Brand Intelligence audit workflow for that section as defined by `00-methodology/CODEX_OPERATING_PROTOCOL.md` and the latest methodology, continue until the applicable Definition of Done is satisfied or blockers are explicitly documented, commit and push the intelligence-repository changes to the configured GitHub remote when access is available, and return the standard handoff report.
 
 The user should not need to repeat methodology, evidence rules, file destinations, audit stages, or completion criteria.
 
