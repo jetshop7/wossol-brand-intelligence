@@ -49,7 +49,7 @@ A command such as:
 
 means:
 
-> Perform the complete current-methodology Product → Brand Intelligence audit of the Orders section, using this operating protocol, continue until the Definition of Done is satisfied, write/update the canonical section document, make any justified methodology/retroactive updates, commit the intelligence changes, and return the standard handoff report.
+> Perform the complete current-methodology Product → Brand Intelligence audit of the Orders section, using this operating protocol, continue until the Definition of Done is satisfied, write/update the canonical section document, make any justified methodology/retroactive updates, commit and push the intelligence changes to the configured GitHub remote, and return the standard handoff report.
 
 The user does **not** need to restate the methodology, evidence rules, file locations, audit stages, output structure, or completion criteria.
 
@@ -315,11 +315,15 @@ When the audit reaches a coherent completion point:
 2. ensure no product-repository modifications were made;
 3. commit intelligence-repository changes with a clear message such as:
    `Audit Orders product-to-brand intelligence`
-4. record/report the resulting intelligence commit SHA.
+4. push the completed intelligence commit to the configured GitHub remote/branch when Git authentication and permissions are available;
+5. verify the push succeeded;
+6. record/report the resulting intelligence commit SHA and pushed branch.
+
+GitHub is the shared Intelligence Source of Truth. Do not leave completed audit work only in the local clone when push access is available.
 
 Do not make meaningless commits merely to show progress.
 
-If the environment cannot commit, clearly report that limitation and the exact uncommitted changes.
+If the environment cannot commit or push, clearly report that limitation, the exact uncommitted/unpushed changes, and the command/state needed to finish synchronization.
 
 ---
 
@@ -334,6 +338,7 @@ After a completed audit, return a concise report containing:
 
 ## Intelligence Output
 - intelligence commit SHA;
+- pushed remote/branch and push status;
 - files created/modified.
 
 ## Coverage
@@ -426,7 +431,7 @@ and independently know:
 - how to evolve methodology;
 - how to handle retroactive impacts;
 - when the section is done;
-- how to commit;
+- how to commit and push the completed intelligence work;
 - what to report.
 
 If Codex needs a giant task prompt to recover these rules, this operating protocol or repository governance is incomplete.
