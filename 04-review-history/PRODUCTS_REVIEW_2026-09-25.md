@@ -10,7 +10,7 @@
 | Product evidence commit used by audit | `e842e8e4e45ba4748412232c914fdeb20063b8ab` |
 | Reviewer | ChatGPT — Strategic Reviewer / Quality Gate |
 | Review date | 2026-09-25 |
-| Decision | **NEEDS TARGETED CORRECTION** |
+| Decision | **ACCEPT WITH OPEN PRODUCT ISSUE** |
 | Full re-audit required | No, unless correction exposes broader source contradictions |
 
 ## What passes
@@ -118,3 +118,27 @@ Re-check affected sections at minimum:
 - Canonical Section Takeaway only if materially affected.
 
 After correction, run consistency checks, commit, push, and report the resulting SHA.
+
+
+## Final Quality Gate — 2026-09-25
+
+### Re-verification metadata
+- Corrected intelligence commit: `784b73257b81242c4ff9e602c27211ecf190c355`
+- Product repository state checked at correction: `e3912a967827bde06450d3510228e5a5ca9e78a7`
+- Director decision: **ACCEPT WITH OPEN PRODUCT ISSUE**
+- Full re-audit required: **No**
+
+### Correction verification
+1. **Specification evidence discipline — PASS.** `MERCHANT_PRODUCTS_UI_SPEC.md` is now treated consistently as P3 approved/final Product intent, while the dated architecture-reading summary is P4. The audit preserves executable P1 truth separately from unresolved contract intent and no longer uses P1 alone to declare the current/final contract superseded.
+2. **Test Product capability — PASS.** The corrected audit records the merchant create/edit flag, default-off behavior, Product authorization boundary, and downstream Manual Test Order eligibility. Targeted Product evidence confirms the create control and Orders eligibility tests. The audit preserves the safety boundary that the flag does not rewrite historical Order purpose, stock truth, or commercial Analytics.
+3. **Store mapping separation — PASS WITH OPEN PRODUCT ISSUE.** The corrected audit distinguishes implemented ProductStore/store-scoped behavior from the broader Final V1 Store-mapping contract. General merchant Store-mapping mutation behavior is not claimed as live; the unresolved implementation/contract gap is explicitly retained in risks, evidence, contradictions, actions, open questions, and the canonical takeaway.
+4. **Claim and strategic safety — PASS.** The correction does not promote Product profitability/opportunity intelligence, generalized omnichannel synchronization, sourcing/network catalog, advertising attribution, or broad competitor superiority. Current differentiation remains bounded to supported operational controls and evidence.
+5. **Traceability and consistency — PASS.** The corrected artifact identifies this review as correction provenance, adds `EV-PROD-016`–`EV-PROD-018`, and carries the affected findings through capability, workflow, cross-section, risk, claim-safety, action, contradiction, open-question, and takeaway sections without introducing a new material overclaim.
+
+### Open product issue retained
+The Final V1 Store-mapping contract remains broader than the targeted executable ProductStore lifecycle verified for this gate. This is an unresolved Product contract/implementation issue, not an intelligence-audit defect. Marketing and downstream synthesis must remain bounded to verified Store-scoped behavior until the contract is explicitly narrowed/superseded or the broader behavior is implemented and evidenced.
+
+### Acceptance
+**Products passes the Director Quality Gate and is accepted with the open Store-mapping Product issue above.**
+
+The next section in the canonical audit sequence is **Inventory**.
