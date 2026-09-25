@@ -4,12 +4,13 @@ This repository is the **Intelligence Source of Truth** for the Wossol Product â
 
 ## Mandatory entrypoint
 
-For every section audit, re-audit, continuation, or related intelligence task:
+For every section audit, re-audit, continuation, reviewer-correction, or related intelligence task:
 
-1. Read `00-methodology/CODEX_OPERATING_PROTOCOL.md` first.
-2. Follow its Mandatory Startup Sequence completely.
-3. Apply the latest `00-methodology/MASTER_INSTRUCTIONS.md`.
-4. Treat repository instructions as the durable operating memory; do not rely on conversation memory to reconstruct the process.
+1. **Synchronize this Intelligence repository from its configured GitHub remote before interpreting the task.** GitHub is the shared Intelligence Source of Truth. If the working tree is clean, fetch and fast-forward the current branch from its upstream (normally `origin/main`). If local intelligence changes exist, preserve them safely and do not overwrite, reset, or discard them; reconcile or report the blocker before proceeding.
+2. Read `00-methodology/CODEX_OPERATING_PROTOCOL.md` first.
+3. Follow its Mandatory Startup Sequence completely.
+4. Apply the latest `00-methodology/MASTER_INSTRUCTIONS.md`.
+5. Treat repository instructions as the durable operating memory; do not rely on conversation memory to reconstruct the process.
 
 ## Repository boundary
 
@@ -21,7 +22,8 @@ During Product â†’ Brand Intelligence audits:
 - Inspect/read `wossol-platform` deeply enough to establish product truth.
 - **Do not modify `wossol-platform`.**
 - Write audit, methodology, competitive-intelligence, synthesis, and review artifacts only to `wossol-brand-intelligence`, according to the operating protocol.
-- Completed audit work must be committed and pushed to GitHub when authentication/permissions are available so GitHub remains the shared Intelligence Source of Truth.
+- GitHub is the **shared canonical Intelligence Source of Truth**; the local clone is a working copy/cache, not an independent authority.
+- Completed audit/review-correction work must be committed and pushed to GitHub when authentication/permissions are available.
 - Do not copy application code into this repository.
 
 ## Short-command contract
