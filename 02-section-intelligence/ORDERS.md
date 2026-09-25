@@ -7,7 +7,8 @@
 - **Competitive reference:** `WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.
 - **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, `38f7450`, clean and synchronized before inspection.
 - **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `e3912a967827bde06450d3510228e5a5ca9e78a7`, clean.
-- **Evidence basis:** P1 code/schema, P2 tests/typechecks where recorded, P3 Final V1 Merchant Orders specification, and P4 architecture material only when qualified. This audit does not prove production provider connectivity, dispatch success, delivery outcomes, financial settlement, or merchant adoption.
+- **Correction provenance:** targeted application of `04-review-history/ORDERS_REVIEW_2026-09-25.md` to audit commit `9e8c44cf6b5f4c00f85f378a7f6339e1b57aac36`; no Orders re-audit performed.
+- **Evidence basis:** P1 code/schema, P2 test sources with execution status stated per evidence entry, P3 Final V1 Merchant Orders specification, and P4 architecture material only when qualified. This audit does not prove production provider connectivity, dispatch success, delivery outcomes, financial settlement, or merchant adoption.
 
 ## 2. Audit Coverage Map
 
@@ -40,7 +41,7 @@ Orders owns canonical identity, status, timeline, validation, merchant-facing pr
 | Confirmation routing | LIVE, connected-domain dependent | ordinary orders enter confirmation; merchant-preconfirmed orders request controlled direct dispatch; Tests do not dispatch |
 | Imports and commerce ingress | LIVE | preview/classification/confirmation path; atomic commerce graph and idempotent external mapping |
 | List/detail/journey/activity/export | LIVE | scoped search/filter/groups, merchant-safe status/timeline/tracking and bounded export |
-| Controlled correction/cancel/delete | LIVE, lifecycle-bounded | editable/cancellable/deletable only before protected lifecycle thresholds; dispatched handling is not a merchant shortcut |
+| Controlled correction/cancel/delete | LIVE, lifecycle-bounded | edit/cancel/delete predicates are restricted to `PENDING_CONFIRMATION` and `WAITING_FOR_STOCK`; blocked-customer correction/cancel is separately gated, and cancel also requires no provider shipment identity/code |
 | Customer safety gate | LIVE | blocked customer can be resolved only through authoritative resume/cancel rules |
 | Attribution/evidence foundation | LIVE | normalized immutable attribution and unresolved advertising evidence can be preserved separately |
 | Provider/finance/worker operations | NOT merchant-controlled | provider dispatch/retry, tracking operations, settlement and confirmation workforce remain domain-owned |
@@ -54,7 +55,7 @@ Orders owns canonical identity, status, timeline, validation, merchant-facing pr
 4. A reserved ordinary order enters `PENDING_CONFIRMATION`; a merchant-preconfirmed order attempts controlled post-commit dispatch; a Test Order is confirmation-only and never sent to delivery.
 5. Confirmation and Tracking evolve the canonical status while Orders exposes simplified merchant-safe group/status projections, journey and timeline facts.
 6. Waiting orders are reconsidered under a serializable transaction; only full fresh allocation promotes them to confirmation and triggers assignment best-effort.
-7. Before dispatch, a merchant may correct, cancel, or delete within exact lifecycle gates. Provider-deletion/after-dispatch handling is guarded and retains evidence rather than pretending an ordinary cancellation is safe.
+7. P1 exposes ordinary edit/cancel/delete in `PENDING_CONFIRMATION` and `WAITING_FOR_STOCK`; `BLOCKED_CUSTOMER` is a separate limited correction/cancel case. Cancellation also rechecks that provider shipment ID/code are absent in the transaction. The relationship between those predicates and P3's phrase “before processing starts” remains unresolved. Provider-shipment deletion is a separate guarded operation and does not expand ordinary merchant cancellation authority.
 
 ## 7. Value Recipient Map
 
@@ -162,8 +163,8 @@ Current defensible framing: **order operations with safe handoffs** or **orders 
 2. The Order module is highly coupled to several operational domains; the merchant experience depends on those services and their permissions/availability.
 3. No current Order-level recommendation, outcome attribution, profitability, SLA, or performance intelligence was established.
 4. Test Order eligibility requires known zero effective availability; this is intentionally narrow and can surprise merchants if its education is weak.
-5. Post-dispatch merchant actions are constrained by design; safe support/remediation quality depends on Tracking/Support surfaces not audited here.
-6. P3 includes broad UI intent; every documented acceptance state was not individually re-executed in a browser. P1 governs executable conclusions.
+5. Cancellation authority has an unresolved P3/P1 boundary: the Final V1 contract permits merchant cancellation only before processing starts, while ordinary P1 merchant cancel accepts `PENDING_CONFIRMATION`, `WAITING_FOR_STOCK`, or `BLOCKED_CUSTOMER` and then requires provider shipment ID/code to be absent. The P3 phrase has not been proven equivalent to those exact gates. Provider-shipment deletion is separately guarded and is not ordinary merchant cancellation authority.
+6. P3 includes broad UI intent; every documented acceptance state was not individually re-executed in a browser. P1 governs executable conclusions, while material P3/P1 contract conflicts remain unresolved.
 
 ## 22. Future Strategic Potential
 
@@ -180,7 +181,8 @@ Current defensible framing: **order operations with safe handoffs** or **orders 
 |---|---|---|
 | Create, import and follow scoped orders with merchant-safe progress | GREEN | implemented routes/projections |
 | Keep stock-aware orders from entering confirmation prematurely | GREEN, provider-qualified | reservation/waiting rules are implemented; live provider data unverified |
-| Correct/cancel/delete orders safely before dispatch | GREEN, lifecycle-qualified | guarded P1 behavior |
+| Correct orders under the implemented pre-dispatch lifecycle gates | GREEN, P1-qualified | guarded P1 behavior; broader contract relationship is unresolved |
+| Merchant cancellation only before processing starts | YELLOW / unresolved | P3's phrase is not proven equivalent to P1's `PENDING_CONFIRMATION` / `WAITING_FOR_STOCK` / `BLOCKED_CUSTOMER` status gates plus absent provider shipment ID/code |
 | Give merchants full confirmation/tracking/provider control | RED | deliberately not exposed |
 | Guarantee delivery, prevent all duplicates, or optimize profit | RED | no outcome proof or optimization found |
 | Offer end-to-end order intelligence | RED | evidence foundation exists; intelligence loop does not |
@@ -226,9 +228,9 @@ Current defensible framing: **order operations with safe handoffs** or **orders 
 
 **EV-ORD-007 — Waiting-stock recovery.** **Type:** P1. **Path:** `waiting-stock-promotion.service.ts`. **Observed:** serializable lock/reallocation, exact promotion to confirmation, history/timeline/audit/domain evidence, best-effort assignment after commit. **Confidence:** High.
 
-**EV-ORD-008 — Import control.** **Type:** P1/P2. **Paths:** `order-import.service.ts`, workbook/policy/destination/confirmation specs. **Observed:** import preview/classification, durable created-order duplicate evidence, and confirmation-aware execution boundaries. **Confidence:** High for tested behavior.
+**EV-ORD-008 — Import control.** **Type:** P1 with P2 test-source references. **Paths:** `order-import.service.ts`, workbook/policy/destination/confirmation specs. **Observed:** source inspection supports import preview/classification, durable created-order duplicate evidence, and confirmation-aware execution boundaries. The related specs are evidence locations; no passing execution for these specs was observed during this audit. **Confidence:** High for the described source behavior; test execution not verified here.
 
-**EV-ORD-009 — Commerce and attribution intake.** **Type:** P1/P2. **Paths:** `createCommerceImportedOrder`, `order-attribution.ts`, `commerce-order-ingestion.spec.ts`, attribution specs. **Observed:** trusted backend-only ingress, atomic canonical graph, idempotent external import mapping, immutable attribution evidence and separate unresolved advertising evidence. **Confidence:** High.
+**EV-ORD-009 — Commerce and attribution intake.** **Type:** P1 with P2 test-source references. **Paths:** `createCommerceImportedOrder`, `order-attribution.ts`, `commerce-order-ingestion.spec.ts`, attribution specs. **Observed:** source inspection supports trusted backend-only ingress, atomic canonical graph, idempotent external import mapping, immutable attribution evidence and separate unresolved advertising evidence. The related specs are evidence locations; no passing execution for these specs was observed during this audit. **Confidence:** High for the described source behavior; test execution not verified here.
 
 **EV-ORD-010 — Communications/tracking boundary.** **Type:** P1. **Path:** `order-communication-eligibility.service.ts`; detail projection in `orders.service.ts`. **Observed:** dispatch evidence, not only a status label, determines support versus confirmation communication eligibility; tracking data is projected merchant-safely. **Confidence:** High.
 
@@ -236,19 +238,19 @@ Current defensible framing: **order operations with safe handoffs** or **orders 
 
 **EV-ORD-012 — Schema and status taxonomy.** **Type:** P1. **Paths:** `apps/backend/prisma/schema.prisma`, `merchant-order-status-groups.ts`, `merchant-order-create-next-step.ts`. **Observed:** canonical status model and merchant-safe grouped/next-step projection. **Confidence:** High.
 
-**EV-ORD-013 — Test evidence.** **Type:** P2. **Paths:** Orders service/controller/list/detail/journey/import/duplicate/attribution/communication/waiting-stock/commerce specs. **Observed:** broad targeted test coverage exists for lifecycle, scope, ingress, allocation and recovery. The full glob command was initiated during this audit but did not return a completion result before the audit record was written; no blanket pass claim is made. **Confidence:** Medium for test inventory; targeted Inventory tests independently passed in the prior audit.
+**EV-ORD-013 — Test evidence and execution status.** **Type:** P2 sources, execution not verified. **Paths:** Orders service/controller/list/detail/journey/import/duplicate/attribution/communication/waiting-stock/commerce specs. **Observed:** the repository contains focused specs covering lifecycle, scope, ingress, allocation and recovery. A broad Orders glob test command was started during the audit but returned no completion result; no Orders test command is recorded as having run to completion during the audit. These files establish test coverage intent only here, not passing behavior. **Confidence:** Medium for test-source inventory; no P2 pass result claimed.
 
 ## 28. Contradictions & Uncertainty
 
 1. **CONTRADICTION-ORD-001 — Contract versus runtime verification:** P3 is Final V1 intent, but this audit used P1 source inspection rather than browser/live-provider execution. P1 supports the executable lifecycle conclusions; individual UX acceptance behavior remains unverified.
-2. **CONTRADICTION-ORD-002 — Cancel wording:** P3 says merchants can cancel only before processing starts; P1 uses exact pre-dispatch lifecycle predicates and separately guarded provider-delete operations. The broader safe reading is “before protected dispatch/processing evidence,” pending product terminology alignment.
+2. **CONTRADICTION-ORD-002 — Cancellation contract versus executable lifecycle boundary:** **Source A (P3):** Final V1 says a merchant may cancel only before processing starts. **Source B (P1):** ordinary merchant cancellation accepts `PENDING_CONFIRMATION` or `WAITING_FOR_STOCK`, and also permits `BLOCKED_CUSTOMER` through the cancellable-status predicate; transaction-time checks require provider shipment ID and provider shipment code to be absent. These are guarded by `orders.cancel_before_processing`. Provider-shipment deletion follows a separate guarded path with distinct later lifecycle statuses. **Nature:** the P3 phrase has not been shown equivalent to the P1 status/dispatch-evidence predicates. **Evidence strength:** P3 approved contract and P1 executable behavior are both material; neither silently supersedes the other. **Working conclusion:** merchant cancellation exists under P1's stated gates, but contract alignment is UNCERTAIN. **Unresolved resolutions:** product authority may amend/clarify Final V1 to match P1, or P1 may be incomplete/misaligned with the current contract. Provider-shipment deletion does not broaden ordinary merchant cancellation authority. **Required verification:** product-authority decision and, if needed, implementation/spec correction.
 3. **CONTRADICTION-ORD-003 — Intelligence risk:** attribution, order history and tracking snapshots are present, but none prove ad-to-order-to-delivery-to-profit decision intelligence. Any claim beyond evidence capture is future territory.
 4. Provider/runtime/database state was not observed. Implemented behavior must not be represented as a delivery, settlement, stock, or support-service guarantee.
 
 ## 29. Open Questions
 
-1. What are production create/import/confirmation/dispatch/delivery failure and recovery outcomes?
-2. Which exact merchant-facing terminology will align P3 “before processing” with P1’s pre-dispatch/provider-delete boundaries?
+1. Will product authority amend/clarify the Final V1 “before processing starts” cancellation rule to match P1's `PENDING_CONFIRMATION` / `WAITING_FOR_STOCK` / `BLOCKED_CUSTOMER` gates plus the absent provider shipment ID/code requirement, or is P1 incomplete/misaligned and implementation correction required?
+2. What are production create/import/confirmation/dispatch/delivery failure and recovery outcomes?
 3. How do Finance settlement and final costs attach to an order without rewriting historic commercial snapshots?
 4. What verified downstream outcomes can safely power order-quality or campaign decisions?
 5. How are operator/support escalations experienced by merchants after dispatch?
@@ -263,4 +265,4 @@ No methodology change and no retroactive queue entry. Orders evidence should inf
 
 ## 32. Canonical Section Takeaway
 
-Orders is Wossol’s controlled commercial handoff: it turns scoped demand into a validated, stock-aware, evidence-preserving operational lifecycle while keeping sensitive confirmation, dispatch, tracking and finance work behind merchant-safe boundaries. Its current differentiation candidate is disciplined handoff and accountability—not delivery guarantees, full operational control, or order-performance intelligence.
+Orders is Wossol’s controlled commercial handoff: it turns scoped demand into a validated, stock-aware, evidence-preserving operational lifecycle while keeping sensitive confirmation, dispatch, tracking and finance work behind merchant-safe boundaries. P1 implements cancellation gates, but their relationship to the Final V1 “before processing starts” contract remains unresolved. The audit supports disciplined handoff and accountability; cancellation scope, delivery outcomes, and order-performance intelligence require the qualifications recorded above.
