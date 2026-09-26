@@ -9,6 +9,16 @@
 - **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `8600a4cbd1a894579a057b3476db35465289c670`, clean and tracking `origin/dev/wossol-integration`; inspected read-only.
 - **Evidence standard:** P1 executable source/schema, P2 focused tests/typechecks, P3 current merchant UI spec/current master architecture, and P4 historical design notes only when qualified. Source inspection does not prove deployment, real provider acceptance, data completeness at scale, merchant adoption, legal compliance, or business outcomes.
 
+### Targeted source-delta reconciliation — 2026-09-26
+
+The section review and acceptance are based on Product commit `8600a4cbd1a894579a057b3476db35465289c670`. The route/backend reconciliation inspected committed Product HEAD `4e26b4369e6416c22c731b8be706d72562a19d5b` (upstream-aligned at inspection). Product's working tree was separately dirty in Shopify files; those changes are not covered by this note or the accepted Advertising review.
+
+Since the audit snapshot, Meta authorization was consolidated into a shared Advertising → Meta One Connect entry. The flow independently discovers Ad Accounts and Facebook Pages, provisions each eligible Page through Messaging-owned scoped connection/credential state after provider subscription, and can retain a healthy asset family when another is unavailable. The former Applications → Messenger page redirects to Advertising Meta; that page displays a credential-free Page connection projection. Advertising owns Ad Account authority; Messaging continues to own Page connection credentials, webhook/capture behavior, and its separate management permission. This does not establish Instagram messaging runtime, production deployment, or live Meta authorization/provider acceptance.
+
+P1 delta locations include `apps/backend/src/modules/advertising/meta-oauth.service.ts`, `meta-graph.client.ts`, `merchant-advertising.service.ts`, `apps/backend/src/modules/messaging/messaging-meta-messenger-onboarding.service.ts`, and the Advertising Meta/Application route components. Focused backend tests passed 81/81; focused frontend Advertising/Messaging tests passed 13/13. These checks do not establish live provider acceptance.
+
+This is a targeted P1 source delta only, not a repeat audit or a new Director acceptance. The historical audit SHA above remains the reviewed baseline; do not imply its acceptance reviewed this later implementation. `04-review-history/NOTIFICATIONS_REVIEW_2026-09-26.md` prompted the route/backend reconciliation; `03-master-synthesis/PRODUCT_ROUTE_BACKEND_COVERAGE_RECONCILIATION.md` holds the complete crosswalk and source-state caveat.
+
 ## 2. Audit Coverage Map
 
 | Surface | Coverage | Evidence |

@@ -9,11 +9,21 @@
 - **Product source:** `jetshop7/wossol-platform`, branch `dev/wossol-integration`, committed HEAD `16223bb5e5bd9cdde0d3e4be3f4f87a4075aa48b`. At inspection, Product working tree had pre-existing uncommitted changes in Advertising and Shopify files; this audit did not modify them. Therefore this is a committed-source audit, not verification of the entire working tree.
 - **Evidence limitation:** code/tests establish implementation contracts, not deployed Meta configuration, production webhook delivery, live account eligibility, or merchant use.
 
+### Targeted source-delta reconciliation — 2026-09-26
+
+The accepted section review is based on Product commit `16223bb5e5bd9cdde0d3e4be3f4f87a4075aa48b`. The route/backend reconciliation inspected committed Product HEAD `4e26b4369e6416c22c731b8be706d72562a19d5b` (upstream-aligned at inspection), while Product's working tree contained separate uncommitted Shopify changes not covered here.
+
+The Messenger Page onboarding entry has since moved from Merchant Applications to Advertising → Meta One Connect; the former Messenger route redirects there. This changes entry/authorization orchestration, not domain ownership: Messaging continues to own Page connection state and its encrypted credential, webhook and capture lifecycle, and Page finalization retains the Messaging permission boundary. Advertising exposes only a scoped, credential-free Page status projection. A Page may be provisioned independently of an Ad Account, and vice versa. Automated source/service checks are evidence only of coded contracts; live Meta authorization, Page subscription and production capture remain unverified. No Instagram runtime is established.
+
+P1 delta locations include `apps/backend/src/modules/messaging/messaging-meta-messenger-onboarding.service.ts`, `apps/backend/src/modules/advertising/meta-oauth.service.ts`, `apps/frontend/src/app/merchant/advertising/meta/page.tsx`, `apps/frontend/src/app/merchant/applications/page.tsx`, and the former Messenger route redirect. The focused backend tests passed 81/81 and frontend Advertising/Messaging tests passed 13/13; these tests do not establish live provider acceptance.
+
+This targeted delta is not a repeat Messaging audit or new Director acceptance. The historical Product SHA above remains the accepted audit baseline; the One Connect delta must not be described as having received that earlier review. See `03-master-synthesis/PRODUCT_ROUTE_BACKEND_COVERAGE_RECONCILIATION.md` for the full route/backend crosswalk and uncommitted Shopify caveat. The authoritative trigger is `04-review-history/NOTIFICATIONS_REVIEW_2026-09-26.md`.
+
 ## 2. Audit Coverage Map
 
 | Surface | Coverage | Evidence |
 |---|---|---|
-| Merchant entry and channel connection UI | WhatsApp app; Messenger redirect/Meta entry; capture list and create-order handoff | EV-MSG-001–002 |
+| Merchant entry and channel connection UI | WhatsApp app; former Messenger Applications route redirects to Advertising Meta One Connect; capture list and create-order handoff | EV-MSG-001–002; targeted source-delta reconciliation above |
 | Provider authorization | WhatsApp Embedded Signup and Messenger Page One Connect, scoped state, credential boundary | EV-MSG-003 |
 | Inbound provider event boundaries | Raw-body signature/verification, normalized WhatsApp coexistence echoes, Messenger Page echoes | EV-MSG-004–005 |
 | Capture persistence and lifecycle | bounded/replay-safe capture; workspace/merchant scope; OPEN/CONSUMED/DISMISSED | EV-MSG-006–007 |

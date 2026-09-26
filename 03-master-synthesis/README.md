@@ -2,6 +2,9 @@
 
 Cross-section synthesis lives here only after section evidence is mature enough.
 
+Pre-synthesis route/backend coverage reconciliation:
+- PRODUCT_ROUTE_BACKEND_COVERAGE_RECONCILIATION.md
+
 Planned canonical masters:
 - WOSSOL_PRODUCT_ADVANTAGE_MASTER.md
 - WOSSOL_MARKETING_ASSET_MASTER.md
