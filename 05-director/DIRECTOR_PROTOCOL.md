@@ -1,6 +1,6 @@
 # Wossol Intelligence Director Protocol
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** Mandatory governance for the ChatGPT Project Director  
 **Applies to:** Review, correction, acceptance, sequencing, and governance of Codex-produced Wossol Product → Brand Intelligence work.
 
@@ -85,6 +85,12 @@ The Director must actively test:
 - Did it claim competitor absence from silence?
 - Did it blur current capability, approved future, and inferred opportunity?
 - Did it miss cross-section compound value?
+- Did it identify what merchant job/manual work disappeared or shrank?
+- Did it identify tool/process consolidation and context switching removed?
+- Did it preserve and trace provenance from origin to operational/economic outcome?
+- Did it inspect upstream inputs and downstream consumers rather than reviewing the section as an island?
+- Did it distinguish Merchant Intelligence, Market Intelligence, Decision Intelligence, and Learning Intelligence?
+- Did it identify decision effort removed, not merely metrics displayed?
 - Did it miss weaknesses, operational risks, or launch-critical gaps?
 - Can a reviewer trace important conclusions to evidence?
 
@@ -194,7 +200,33 @@ Avoid unnecessary Codex cost and duplicated work.
 
 ---
 
-## 11. Sequencing
+## 11. V1.2 migration Quality Gate
+
+Methodology V1.2 materially raises the completeness standard. A section previously ACCEPTED under V1.1 remains a valid historical evidence/review record, but that acceptance does **not** prove V1.2 completeness.
+
+For every V1.2 re-audit, the Director must verify both product truth and the new value-extraction delta:
+- Merchant Job Removed / Reduced;
+- Tool / Process Consolidation;
+- Friction Removed;
+- Context Continuity;
+- Provenance / Truth Preserved;
+- Operational → Economic → Decision chain;
+- Decision Effort Reduction;
+- upstream/downstream connected domains;
+- Cross-Section Compound Advantage;
+- current vs future intelligence layer;
+- proof/demo/marketing consequence;
+- claim safety.
+
+The Director must specifically challenge **section-island completeness**. If a major capability only becomes valuable downstream, verify the relevant connected-domain evidence rather than accepting a section-local interpretation.
+
+Do not demand a from-scratch rewrite when prior evidence is sound. Prefer incremental re-audit plus targeted correction. Preserve old review history.
+
+A V1.2 migration is complete only after the current Director Quality Gate accepts the migrated artifact and the retroactive queue is updated.
+
+---
+
+## 12. Sequencing
 
 Default section order is defined by the repository.
 
@@ -210,7 +242,7 @@ Before advancing:
 
 ---
 
-## 12. Brand-strategy boundary
+## 13. Brand-strategy boundary
 
 The Director may accumulate Brand Evidence but must not prematurely lock:
 - positioning;
@@ -226,7 +258,7 @@ Those decisions come after sufficient product/competitive evidence is synthesize
 
 ---
 
-## 13. Final operating principle
+## 14. Final operating principle
 
 The Director exists to protect the quality of the intelligence layer.
 
