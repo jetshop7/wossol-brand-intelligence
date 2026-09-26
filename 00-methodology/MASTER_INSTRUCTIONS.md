@@ -2,7 +2,7 @@
 
 ## MASTER AUDIT & EXTRACTION INSTRUCTIONS
 
-**Version:** 1.1
+**Version:** 1.2
 **Status:** Living Operating Standard
 **Primary Purpose:** Product Intelligence → Competitive Intelligence → Marketing Intelligence → Brand Intelligence
 **Applies To:** Every Wossol section/module/domain reviewed under this repository.
@@ -281,6 +281,26 @@ Examples:
 
 # 20. MERCHANT JOURNEY LENS
 
+For every meaningful capability, explicitly identify the **Merchant Job Removed or Reduced**. Do not stop at benefit language.
+
+Ask:
+- What manual work disappears or becomes materially smaller?
+- What copy/paste, reconciliation, switching, calculation, follow-up, provider conversation, spreadsheet, external tool, employee dependency, or developer dependency is reduced?
+- What setup or operating steps are consolidated?
+- What cognitive work is removed from the merchant?
+- What still remains manual?
+
+Classify the effect when useful as:
+- **Operational Effort Reduction**
+- **Decision Effort Reduction**
+- **Creation Effort Reduction**
+- **Coordination Effort Reduction**
+- **Risk / Recovery Effort Reduction**
+
+Do not claim a removed job unless the end-to-end workflow supports it.
+
+
+
 Analyze:
 
 > **Before Wossol → Setup → Operate → Monitor → Intervene → Recover → Understand Outcome → Improve**
@@ -502,6 +522,22 @@ Marketing today must not silently borrow credibility from future ambition.
 
 Search for Feature Advantage, Feature-Cluster Advantage, Workflow Advantage, Architecture Advantage, Data Advantage, Network Advantage, Intelligence Advantage, Experience Advantage, Business-Model Advantage, and Cross-Section Compound Advantage.
 
+For every strategically important capability, trace both **upstream provenance** and **downstream consequence**. A section must not be interpreted as an island when its real value depends on connected domains.
+
+Use the **Connected Value Chain Test**:
+1. Where did the signal/object originate?
+2. What identity/provenance is preserved?
+3. Which later Wossol domains consume it?
+4. Which operational outcome becomes knowable?
+5. Which economic outcome becomes knowable?
+6. Which merchant decision becomes easier or possible?
+7. What becomes stronger when this chain accumulates over time?
+
+Explicitly search for chains such as:
+**Acquisition / Conversation / Commerce Source → Order → Confirmation → Delivery / Return → Finance → Analytics → Decision Support → Outcome / Learning**
+
+The strongest finding may belong to the chain rather than any single feature. Preserve the evidence from every participating domain and do not assign the entire compound advantage to one section without qualification.
+
 ---
 
 # 41. MERCHANT AGENCY TEST
@@ -622,6 +658,21 @@ Queue affected earlier sections. Avoid uncontrolled recursive re-auditing.
 ---
 
 # 49. REQUIRED SECTION DOCUMENT STRUCTURE
+
+Under Merchant Value Extraction and Cross-Section Compound Advantages, the audit must explicitly cover, where applicable:
+- Merchant Job Removed / Reduced
+- Tool / System Consolidation
+- Friction / Steps Removed
+- Context Continuity Created
+- Provenance / Truth Preserved
+- Decision Effort Reduced
+- Connected Value Chain
+- Cross-Domain Inputs and Downstream Consumers
+- Proof / Demo Consequence
+
+A section with no applicable finding should say so rather than fabricate value.
+
+
 
 Every Section Intelligence file must include, where applicable:
 
@@ -989,3 +1040,198 @@ Revisit earlier work when later knowledge materially improves the method.
 And above all:
 
 > **Do not merely catalogue what Wossol has. Discover what Wossol can legitimately own — and preserve the evidence that proves it.**
+
+
+---
+
+# 71. MERCHANT JOB-TO-BE-DONE REMOVAL TEST
+
+For every meaningful capability ask:
+
+> **What does the merchant no longer need to do, calculate, reconcile, remember, chase, configure elsewhere, or understand manually because Wossol does this?**
+
+Record the previous realistic method, Wossol method, removed/reduced work, remaining work, recipient, and evidence.
+
+The strategic value may be the disappearance of work rather than the presence of a feature.
+
+Do not confuse automation with value. An automated step that removes no meaningful merchant burden may remain a micro-proof.
+
+---
+
+# 72. TOOL / SYSTEM CONSOLIDATION TEST
+
+Ask whether Wossol replaces or consolidates a spreadsheet, browser extension, dashboard, messaging bridge, manual report, provider portal, finance calculation, employee task, agency task, or developer integration.
+
+Record:
+- external tool/process previously required;
+- exact Wossol capability that absorbs it;
+- whether replacement is complete, partial, or only connective;
+- switching/context loss removed;
+- remaining dependency.
+
+Do not claim “all-in-one” merely because several tools are connected.
+
+---
+
+# 73. FRICTION AND STEP-COUNT TEST
+
+Trace the realistic workflow before and with Wossol. Identify:
+- setup steps;
+- repeated data entry;
+- copy/paste;
+- channel switching;
+- waiting;
+- handoffs;
+- manual matching;
+- calculations;
+- recovery steps.
+
+Use qualitative step reduction unless a precise count is evidenced. The goal is to expose **friction removed**, not manufacture productivity statistics.
+
+---
+
+# 74. CONTEXT CONTINUITY TEST
+
+Ask whether Wossol preserves the merchant's working context instead of forcing migration to another interface or breaking the commercial thread.
+
+Examples include continuing a messaging conversation while Wossol captures the order, deep-linking back to the originating conversation, preserving source identity, and carrying evidence downstream.
+
+Record:
+**Origin Context → Preserved Identity → Wossol Action → Return / Continuation Path → Merchant Benefit**
+
+Context continuity can support convenience, speed, adoption, control, traceability, and trust.
+
+---
+
+# 75. PROVENANCE-TO-OUTCOME TRACE
+
+For objects that can originate outside Wossol, especially Orders, Leads, Products, Advertising evidence, Commerce connections, and Messaging captures, inspect whether Wossol preserves:
+- source type;
+- platform;
+- channel;
+- integration/connection;
+- external identity;
+- acquisition owner;
+- campaign / ad group / ad / creative evidence;
+- UTM/referral/landing/session evidence where applicable;
+- conversation or source reference;
+- capture time/schema/version;
+- later operational and economic outcomes.
+
+Then ask whether the provenance can be joined to confirmation, delivery, return, revenue, cost, advertising spend, contribution/profitability, customer quality, or other downstream truth.
+
+Do not say “full attribution” when evidence is partial, unresolved, provider-reported, or merely stored but not yet consumed.
+
+---
+
+# 76. OPERATIONAL TRUTH → ECONOMIC TRUTH → DECISION VALUE
+
+For relevant sections, explicitly test the chain:
+
+**What happened operationally? → What did it mean economically? → What decision can the merchant make?**
+
+Inspect whether Wossol reduces merchant-side reconciliation between:
+- commerce/store data;
+- messaging/acquisition data;
+- advertising data;
+- order outcomes;
+- confirmation;
+- delivery/returns;
+- inventory/FIFO cost;
+- finance/expenses;
+- profitability;
+- analytics/decision support.
+
+Classify each stage separately:
+- DATA CAPTURED
+- CONNECTED
+- CALCULATED / RECONCILED
+- INTERPRETED
+- RECOMMENDED
+- ACTIONABLE
+- OUTCOME MEASURED
+- LEARNING LOOP
+
+Never jump levels.
+
+---
+
+# 77. INTELLIGENCE LAYER MODEL
+
+When reviewing Analytics, Market Center, or any intelligence-producing domain, distinguish:
+
+1. **Merchant Intelligence** — what is happening in this merchant's business.
+2. **Market Intelligence** — aggregated/external market context and signals beyond one merchant, with privacy/evidence constraints.
+3. **Decision Intelligence** — interpretation, prioritization, explanation, recommendation, and action guidance.
+4. **Learning Intelligence** — outcome feedback that improves future merchant-specific or system-level decisions.
+
+Do not collapse these layers. Current implementation may support some and not others.
+
+For every intelligence claim record:
+**Input Truth → Connection → Calculation → Interpretation → Recommendation → Action Path → Outcome Evidence → Learning State**
+
+---
+
+# 78. DECISION EFFORT REDUCTION
+
+Treat reduction of analytical/cognitive work as a first-class merchant value.
+
+Ask:
+- What would the merchant otherwise need to export, merge, calculate, compare, or interpret?
+- Does Wossol reconcile numbers across systems?
+- Does it explain period changes?
+- Does it surface business health or prioritized actions?
+- Does it expose completeness/provisional status rather than false precision?
+- Does it deep-link or route the merchant toward action?
+
+Distinguish:
+**Metric Visibility → Reconciliation → Explanation → Decision Support → Guided Action → Closed-Loop Learning**
+
+---
+
+# 79. SECTION-ISLAND FAILURE MODE
+
+A section audit is methodologically incomplete if it accurately catalogs the section but misses a material advantage created by its connection to another Wossol domain.
+
+Before Definition of Done:
+1. list material upstream inputs;
+2. list material downstream consumers;
+3. inspect at least the strategically important joins;
+4. identify any compound advantage;
+5. identify any compound weakness or broken link;
+6. record whether the connected value is current, partial, future, or inferred.
+
+---
+
+# 80. SECOND-PASS VALUE SYNTHESIS
+
+After Product Truth Extraction and before final strategic classification, perform a dedicated second pass that asks, for every meaningful capability or cluster:
+
+**Feature Truth → Merchant Job Removed → Tool/Process Consolidated → Friction Removed → Context Continuity → Control Added → Truth/Provenance Added → Decision Value → Cross-Domain Compound Value → Marketing Angle → Proof/Demo → Competitive Relevance → Future Compounding Value**
+
+This pass is mandatory even when the first technical audit is already strong.
+
+The purpose is to prevent technically correct audits from under-extracting merchant, commercial, marketing, and brand value.
+
+---
+
+# 81. RETROACTIVE MIGRATION RULE FOR V1.2
+
+V1.2 materially expands value extraction. Previously accepted sections remain valid evidence records but are **not presumed complete under V1.2**.
+
+Do not discard or restart them blindly. Re-audit them incrementally:
+- preserve verified evidence IDs and accepted product truth;
+- re-check current product state;
+- apply the new V1.2 lenses;
+- add missed connected-domain evidence;
+- correct outdated findings where product state changed;
+- preserve prior Director review history;
+- run the current Director Quality Gate again.
+
+This is a methodology migration, not a deletion of prior work.
+
+---
+
+# 82. V1.2 FINAL OPERATING PRINCIPLE
+
+> **Do not stop at what Wossol has. Trace what work it removes, what truth it preserves, what systems it connects, what decisions it improves, and what compound value becomes possible across the whole Wossol system — while preserving exact evidence and claim boundaries.**
