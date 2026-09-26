@@ -85,10 +85,31 @@ Do not reduce Wossol automatically to:
 
 The strongest long-term brand territory must emerge from repeated evidence across the product system.
 
+## Current methodology state
+
+**Active methodology: V1.2 — Connected Merchant Value & Decision-Effort Upgrade.**
+
+V1.2 was introduced after cross-section review showed that prior audits could be technically correct yet under-extract merchant value created by work removal, tool consolidation, context continuity, provenance-to-outcome chains, reconciliation, decision-effort reduction, and connected-system compound advantages.
+
+Previously accepted V1.1 sections remain valid historical evidence, but must migrate incrementally through the retroactive queue before final synthesis. Do not erase prior work or restart blindly.
+
+Working system hypothesis to test, not assume:
+
+> Wossol may create its strongest value by combining market access, operational control, connected commercial truth, reduced merchant work, and progressively stronger decision support.
+
+A particularly important chain to verify across sections is:
+
+**Acquisition / Conversation / Commerce Source → Order → Confirmation → Delivery / Return → Finance → Analytics → Decision Support → Outcome / Learning.**
+
+Do not promote this chain to final positioning until repeated evidence supports it.
+
 ## Current audit sequence
 
-Default:
-Home → Products → Inventory → Orders → Confirmation → Customers → Tracking/Delivery → Finance → Analytics/Decision Center → Market Center → Advertising → Integrations/Commerce Channels → Stores → Team → Sourcing/Network.
+The original audit sequence remains historical context. During the V1.2 migration, default priority is:
+
+Orders → Messaging/Order Capture → Analytics/Decision Center → Market Center → Inventory → Finance → Advertising → Integrations/Commerce Channels → Products → Customers → Confirmation → Tracking/Delivery → Home → Stores → Team → Sourcing/Network → remaining supporting sections.
+
+This is an **incremental re-audit sequence**, not a project reset.
 
 ## Known Director lessons already established
 
