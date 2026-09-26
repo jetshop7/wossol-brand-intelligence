@@ -1,6 +1,6 @@
 # WOSSOL CODEX OPERATING PROTOCOL
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** Mandatory execution contract  
 **Purpose:** Make every section audit executable from a short command such as `Audit Orders.`
 
@@ -169,6 +169,10 @@ Do not stop at UI. Follow important workflows through relevant frontend, APIs, b
 Extract atomic capabilities and meaningful small proofs before deciding what is important.
 
 ## D. Interpret
+Before strategic classification, run the mandatory **V1.2 Second-Pass Value Synthesis** across every meaningful capability/cluster. A technically complete inventory is not sufficient.
+
+Explicitly test Merchant Job Removed, Tool/Process Consolidation, Friction Removed, Context Continuity, Provenance/Truth Added, Decision Effort Reduced, upstream/downstream connected value, proof/demo consequence, and future compounding value.
+
 Apply the current methodology: recipients, value lenses, control depth, transparency/trust, merchant journey, Old Way vs Wossol Way, feature interactions, cross-section compounds, data/intelligence, competitive interpretation, marketing extraction, brand evidence, weaknesses, future potential, claim safety, copyability, accumulation, and other active lenses.
 
 ## E. Challenge
@@ -278,6 +282,8 @@ When a methodology change may materially affect completed sections:
 4. process retroactive work only when instructed or when the active task explicitly includes queue processing.
 
 A short command such as `Audit Orders` does not automatically mean re-audit every prior section.
+
+When the queue contains a methodology-migration item for the requested section, `Re-audit <Section>` means an **incremental migration**, not blind deletion/restart: preserve valid evidence IDs and accepted truths, re-check current product state, apply the new lenses, inspect strategically important connected domains, update outdated findings, and retain Director review history.
 
 ---
 
@@ -397,6 +403,16 @@ Read the existing section document and repository state, identify incomplete cov
 ## `Re-audit <Section>`
 Treat the current product state and current methodology as authoritative. Re-check prior evidence and conclusions, preserve stable evidence IDs where still valid, explicitly record material changes, and update the canonical document.
 
+For V1.2 migration, the re-audit must include a **Delta Review**:
+- what prior product truth remains valid;
+- what product truth changed;
+- what V1.2 value was previously missed;
+- what connected-domain evidence was added;
+- what prior strategic/marketing conclusion changed;
+- what queue item is resolved.
+
+Do not rewrite a strong prior audit from scratch merely to satisfy the new template.
+
 ## `Review retroactive queue`
 Process queued sections systematically according to the active methodology.
 
@@ -468,3 +484,28 @@ Do not require conversation memory to reconstruct the process.
 Do not merely catalogue what Wossol has.
 
 > **Discover what Wossol can legitimately own — and preserve the evidence that proves it.**
+
+
+---
+
+# 21. V1.2 MIGRATION EXECUTION
+
+Until the V1.2 retroactive queue is cleared, completed V1.1 sections are historical accepted audits, not proof of V1.2 completeness.
+
+Process queued sections by strategic dependency rather than by file age. Default migration order:
+
+**Orders → Messaging/Order Capture → Analytics/Decision Center → Market Center → Inventory → Finance → Advertising → Integrations/Commerce Channels → Products → Customers → Confirmation → Tracking/Delivery → Home → Stores → Team → Sourcing/Network → remaining supporting sections.**
+
+The order may change when a dependency makes another sequence materially better; record the reason.
+
+After each migrated section:
+1. update its queue item;
+2. commit and push;
+3. hand off to the Director;
+4. do not mark the migration complete until the Director runs the current Quality Gate.
+
+The user can launch each migration with the short command:
+
+`Re-audit Orders under V1.2.`
+
+Repository governance supplies the rest.
