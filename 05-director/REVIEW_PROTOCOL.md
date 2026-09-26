@@ -93,6 +93,10 @@ Ask:
 - Is a historical summary being treated as current truth?
 
 ### Value
+- What merchant job/manual work disappears or materially shrinks?
+- What tool, spreadsheet, portal, employee task, provider conversation, or developer dependency is consolidated?
+- What friction, handoff, context switch, copy/paste, reconciliation, or calculation is removed?
+- Does the capability preserve working context or source continuity?
 - Would a merchant care?
 - Is the real value hidden in backend behavior?
 - Did Codex miss a micro-proof?
@@ -108,6 +112,19 @@ Ask:
 - Are future claims clearly future?
 - Are proof points stronger than generic copy?
 - Is any attractive wording stronger than the evidence?
+
+### Connected-system completeness
+- What are the material upstream inputs?
+- What are the material downstream consumers?
+- Was provenance traced from origin to operational and economic outcome where applicable?
+- Did Codex inspect the joins that create the strongest value?
+- Is the section being mistakenly treated as an island?
+- Does the finding reduce operational, coordination, creation, or decision effort?
+
+### Intelligence depth
+- Is this only data capture, or is it connected/calculated/interpreted/recommended/actionable/measured/learned?
+- Is the finding Merchant Intelligence, Market Intelligence, Decision Intelligence, or Learning Intelligence?
+- Is any higher intelligence layer being claimed before evidence supports it?
 
 ### Brand
 - Is the audit producing evidence rather than forcing a preselected territory?
@@ -165,3 +182,18 @@ When Codex reports corrections complete:
 6. Decide ACCEPT or continue the correction loop.
 
 Do not accept based solely on Codex's summary.
+
+
+---
+
+## 5. V1.2 migration review delta
+
+For a section re-audited under V1.2, the Director review record should explicitly state:
+- prior accepted truth preserved;
+- product truth changed since prior audit;
+- V1.2 value newly extracted;
+- connected-domain evidence newly inspected;
+- prior claims strengthened, weakened, or unchanged;
+- retroactive queue item status.
+
+A technically accurate re-audit that still omits material merchant-job removal or cross-domain compound value does not pass V1.2 merely because its feature inventory is complete.
