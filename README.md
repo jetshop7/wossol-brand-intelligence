@@ -35,7 +35,7 @@ These commands do not require the user to repeat methodology, evidence rules, ou
 
 ## Audit order
 
-Home → Products → Inventory → Orders → Confirmation → Customers → Tracking/Delivery → Finance → Analytics/Decision Center → Market Center → Advertising → Integrations/Commerce Channels → Stores → Team → Sourcing/Network → External Shipping → Local Pickup
+Home → Products → Inventory → Orders → Confirmation → Customers → Tracking/Delivery → Finance → Analytics/Decision Center → Market Center → Advertising → Integrations/Commerce Channels → Stores → Team → Sourcing/Network → External Shipping → Local Pickup → Support / Internal Chat
 
 The order may change when dependencies justify it; record the reason.
 
