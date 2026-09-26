@@ -72,7 +72,12 @@ An audit is not acceptable if it:
 - calls visibility control without execution authority;
 - calls data intelligence without interpretation/decision support;
 - calls architecture a moat without defensibility evidence;
-- treats a technical safeguard as a hero feature without merchant consequence.
+- treats a technical safeguard as a hero feature without merchant consequence;
+- is technically complete but materially misses the merchant job/work removed;
+- treats a strategically connected section as an island and misses a material upstream/downstream compound advantage;
+- calls stored provenance “attribution intelligence” without showing downstream use;
+- calls metrics or reconciliation “decision intelligence” without interpretation/recommendation evidence;
+- calls decision support a learning loop without measured outcome/feedback evidence.
 
 ## Director recommendation style
 
