@@ -2,7 +2,7 @@
 
 ## 1. Purpose and source state
 
-This bounded verification is required by `04-review-history/PRODUCT_ROUTE_BACKEND_COVERAGE_RECONCILIATION_REVIEW_2026-09-26.md`. It supplements—not replaces or re-audits—the accepted Integrations / Commerce Channels review. Its exact source target is Product commit `4e26b4369e6416c22c731b8be706d72562a19d5b`; findings below are limited to that immutable committed tree.
+This bounded verification was required by `04-review-history/PRODUCT_ROUTE_BACKEND_COVERAGE_RECONCILIATION_REVIEW_2026-09-26.md`. It supplements—not replaces or re-audits—the accepted Integrations / Commerce Channels review. Sections 1–9 preserve the exact original source target, Product commit `4e26b4369e6416c22c731b8be706d72562a19d5b`; the separately marked Section 10 records the subsequent targeted delta verification required by `04-review-history/SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE_REVIEW_2026-09-26.md`.
 
 - Product repository: `jetshop7/wossol-platform`.
 - Verification target: commit `4e26b4369e6416c22c731b8be706d72562a19d5b`, branch `dev/wossol-integration` at the time of the Director review.
@@ -25,6 +25,8 @@ This bounded verification is required by `04-review-history/PRODUCT_ROUTE_BACKEN
 | Schema, current Product contract, connected domains | PARTIALLY INSPECTED | Relevant COD configuration/Offer/Upsell models and migrations; current Shopify COD master consulted. Owner-domain implementation beyond the ingress boundary was not re-audited. |
 | Deployed runtime/provider acceptance | NOT INSPECTED | No Shopify Admin session, live store, deployed version, browser run or provider call used. |
 | Product changes after `4e26b436` | NOT INSPECTED | Explicitly outside the Director-requested source target. |
+
+This map describes the original `4e26b436` verification scope only. The targeted later Shopify delta is covered separately in Section 10.
 
 ## 3. Capability truth at the target commit
 
@@ -80,7 +82,7 @@ The competitive master treats commerce integrations broadly as common capability
 2. Embedded ID-token/shop validation establishes shop context, but per-person authorization parity with Wossol's permission system was not found in this route family. Confirm whether Shopify staff access is the intended control.
 3. No live browser/store run validated the full sequence from App Home save through Theme App Block rendering and customer submission at this target. The Product COD master reports one earlier base COD Order runtime milestone, but that report does not verify the later embedded configuration/Offer/Upsell depth.
 4. Two committed tests expose source/contract mismatches: (a) `shopify-cod-acceptance.spec.ts` expects literal `trustedCommerceCommercialSnapshot ?? null`; committed `OrdersService` conditionally spreads the supplied snapshot when defined. This appears semantically equivalent, making the source-text assertion brittle, but the test still fails and should be aligned/re-run by Product. (b) `wossol-cod-form.spec.js` expects `variantText(selected, currencyCode)` for fixed-Variant Upsells. At this commit the Theme App Extension presents the selected Variant label in its static field and separately shows the configured fixed/reference amount; it does not include that exact full Shopify label/price formatter call. Confirm whether provider price/compare-at presentation is required or the test is stale. No Product change was made.
-5. Exact target `4e26b436` is not the current Product HEAD. Subsequent committed Shopify source changes were deliberately excluded by the Director's exact-source request. This supplement cannot be cited as verification of current HEAD.
+5. At the original target, `4e26b436` was not current Product HEAD; subsequent Shopify changes were excluded from that exact-snapshot pass. Section 10 records the separately required committed delta verification through `97f9959` (the current Shopify files at follow-up `fd7157f`). This supplement still does not establish deployed/live behavior.
 6. Native Shopify Checkout Order intake remains not found in the accepted Integration search. The Wossol Theme App Extension/App Proxy COD submission is a separate path. General inbound Order synchronization, continuous catalog/inventory sync and channel-wide recovery/reconciliation are not established here.
 7. No live competitor comparison, deployment/runtime verification, adoption, conversion/AOV/profit measurement or legal/consent review was performed.
 
@@ -110,7 +112,37 @@ Selected-test total: **165 passed, 2 failed**. No backend typecheck, database in
 | EV-IC-028 | `shopify-cod.service.ts`; App Proxy controller; theme extension source; `extensions/wossol-cod-form/**`; `tests/shopify/wossol-cod-form.test.cjs`; Commerce/Orders services | Storefront bootstrap/quote/final-submit authority and canonical Order boundary. No native Shopify Checkout import claim. |
 | EV-IC-029 | `app-home-continuation.spec.ts`; `embedded-cod-management.spec.ts`; `shopify-offers-upsells-acceptance.spec.ts`; focused backend/storefront tests in Section 7 | Exact-target automated results: 165 pass, 2 source/contract assertions fail; no typecheck/live execution. |
 | EV-IC-030 | `docs/integrations/commerce/WOSSOL_SHOPIFY_APPLICATION_COD_MASTER_SOURCE_OF_TRUTH_V1.md` §§1, 4–9, 19, 28, 31, 38, 43–47 | Current Product contract and reported base runtime milestone are P3/context; implementation plans and vision are not runtime proof. |
+| EV-IC-031 | Product `97f9959bd2c6a05263a96a73b650fdc9a768dbd4`: `shopify-cod.service.ts` / `.spec.ts`, `shopify.controller.ts`, `shopify.dto.ts`, `shopify-cod-offers-upsells.service.ts` / `.spec.ts`, `shopify-app-home.js`, `shopify-offers-upsells-acceptance.spec.ts`, Theme App Extension source/runtime/spec, Shopify storefront contract tests | Read-only preflight, phone validation, customer storefront sequencing, Upsell Variant write-time reservation, and the focused results/caveats in Section 10. No live-provider evidence. |
 
-## 9. Disposition
+## 9. Disposition at Original Target `4e26b436`
 
 This verification resolves the **coverage gap for source target `4e26b436`** identified by the Product Route / Backend Coverage review. It is ready to return for Director Quality Gate; it is not itself Director acceptance. Do not cite it as current Product HEAD coverage, verified deployed end-to-end configuration, competitive differentiation or measured conversion outcomes. The test/contract mismatches and shop-domain versus per-user authorization boundary remain explicit Product questions.
+
+## 10. Current-Head Shopify Delta Verification — 2026-09-26
+
+### Scope and source state
+
+This is the narrow committed-source follow-up required by `04-review-history/SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE_REVIEW_2026-09-26.md`; it is not a full Shopify or Integrations re-audit. The requested comparison was `4e26b4369e6416c22c731b8be706d72562a19d5b` → `97f9959bd2c6a05263a96a73b650fdc9a768dbd4`. At verification, Product `HEAD` was `fd7157fe1a6ee03499e026373f263c3a15c831ef` on `dev/wossol-integration`, aligned with `origin/dev/wossol-integration`; the Shopify source files in this follow-up are unchanged from `97f9959`. The later `97f9959` → `fd7157f` changes are outside this Shopify evidence (Advertising/Messaging and related documentation). Product working tree was clean at inspection. The fifteen Ads/Messaging paths described in the Director review were not changed by this task and are excluded from evidence. No Product files were modified.
+
+### Material committed changes and verified contract
+
+The `4e26b436` → `97f9959` delta changes ten Shopify source/test paths. It adds a read-only customer preflight endpoint and DTO, calls canonical phone validation before returning a newly resolved quote/Upsell projection, and does not ingest an Order. The Theme App Extension now sends the base Product, Variant lines, destination, Offer selection and customer fields to preflight before opening the Upsell sequence. If no Upsells are returned, it proceeds to the one final submission; if customer input changes during the flow, it clears the pending preflight/Upsell state and requires a fresh pass. Submitted accepted-Upsell authority remains tokenized and is revalidated on final submit.
+
+Upsell create/update now checks each mapped target Shopify Variant against other Upsells for the same source Product sequence, including inactive rows; those writes use serializable transactions and the editor filters already reserved Variants. The check is scoped by the exact connection/source Product/target Product query. The inspected `setUpsellActive` path does not perform this duplicate check, so cleanup/activation behavior for any pre-existing duplicate configuration was not established. This is a configuration constraint, not evidence that Upsells improve conversion or commercial outcomes.
+
+The bounded claim boundary remains: preflight is validation plus a fresh server-owned projection, not an Order or downstream operational write; the final customer submission remains one Commerce → Orders ingress. This delta does not establish native Shopify Checkout intake, deployed/live runtime acceptance, conversion improvement, or per-user Wossol permission parity inside Shopify Admin.
+
+### Focused verification at Product source `97f9959` (same Shopify files at `fd7157f`)
+
+| Test group | Result |
+|---|---|
+| `shopify-cod.service.spec.ts`, `shopify-cod-offers-upsells.service.spec.ts`, `shopify-cod-acceptance.spec.ts` | 44/45 passed. New preflight validation/no-Order coverage and Variant reservation checks passed. The existing Orders snapshot source-text assertion still fails because it requires literal `trustedCommerceCommercialSnapshot ?? null`; Orders conditionally spreads the provided snapshot when defined. The semantic/source-pattern mismatch remains unresolved by this Product-only follow-up. |
+| `shopify-offers-upsells-acceptance.spec.ts` | 19/19 passed, including Variant reservation behavior in the editor. |
+| `wossol-cod-form.test.cjs` + `wossol-cod-form.spec.js` | 47/48 passed. Preflight transport/flow tests pass. The fixed-Variant assertion still expects `variantText(selected, currencyCode)`; current fixed-Variant UI renders a static Shopify Variant label and separately renders configured fixed/reference pricing. Whether this satisfies the intended presentation contract or omits a required combined provider label/price remains **UNRESOLVED**; the failing test is not dismissed as stale. |
+| `pnpm shopify:cod:runtime:check` | Passed; generated storefront runtime matches authored source. |
+
+Focused result: **110 passed, 2 failed** across the three test invocations containing tests (44/45 + 19/19 + 47/48); generated-runtime consistency check passed. No typecheck, Shopify Admin session, live store/browser/provider execution, deployment verification, or production outcome measurement was performed.
+
+### Updated disposition
+
+The two original focused failures **persist with materially the same meaning**: one is a brittle/stale textual test contract whose behavioral equivalence is plausible but not resolved in the Product repository; the other is an unresolved customer-facing fixed-Variant presentation contract and must remain an open issue. The new preflight and sequence-uniqueness paths have focused automated coverage, but these tests do not prove live provider behavior or eliminate the two prior caveats. This targeted source delta closes the specific current-HEAD coverage requirement in the Shopify review. It is **not Director acceptance**; Master Synthesis remains pending Director re-review. Do not make current-source, deployed-reliability, conversion, or comparative-superiority claims beyond the evidence above.

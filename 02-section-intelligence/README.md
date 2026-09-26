@@ -27,4 +27,4 @@ Planned order:
 20. NOTIFICATIONS.md
 
 Targeted supplement for the accepted Integrations / Commerce Channels section:
-- SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md (source-targeted follow-up; separate Director Quality Gate pending)
+- SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md (exact snapshot plus current-head Shopify delta verification; Director re-review pending)
