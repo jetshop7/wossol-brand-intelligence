@@ -16,6 +16,7 @@
 | Shared Commerce domain | providers, connection scope, identity, mappings, delivery state | EV-IC-001–004 |
 | Shopify connection and catalog | install/auth, products/variants, mappings, outbound projection | EV-IC-005–007 |
 | Shopify Wossol COD channel | app extension, signed proxy, canonical order, projection boundary | EV-IC-008–009 |
+| Shopify embedded App Home / COD management | mapped Product readiness/configuration, delivery pricing, Form/Appearance, Offers/Upsells and storefront execution, targeted at Product commit `4e26b436...` | EV-IC-023–030; `SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md` |
 | Native Shopify order intake | receiver/event path and current-vs-historical docs | EV-IC-010–011 |
 | YouCan connection and webhooks | OAuth/hooks, signature, normalization, destination resolution, error path | EV-IC-012–015 |
 | YouCan catalog and admin capabilities | API/UI reachability and capability metadata | EV-IC-016–017 |
@@ -30,7 +31,7 @@ Commerce channels are **unevenly operational**. Shopify has a real merchant-auth
 
 The common substrate contributes scoped connections, exact identity mappings, and durable webhook-delivery records. It does not make all advertised provider capabilities available as complete merchant workflows. WooCommerce remains a “Coming soon” UI entry, not an implemented provider.
 
-The strongest demonstrated value is exact catalog relationship plus a bounded Shopify COD order-conversion path for Wossol’s delivery/pricing model. Current evidence does not support broad “multichannel commerce management,” “all orders centralized,” inventory synchronization, or complete commerce-to-profit claims.
+The strongest demonstrated value is exact catalog relationship plus a bounded Shopify COD order-conversion path for Wossol’s delivery/pricing model. Targeted verification at Product commit `4e26b436...` additionally establishes embedded Shopify Admin controls for mapped Product readiness/configuration, per-Product delivery policy, Form/Appearance, Offers and Upsells; it does not establish their live deployment or conversion outcomes. See `SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md` for the source-bounded supplement. Current evidence does not support broad “multichannel commerce management,” “all orders centralized,” inventory synchronization, or complete commerce-to-profit claims.
 
 ## 4. Scope & Architecture Map
 
@@ -212,6 +213,7 @@ Potential magnitude is moderate for merchants using Shopify storefronts and Woss
 | EV-IC-020 | Current product architecture/Cross-System Event Flow docs | P3 | Intended domain boundaries, qualified against executable code. |
 | EV-IC-021 | Focused backend suites (327 tests: 324 pass, 3 fail); frontend typecheck passed | P2 | Verification and precise failures/blocker; backend typecheck result unavailable. |
 | EV-IC-022 | `01-competitive/WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` | P3 | Competitive context only; not a current independent competitor audit. |
+| EV-IC-023–030 | See `SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md` evidence register | P1/P2/P3 | Targeted committed-source verification of the embedded Shopify management and COD commerce surface at `4e26b436`; later Product changes and current runtime are excluded. |
 
 ## 28. Contradictions & Uncertainty
 
@@ -240,4 +242,10 @@ No methodology change requiring a retroactive audit was made. This audit’s sco
 
 ## 32. Canonical Section Takeaway
 
-Wossol currently demonstrates a meaningful but narrow Shopify storefront-to-operations bridge: exact catalog mapping and Wossol COD checkout can create a canonical Wossol Order, with optional outbound Shopify projection. It does not currently establish native Shopify Checkout ingestion or broad multichannel commerce. YouCan has real connection and signed-webhook infrastructure, but current destination normalization is rejected by the shared Order resolver, so successful YouCan order ingestion is not supported by inspected code. Claims should describe those provider-specific boundaries rather than treating a connected account or capability list as a working channel.
+Wossol currently demonstrates a meaningful but narrow Shopify storefront-to-operations bridge: exact catalog mapping and Wossol COD checkout can create a canonical Wossol Order, with optional outbound Shopify projection. The separate embedded App Home source at `4e26b436` also has material mapped-Product COD controls; the follow-up does not establish their production use or prove conversion outcomes. It does not establish native Shopify Checkout ingestion or broad multichannel commerce. YouCan has real connection and signed-webhook infrastructure, but current destination normalization is rejected by the shared Order resolver, so successful YouCan order ingestion is not supported by inspected code. Claims should describe those provider-specific boundaries rather than treating a connected account or capability list as a working channel.
+
+## 33. Targeted Shopify Embedded App Verification — 2026-09-26
+
+The Product Route / Backend Coverage review found that `/shopify` page counting understated an embedded app primarily implemented through a route response, static App Home script, Shopify extension assets and backend services. In response, `SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md` documents a targeted read of the exact committed Product snapshot `4e26b4369e6416c22c731b8be706d72562a19d5b`, its connected authority/Order boundaries, cross-section implications and focused tests. The later current Product HEAD `97f9959...` contains subsequent Shopify changes and fifteen uncommitted Advertising/Messaging files; neither was used to expand this exact-target verification. Do not treat the supplement as a review of current Product HEAD or as Director acceptance.
+
+The supplement identifies real embedded merchant controls for mapped Product readiness and COD settings, Product-level delivery policy, Form/Appearance, Offers and Upsells, and the customer Theme App Extension COD path. It also records two test/contract mismatches, the not-established per-user Wossol permission parity for embedded mutations, lack of live runtime validation of these later controls, and the distinction from native Shopify Checkout intake. Its strategic conclusion is bounded: this is material operational control for Shopify COD merchants, while conversion impact, competitor distinction and current deployed use remain unverified.

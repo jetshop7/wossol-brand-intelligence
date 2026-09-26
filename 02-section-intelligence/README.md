@@ -25,3 +25,6 @@ Planned order:
 18. LOCAL_PICKUP.md
 19. SUPPORT_INTERNAL_CHAT.md
 20. NOTIFICATIONS.md
+
+Targeted supplement for the accepted Integrations / Commerce Channels section:
+- SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md (source-targeted follow-up; separate Director Quality Gate pending)

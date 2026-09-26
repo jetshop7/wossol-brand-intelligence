@@ -82,11 +82,17 @@ At the same inspection, 14 Product working-tree paths were modified: `apps/backe
 
 Because these changes are uncommitted and no accepted review examines them, this record does **not** claim their correctness, test status, runtime behavior, or coverage by prior Director decisions. Keep them outside accepted product claims until their source state is stabilized and reviewed through the normal owner-domain correction/review process. Do not misstate `4e26b436` as the complete inspected Product state.
 
+### Targeted verification outcome — 2026-09-26
+
+The Director's follow-up review required deeper committed-source coverage of the embedded Shopify App at `4e26b436`; this is now documented in `02-section-intelligence/SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md` and linked from `INTEGRATIONS_COMMERCE_CHANNELS.md`. It confirms material App Home capabilities beyond the route count and records exact-source tests, boundaries and open verification issues. The supplement is ready for its own Director Quality Gate; it is not an acceptance.
+
+Product has since advanced to committed HEAD `97f9959bd2c6a05263a96a73b650fdc9a768dbd4` (upstream-aligned at final status check), with fifteen local uncommitted Advertising/Messaging files and no uncommitted Shopify files. Shopify files changed in committed history after target `4e26b436`; they were not expanded into scope because the Director specified the exact earlier SHA. Consequently this supplements coverage for `4e26b436` only and does not establish coverage of current Product HEAD.
+
 ## Reconciliation result
 
 The route inventory has no remaining unexplained merchant, worker, public-tracking, Warehouse, or Admin route family: each is mapped to an accepted section or explicitly classified as scaffolding/cross-cutting backend control. The Director's previously requested missing audits (External Shipping, Local Pickup, Support / Internal Chat, Notifications) are now present and accepted.
 
-**Coverage inventory: reconciled. Synthesis readiness: conditional.** Master Synthesis may use the accepted section evidence with the source snapshots and open review issues preserved. It must not imply that the newer One Connect flow has received a new Director review, nor cite the uncommitted Shopify COD delta as accepted/current verified capability. If synthesis depends materially on either delta, obtain the corresponding source-state review first. The product-wide route count is not evidence of capability completeness, reliability, production deployment, user adoption, or outcomes.
+**Coverage inventory: reconciled. Synthesis readiness: conditional.** The embedded Shopify App gap at Product target `4e26b436` now has a targeted source-verification supplement ready for Director review, but is not yet newly accepted. Current Product HEAD `97f9959` contains later Shopify changes that were not reviewed by that exact-target supplement; do not represent the old snapshot as current-source verification. Master Synthesis should wait for Director Quality Gate of the supplement and must not imply that One Connect received a new Director review or that the dirty Shopify source described at the original reconciliation was accepted. The product-wide route count is not evidence of capability completeness, reliability, production deployment, user adoption, or outcomes.
 
 ## Evidence and review provenance
 
