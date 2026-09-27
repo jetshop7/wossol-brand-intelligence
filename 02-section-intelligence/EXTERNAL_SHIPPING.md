@@ -2,11 +2,11 @@
 
 ## 1. Audit Metadata
 
-- **Audit date:** 2026-09-26.
-- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.1; `CODEX_OPERATING_PROTOCOL.md` v1.0.
+- **Audit date:** 2026-09-27 (incremental V1.2 migration re-audit; preserves prior accepted findings and open product issues).
+- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.2; `CODEX_OPERATING_PROTOCOL.md` v1.1.
 - **Competitive reference:** `WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.
-- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, clean and synchronized to `e97120b2560ab5adf92949437415e2f9f1507285` before task interpretation.
-- **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `c78be7dfde91c421881db8fe6ec468397cc67e8a`, clean and equal to upstream at the initial source-state check. A final read-only check later found six uncommitted Shopify/COD-form changes in the backend configuration service/spec, frontend public Shopify app home, extension/theme COD runtime, and Shopify test. I did not inspect or modify those edits; findings are scoped to the committed code at the recorded SHA.
+- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, synchronized clean to `84dd1cc942127d91280961d0519e21704311a583` before task interpretation.
+- **Product source:** `jetshop7/wossol-platform`, branch `dev/wossol-integration`, commit `23fd26572fb82ff86b74539e40eb0e1181bb07f3`; tracking ref reported equal at inspection (Product remote not freshly fetched). One uncommitted change exists in `apps/backend/src/modules/orders/orders-messaging-attribution.postgres.integration.spec.ts`; it is unrelated, not used as evidence, and not modified. No committed changes were found between the prior audit source `c78be7dfde91c421881db8fe6ec468397cc67e8a` and current HEAD in External Shipping, carrier Finance, Inventory, or the cited UI paths.
 - **Evidence limitation:** implementation and automated tests do not verify deployed storage durability, real provider success outside test harnesses, physical shipment outcomes, carrier performance, or realized merchant economics.
 
 ## 2. Audit Coverage Map
@@ -20,7 +20,7 @@
 | Provider pickup and reconciliation | INSPECTED | daily shared Accurate/Mayar General Pickup, uncertain-create recovery, provider polling, aggregate receiving allocation | EV-ES-009 |
 | Finance | INSPECTED | merchant price, separate company cost, carrier payable cycles, payment evidence, later merchant charge/FX | EV-ES-010 |
 | Schema, permissions, connected domains | INSPECTED | Store/Variant/expected quantity, Inventory boundary, Fees, Finance, Support, Notifications | EV-ES-011–012 |
-| Specs/tests | PARTIALLY INSPECTED | External Shipping, recovery, scope, scheduler, PDF, Carrier Finance and permission tests; focused frontend spec runner unavailable | EV-ES-013 |
+| Specs/tests | INSPECTED (backend); PARTIAL (frontend) | Current focused backend regression set; one frontend source spec passes, two are blocked by direct Node ESM/TypeScript harness incompatibilities | EV-ES-013, EV-ES-015 |
 | Competitor equivalence and production operation | PARTIALLY INSPECTED | stable competitive baseline only; no direct competitor workflow check or production access | §16, §24 |
 | Intent/code contradiction | INSPECTED | older V1 exclusions vs current executable workflows | EV-ES-014 |
 
@@ -88,7 +88,13 @@ Transparency is not equivalent to independent proof. Manual transit records a hu
 
 The functional value is reducing ambiguity in the inbound shipment job: what Store/Variant/quantity is expected, which carton goes where, what proof was submitted, what rate was fixed, what physical measurements were verified, what is short/over, and what finance stages have (or have not) occurred. Labels and evidence reduce reliance on informal identifiers; immutable estimates plus observed measurements make price changes explainable; provider-backed aggregate reconciliation can connect completed pickup evidence to expected stock without pretending it identifies a physical carton where it does not.
 
-No prior merchant workflow or reduction in freight cost, loss, delay, data-entry time, or disputes was measured. Benefits should be framed as structure and traceability, not proven efficiency or reliability outcomes.
+**V1.2 job / tool / friction pass:** The defensible job reduced is maintaining a coherent declared-to-physically-checked inbound shipment record across merchant preparation, internal receipt review, Warehouse measurement, provider pickup and Finance evidence. Wossol consolidates shipment-specific carton identity, proof, declared/verified quantities and dimensions, exception history, price snapshots and settlement linkage. This is partial process/tool consolidation: it does not replace carrier/provider operations, physical work, sourcing/procurement, Inventory's stock authority, or separate Finance and provider records. It reduces ambiguity and some cross-role re-keying/matching, but no prior merchant baseline or step count was measured; preparation, handoffs, exception decisions, provider coordination and reconciliation remain.
+
+**Context / provenance continuity:** Store + Merchant/Workspace + Variant + carton/shipment identity persist from declaration through submission, physical receipt and measurements, pickup membership/provider movement evidence, and (where eligible) a carrier payable/Finance charge. Important limits remain: provider movement can be aggregate, Variant allocation is Wossol's deterministic accounting rule rather than physical carton attribution, and a Finance ledger charge is not proof of external settlement or merchant profitability.
+
+**Operational → economic → decision chain:** operational declarations and Warehouse observations are captured; provider movement evidence is connected with scoped shipments and allocated; final shipping price and carrier payable are calculated from distinct immutable rate snapshots; Finance may recognize the merchant charge only after the carrier-cycle paid gate and required FX/Fee Profile inputs. No interpretation, recommended replenishment/route choice, measured outcome, or learning loop is established. Decision-effort reduction is therefore limited to making the evidence and staged amounts easier to inspect; no recommendation or complete landed-cost comparison is present.
+
+**Proof / demo consequence:** Demonstrate one Store-scoped shipment from declared carton and estimate → immutable submit/proof → Warehouse verified measurement and final price → shared Pickup-linked receiving evidence → separate payable and gated ledger charge. Include a timeout-transit or aggregate-allocation caveat and show that `INVENTORY_UPDATED` does not itself mutate Inventory. This proves controlled records and traceable transitions, not faster shipping, exact physical attribution in every shared batch, reduced cost, or improved stock availability. No prior merchant workflow or reduction in freight cost, loss, delay, data-entry time, or disputes was measured.
 
 ## 11. Feature Clusters
 
@@ -99,16 +105,16 @@ No prior merchant workflow or reduction in freight cost, loss, delay, data-entry
 
 ## 12. Merchant Journey / Old Way vs Wossol Way
 
-| Stage | Plausible manual alternative (not universal/verified) | Current Wossol evidence |
+| Stage | Plausible manual alternative (not universal/verified) | Current Wossol evidence / work remaining |
 |---|---|---|
-| Prepare supply shipment | Messages/sheets with item and carton lists | Scoped Store, Variant quantities, dimensions/weight, generated labels |
-| Agree on shipping price | Recalculate or preserve informal quote | Server Fee Profile quote; submit-time immutable estimate/rate |
-| Prove handover | Send receipt image in a separate channel | Actor-bound staged Receipt Proof and current replacement request flow |
-| Receive and resolve differences | Manual carton/quantity check | Warehouse carton evidence, private measurement images, shortage/overage/absence exceptions |
-| Reconcile provider movement | Compare a general manifest manually | Durable General Pickup evidence; deterministic shared-Variant allocation with known attribution caveat |
-| Know actual cost | Mix merchant quote and carrier bill | Separate Merchant Pricing, Company Cost, final verified price, carrier payable and PAID-gated merchant debit |
+| Prepare supply shipment | Messages/sheets with item and carton lists | Scoped Store, Variant quantities, dimensions/weight and generated labels; physical packing remains |
+| Agree on shipping price | Recalculate or preserve informal quote | Server Fee Profile quote and submit-time immutable estimate/rate; taxes/customs/full landed cost remain outside evidence |
+| Prove handover | Send receipt image in a separate channel | Actor-bound staged Receipt Proof and replacement request flow; authenticity/physical carrier handoff is not independently verified |
+| Receive and resolve differences | Manual carton/quantity check | Warehouse carton evidence, private measurement images, shortage/overage/absence exceptions; operators still inspect/resolve |
+| Reconcile provider movement | Compare a general manifest manually | Durable General Pickup evidence; deterministic shared-Variant allocation, not carton-specific provider attribution |
+| Know recorded shipping cost | Mix merchant quote and carrier bill | Separate Merchant Pricing, Company Cost, final verified price, carrier payable and PAID-gated merchant debit; no full landed cost/profit or external cash proof |
 
-The table describes implemented path vs plausible alternatives, not verified user history or measured savings. The system adds process/role coordination; it does not eliminate physical work, provider dependency, or exception handling.
+The table describes implemented path vs plausible alternatives, not verified user history or measured savings. Wossol consolidates records and makes several handoffs traceable; it does not eliminate physical work, provider dependency, operational role handoffs or exception handling.
 
 ## 13. Hidden / Non-Obvious Advantages
 
@@ -232,6 +238,7 @@ Potential magnitude is high for merchants who use this inbound shipment/warehous
 | EV-ES-012 | `docs/wossol-system-design/03-operational-systems/external-shipping-system.md`; Merchant/Admin/Warehouse UI specs; Notifications, Support, Inventory and Finance sources | Aligned intent and cross-domain boundaries (with caveats below) | P2/P3, not proof where conflicting with P1 |
 | EV-ES-013 | P2: executed backend focused specs (107 pass); backend and frontend typechecks pass | Spec coverage for service/recovery/scope/scheduler/PDF/finance/permissions | Frontend receiving spec could not be run through the available TypeScript/ESM runner |
 | EV-ES-014 | `external-shipping-system.md` V1 “Security, evidence, and non-scope” exclusions vs current P1 source | Some exclusions (Admin/Warehouse UI, QR, General Pickup API, Finance posting) are contradicted; other exclusions remain unverified/not found | P1 prevails for current truth; approval/rollout history unresolved |
+| EV-ES-015 | Current Product HEAD `23fd26572fb82ff86b74539e40eb0e1181bb07f3`; executed eight focused backend files covering External Shipping service/store scope/scheduler/pickup recovery/labels and Carrier Finance service/controller/access; focused frontend UI specs | Fresh regression verification of core lifecycle, boundaries, retries/reconciliation and billing gates | Backend 95/95 pass. Frontend direct Node invocation: accepted-shortage spec 1 pass; two other specs fail before product assertions due to `__dirname` under ESM and extensionless TypeScript import resolution. `ts-node/register` is unavailable in the frontend workspace. Harness limitation; no live/provider/deployment verification. |
 
 ## 28. Contradictions & Uncertainty
 
@@ -257,12 +264,23 @@ Additional uncertainty: production shared file storage; active merchant countrie
 
 ## 30. Methodology Learnings
 
-No methodology change required. The audit applied current P1 precedence over a historical P3 “not in V1 scope” list while preserving the unresolved version/rollout question. It also keeps physical observation, aggregate provider evidence, timeout inference, merchant price, carrier cost and inventory truth separate.
+No methodology change required. V1.2 exposes bounded coordination and evidence-reconciliation effort as merchant value without treating process consolidation as tool replacement, or stored/cross-linked records as decision intelligence. Existing evidence still supports the separation of physical observation, aggregate provider evidence, timeout inference, merchant price, carrier cost and inventory truth.
 
 ## 31. Retroactive Review Impact
 
-No methodology-driven retroactive re-audit is required. The new Director route-coverage review at `04-review-history/MERCHANT_SURFACE_COVERAGE_REVIEW_2026-09-26.md` explicitly requested this dedicated External Shipping audit before synthesis. Sourcing/Network, Inventory, Tracking/Delivery, Finance, Orders, Stores and Integrations were treated as dependency boundaries; this audit does not revise them. Local Pickup remains a distinct follow-on coverage item.
+RR-V12-018 is updated by this incremental V1.2 re-audit. Sourcing/Network, Inventory, Tracking/Delivery, Finance, Orders, Stores, Local Pickup and Integrations remain dependency boundaries; no other section was revised. The prior route-coverage review remains historical context, not the source of this migration's requirements. Current Director Quality Gate is pending.
 
 ## 32. Canonical Section Takeaway
 
-External Shipping is a real multi-role inbound shipment, warehouse-receiving, provider-pickup and carrier-finance workflow—not customer last-mile tracking or sourcing/procurement. Its defensible strength is controlled, evidence-linked progression from Store-scoped declared cartons and estimated merchant price to physical verification, provider-linked receiving evidence, final price and separately gated Finance effects. It does not itself make expected quantities actual inventory, and its ten-day transit fallback is not a carrier observation. P1 implementation materially exceeds older V1 scope exclusions; current architecture/version and production enablement need reconciliation before broader claims.
+External Shipping is a real multi-role inbound shipment, warehouse-receiving, provider-pickup and carrier-finance workflow—not customer last-mile tracking or sourcing/procurement. V1.2 adds a defensible but bounded value interpretation: it consolidates a Store-scoped declaration, proof, physical checks, exception history and staged shipping-cost evidence across roles, reducing ambiguity and some matching work; it does not prove fewer steps, lower cost, faster/reliable transport, complete landed cost or better decisions. Expected quantities do not become actual Inventory through this module, ten-day transit fallback is not a carrier observation, and provider aggregate allocation is not carton-level proof. P1 implementation materially exceeds older V1 scope exclusions, while formal version and production enablement remain unresolved.
+
+## 33. V1.2 Migration Delta Review
+
+| Delta question | Finding |
+|---|---|
+| Prior product truth still valid | Multi-role Store-scoped AIR/SEA preparation, proof and price snapshots, Warehouse physical verification, shared General Pickup reconciliation, separate carrier Finance path; Inventory authority boundary; timeout and aggregate-allocation caveats. No committed relevant Product change since the prior source SHA. |
+| Product truth changed | No relevant code delta established between prior audited SHA and current Product HEAD. Product source-state recording is refreshed; unrelated dirty Orders test remains excluded. |
+| V1.2 value previously missed | Wossol partially consolidates shipment-specific records and cross-role reconciliation, preserving the commercial/physical context. This can reduce ambiguity and matching work but does not replace provider operations or remove physical/exception work; no step/time/savings outcome is measured. |
+| Connected-domain evidence added | Explicit trace from Store/Variant declaration → Warehouse observations → Pickup membership/provider aggregate evidence → carrier payable snapshot → PAID-gated Finance ledger entry; expected/received stock remains separate from Inventory mutation and supplier/procurement context. |
+| Strategic / marketing conclusion changed | Prior process-control story is retained; qualified operational coordination/evidence consolidation is now a supporting benefit. No new differentiator, intelligence, savings or moat claim is warranted. Demo should expose the aggregate/timeout/stock caveats. |
+| Queue item | RR-V12-018 marked UPDATED; Director Quality Gate pending. |
