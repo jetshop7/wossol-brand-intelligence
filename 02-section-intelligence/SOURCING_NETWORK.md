@@ -1,24 +1,24 @@
 # Sourcing / Network — Section Intelligence
 
 ## 1. Audit Metadata
-- **Audit date:** 2026-09-26.
-- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.1; `00-methodology/CODEX_OPERATING_PROTOCOL.md` v1.0.
+- **Audit date:** 2026-09-27 (V1.2 incremental migration re-audit; preserves prior accepted findings and review history).
+- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.2; `00-methodology/CODEX_OPERATING_PROTOCOL.md` v1.1.
 - **Competitive reference:** `01-competitive/WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.0 (2026-09-09).
-- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, synchronized at `b5bb5b012b22422ebe2b4d074b686c3ae13e0624` at audit start; clean and equal to `origin/main`.
-- **Product source:** `jetshop7/wossol-platform`, `C:\Users\Global Tech\Documents\wossol-platform`, `dev/wossol-integration`, `de2bb9bad7c39ce8f6ccf2d237a36cea1a82fb98`, clean and equal to `origin/dev/wossol-integration`; inspected read-only.
+- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, synchronized at `4acd911484ffd2e674c9f5f6f3744d8939b7e999` at audit start; clean and equal to `origin/main`.
+- **Product source:** `jetshop7/wossol-platform`, `C:\Users\Global Tech\Documents\wossol-platform`, `dev/wossol-integration`, `de58ec2e4a89a4bc9b751ea669b053e63e8d31a8`; clean at initial inspection and local branch reported equal to `origin/dev/wossol-integration` (remote not freshly fetched in this audit). After focused tests, the worktree showed two modified Analytics files and one untracked Orders integration spec; all are unrelated to this audit and excluded, and whether they appeared concurrently or from test execution is unknown. No Product writes were performed. Sourcing/Product/Local Pickup/Market Center UI/service files had no committed delta from reviewed commit `de2bb9bad7c39ce8f6ccf2d237a36cea1a82fb98`; Prisma schema added Shopify COD checkout-session models only, with no sourcing entities. Current source was searched again at HEAD.
 - **Evidence standard:** P1 executable source/schema, P2 focused tests, P3 current approved design/specification, P4 stale/speculative intent. Repo inspection does not verify production deployment, supplier contracts, live stock, catalog quality, or outcomes.
 
 ## 2. Audit Coverage Map
 | Surface | Coverage | State / evidence |
 |---|---|---|
-| Merchant sourcing/network routes | Merchant routes and source files searched for sourcing, supplier, marketplace, drop/network catalog | INSPECTED; no dedicated route found — EV-SRC-001–002 |
+| Merchant sourcing/network routes | Merchant routes and source files searched for sourcing, supplier, marketplace, drop/network catalog | INSPECTED at current HEAD; no dedicated route found — EV-SRC-001, 015 |
 | Product catalog and lifecycle | Product/Variant create/list/edit, schema and marketplace/sourcing entry points | PARTIALLY INSPECTED; full lifecycle reused from accepted Products audit; no sourcing catalog found — EV-SRC-002–004 |
 | Procurement/supplier data model | Current Prisma model search; Product, Variant, LocalPickup models | INSPECTED; no Supplier, SourcingRequest, PurchaseOrder, NetworkProduct, MarketplaceProduct model found — EV-SRC-003–004 |
 | Local Pickup inbound operations | Merchant UI, service/controller, reconciliation, permissions/scope, schema, tests and V1 design | INSPECTED — EV-SRC-005–009 |
 | Inventory/Finance handoff | Receiving evidence, ledger effects, accepted Inventory/Finance audits | PARTIALLY INSPECTED; enough to separate receiving/accounting from procurement — EV-SRC-008, 010 |
 | Market Center / activity signal | Accepted audit and latest review record | INSPECTED; not national demand, profitability or sourcing fit — EV-SRC-012 |
 | Competition | Competitive master sourcing/network sections and baseline | INSPECTED; sourcing/product marketplace are category capabilities among named competitors — EV-SRC-013 |
-| Verification/source state | Product git state, focused backend/frontend Local Pickup tests | INSPECTED — EV-SRC-014 |
+| Verification/source state | Current Product git state, focused backend/frontend Local Pickup tests | INSPECTED — EV-SRC-014–015 |
 
 Search bounded to current app routes/modules, Product/Variant and adjacent schema, Local Pickup, Inventory/Finance handoffs, relevant designs, previous Products/Inventory/Market Center intelligence, and competitive master. Not a census of private supplier relationships, offline manual operations, or every archived design document.
 
@@ -81,9 +81,15 @@ No choice among suppliers, supplier quality/terms, sourcing price, purchase quan
 Local Pickup persists expected quantities, received quantities, provider movement/evidence references and dates, lifecycle/timeline, actor/time, alerts and handling notes. It distinguishes a request from accepted stock evidence. Finance remains ledger owner. This supports traceable inbound operation, but not supplier identity/provenance, quality inspection, invoice matching, supplier performance history, product authenticity or supplier payment. A contact name/phone alone is not verified supplier identity.
 
 ## 10. Merchant Value Extraction
-Current adjacent value: coordinate an inbound request, compare declared and provider-evidenced quantities, and retain exception evidence before tied charges. This may reduce tracking ambiguity for a receipt; no measured reduction in time, shortage, dispute, cost or error was found.
+**Sourcing job removed:** none established. There is no current Wossol sourcing workflow, so we cannot claim less supplier search, offer comparison, negotiation, quality checking, procurement administration, landed-cost calculation, or purchasing effort.
 
-No current value such as discovering qualified products, reducing supplier search cost, comparing landed costs, negotiating terms, avoiding poor quality, or matching product-market fit was established. Those are potential jobs, not current benefits.
+**Adjacent Local Pickup job/friction:** for already-selected Products/Variants, the merchant records a scoped pickup request and expected cartons; Wossol preserves that declaration, records a manual provider request, reconciles provider movements, and surfaces mismatch/delay exceptions. This may reduce ambiguity versus unstructured calls/messages and spreadsheet tracking, but prior merchant practice and measured time/shortage/dispute/error reduction are unknown. Tool consolidation is at most partial: the Wossol record holds the request and receipt evidence, while provider coordination remains manual and the interface offers a coordination handoff. No automated provider booking/payment or complete replacement of supplier/provider tools was verified.
+
+**Context, provenance and trust:** Product/Variant, Workspace/Store, pickup code, expected quantities, provider movement reference and Finance effect can be linked along the inbound workflow. This is inbound receipt provenance, not source-of-goods identity. The pickup contact is not a canonical supplier; the user-facing UI describes the optional amount as what the delivery company is expected to pay the supplier, but P1 persists an amount and creates a Finance goods-purchase debit after accepted provider evidence—it does not prove payment occurred or verify invoice/unit economics.
+
+**Operational → economic → decision value:** operational declaration and matched provider evidence are captured/connected; a Finance effect may be recorded after the system completion gate; supplier payable reconciliation, landed cost, sourcing interpretation, recommendation, purchasing action, outcome measurement and learning are not established. Decision effort is therefore not reduced for choosing what to source. No product discovery or supplier decision is supported.
+
+**Connected value / proof consequence:** the defensible demo is a previously selected Variant moving from declared expected quantity to provider-evidenced receipt, with a mismatch/delay exception and bounded Finance handoff. It must not demo or imply market demand → recommended product → verified supplier → landed economics → purchase. Market Center's limited Wossol-observed order signal cannot fill those missing links.
 
 ## 11. Feature Clusters
 1. **Inbound visibility/reconciliation:** expected Variant quantity + provider movement identity + receiving lines + mismatch/delay alerts.
@@ -143,7 +149,7 @@ Current evidence is limited to inbound accountability: declared expectations, pr
 - **P1 — Sourcing surface not found:** no merchant product/supplier marketplace, request, quote, purchase order or supplier relationship lifecycle in searched current surfaces. Competitor sourcing is a category baseline, relevant if Wossol intends product access.
 - **P1/P3 — supplier-direct concept vs execution:** approved Local Pickup design describes `pickup_type` values including supplier direct delivery, while current schema/service have no pickup type and use generic contact/pickup fields plus manual coordination. Do not claim distinct executable courier/supplier modes until resolved.
 - **P2 — no supplier provenance:** contact name/phone and provider evidence do not establish canonical supplier, purchase invoice, unit cost by Variant or quality proof.
-- **P2 — goods-value ambiguity:** optional whole-pickup amount posts a Finance effect only on accepted completion; not necessarily verified supplier cost, per-unit cost, payment or payable.
+- **P2 — goods-value ambiguity:** merchant UI describes this amount as the delivery company being expected to pay the supplier on Wossol's behalf; executable behavior records a whole-pickup amount and posts a Finance effect only on accepted completion. It does not verify invoice, unit cost, payment/settlement or payable.
 - **P2 — manual provider coordination:** request records manual pickup request; no sourcing/pickup provider orchestration found.
 - **P2 — market-signal overreach:** Market Center ordered units are not national demand, delivered sales, margin, sourcing fit or product recommendation.
 - **P3 — outcomes absent:** no sourcing search cost, quality, lead-time, landed margin or adoption measures.
@@ -203,7 +209,11 @@ Current evidence is limited to inbound accountability: declared expectations, pr
 | EV-SRC-011 | Financing design supplier fields do not prove a live sourcing feature | P3 `docs/wossol-system-design/01-system-design/core-systems/Financing System (V1).md`; no matching current route/module/model found |
 | EV-SRC-012 | Market Center signal is not national demand/profitability/sourcing fit | P2 `MARKET_CENTER.md`; authoritative `MARKET_CENTER_REVIEW_2026-09-26.md` |
 | EV-SRC-013 | Direct competitors include sourcing and some marketplace/drop capabilities; category baseline | P3 Competitive Master §§4–8 and comparison matrix; not fresh live competitor verification |
-| EV-SRC-014 | Product source state and focused verification | Git read-only checks; 31 backend and 6 frontend Local Pickup tests passed |
+| EV-SRC-014 | Prior Product source state and focused verification | Prior Git read-only checks; 31 backend and 6 frontend Local Pickup tests passed; prior review retained as history |
+| EV-SRC-015 | Current Product state and repeat source search show no Sourcing/Product/Local Pickup/Market Center UI/service delta from reviewed evidence; the only schema delta is Shopify COD checkout-session modeling, and no supplier, sourcing-request, purchase-order or marketplace model/route was found at current HEAD | P1, read-only Git/search at `de58ec2e4a89a4bc9b751ea669b053e63e8d31a8`; working-tree status recorded in §1 |
+| EV-SRC-016 | Current adjacent Local Pickup backend service/scheduler behavior and focused regression coverage | P1/P2 `apps/backend/src/modules/local-pickup/local-pickup.service.ts`, scheduler, service/scheduler specs; current focused run 35/35 passing on 2026-09-27 |
+| EV-SRC-017 | Current Merchant/Admin Local Pickup coordination wording and evidence workflow | P1/P2 merchant/admin Local Pickup UI and focused specs; current focused run 15/15 passing on 2026-09-27 |
+| EV-SRC-018 | V1.2 job/friction/provenance/economic/decision and connected-domain synthesis; no sourcing job or sourcing decision chain verified | P1 EV-SRC-015–017; P2 accepted `LOCAL_PICKUP_REVIEW_2026-09-26.md`, `MARKET_CENTER_REVIEW_2026-09-26.md`, `SOURCING_NETWORK_REVIEW_2026-09-26.md` |
 
 ## 28. Contradictions & Uncertainty
 **CONTRADICTION ID: CONTR-SRC-001**
@@ -217,6 +227,21 @@ Current evidence is limited to inbound accountability: declared expectations, pr
 
 Other uncertainty: off-platform sourcing, actual partners, production usage, and current competitor depth not established.
 
+**CONTRADICTION ID: CONTR-SRC-002 — Local Pickup completion authority**
+- **Source A:** Current Local Pickup V1 design describes both accepted provider evidence and operator verification as possible routes to `inventory_updated`.
+- **Source B:** Current P1 service reconciles qualifying positive provider movements and has no operator manual-completion route; accepted Product review confirms this boundary.
+- **Nature:** Approved workflow intent includes a completion authority absent from the executable service.
+- **Evidence strength:** P1 confirms current source behavior; P3 documents product intent.
+- **Working conclusion:** Current implementation completion is provider-evidence-driven; do not call this settled product intent or claim manual verification exists.
+- **Remaining uncertainty / required verification:** Product authority must resolve whether P3 is superseded or P1 is incomplete and add contract/acceptance evidence.
+
+**CONTRADICTION ID: CONTR-SRC-003 — optional goods-purchase amount**
+- **Source A:** Merchant Local Pickup UI describes an optional amount as what the delivery company is expected to pay the supplier on Wossol's behalf.
+- **Source B:** Backend stores an amount and posts a Finance effect on accepted receipt; no supplier-payment instruction/confirmation, supplier identity, invoice, payable or settlement proof was found in the Local Pickup service.
+- **Nature:** User-facing expectation may be read as a payment capability, while executable evidence only establishes a stored amount and ledger effect.
+- **Working conclusion:** Preserve the UI's stated intent, but do not claim payment to supplier occurred or that a verified payable exists.
+- **Required verification:** Product/Finance authority should clarify the meaning and fulfillment evidence for this amount.
+
 ## 29. Open Questions
 1. Does Wossol currently arrange sourcing operationally outside the app, and for which merchants/markets?
 2. Is supplier-direct pickup a current requirement or unimplemented/stale design language?
@@ -228,7 +253,16 @@ Other uncertainty: off-platform sourcing, actual partners, production usage, and
 No reusable methodology change required. Existing evidence-tier, contradiction, current-vs-future, absence-search and Market Center scope rules suffice. Inbound/supplier-adjacent workflow and approved supplier fields in design are not proof of a sourcing network.
 
 ## 31. Retroactive Review Impact
-No prior section correction or queue entry warranted. Products and Inventory already record product-intelligence/procurement boundaries. Market Center’s review is carried forward: eligible Wossol-observed ordered units cannot be used as national demand, profitability or sourcing validation. No methodology change was made.
+No methodology change or additional retroactive item is proposed. Inventory, Products, Finance, Local Pickup, External Shipping and Market Center findings were checked as connected-domain constraints; no prior conclusion requires correction. RR-V12-016 is updated for this V1.2 migration; preserve the 2026-09-26 Director review as historical acceptance and obtain a new current Quality Gate.
 
 ## 32. Canonical Section Takeaway
-Current Wossol source establishes structured, evidence-linked **inbound Local Pickup** around merchant-owned Products/Variants, but a merchant-facing product-sourcing marketplace, supplier network, procurement lifecycle or supplier-payment capability was **not found after reasonable search**. Competitor sourcing is category infrastructure; Wossol’s present Local Pickup must not be stretched into sourcing, supplier verification, product demand or profitability claims.
+Current Wossol source establishes structured, evidence-linked **inbound Local Pickup** around merchant-owned Products/Variants, but a merchant-facing product-sourcing marketplace, supplier network, procurement lifecycle or supplier-payment capability was **not found after reasonable search**. Under V1.2 the connected data adds receipt accountability, not sourcing provenance or decision value: provider evidence and an optional Finance effect cannot fill the missing offer, supplier, purchase, verified-cost and outcome links. Competitor sourcing is category infrastructure; Wossol’s present Local Pickup must not be stretched into sourcing, supplier verification, product demand or profitability claims.
+
+## 33. V1.2 Migration Delta Review
+
+- **Prior product truth retained:** reasonable current-source search found no in-app Sourcing/Network marketplace, supplier master, purchase/quote lifecycle or supplier-payment workflow. Local Pickup remains adjacent inbound coordination after Product choice, not sourcing. Existing EV-SRC-001–014 remain stable historical evidence.
+- **Product truth changed:** no material Sourcing/Product/Local Pickup/Market Center UI or service delta from the reviewed source baseline was found at Product HEAD `de58ec2e4a89a4bc9b751ea669b053e63e8d31a8`; the schema delta adds Shopify COD checkout-session entities, not supplier/sourcing entities. Current code and relevant UI were checked again. The Product worktree later showed unrelated Analytics/Orders changes; they were not read as audit evidence and were not modified.
+- **V1.2 value previously under-expressed:** no sourcing job, supplier-tool replacement, source-context continuity, sourcing provenance, or sourcing decision reduction can be credited to an absent workflow. Adjacent Local Pickup may reduce inbound receipt ambiguity, but leaves provider coordination manual and does not establish measured effort reduction. Its data chain stops before supplier identity/payment verification and before sourcing decisions.
+- **Connected-domain evidence:** Products/Variants → Local Pickup expected items → provider movement association → Inventory evidence → conditional Finance ledger effect is a bounded inbound chain. Market Center category activity does not supply national demand, delivered outcomes, profitability or product-fit evidence.
+- **Strategic/marketing conclusion:** unchanged and sharpened: competitor sourcing remains category infrastructure; current Wossol sourcing is `NOT FOUND AFTER SEARCH`; Local Pickup's accountability is supporting inbound value only, not sourcing parity, network effect, or intelligence. All unresolved Local Pickup P1/P3 contradictions and Director-listed product issues remain open.
+- **Queue:** RR-V12-016 is updated to reflect this incremental V1.2 pass. The Director's 2026-09-26 acceptance is not a current V1.2 gate; Quality Gate pending.
