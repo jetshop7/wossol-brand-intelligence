@@ -1,6 +1,6 @@
 # Support / Internal Chat — Section Intelligence
 
-## 1. Audit Metadata
+## 1. Initial V1.1 Audit Metadata (Historical Baseline)
 
 - **Audit date:** 2026-09-26.
 - **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.1; `CODEX_OPERATING_PROTOCOL.md` v1.0.
@@ -286,10 +286,72 @@ If Support standardizes codes responsibly, links resolution episodes to authorit
 
 No general methodology change identified. Section-specific: for any “unread” queue measure, inspect its persisted read cursor or equivalent latest-response predicate rather than relying on a UI label. For issue resolution, distinguish (a) information recorded internally, (b) information sent to the reporter, and (c) a successful owner-domain outcome; they are separate proofs.
 
-## 31. Retroactive Review Impact
+## 31. Initial V1.1 Retroactive Review Impact (Historical)
 
 No methodology change and no retroactive queue entry. The audit applies the Orders and Confirmation dispatch/channel boundary without changing those accepted section audits; it treats Chat as distinct from the Messaging/WhatsApp acquisition/capture model and preserves the Finance, Tracking, External Shipping, Products and Inventory ownership boundaries. The synchronized Local Pickup review identifies this as the next section and requires no Local Pickup correction. No Support/Internal Chat-specific Director review existed at synchronization.
 
-## 32. Canonical Section Takeaway
+## 32. Initial V1.1 Canonical Section Takeaway (Historical)
 
 Support currently gives Merchants a scoped Ticket-and-message workflow and internal agents a permissioned Workspace queue, private notes, manual coordination states and auditable resolution/closure. Shared Chat is a separate Merchant/Confirmation operational conversation, not private Support staff chat; an explicit dispatch-aware handoff prevents post-dispatch Order issues from remaining in the wrong channel. The append-only structured resolution episode is a credible future evidence asset, but not yet an intelligence system. Correct the “unread reply” heuristic/label, align corrected replies and resolution explanations with Merchant-visible communication, reconcile API-only assignment with the UI contract, and verify production storage, notifications and service outcomes before stronger reliability or intelligence claims.
+
+## 33. V1.2 Migration Addendum
+
+### Latest audit metadata
+
+| Field | Latest migration state |
+|---|---|
+| Audit date | 2026-09-27 (incremental V1.2 migration) |
+| Product repository / branch / commit | `jetshop7/wossol-platform`, `dev/wossol-integration`, `46716c433de40fbdbeb023d297d167c49909b380` |
+| Product local state | Clean at inspection; `HEAD` matched local `origin/dev/wossol-integration`. Product remote was not freshly fetched. No Product files were modified. |
+| Prior audit Product snapshot | `020593219001f857cace7bf80ad80fe2930319d4` (accepted Support/Chat review snapshot) |
+| Intelligence repository | `jetshop7/wossol-brand-intelligence`, `main`, fast-forwarded to `4f2f3da7e3b2099e43f0fcf2e9c6429b94d0908f` before repository reads; clean at start |
+| Methodology / protocol | Master Instructions V1.2; Operating Protocol 1.1 |
+| Competitive reference | `WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` V1.0 (2026-09-09) |
+| Director review retained | `04-review-history/SUPPORT_INTERNAL_CHAT_REVIEW_2026-09-26.md`: **ACCEPT WITH OPEN PRODUCT ISSUES**; no full re-audit required by that review. This migration does not replace or self-accept that review. |
+| Verification | Focused Support/Chat backend specs 60/60; Chat polling source checks 3/3; backend and frontend typechecks passed. No DB integration, authenticated browser, deployed service, or live storage test. |
+
+### V1.2 delta review
+
+- **Prior product truth retained:** Support Tickets and Shared Confirmation Chat remain separate systems with distinct access/ownership. Chat is not private staff chat or Meta/Messaging Order Capture. Pre-dispatch Order communication stays in Chat; qualifying post-dispatch communication is blocked there and may continue through an explicit unsubmitted Support draft. Private notes remain separate from Merchant-visible messages; Support remains unable to mutate linked owner-domain truth. P0-16 resolution episodes remain structured evidence, not current intelligence.
+- **Current Product delta:** no Support, Chat, Merchant Support UI, Admin Support UI, or Support/Chat migration file changed between the accepted evidence snapshot `0205932` and current Product `46716c4`. The changed Confirmation functional spec clarifies incomplete-checkout performance/workload cohorts; it does not alter the inspected Support/Chat dispatch boundary or its code. The current code paths were rechecked. Product is clean; its branch tracking ref matches HEAD, but the remote was not freshly fetched.
+- **Prior Director findings retained and rechecked:** the seven-day “Unread Merchant Replies” query remains a recent-message heuristic, not a latest-unanswered or agent-read predicate; corrected Admin Support messages still omit `correctedBody` from the Merchant projection; resolution still records an Admin note without sending it to the Merchant; manual assignment remains API/backend capability not exposed in the V1 Admin UI; and `WAITING_INTERNAL` remains a manual coordination state rather than task routing. The V1.1 review's other open storage, service-quality, taxonomy-governance, and competitor questions remain open.
+- **V1.2 value newly extracted:** category-first Ticket intake, owner-context linking, and explicit Chat-to-Support handoff can reduce some context re-entry and misrouting. The handoff carries linked Order and text into an unsubmitted draft; images must be reselected and the Merchant must review/submit. This is bounded context/friction reduction, not a measured productivity or faster-resolution result.
+- **Tool/process consolidation:** current product offers an in-product Support case surface and a separate Confirmation conversation. It does not establish replacement of external help desks, email, WhatsApp, provider chat, spreadsheets, or internal task tools. Internal department follow-up remains manual.
+- **Provenance and continuity:** linked entity identity is revalidated against Merchant/Workspace and category; Chat messages retain conversation/actor/time/optional Order context; handoff preserves Order/text before explicit submit. Support/Chat events can feed a limited Merchant Notification projection. Notification evidence stops at signal/navigation: the Notifications V1.2 review found API-time permission revalidation, delivery reliability, event-processing recovery and runtime outcomes unresolved. No click is proof of Ticket resolution.
+- **Decision effort / operational → economic → decision chain:** Support queue filters and bounded status/priority/department metadata help locate and classify cases, but the “unread” predicate is misleading and “overdue” is a time marker, not a service commitment. Resolution codes can preserve operator-entered facts, but no governed aggregate, independent owner-domain outcome join, economic calculation, recommendation, or learning loop was found. Merchant/Decision Intelligence is not established.
+- **Connected value:** Order communication eligibility is the upstream lifecycle signal; Confirmation/Team governs operational Chat participants; Support owns the case; Orders, Tracking, Finance, Product/Inventory and External Shipping retain their own truth; selected Support events flow to Notifications. The useful compound is channel ownership and bounded context continuity, while the compound weakness is manual internal follow-up and unverified notification/service delivery.
+- **Proof/demo consequence:** a controlled demo could show a pre-dispatch linked Chat message, then attempt a post-dispatch send, observe server-side rejection, choose Continue to Support, retain Order/text in the unsubmitted form, and explicitly submit. A second proof should contrast private Admin notes with Merchant messages and distinguish the required internal resolution note from a separately sent Merchant reply. This sequence is source/test-supported but was not browser-verified in this migration.
+- **Strategic/marketing conclusion:** prior foundational Trust/Accountability classification is unchanged. V1.2 supports only qualified claims about contextual issue intake and lifecycle-aware communication routing; it does not support “unified communications,” internal task automation, timely/reliable support, proactive prevention, faster resolution, or root-cause intelligence.
+- **Queue:** `RR-V12-021` is updated by this migration. Director V1.2 Quality Gate is pending.
+
+### V1.2 coverage delta
+
+| Surface | Latest state | Delta evidence |
+|---|---|---|
+| Support/Chat code, APIs, schema behavior | RECHECKED; no owned committed source delta since `0205932` | Existing `EV-SIC-003`–`011`; current code/test trace at `46716c4` |
+| Merchant and Admin UI / current specs | RECHECKED; no Support-owned UI/spec source delta | `EV-SIC-001`–`002`, `EV-SIC-013`; current route implementation and V1 contract retained |
+| Chat→Support and Confirmation lifecycle connection | RECHECKED | `EV-SIC-004`, `EV-SIC-009`; `order-communication-eligibility.service.ts`, `ChatService.send`, Merchant handoff |
+| Notification projection and current review | RECHECKED through current policy plus accepted Notifications V1.2 review | `EV-SIC-011`, new `EV-SIC-017`; selected Support signals only; no delivery/outcome guarantee |
+| Focused tests | PASSED | `EV-SIC-015`–`016`; 60/60 backend, 3/3 frontend source assertions, both package typechecks |
+| Production service/storage/merchant outcomes | NOT VERIFIED | Deployment, real agents, shared storage, notifications, SLA and outcomes unavailable |
+
+### V1.2 evidence additions
+
+| Evidence ID | Claim supported | Source / evidence class |
+|---|---|---|
+| EV-SIC-015 | Current product source state and no Support/Chat-owned delta | P1 read-only Git check at Product `46716c433de40fbdbeb023d297d167c49909b380`; branch `dev/wossol-integration`, clean, tracking ref matches; `git diff 0205932..46716c4` has no Support/Chat implementation/UI paths. Product remote not freshly fetched. |
+| EV-SIC-016 | Current focused regression and typecheck result | P2. Backend `support.service.spec.ts`, `admin-support.service.spec.ts`, `chat.service.spec.ts`, `chat-access.service.spec.ts`, `chat-image.service.spec.ts`: 60/60 passed. Frontend `chat-polling.source.spec.ts`: 3/3 passed. Backend and frontend `pnpm typecheck` passed. No browser or DB integration. |
+| EV-SIC-017 | Support→Notifications boundary and limitations | P1/P2. Current `notifications.service.ts` policy maps selected `SUPPORT_TICKET_AGENT_REPLIED`, `SUPPORT_TICKET_WAITING_MERCHANT`, and `SUPPORT_TICKET_RESOLVED` events to Support navigation; current Notifications migration review (2026-09-27) accepts the V1.2 attention-routing conclusion but retains API-time permission, event recovery, and operational delivery gaps. |
+| EV-SIC-018 | Current connected contract interpretation | P2/P3. Current Merchant Support UI spec, Admin Support UI spec, Chat System Design approval and Notification V1 authority; dispatch-aware handoff remains explicit/unsubmitted, owner domains retain authority, selected notification projection does not establish delivery. The changed Confirmation spec is incomplete-checkout reporting context only. |
+
+### V1.2 open questions and limitations
+
+The existing Director open issues remain authoritative. This migration adds no new code defect confirmed by a changed Support/Chat path. Product fixes/evidence still needed include correcting or relabeling unread semantics, resolving Merchant visibility of corrected replies and resolution notes, aligning assignment API/UI, deciding whether internal follow-up needs accountable routing, governing resolution codes/read access, and verifying durable private storage and actual Support/notification outcomes. No competitor workflow comparison or productivity baseline was performed.
+
+### V1.2 self-critique
+
+The strongest claim—lifecycle-aware channel ownership with bounded context continuity—survives because current Support/Chat source, focused tests and the accepted Director review agree on the explicit post-dispatch rejection and unsubmitted handoff. Its merchant-effort magnitude remains inferred, not measured; text/Order retention does not include image continuity or prove a persistent draft. No changed Support/Chat implementation path was found, and no production/runtime or competitor study was available. The open issues therefore remain constraints, not newly demonstrated production incidents.
+
+### Updated canonical takeaway
+
+Support / Internal Chat is V1.2 evidence for **bounded operational context continuity and lifecycle-aware channel ownership**: scoped case intake keeps owner truth with its domain, Confirmation Chat handles the appropriate operational conversation, and an explicit handoff can carry Order/text context into an unsubmitted Support draft. The feature can reduce some re-entry and navigation effort, but the old way and magnitude are unmeasured; images are not carried through the handoff, internal department coordination remains manual, notification delivery is not proven, and resolution facts are not interpreted into current intelligence. The prior Director decision remains **ACCEPT WITH OPEN PRODUCT ISSUES**; this migration's current Director Quality Gate is pending.
