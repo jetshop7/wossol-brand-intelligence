@@ -2,13 +2,26 @@
 
 ## 1. Audit Metadata
 
-- **Audit date:** 2026-09-26.
-- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.1; `00-methodology/CODEX_OPERATING_PROTOCOL.md` v1.0.
+- **Audit date:** 2026-09-27 (incremental V1.2 migration).
+- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.2; `00-methodology/CODEX_OPERATING_PROTOCOL.md` v1.1; queue item `RR-V12-014`.
 - **Competitive reference:** `01-competitive/WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.0 (2026-09-09).
-- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, `5937d9b4915e0a6fe46dea78cca958f85f00293f` at audit start, clean and synchronized with `origin/main`.
-- **Product source at final verification:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `de2bb9bad7c39ce8f6ccf2d237a36cea1a82fb98`, clean and equal to the local `origin/dev/wossol-integration` ref. It was inspected read-only.
-- **Source-state note:** The product checkout was initially at `db2acf042c539f7784585b241c26fd3b34a3cf19` with three local Shopify offer-preview files modified. During this audit it advanced to `de2bb9b` and became clean. The only diff between those commits is four Shopify offer-preview/runtime/test files; Store schema, Store services, Settings, Shell, and Store specs/UI specifications are unchanged. No Product files were modified by this audit.
-- **Evidence standard:** P1 executable source/schema, P2 targeted tests/typechecks, P3 current UI/system specifications, P4 historical design material qualified as such. Production deployment/data and merchant outcomes are not inferred from repository inspection.
+- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, starting commit `b97d678518713bb0b8bc71342114962fbbf5623f`, clean and synchronized with `origin/main` before task interpretation.
+- **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `933fb7d3431fc32de2473b4e45c2289e00111463`; local `HEAD` equals the local `origin/dev/wossol-integration` tracking ref. Product remote was not freshly fetched during this pass. Inspected read-only.
+- **Source-state delta:** Compared with the prior Stores evidence commit `de2bb9bad7c39ce8f6ccf2d237a36cea1a82fb98`, only Prisma schema and MerchantShell changed among the inspected Store-related paths. Store model/service/controller, Store Settings UI/specifications, Store access code/specs and Store-focused frontend spec are unchanged. The schema adds Shopify COD checkout-session relations to Store; MerchantShell adds a workspace-scoped open-capture badge, not Store behavior. No Product files were modified.
+- **Product local state:** Initially clean at the source-state check. At final verification, 14 uncommitted paths appeared in Orders, Confirmation, Analytics, and related admin/frontend surfaces; none are Store-owned paths. Preserve them untouched and exclude them from this audit's committed capability claims. Local HEAD still equals the tracking ref, but the Product remote was not freshly fetched, so equality with GitHub at audit time is **NOT VERIFIED**.
+- **Verification performed:** Focused backend Store/access plus Shopify checkout-session unit tests: 19/19 passed (13 Store/access and 6 checkout-session tests). Store Settings workspace UI tests: 3/3 passed; adjacent MerchantShell Order Capture navigation tests: 3/3 passed (Node module-type warning only). These are source/unit tests; no DB migration application, typecheck, production, or runtime verification.
+- **Audit status:** Incremental V1.2 source review complete; current Director Quality Gate pending. Preserve the Stores Director acceptance of 2026-09-26 and its open product issues; this migration is not itself accepted.
+
+### V1.2 migration delta review
+
+- **Prior product truth retained:** Store remains a provider-neutral Merchant operating identity inside one Workspace, with Owner/Admin-managed lifecycle, Staff Store grants as an additional restriction, and domain-owned interpretation of Store scope. The prior Director review's accepted conclusions and open issues are retained; no direct Store-owned code or Store UI contract changed since evidence commit `de2bb9b`.
+- **Product truth changed:** The committed schema now relates `CommerceCodCheckoutSession` to Store, CommerceConnection, Product/ProductStore and a finalized Order by composite scope. Shopify COD code carries the same Merchant/Workspace/Store tuple into session lookup and canonical Order ingestion. The Home/Store Shell also now renders an open Order Capture count, queried by active Workspace; this is Orders navigation, not a Store-level capability.
+- **V1.2 value previously missed:** Store is more than a selector/domain join for the Shopify COD path: it participates in identity continuity from connected storefront/product through temporary checkout evidence into an Order, alongside an acquisition snapshot. This supports traceable downstream joins, but does not establish complete ad attribution, Store-level profitability, or improved decisions.
+- **Connected-domain evidence added:** inspected current Shopify checkout-session persistence/finalization and Order ingestion, Product/Commerce mapping relationships, and Store/Workspace context. Source inspection found a material Prisma-schema/SQL-migration mismatch in the new checkout-session migration; the consequence for an applied database is high risk but deployed migration state is unknown.
+- **Prior strategic conclusion:** Stores remains foundational/scoped operating infrastructure, not a demonstrated differentiator or moat. V1.2 adds a qualified cross-domain provenance contribution, not a stronger superiority claim.
+- **Queue:** `RR-V12-014` updated for this incremental pass; submit to current Director Quality Gate. Do not mark the V1.2 migration accepted here.
+
+**Evidence standard:** P1 executable source/schema, P2 targeted tests, P3 current UI/system specifications, P4 historical design material qualified as such. Production deployment/data and merchant outcomes are not inferred from repository inspection.
 
 ## 2. Audit Coverage Map
 
@@ -20,9 +33,10 @@
 | Merchant Shell context | Workspace selection, active Store selection, All Stores, persistence | EV-STORE-008 |
 | Store Settings UI | Workspace-scoped list, create/edit, errors, status and logo flow | EV-STORE-009–011 |
 | Logo storage | size/type validation, private path, replacement/removal | EV-STORE-012 |
-| Connected domains | Products/Orders/Inventory/Delivery/Finance/Commerce/Ads Store relationships | EV-STORE-013–015 |
+| Connected domains | Products/Orders/Inventory/Delivery/Finance/Commerce/Ads Store relationships; Shopify COD session → Order scope/provenance trace | EV-STORE-013–015, EV-STORE-020 |
+| Store model vs migrations | Current Prisma checkout-session relation and additive SQL migration compared | EV-STORE-021 |
 | Specifications and history | Current Store Management and Settings specs; historical Store-source architecture | EV-STORE-016–017 |
-| Verification | focused backend/frontend suites and typechecks | EV-STORE-018 |
+| Verification | prior accepted focused tests retained; current Store/access/COD session backend tests and Store Settings/Shell UI tests rerun | EV-STORE-018, EV-STORE-022 |
 | Competition | stable competitive master, not a new competitor audit | EV-STORE-019 |
 
 Not verified: production deployment/database state, real tenant/user records, live cloud object-storage configuration (the inspected implementation writes private local files), business usage or store-level outcome differences, and current competitor Store-entity designs first-hand.
@@ -33,7 +47,7 @@ In the inspected product, a **Store is a Wossol Merchant-owned, Workspace-bound 
 
 Merchant Owner and Admin can create and manage Stores from Settings within one authorized active Workspace. They can edit name/URL, manage a private logo, disable, and reactivate; there is no delete or cross-Workspace transfer. Staff has no Store mutation authority; their operating Store visibility is controlled by Store access in addition to Merchant, Workspace, and section access. The Shell lists active Stores only, and All Stores means the active/authorized Store cohort within the current Workspace—not every Store across the Merchant’s markets.
 
-This is meaningful **tenant and operating-scope infrastructure**, with an understandable self-service lifecycle and strong access-boundary patterns. It is not itself a differentiated commerce feature. Current implementation has two notable workflow risks: create-time URL input lacks the backend validation applied during edit, and Store creation plus optional logo upload is a two-request flow that can leave a persisted Store behind when logo upload fails, making an unguarded retry create another Store.
+This is meaningful **tenant and operating-scope infrastructure**, with an understandable self-service lifecycle and strong access-boundary patterns. It is not itself a differentiated commerce feature. Store also acts as a scope/provenance key in the current Shopify COD checkout-session → canonical Order flow. That trace is constrained by a newly identified model/migration mismatch and is not proof of deployed behavior. Prior workflow risks remain: create-time URL input lacks the backend validation applied during edit, and Store creation plus optional logo upload can persist the Store before a failed second request, making an unguarded retry create another Store.
 
 ## 4. Scope & Architecture Map
 
@@ -47,6 +61,7 @@ Merchant Settings → authenticated Merchant Portal Store endpoints → actor’
 | Merchant Shell | Projects authorized active Stores for the selected Workspace; persists workspace choice in session storage and Store choice in local storage, then revalidates choices against context. |
 | Store access | Staff Store restriction layered under active Merchant + Workspace membership; it does not grant section or Workspace authority. |
 | Domain owners | Products, Orders, delivery pricing, Commerce and other domains retain their own data/behavior and enforce Store scope where applicable. |
+| Shopify COD session | Carries Merchant/Workspace/Store, CommerceConnection and Product scope plus acquisition/commercial snapshots; finalization submits a canonical Order using the same Store tuple. Migration parity is unresolved. |
 | Store URL/logo | Descriptive optional fields, not provider identity or public authorization. Logo bytes are served through authenticated private endpoints. |
 
 ## 5. Current Capability Inventory
@@ -96,7 +111,21 @@ Trust is weakened by the create/edit URL validation mismatch and by the multi-re
 
 ## 10. Merchant Value Extraction
 
-Store management reduces setup friction and creates a durable scope boundary as a Merchant operates multiple sales identities or markets. Explicit Workspace confinement limits accidental cross-market setup; immutable Store Code and history-preserving disable reduce identity churn. The main value is **safer organization and scoping**, not direct demand, conversion, profit, or market intelligence. No measured setup-time, error-rate, or operational outcome improvement was available.
+Store management reduces setup friction and creates a durable scope boundary as a Merchant operates multiple sales identities or markets. Explicit Workspace confinement limits accidental cross-market setup; immutable Store Code and history-preserving disable reduce identity churn. In the Shopify COD chain, Store identity links a connected storefront/product context to a temporary captured checkout and then a canonical Order, allowing downstream domains to join on the same scope when their own data contracts permit. The main value remains **safer organization, context continuity and scoping**, not direct demand, conversion, profit, or market intelligence. No measured setup-time, error-rate, or operational outcome improvement was available.
+
+### V1.2 second-pass merchant value synthesis
+
+| Capability / merchant job | Work removed or reduced | Remaining work and boundary | Truth, context and downstream value | Claim limit / proof consequence |
+|---|---|---|---|---|
+| Create a Store in an authorized Workspace rather than request every internal operating identity from platform staff | Reduces provisioning handoff/setup friction qualitatively | Owner/Admin still configures Store details and separately connects a provider; no measured setup-time delta | Backend-generated Store Code and Workspace/merchant ownership provide a stable scope key | Demo the Store Code and active Workspace; do not claim the Store itself connects an external channel |
+| Switch among Stores / use All Stores within one Workspace | Reduces repeated manual market/Store filtering in screens that honor Shell context | Each domain can define filters differently; All Stores is not all markets, and concrete Store may still be required for writes | Shell validates stored preference against authorized active context; domain joins preserve Store identity | No complete cross-market operational or performance view is implied |
+| Limit a Staff member to selected Stores | Reduces ad hoc reliance on verbal store assignments and broad visibility | Merchant, Workspace and section gates still apply; some endpoints may vary and product-wide universal enforcement is not proven by this section | Store grant is an additive access restriction, maintained by Team/auth services | Demonstrate only audited paths; not a universal guarantee without endpoint-wide verification |
+| Preserve Store identity while disabling/reactivating | Avoids destructive deletion/identity churn and retains linked references | Disabled Store operational visibility is restricted; historical browsing differs by domain and remains unresolved | Stable Store key can connect historical records and lifecycle Audit evidence | Retention is not equivalent to convenient historical access |
+| Carry Shopify COD context into Orders | Could reduce manual Store/source re-entry in the implemented code path; this reduction is not established in a running database workflow | Product/Commerce mapping and valid App Proxy path are prerequisites; Order processing/confirmation/delivery/economics remain owner-domain work; DB migration parity unresolved | Checkout session code carries Store + Workspace + Merchant tuple and acquisition snapshot; finalization submits an Order with the same tuple and evidence | Proof is code-level and partially unit-tested; current migration omits model fields/constraints, and live operation is not verified |
+
+**Operational → economic → decision chain:** Store identity is present and joinable as a scope key in relevant records (DATA CAPTURED / CONNECTED). Domain owners calculate operational and economic truth; Stores itself does not reconcile or interpret it. This audit found no Store-level recommendation/action/outcome loop (NOT FOUND AFTER SEARCH in the inspected Store surface and relevant cross-domain evidence). No merchant decision improvement or quantified economic benefit may be claimed.
+
+No evidence establishes that Store management itself replaces a merchant's commerce-provider portal, spreadsheet, or other operating system. It consolidates Wossol's internal Store identity/scope and connects to separately owned domain workflows; external provider management remains separate.
 
 ## 11. Feature Clusters
 
@@ -139,6 +168,7 @@ Cross-Store analytics can become useful only when the consuming domain defines e
 - **Inventory:** Workspace/provider-backed stock and Store product visibility are distinct; Store selection must not imply independent physical stock pools.
 - **Delivery / Finance:** Store-specific customer delivery-price overrides are separate from platform Fee Profile charges and immutable Order snapshots; Finance remains authoritative for ledger/settlement.
 - **Commerce:** Shopify/YouCan connections attach provider-specific accounts to Store scope. Internal Store is not the same thing as external commerce channel.
+- **Shopify COD capture → Orders:** The current checkout-session schema/service carries Store/Workspace/Merchant identity with connection and product scope, snapshots acquisition evidence, and submits a canonical Order on finalization. This is a current source-code chain, but the session migration does not match the Prisma model; deployed availability and end-to-end provenance are not established (EV-STORE-020–021).
 - **Advertising:** Store-level conversion destination selection can exist without turning Store identity into ad attribution.
 - **Team:** Staff Store selection is an additional restriction; Team owns assignment changes, Store management does not grant Staff access.
 - **Home / Analytics / Market Center:** aggregate projections must preserve active Workspace and authorized Store scope and must not infer market demand, decision quality, or profitability from Store count/configuration.
@@ -180,6 +210,7 @@ Potential evidence for Control and Accountability: stable identity, explicit Wor
 - **P2 — Store scope labels:** “Store” can be confused with an external storefront or physical location; existing URL does not establish either. Ensure UI/help text preserves the internal operating identity meaning.
 - **P2 — No deletion or transfer:** intentional V1 preservation is safer for history, but correction of wrong Merchant/Workspace association lacks a self-service path and requires governed support/admin action.
 - **P2 — Metadata history depth:** Audit captures key before/after management changes, but no dedicated Store metadata version/history UI was found.
+- **P1 — New schema/migration contract mismatch:** `CommerceCodCheckoutSession` Prisma model declares `revision`, `upsellDecisionIndex`, composite unique keys and relations to Store/CommerceConnection/Product/ProductStore/Order. `20260927_shopify_cod_checkout_session_v1/migration.sql` creates neither the two declared scalar fields nor the composite unique indexes/foreign-key constraints. If this migration is applied as written against this model, the database will not provide the model's declared contract and runtime operations depending on missing fields/relational integrity may fail or permit inconsistent references. The deployed migration state is **NOT VERIFIED**; confirm/fix migration and exercise generated-client integration before claiming the new Store→checkout→Order chain is operational.
 - **NOT VERIFIED:** production storage durability/backup for private logo files, deployment migrations, production authorization, load/race behavior, usage, and Store-specific outcome improvement.
 
 ## 22. Future Strategic Potential
@@ -213,6 +244,7 @@ Potential evidence for Control and Accountability: stable identity, explicit Wor
 - **Core entity and basic management:** TABLE STAKES / enabling architecture.
 - **Role-aware Workspace/Store scoping:** WOSSOL STRONGER implementation candidate, but comparative strength is not established from current competitor evidence.
 - **Cross-domain Store identity:** POTENTIAL DIFFERENTIATOR if consistently used in a coherent merchant workflow; current data model alone is insufficient.
+- **Store continuity through Shopify COD capture:** POTENTIAL DIFFERENTIATOR / qualified foundation; current P1 code retains scope and acquisition evidence into canonical Order, but migration mismatch and no measured merchant outcome materially limit the claim.
 - **Potential moat:** none established; no Store-specific accumulation or network effect demonstrated.
 - **Confidence:** high for schema/API/UI behavior; moderate for product-wide downstream completeness; low for live production and competitive-depth comparisons.
 
@@ -226,6 +258,7 @@ Potential evidence for Control and Accountability: stable identity, explicit Wor
 | P2 | Clarify internal Store vs external commerce storefront vs warehouse/location in UI terminology. | WORTH ADOPTING | Avoids identity and scope confusion. |
 | P2 | Define a governed correction path for wrong Merchant/Workspace Store ownership if such corrections are operationally needed. | POST-LAUNCH | V1 intentionally forbids transfer/delete. |
 | P2 | Verify durable backup/recovery for private logo storage in deployed environments. | MUST MATCH | Repository inspection shows local private-file implementation, not deployment durability. |
+| P1 | Align the Shopify COD checkout-session SQL migration with the Prisma model (fields, composite keys and foreign keys); verify it with schema/migration validation and DB-backed integration tests. | MUST FIX | Current schema-to-migration mismatch undermines the newly introduced Store-scoped session/order provenance path if the SQL migration is applied as written. |
 
 ## 27. Evidence Register
 
@@ -250,15 +283,29 @@ Potential evidence for Control and Accountability: stable identity, explicit Wor
 | EV-STORE-017 | `STORE_SOURCE_INTEGRATION_IDENTITY_P0_15.md` (historical design) | P4 | Conceptual Store/provider separation only; its “Shopify not live” state is stale against current code and is not used as current truth. |
 | EV-STORE-018 | Backend targeted tests 23/23; frontend targeted tests 8/8; backend/frontend typechecks passed | P2 | Focused verification of Store management, access, UI workspace scope, and type integrity. |
 | EV-STORE-019 | Competitive Intelligence Master v1.0, category baseline and capability matrix | P3 | Store integrations/basic user management are common infrastructure; not a fresh Store model comparison. |
+| EV-STORE-020 | `CommerceCodCheckoutSession` model; `shopify-cod.service.ts` (`syncCheckoutSession`, `scopedCheckoutSession`, `contextForCheckoutSession`, `finalizeCheckoutSession`); focused session tests | P1/P2 | Current committed source carries Merchant/Workspace/Store plus provider/Product scope and acquisition snapshot into session state, then canonical Order ingestion with the same scope. Unit tests cover retry/cursor/finalization concurrency behaviors; they do not establish live DB operation or full provenance quality. |
+| EV-STORE-021 | Prisma `CommerceCodCheckoutSession` / Store relations vs `20260927_shopify_cod_checkout_session_v1/migration.sql` | P1 source contract comparison | Model declares `revision`, `upsellDecisionIndex`, composite unique keys and relational references; SQL creates none of those declared fields/constraints. Deployed migration application/current DB parity is NOT VERIFIED. |
+| EV-STORE-022 | Current Product focused run: `merchant-store-management.service.spec.ts`, `merchant-store-access.service.spec.ts`, `shopify-cod-checkout-session.spec.ts` (19/19); `settings-workspace-scope.spec.ts` and `merchant-shell-order-captures-nav.spec.ts` (6/6) | P2 | Current scoped Store/access, checkout-session unit behaviors, Workspace-bound Store Settings and Shell capture-count navigation passed; mocks/source assertions do not verify database migration or production behavior. |
 
 ## 28. Contradictions & Uncertainty
+
+### C-STORE-001 — Shopify COD checkout-session Prisma model and SQL migration disagree
+
+- **Source A:** `apps/backend/prisma/schema.prisma`, model `CommerceCodCheckoutSession`, declares `revision`, `upsellDecisionIndex`, composite unique keys, and relations to Store, CommerceConnection, Product, ProductStore, and finalized Order.
+- **Source B:** `apps/backend/prisma/migrations/20260927_shopify_cod_checkout_session_v1/migration.sql` creates the session table and basic indexes, but omits `revision`, `upsell_decision_index`, the model's composite unique indexes, and foreign-key constraints.
+- **Nature of conflict:** The Prisma data model describes a stronger, richer relational contract than the committed SQL migration creates.
+- **Evidence strength:** Both are P1 committed product artifacts at Product `933fb7d`; current database/deployed migration state was not inspected.
+- **Working conclusion:** Schema/migration parity is not established. If the SQL is applied as written, it does not implement the checked-in model contract and may prevent operations requiring missing columns or permit invalid cross-scope references. Unit tests use a mocked model and do not resolve this.
+- **Remaining uncertainty:** Whether the migration has been applied, whether another migration or deployment process supplies the omitted objects, and actual DB behavior.
+- **Required verification:** Align migration and Prisma model; inspect deployment migration state; run migration/schema validation and DB-backed session→Order tests.
 
 - Historical Store/Commerce architecture says Shopify install/controller flow was not live; this is stale relative to inspected current Shopify code. It is not used to conclude current Store-provider status.
 - The current Store Management UI spec says disabled Stores are excluded from the operational selector; current Shell context query and selector align by projecting active Stores, while Settings management returns disabled Stores to managers.
 - Store record has independent Merchant and Workspace foreign keys plus a composite unique key used by linked records; the service validates their association through actor context. No independent database relation from Store to `MerchantWorkspace` was found, so cross-link integrity is principally application-enforced at creation.
 - The optional create URL backend validation gap and two-step logo workflow are directly observable in P1. Their production exploitability/frequency is not measured.
 - Disabled records are retained, but access to historical domain records after disable varies by active-query filters and was not exhaustively proven for every domain.
-- Local product checkout advanced during inspection, but the diff was limited to Shopify offer preview files; Store-relevant paths remained unchanged. Production code/deployment remains unverified.
+- Current checkout-session schema models Store and related records with composite scope references, but its same-date SQL migration omits fields/constraints required by that model. Since no database or deployment migration state was inspected, whether this blocks a deployed workflow is unresolved; do not describe the Store→COD session chain as verified in production.
+- Product's local working tree was clean when the committed source was first recorded, but 14 unrelated Orders/Confirmation/Analytics/admin paths were modified by the final check. They were not inspected as Store truth or modified by this audit; any effect they may have on downstream operations is excluded, and the local checkout is no longer clean.
 
 ## 29. Open Questions
 
@@ -267,15 +314,17 @@ Potential evidence for Control and Accountability: stable identity, explicit Wor
 3. What precise URL semantics are intended (display-only, commerce site, or verified external identity), and should create/edit share one backend policy?
 4. Is there a supported Admin-side correction path for incorrectly assigned Merchant/Workspace ownership, and what approval/audit controls govern it?
 5. What production object/file storage and backup policy guarantees logo durability across instances?
+6. Has `20260927_shopify_cod_checkout_session_v1` been applied anywhere, and if so, how does its live schema compare with the Prisma model's `revision`, decision cursor, composite keys and foreign-key relations?
+7. Do DB-backed tests confirm Store identity and acquisition evidence survive Shopify COD session finalization into the canonical Order and downstream outcomes?
 
 ## 30. Methodology Learnings
 
-For a cross-domain entity audit, distinguish **identity**, **scope**, **selector projection**, **authorization**, and **domain-owned records**; similarly, distinguish record retention from merchant-visible historical access. No methodology change proposed because existing source-state, boundary and owner-domain lenses cover the reusable questions.
+For a cross-domain entity audit, distinguish **identity**, **scope**, **selector projection**, **authorization**, and **domain-owned records**; similarly, distinguish record retention from merchant-visible historical access. No methodology change proposed because existing source-state, boundary and owner-domain lenses cover the reusable questions. Self-critique: the new Shopify COD chain is easy to overstate from the model/service alone; SQL omits declared contract elements, tests mock persistence, no deployed DB was inspected, and merchant outcomes are absent. Its value remains a qualified source-level foundation, not a proven working compound advantage.
 
 ## 31. Retroactive Review Impact
 
-No methodology change requiring a retroactive review was made. No prior accepted section requires correction. The Stores audit confirms the Integrations review’s direction to keep internal Store scope/identity separate from external commerce-channel functionality.
+No methodology change requiring a retroactive review was made. This is the requested incremental V1.2 migration for `RR-V12-014`; it adds a Store-linked COD→Order chain and a schema/migration risk. The established cross-section rule remains: internal Store scope/identity is separate from external commerce-channel functionality. Current Director Quality Gate remains pending.
 
 ## 32. Canonical Section Takeaway
 
-Wossol Store is a provider-neutral Merchant operating identity nested in a Workspace, not automatically an external shop or physical inventory pool. Owner/Admin self-service lifecycle, active Workspace context, layered Staff Store scope and domain-owned Store relationships form useful operating infrastructure. This is table-stakes/foundational value rather than a proven differentiator. Keep All Stores Workspace-bounded and Store permissions additive to other access gates. Close the create-time URL validation gap and the partial Store-create/logo retry path; retain disabled history without confusing retention with active operation or guaranteed historical visibility.
+Wossol Store is a provider-neutral Merchant operating identity nested in a Workspace, not automatically an external shop or physical inventory pool. Owner/Admin self-service lifecycle, active Workspace context, layered Staff Store scope and domain-owned Store relationships form foundational operating infrastructure. Shopify COD source shows Store scope can continue into a temporary checkout session and canonical Order, but the associated SQL migration does not encode the full Prisma model contract, and production operation is unverified. This is not a proven differentiator. Keep All Stores Workspace-bounded and Store permissions additive to other access gates; retain prior URL validation, partial-create/logo recovery, disabled-history, terminology and deployment issues.
