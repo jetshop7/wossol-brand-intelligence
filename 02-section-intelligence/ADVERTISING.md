@@ -8,6 +8,7 @@
 - **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, `0d78ce6cceabd6495382a0a7501ca584fd74f914` at audit start, clean and synchronized with `origin/main` before inspection.
 - **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `8600a4cbd1a894579a057b3476db35465289c670`, clean and tracking `origin/dev/wossol-integration`; inspected read-only.
 - **Evidence standard:** P1 executable source/schema, P2 focused tests/typechecks, P3 current merchant UI spec/current master architecture, and P4 historical design notes only when qualified. Source inspection does not prove deployment, real provider acceptance, data completeness at scale, merchant adoption, legal compliance, or business outcomes.
+- **V1.2 incremental review:** 2026-09-27, Methodology `00-methodology/MASTER_INSTRUCTIONS.md` v1.2; Intelligence `main` at `475c25dc8e2a4cf7e0013a4c71b6d673ea994c23` before this update. Product committed HEAD `ac51f387bc65ab33d5827074a787ac6384609161`, branch `dev/wossol-integration`, matched `origin/dev/wossol-integration`; Product checkout had unrelated uncommitted Shopify upsell edits outside the inspected Advertising/Orders files, preserved and excluded. Incremental findings below do not replace or extend the 2026-09-26 Director acceptance; V1.2 Quality Gate is pending.
 
 ### Targeted source-delta reconciliation — 2026-09-26
 
@@ -32,6 +33,7 @@ This is a targeted P1 source delta only, not a repeat audit or a new Director ac
 | Schema, connected domains, product documents | Advertising schema/migrations, Analytics, Orders, Finance, current vs historical specs | EV-ADV-011–013 |
 | Verification | Advertising backend specs, typechecks, source state | EV-ADV-014 |
 | Competitive comparison | stable competitive master only; competitor claims not re-verified live in this audit | EV-ADV-015 |
+| V1.2 Ads→Order referral continuity and Meta One Connect | exact Messenger referral identity resolution, source-separated authorization/credential owners, downstream outcome boundary | EV-ADV-016–018 |
 
 Not inspected/verified: production deployment and database state, connected Meta/TikTok accounts, real sync freshness/volume, live Meta event acceptance or Ads Manager results, privacy/legal basis and consent implementation, merchant usage/conversion outcomes, current competitor private capabilities.
 
@@ -252,3 +254,41 @@ No methodology change; no retroactive queue update required. The fetched `04-rev
 ## 32. Canonical Section Takeaway
 
 Wossol has a substantial Meta-specific advertising evidence subsystem: safe connection lifecycle, durable structure and daily reporting, exact-match acquisition evidence, merchant-controlled product mapping, and a separate narrow Purchase event pathway. It should currently be described as evidence-aware Meta visibility and integration—not cross-channel attribution, complete ROAS, causal intelligence, privacy certification, or automated advertising optimization. TikTok reporting, live provider acceptance, complete commerce outcome linkage, and realized merchant value remain unverified or absent.
+
+## 33. V1.2 Incremental Migration — Delta Review (2026-09-27)
+
+This is an incremental review against the accepted V1.1 baseline, prompted by `RR-V12-007`; it is not a full re-audit or a new Director decision. The prior `ADVERTISING_REVIEW_2026-09-26.md` remains authoritative for the earlier gate and its open issues. This pass reconciles relevant committed changes through Product `ac51f387bc65ab33d5827074a787ac6384609161` and carries forward, rather than closes, the existing questions about live Meta runtime, reporting freshness/revisions, CAPI acceptance, privacy/legal governance, attribution coverage, provider breadth, optimization closure, and production DB behavior.
+
+### Meta One Connect: less repeated setup, not one authority
+
+The current callback independently discovers Meta Ad Accounts and Facebook Pages, logs bounded/sanitized discovery and effective-grant diagnostics, and can retain a completed Advertising connection when Messaging Page candidate handling fails. It does not auto-connect Pages: the merchant must explicitly select candidates through a continuation. The selected Page is provisioned into Messaging-owned scoped connection/credential state; Advertising continues to own the Ad Account connection and token lifecycle. The merchant UI presents a credential-free Page connection projection. Thus, One Connect reduces repeated Meta authorization/setup across these workflows, but it does not merge their authority, permissions, credentials, or runtime behavior, and no measured time saving or live Meta acceptance is established.
+
+The HTTP selection flow is entered under Advertising connection-management authorization, while the Messaging onboarding service enforces Messaging connection-management authority and scope. Completion therefore depends on both domain permissions; the shared authorization entry must not be described as bypassing Messaging authorization. Discovery/selection and provisioning failures are separately represented, and a healthy Ad Account authorization is retained on a Page-side partial failure. The implementation does not prove deployed OAuth scopes, suitable live assets, or production behavior. Relevant P1 paths: `apps/backend/src/modules/advertising/meta-oauth.service.ts`, `meta-graph.client.ts`, `merchant-advertising.service.ts`, Advertising OAuth controller; `apps/backend/src/modules/messaging/messaging-meta-messenger-onboarding.service.ts`; merchant Advertising Meta page.
+
+### Messenger referral → canonical Order → economic boundary
+
+V1.2 adds a conditional source-continuity edge: when an eligible Messenger capture carries exactly one Meta `ADS` referral touch, Orders passes that exact provider Ad ID and its current Workspace/Merchant scope to `resolveMessengerReferralAd` within the Order transaction. The Advertising resolver accepts only a unique scoped Meta Ad entity, then follows only its canonical `PRIMARY_PARENT` relationships through Ad Set and Campaign. It performs no provider lookup or hierarchy guessing. Missing/ambiguous identity remains unresolved; a deterministic Ads claim that conflicts/ambiguously resolves fails closed rather than being silently treated as unattributed. The resulting evidence is persisted on canonical Order attribution with source `MESSAGING_REFERRAL`.
+
+This strengthens exact source provenance from a Messaging capture into Orders when the Ad graph already exists and is unambiguous. It does not establish referral coverage, capture freshness/window semantics, thread identity, identity across the wider conversation, Ads conversion credit, delivery/collection, or causal campaign performance. It also does not close the full population gap: Messaging review notes missing freshness/window and discarded referral `ref`; those limitations constrain this join. No missing link is inferred from provider metrics.
+
+Beyond this exact edge, outcome authority remains distributed: Orders owns lifecycle and attribution history; Tracking/Delivery owns delivery evidence; Finance owns human collection/ledger evidence; Inventory owns FIFO cost allocations; Analytics combines selected domain inputs under its own cohort and calculation rules. The V1.2 Analytics Test Order/population issue and Finance-vs-Inventory cost ownership remain material. Accordingly, provider spend/results, exact acquisition evidence, delivered Orders, recognized collections, and Analytics economics are distinct populations/facts—not a verified Ads-to-profit funnel or ROAS. Advertising adds provenance to the chain, not end-to-end outcome closure.
+
+### V1.2 merchant work, decision effort, and claim boundary
+
+Current system evidence supports two bounded work reductions: a shared Meta authorization route can avoid repeating OAuth for Ads and selected Messenger Page setup, and an exact referral can avoid reconstructing the captured Ad identity later when creating the Order. Both remain conditional on permission, provider behavior, selected Page/capture path, surviving referral evidence and an exact canonical Ad graph. Neither is quantified. Persisted reporting and explicit separation of provider Results from Wossol Outcomes also reduce the effort of distinguishing platform-reported conversions from exact Order evidence. They do not answer full-funnel conversion or profitability without compatible, complete downstream populations.
+
+Safe V1.2 phrasing: **“Authorize Meta for Wossol Advertising, optionally select Facebook Pages for the separately permissioned Messaging connection, and preserve an exact Messenger Ad referral on a canonical Order when it resolves to the scoped Meta Ad graph.”** This describes source behavior only; availability, provider/runtime acceptance, coverage, speed improvement and economics are not implied.
+
+Competitive distinctiveness remains unverified against current competitor products. The available competitive master does not support a uniqueness or superiority conclusion for this new continuity seam. No change to methodology or other accepted section truth is required from this incremental review. The Director’s V1.2 Quality Gate remains pending.
+
+## 34. V1.2 Evidence Additions
+
+| Evidence ID | Current source | What it establishes / does not establish |
+|---|---|---|
+| EV-ADV-016 | `apps/backend/src/modules/advertising/meta-oauth.service.ts`, `meta-graph.client.ts`, `merchant-advertising.service.ts`; Advertising OAuth routes; Messaging `messaging-meta-messenger-onboarding.service.ts`; merchant Advertising Meta page and focused specs | Independent bounded Ads/Page discovery, safe grant diagnostics, explicit Page selection, separate Advertising/Messaging authority and partial outcomes; not live scopes, deployed authorization or provider acceptance |
+| EV-ADV-017 | `apps/backend/src/modules/advertising/advertising-acquisition-evidence-resolver.service.ts::resolveMessengerReferralAd`; `apps/backend/src/modules/orders/orders.service.ts::messagingCaptureAttributionInTransaction`; attribution/resolver specs | Exact scoped Messenger Ads referral → canonical Order evidence, only via unique Ad and canonical PRIMARY_PARENT graph; no provider I/O/fuzzy matching; not referral coverage, freshness or conversion credit |
+| EV-ADV-018 | Product state: `ac51f387bc65ab33d5827074a787ac6384609161`, remote branch matched; current Product checkout contained uncommitted Shopify upsell files outside inspected paths | Source-state boundary for this migration; unrelated uncommitted changes excluded and preserved. Selected test run could not complete because the execution runner failed (`Stack overflow`, pipe closed); no new V1.2 test pass is claimed. Prior V1.1 test/typecheck result remains historical only. |
+
+## 35. V1.2 Retroactive Review Impact
+
+`RR-V12-007` is updated by this incremental migration. Preserve the conditional Messaging-referral → exact Advertising graph → Order edge and the absence of a verified delivered/economic Ads funnel in later synthesis. Analytics, Messaging, Orders, Tracking/Delivery, and Finance retain their owner-specific source/population boundaries. No additional retroactive queue item or methodology change is proposed. Director Quality Gate pending.
