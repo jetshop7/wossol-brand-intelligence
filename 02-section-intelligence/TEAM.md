@@ -2,11 +2,11 @@
 
 ## 1. Audit Metadata
 
-- **Audit date:** 2026-09-26.
-- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.1; `00-methodology/CODEX_OPERATING_PROTOCOL.md` v1.0.
+- **Audit date:** 2026-09-27 (V1.2 incremental re-audit; prior accepted V1.1 findings retained).
+- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.2; `00-methodology/CODEX_OPERATING_PROTOCOL.md` v1.0.
 - **Competitive reference:** `01-competitive/WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.0 (2026-09-09).
-- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, synchronized at `cddd1c077a30390d1d8fa781d357666dbeb02fdb` at audit start; clean.
-- **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `de2bb9bad7c39ce8f6ccf2d237a36cea1a82fb98`, clean and equal to local `origin/dev/wossol-integration`; inspected read-only.
+- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, synchronized at `7a11e02d939132cc89de0a6def195e07d1fece3d` at audit start; clean.
+- **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `933fb7d3431fc32de2473b4e45c2289e00111463`; local tracking ref matched HEAD (remote not freshly fetched); checkout dirty with 24 pre-existing paths (20 modified, 4 untracked) in Analytics, Confirmation, Orders, admin/frontend projections, execution and integration docs. No Team-owned paths were dirty; inspected relevant sources read-only and excluded unrelated dirty content from product claims.
 - **Evidence standard:** P1 executable source/schema, P2 targeted tests, P3 current product/architecture specifications, P4 historical design. Repository evidence establishes implementation intent/current source, not production deployment, tenant configuration, or outcomes.
 
 ## 2. Audit Coverage Map
@@ -19,6 +19,7 @@
 | Operational staffing | Confirmation assignment surface and distinct worker domains | EV-TEAM-013–015 |
 | Verification | Targeted tests and source-state checks | EV-TEAM-016 |
 | Competition | Existing competitive master baseline | EV-TEAM-017 |
+| V1.2 value extraction and fresh targeted verification | Jobs/friction/context/provenance/connected domain value; current Team UI and backend authorization suites | EV-TEAM-018–020 |
 
 Not established: production deployment/feature flags, live authorization data, incident rates, password-reset delivery/security outside the repository, complete parity of every domain endpoint with UI section gates, nor competitor implementation depth beyond the competitive master’s documented coverage.
 
@@ -85,7 +86,13 @@ Merchant member create/edit/access/reset/disable/reactivate actions emit audit e
 
 ## 10. Merchant Value Extraction
 
-Team access administration can reduce reliance on shared credentials and platform support, and can narrow which merchant users can operate in which Workspaces, sections, and Stores. These are plausible operational benefits, not measured results. The real security value depends on consistency of downstream endpoint enforcement and correct configuration; a role editor alone is not evidence of end-to-end least privilege.
+**Merchant jobs and friction:** owners/admins create and maintain merchant identities, select the Workspace/section/Store access envelope, and handle reset, disable, and reactivation. The integrated surface avoids the need to configure these particular access records in a separate Team tool, but there is no evidence that Wossol replaces an external identity provider, password-delivery channel, or a merchant’s broader workforce stack. It can plausibly reduce manual coordination and shared-credential dependence; setup time, support burden, access errors, and incident outcomes are unmeasured.
+
+**Context continuity and trust:** identity, Merchant membership, role assignments, section and Store grants, and lifecycle audit records connect an access decision to the merchant context. Material changes increment `sessionVersion`, invalidating stale sessions. Internal employee assignments retain a separate Workspace and permission context. These are configuration and accountability foundations, not proof of a comprehensive user-visible event history, retention/monitoring, or attribution completeness for every downstream action.
+
+**Operational → economic → decision value:** Team governs who may enter or act in downstream domains; it does not itself create operational outcomes, financial truth, recommendations, or decision intelligence. Reduced unauthorized access and clearer accountability are plausible enabling/economic benefits conditional on enforcement and correct grants, not demonstrated outcomes. No Team-generated decision asset or learning loop was found.
+
+**Connected-domain value / second-pass synthesis:** Merchant Team access is a prerequisite/control layer for Orders, Products, Inventory, Stores, Finance, Analytics, and other merchant surfaces, while Confirmation and Tracking staffing follow separate operational authority models. This connection is useful only insofar as each owner API applies its own resource and scope checks. The re-audit did not build the cross-domain route→guard→service matrix; consequently, no platform-wide least-privilege or “one team controls the business” conclusion is supported. The retained section/Store grant behavior on disable/reactivate is a counterexample to assuming lifecycle revocation permanently removes access.
 
 ## 11. Feature Clusters
 
@@ -191,6 +198,9 @@ Team can support trust in multi-user operations when permissions remain understa
 | EV-TEAM-015 | Tracking worker/team lead is another distinct operational workforce domain | P3 `docs/wossol-system-design/01-system-design/admin-platform/tracking/Tracking Worker — Official System Design Document.md`; `Tracking Team Lead.md` |
 | EV-TEAM-016 | Product source branch/commit and clean state | Read-only Git state check at audit start/final verification |
 | EV-TEAM-017 | Basic team/user management is common category capability; depth is the relevant comparison | P3 `01-competitive/WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` |
+| EV-TEAM-018 | Targeted current Merchant Team UI regression checks (8 passing) | P2 `apps/frontend/src/app/merchant/team/merchant-team-workflow.spec.ts`, run 2026-09-27 |
+| EV-TEAM-019 | Focused current backend access/Team/Store/employee regression checks (35 passing) | P2 merchant-portal, merchant-store-management, merchant-store-access, merchant-section-access, and admin-employees specs, run 2026-09-27 |
+| EV-TEAM-020 | Team administration configures downstream access but does not establish downstream outcomes/decision intelligence; lifecycle grants and enforcement caveats persist | P1 service and guard traces summarized in EV-TEAM-002–010; V1.2 synthesis and limits recorded in §10 and §21 |
 
 ## 25. Confidence Assessment
 
@@ -203,11 +213,11 @@ Team can support trust in multi-user operations when permissions remain understa
 
 ## 26. Source-State & Verification Notes
 
-Product checkout was clean at `de2bb9bad7c39ce8f6ccf2d237a36cea1a82fb98` on `dev/wossol-integration` and matched `origin/dev/wossol-integration` at inspection. Product files were not modified. Focused source/spec inspection covered Merchant Team UI/service/controller/schema and tests; Internal Employee service/controller/spec/schema; Shell navigation; and Confirmation team UI plus current worker specifications. No production deployment or live data was queried.
+Product checkout was at `933fb7d3431fc32de2473b4e45c2289e00111463` on `dev/wossol-integration`; local tracking ref matched, but no fresh Product fetch was performed. The checkout was already dirty (20 modified, 4 untracked paths, unrelated to Team); Product files were not modified. Compared with the prior Team evidence commit `de2bb9bad7c39ce8f6ccf2d237a36cea1a82fb98`, the relevant committed delta was MerchantShell navigation only; Team service/controller/schema and Internal Employee authority sources remained unchanged. Targeted UI workflow suite passed 8/8. Focused backend merchant-portal, Store access/management, section access, and Admin Employees suites passed 35/35. These are targeted regression checks, not a full suite, security assessment, production check, or complete route authorization matrix. No production deployment or live data was queried.
 
 ## 27. Methodology / Retroactive Review
 
-No methodology change is proposed. The Stores review record dated 2026-09-26 is applied as a cross-section constraint: Store grants remain additional restrictions and are never treated as independent authorization. No retroactive audit correction is triggered by this Team audit.
+No methodology change is proposed. V1.2 was applied to the existing Team evidence without replacing prior findings: the merchant’s access-administration job and friction, context continuity, provenance, downstream operational/economic/decision chain, and connected-domain dependencies are now explicit. The Stores review record dated 2026-09-26 remains a cross-section constraint: Store grants are additional restrictions, never independent authorization. This incremental pass does not replace the prior Director review; current Director Quality Gate is pending.
 
 ## 28. Open Questions / Blockers
 
@@ -229,4 +239,4 @@ Build a cross-domain authorization matrix from route → guard → service scope
 
 ## 32. Canonical Section Takeaway
 
-Wossol’s Team capability is a set of **three distinct control domains**, not a unified workforce manager: merchant-user access administration, internal employee authority, and operational worker assignment. Merchant Team’s composable scopes and audited lifecycle are useful enabling controls, but their security value depends on downstream enforcement and they are not, by themselves, differentiated or outcome-proven.
+Wossol’s Team capability is a set of **three distinct control domains**, not a unified workforce manager: merchant-user access administration, internal employee authority, and operational worker assignment. The merchant surface connects identity, access scope, lifecycle, and audit context, but does not itself deliver operational/economic outcomes or decision intelligence. Its security value depends on downstream enforcement; retained grants may return on reactivation, and the capability is not comparatively differentiated or outcome-proven.
