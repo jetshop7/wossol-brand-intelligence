@@ -2,11 +2,13 @@
 
 ## 1. Audit Metadata
 
-- **Audit date:** 2026-09-25.
-- **Methodology:** `MASTER_INSTRUCTIONS.md` v1.1; current operating protocol.
+- **Original audit date:** 2026-09-25.
+- **Latest migration review:** 2026-09-27, incremental V1.2 re-audit; Director Quality Gate pending.
+- **Methodology:** Original evidence captured under `MASTER_INSTRUCTIONS.md` v1.1; this incremental migration applies v1.2.
 - **Competitive reference:** `WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.
 - **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, `2066f46`, clean and synchronized before inspection.
-- **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `e3912a967827bde06450d3510228e5a5ca9e78a7`, clean.
+- **Original Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `e3912a967827bde06450d3510228e5a5ca9e78a7`, clean at original audit.
+- **V1.2 Product source:** `dev/wossol-integration`, `46716c433de40fbdbeb023d297d167c49909b380`; remote branch tip matched at verification. The working tree contains four uncommitted Commerce/Orders/Shopify files outside Inventory. They were preserved and not treated as committed product truth; they may affect incoming Order classification and therefore remain a connected-source caveat.
 - **Evidence basis:** P1 executable code/schema, P2 focused automated tests and typechecks, P3 Final V1 Inventory UI specification, and P4 dated/architecture material only where explicitly qualified. Static evidence does not prove deployment, live provider connectivity, data quality, or merchant adoption.
 
 ## 2. Audit Coverage Map
@@ -19,6 +21,7 @@
 | Cost provenance | approved-receipt layers, FIFO allocation, controlled corrections | EV-INV-010 |
 | Data model and connected domains | mappings, reservations, movements, shipping/pickup/order signals | EV-INV-011–012 |
 | Verification and specification comparison | focused tests/typechecks; Final V1 contract comparison | EV-INV-013–014 |
+| V1.2 connected-domain pass | Inventory→Orders→Finance→Analytics evidence chain; Inventory exclusion of Test Orders; checkout-local changes considered but not adopted as committed truth | EV-INV-015–018 |
 
 Not inspected as live fact: Accurate/Mayar account behavior, production sync history, production database values, provider latency, warehouse operations, merchant decisions, or commercial outcomes.
 
@@ -299,8 +302,69 @@ No reusable methodology change identified. The existing hierarchy was sufficient
 
 ## 31. Retroactive Review Impact
 
-No methodology change and no retroactive queue entry. Inventory findings should inform future audits of External Shipping, Local Pickup, Finance, and provider integration, but they do not justify changing completed section records.
+At the original V1.1 audit, no methodology change or retroactive queue entry was identified. The later V1.2 methodology migration is recorded in §33–34 and queue item `RR-V12-005`; related Inventory findings should inform future External Shipping, Local Pickup, Finance, and provider-integration reviews.
 
 ## 32. Canonical Section Takeaway
 
 Inventory is Wossol’s evidence-aware operational stock decision surface: it protects provider-backed availability through reservation and synchronization lag, keeps inbound/demand awareness distinct from stock, and offers an explainable replenishment review only when evidence is fresh enough. Its strongest current claim is disciplined inventory decision support—not prediction, autonomous procurement, or warehouse control—and its Final V1 contract contradictions need resolution before the capability is marketed more broadly.
+
+## 33. V1.2 Incremental Migration — Delta Review (2026-09-27)
+
+### Source and migration boundary
+
+This is an incremental V1.2 migration of the accepted V1.1 audit, not a fresh audit or a Director review. The accepted findings and EV-INV-001–014 remain the baseline. No committed Inventory-owned implementation/specification delta was found between the earlier Product snapshot (`e3912a9`) and current branch tip (`46716c4`). The branch is synchronized with its remote, but the Product working tree has four uncommitted files in Commerce/Orders/Shopify. Those changes were read to establish their scope; they are not used as proof of committed behavior and Product files were not modified.
+
+### Prior product truth that remains valid
+
+- Variant/Workspace effective availability is provider-backed on-hand less protected reservations and pending-consumption evidence; unknown/delayed values remain explicit.
+- Inventory keeps expected inbound, waiting-for-stock, confirmed demand, delivery activity, and available quantity distinct. Expected stock informs sizing, not orderable stock.
+- Merchant review captures a decision snapshot; it does not prove recommendation acceptance, causal effect, purchase execution, or a learning loop.
+- Receipt-linked FIFO cost allocations connect confirmed provider outflow to Order Items, with uncovered quantities visible and cost metadata remaining non-authoritative for physical stock.
+- The five Final V1 P3/P1 contradictions and the 2026-09-25 Director decision remain open; this migration does not convert any into “by design” or treat implementation as silent specification approval.
+
+### V1.2 value synthesis
+
+| Lens | Current evidence-based Inventory value | Boundary / remaining work |
+|---|---|---|
+| Merchant job removed/reduced | Reduces the need to separately reconcile provider-backed stock, protected Wossol reservations, selected inbound/demand signals, and recent delivered velocity to get a scoped stock-review candidate. | Does not remove sourcing, supplier follow-up, purchase decision, receipt confirmation, or provider issue resolution. No merchant time study exists. |
+| Tool/process consolidation | Combines provider stock evidence with Wossol Order and inbound awareness in one Variant-level view, rather than requiring those facts to be manually assembled for this review. | Partial consolidation only: no external procurement system replacement, supplier portal, warehouse control, or complete Store-level inventory pool. |
+| Friction and steps | One scoped screen, explainable status/reasons, and a bounded manual sync request reduce some context switching and hand calculation. | Refresh still uses a UI label contrary to the specification; cooldown, unknown stock, and external remediation remain. No quantified steps saved. |
+| Context continuity | Product/Variant identity remains the join key across provider snapshots/movements, Reservations, Orders, inbound records, and cost allocations. | No evidence of complete source identity or traceability for every provider/import path; provider-live behavior is not verified. |
+| Provenance/truth | Immutable provider movement identity and reservation transitions support causal reconciliation; approved receipt evidence seeds cost layers; FIFO allocations preserve covered/uncovered quantity. | Corrections change the current layer unit cost and can affect later Analytics COGS reading that layer; allocation-time immutable cost value was not established by the connected audit. |
+| Decision effort | The live rule explains its evidence and withholds numeric quantity when availability/freshness/velocity is insufficient. | Fixed 30-day target and historical seven-day delivered velocity are not demand forecasts, margin optimization, or recommendations incorporating lead time, seasonality, supplier reliability, or service-level preferences. |
+| Connected value chain | Provider receipt/movement → protected stock/reservation → Order demand/outcome → FIFO allocation → Finance/Analytics economic calculation is materially connected at the evidence/data level. | The economic chain is conditional on authoritative movement, cost completeness and currency/scope compatibility. Inventory does not itself interpret profit or route a decision. |
+| Proof/demo consequence | Demonstrate an in-scope Variant with availability, reservation-protected stock, separate expected/demand values, freshness/reasons, then trace approved receipt/outbound movement into covered and uncovered cost allocation. | Demo must disclose synthetic/test evidence, provider dependency, contract mismatch and incomplete economics; no production accuracy claim. |
+
+### Cross-domain checks and conclusions
+
+1. **Orders → Inventory:** current committed Inventory aggregation explicitly filters Order-derived demand and delivered velocity to `isTestRecord: false`; the focused tests verify Test Orders do not enter each Order-derived Inventory metric or recommendation evidence. This aligns Inventory with Market Center/H-C04 Test exclusion and contrasts with the Test Order leakage in active Merchant Analytics operational/recovery/economic populations. The mismatch is real and section-specific; Inventory’s filtering does not repair Analytics.
+2. **Uncommitted Commerce/Shopify changes:** the local working diff adds a trusted expected Test-purpose signal to a Commerce→Orders path. Since it is uncommitted, it is not treated as shipped behavior. Inventory’s committed filter still relies on persisted canonical `isTestRecord`; whether the incoming-order classification becomes consistently trustworthy must be rechecked after the Product change is committed and integrated.
+3. **External Shipping/Local Pickup → Inventory:** eligible inbound records affect expected stock and the suggestion formula, not effective availability. The current tests affirm inclusion of submitted External Shipping `CREATED` records and Local Pickup Created/In Progress states. The External Shipping `CREATED` inclusion still contradicts the Inventory specification; no source review changes that conclusion.
+4. **Inventory → Finance/Analytics:** confirmed outbound movement consumes FIFO layers and emits explicit uncovered cost evidence. Finance/Analytics can use those allocations for economics, but they do not make Inventory’s recommendation a profitability decision. V1.2 Analytics’ current-layer cost mutability caveat remains relevant; no immutable allocation-time unit-cost snapshot was established here.
+5. **Decision/review feedback:** `REVIEWED` evidence is idempotent and snapshots the decision. No causal action/outcome join, outcome evaluator, or learning update was found; classify as persisted interaction evidence, not feedback learning.
+
+### Strategic delta, strengths, and open risks
+
+- **V1.2 value previously underextracted:** the strongest Inventory value is less merchant-side reconciliation plus preserved operational/economic provenance, not simply a stock dashboard or “smart” label.
+- **Classification:** reservation-aware protected availability and evidence-based FIFO trail remain WOSSOL STRONGER / potential differentiator in combination; stock visibility, low-stock state, inbound awareness, and basic sync remain table stakes. The competitive master provides no basis to claim direct competitors lack this exact capability; comparative depth is INSUFFICIENT EVIDENCE.
+- **Claim safety remains qualified:** a scoped, freshness-aware supply review is a current capability, but expected-stock status conflicts with the approved contract for CREATED External Shipping, decision inputs are narrow, and no production reliability/outcome evidence was added.
+- **Unresolved P3/P1 issues retained:** recommendation/deferred suggestion language; read-only Detail vs permission-gated cost correction; External Shipping CREATED eligibility; `Request Sync` vs `Refresh`; cached/last-calculated vs live-derived evaluation. Each remains a specification/implementation contradiction, not a settled design choice.
+- **Director review remains pending** for the V1.2 migration. The prior Director ACCEPT WITH OPEN PRODUCT ISSUES decision remains intact; this migration does not self-approve or supersede it.
+
+### Verification / evidence added
+
+**EV-INV-015 — Current source and scoped migration**
+**Type:** P1/P2. **Repository:** `jetshop7/wossol-platform`. **Commit:** `46716c433de40fbdbeb023d297d167c49909b380`. **Paths:** Inventory module, Merchant Inventory UI and `docs/ui/merchant/MERCHANT_INVENTORY_UI_SPEC.md`. **Observed:** no committed Inventory-owned source/spec change since the original snapshot; current branch tip equals its configured remote tip; four uncommitted Commerce/Orders/Shopify files were preserved and treated only as an uncertainty boundary. **Confidence:** High for the observed Git state at audit time.
+
+**EV-INV-016 — Order-derived metric exclusion / supply decision boundary**
+**Type:** P1/P2. **Path:** `apps/backend/src/modules/inventory/inventory.service.ts`, Order-derived demand, waiting-stock and delivered-velocity queries; `inventory.service.spec.ts`. **Observed:** relevant Order queries specify `isTestRecord: false`; recommendations are deterministic and freshness-gated, use recent delivered velocity, available/expected stock and waiting demand, and do not claim causal learning. **Capability status:** LIVE, derived. **Confidence:** High for code and focused-test evidence; production data unverified.
+
+**EV-INV-017 — Connected cost/economic chain**
+**Type:** P1/P2. **Paths:** `apps/backend/src/modules/inventory/inventory-cost.service.ts`, Inventory schema; downstream Finance/Analytics section records. **Observed:** approved manifest receipt creates an idempotent cost layer; authoritative outbound movement allocates FIFO quantity, retaining uncovered quantity; Analytics consumes persisted allocations but reads current layer cost. **Caveat:** cost edits may change historical calculated COGS; no immutable allocation-time cost snapshot established. **Confidence:** High for code/data-model behavior, conditional economic interpretation.
+
+**EV-INV-018 — V1.2 focused verification and contract comparison**
+**Type:** P2/P3. **Paths:** `inventory.service.spec.ts`, other `apps/backend/src/modules/inventory/*.spec.ts`; `docs/ui/merchant/MERCHANT_INVENTORY_UI_SPEC.md`. **Observed:** 120/120 focused Inventory backend tests passed, including Test Order exclusion and CREATED expected-inbound behavior; frontend typecheck passed. Backend typecheck failed on three missing `ShopifyCodService.assertSessionClassification` references in the uncommitted `apps/backend/src/modules/shopify/shopify-cod.service.ts` (lines 160, 176, 285), outside Inventory. This run therefore does not establish a clean full-backend typecheck, and no attempt was made to modify or discard the Product working diff. The P3 spec retains the stock, mutability, eligibility, and labeling requirements described in EV-INV-014. **Confidence:** High for completed commands and specification text.
+
+## 34. Retroactive Review Impact
+
+`RR-V12-005` has been migrated and updated in the queue. No methodology change or further retroactive queue item was justified. Carry the Inventory↔Analytics Test Order scope mismatch and mutable cost-layer limitation into any future relevant review; do not expand the current Inventory migration into a recursive Analytics re-audit.
