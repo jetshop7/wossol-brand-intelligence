@@ -1,8 +1,8 @@
-# Shopify Embedded App / COD Commerce Experience — Targeted Source Verification
+# Shopify Embedded App / COD Commerce Experience — V1.2 Migration Re-audit
 
-## 1. Purpose and source state
+## 1. Purpose and historical source state
 
-This bounded verification was required by `04-review-history/PRODUCT_ROUTE_BACKEND_COVERAGE_RECONCILIATION_REVIEW_2026-09-26.md`. It supplements—not replaces or re-audits—the accepted Integrations / Commerce Channels review. Sections 1–9 preserve the exact original source target, Product commit `4e26b4369e6416c22c731b8be706d72562a19d5b`; the separately marked Section 10 records the subsequent targeted delta verification required by `04-review-history/SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE_REVIEW_2026-09-26.md`.
+This supplement began as a targeted verification required by `04-review-history/PRODUCT_ROUTE_BACKEND_COVERAGE_RECONCILIATION_REVIEW_2026-09-26.md`. Sections 1–9 preserve the original Product snapshot `4e26b4369e6416c22c731b8be706d72562a19d5b`; Section 10 preserves the accepted follow-up through `97f9959`. Section 11 is the requested incremental V1.2 re-audit at current Product HEAD. It does not replace the accepted Integrations / Commerce Channels review or claim live Shopify acceptance.
 
 - Product repository: `jetshop7/wossol-platform`.
 - Verification target: commit `4e26b4369e6416c22c731b8be706d72562a19d5b`, branch `dev/wossol-integration` at the time of the Director review.
@@ -146,3 +146,79 @@ Focused result: **110 passed, 2 failed** across the three test invocations conta
 ### Updated disposition
 
 The two original focused failures **persist with materially the same meaning**: one is a brittle/stale textual test contract whose behavioral equivalence is plausible but not resolved in the Product repository; the other is an unresolved customer-facing fixed-Variant presentation contract and must remain an open issue. The new preflight and sequence-uniqueness paths have focused automated coverage, but these tests do not prove live provider behavior or eliminate the two prior caveats. This targeted source delta closes the specific current-HEAD coverage requirement in the Shopify review. It is **not Director acceptance**; Master Synthesis remains pending Director re-review. Do not make current-source, deployed-reliability, conversion, or comparative-superiority claims beyond the evidence above.
+
+## 11. V1.2 Current-Head Migration Re-audit — 2026-09-27
+
+### Source state and delta
+
+- Product: `jetshop7/wossol-platform`, branch `dev/wossol-integration`, commit `2535c07e65b7d6fe047833b881fa2050d474b865`; `origin/dev/wossol-integration` matched HEAD. The working tree was clean at initial inspection; a later final check found an untracked `apps/backend/verify-incomplete-finalization.cjs`. Its contents were not opened or used, it is unrelated to this evidence, and it was not modified. No Product files were modified by this audit.
+- Intelligence: `jetshop7/wossol-brand-intelligence`, `main`, synchronized clean at `f9e64bd616abf8819621ff25a193ca5bf3a69573` before work.
+- Methodology: `MASTER_INSTRUCTIONS.md` v1.2; competitive baseline V1.
+- The current Product commit adds no changes to the Shopify implementation beyond `97f9959`; the intervening `2535c07` changes only an Orders attribution integration spec and execution/change-log docs. The Shopify-relevant committed delta from `97f9959` to current HEAD is in the checkout-session, Offer/Upsell, schema/migration and customer storefront surfaces.
+
+Current inspected areas include App Home/API configuration, Theme App Extension/App Proxy runtime, checkout-session DTO/routes/service/processor, Offers/Upsells configuration and calculation, Checkout Session/Order provenance schema and migrations, Order Projection replay, and focused frontend/backend tests. The canonical Product COD master and accepted Director review `SHOPIFY_COD_INCOMPLETE_CHECKOUT_RECOVERY_REVIEW_2026-09-27.md` were used for contract and cross-domain boundaries. No live Shopify Admin/store, browser session, deployed DB, provider, or production outcomes were available.
+
+### Current Product truth and V1.2 value synthesis
+
+The existing Product-level embedded configuration and Wossol-owned COD storefront remain materially as described in Sections 3–5 and 10: Shopify product-page context enters through a signed App Proxy, exact mapped Wossol Product/Variant and Store scope remain server-derived, base money is fetched/calculated server-side, and one final Commerce ingress creates the canonical Wossol Order. No native Shopify Checkout ingestion or broad catalog/inventory synchronization is established.
+
+Current additions materially deepen the customer workflow:
+
+- Durable Checkout Sessions persist scoped input/commercial/acquisition snapshots and an opaque continuation token; browser storage holds only that token. Revision checks and short leases fence concurrent sync, timeout and Upsell decisions. A background processor recovers due work from the database and performs no provider polling.
+- Order intent freezes the base commercial snapshot and ordered Upsell sequence. Customer Accept/Skip decisions advance a persisted cursor; finalization uses a stable session-derived Commerce identity, normal Order ingress, checkout-origin provenance and a best-effort Shopify Order projection. An idempotent retry can return the finalized result/status URL without re-creating the canonical Order.
+- Upsells now support fixed prices and current-Shopify-price-based percentage/fixed-amount discounts. The backend validates exact mapped Variants and discount bounds and recalculates amounts; it does not rely on browser-submitted money. Embedded configuration adds scoped deletion/resequencing and requires current Shopify prices before discount-rule activation.
+
+**V1.2 job / consolidation / friction:** for a Shopify COD merchant, the connected product-page Wossol form and persisted continuation can preserve a customer’s product, destination, contact, offer and acquisition context. In principle this can avoid reconstructing an eligible interrupted selection; no prior merchant/staff recovery process was validated, and no work/time reduction was measured. This is built-in workflow/context consolidation, not proof that it replaces Shopify checkout, a provider, spreadsheet or separate recovery tool. It still requires Wossol connection/mapping and merchant configuration. For shoppers, the form remains in Shopify storefront context and no separate Wossol account is required at order time; live adoption/usability is not verified.
+
+**Provenance and downstream chain:** bounded landing/referrer/UTM evidence → scoped Checkout Session → one canonical Order with immutable `COMPLETED_CHECKOUT` or `INCOMPLETE_CHECKOUT` origin → normal Confirmation/Inventory/Finance operations. The Director’s accepted recovery review confirms a separate recovery cohort for checkout-performance metrics while recovered canonical Orders remain included in financial/economic Analytics. This supports operational-to-economic continuity, not Meta Purchase reporting, full ad attribution, recommendation, optimization or learning. A distinct recovered-confirmation metric is evidence of measurement, not proof that recovery causes incremental sales.
+
+**Important eligibility boundary:** code allows a due `COLLECTING` session with `orderReady=true` to finalize as `INCOMPLETE_CHECKOUT` after the 30-minute TTL, although no `Order Now` transition has occurred; an unready session is expired and its customer/acquisition snapshots are cleared. The shopper can enter a valid phone and a currently orderable selection before pressing the final action. The Product COD master source describes “eligible incomplete checkout” recovery but does not define this exact threshold or required notice in its reviewed text. The prior Director review accepts incomplete-checkout recovery semantics but still requires targeted browser acceptance. Merchant/customer notice, consent/intent threshold, denominator semantics, cancellation handling and production behavior for this pre-Order-Now conversion therefore remain explicit verification items; do not call every recovered Order an abandoned purchase recovered or assume incrementality.
+
+**Proof / demo consequence:** show Product mapping/readiness and configuration → Shopify product-page quote → valid contact and Checkout Session → explicit Order Now and persisted Upsell Accept/Skip → one canonical Order, then separately show timeout recovery and its `INCOMPLETE_CHECKOUT` label. Demonstrate that a session may auto-finalize after timeout before explicit Order Now and explain the consequence. Show recovery analytics separate from standard checkout performance and inclusive of real economics. Do not imply native Shopify Checkout, guaranteed customer consent, a delivered order, profitable recovery or ad-platform Purchase events.
+
+### Migration delta review
+
+| Question | V1.2 finding |
+|---|---|
+| Prior truth retained | Exact mapped Product/Variant and Store scope, server-side quote/order authority, Offer/Upsell validation, one canonical Wossol Order handoff and owner-domain lifecycle remain supported. Prior open issues (shop-domain vs per-person access, fixed-Variant presentation test, live/browser acceptance and outcome proof) are preserved. |
+| Product truth changed since last supplement | Durable session persistence, optimistic revision/lease handling, timeout recovery, persisted Upsell decision cursor, percentage/fixed-amount discount rules, Upsell deletion/resequencing, and forward SQL hardening were added after the `97f9959` supplement target. The latest Product commit `23fd265` → `2535c07` itself changes no Shopify source. |
+| V1.2 value previously missed | More than configuration/integration: the workflow can preserve in-progress shopper and acquisition context through a resumable, server-authoritative sequence and link eligible recovery into canonical operational/economic outcomes. Its realized value and eligibility/intent boundary remain unverified. |
+| Connected evidence added | Checkout Session → Order capture origin → Confirmation/recovery projection and distinct checkout-performance vs inclusive economic populations, per the Director-accepted recovery review at Product `23fd2657`. The most recent Product commit changes no Analytics/Confirmation source. |
+| Strategic/marketing conclusion changed | The Shopify COD experience is now a stronger potential context-continuity and recovery-workflow foundation, but still not an established conversion differentiator or learning engine. Use “records eligible incomplete checkout context as a separately identified Wossol Order” only with clear qualification; no lift/sales claim. |
+| Queue | RR-V12-019 marked UPDATED; current Director V1.2 Quality Gate pending. |
+
+### Current verification
+
+| Focused check | Result |
+|---|---|
+| Backend Shopify COD session, COD service, Offers/Upsells, commercial calculator and Order Projection tests | 64/64 passed. |
+| `shopify-cod-acceptance.spec.ts` | 3/4 passed; the existing snapshot source-text assertion still expects literal `trustedCommerceCommercialSnapshot ?? null`. This is an unresolved brittle/contract test mismatch, not a demonstrated runtime pricing defect. |
+| Shopify App Home / embedded management / Offers-Upsells frontend source tests | 46/46 passed. |
+| Storefront CJS + Theme App Extension tests | 46/48 passed. Two failures remain: a test expects the pre-session `fields.requestSubmit()` flow; the current session/intent route does not use that contract. The fixed-Variant presentation expectation remains unresolved and is not dismissed as stale. |
+| `pnpm shopify:cod:runtime:check` | Passed; generated runtime matches authored source. |
+| Backend `pnpm typecheck` | Passed. |
+| Prisma CLI schema validation | NOT RUN: the Prisma executable was unavailable in this workspace. Migration files were read and compared with the schema, but deployed migration state / DB parity was not inspected. |
+
+Across these invocations: **159 passed, 3 failed**. No DB integration or live/browser acceptance. The forward hardening migration adds the previously missing session concurrency fields and scoped foreign-key constraints; deployment/application remains NOT VERIFIED. Continue to treat the checkout-session persistence contract as unverified in a deployed database until migration execution and DB-backed tests are demonstrated.
+
+### V1.2 review disposition and open risks
+
+1. Retain all earlier open issues, especially embedded staff authorization semantics, fixed-Variant shopper presentation, no native Shopify Checkout intake, and no live end-to-end evidence.
+2. Preserve the earlier open question that `setUpsellActive` does not enforce the configured target-Variant exclusivity invariant for pre-existing duplicate Upsells; create/update checks are not a global guarantee.
+3. Verify whether a still-open `COLLECTING/orderReady` session should create an Order after timeout without explicit Order Now, including customer notice/consent, duplicate/recovery behavior, cancellation and merchant-facing semantics.
+4. Reconcile discount Upsell display with acceptance: available prices are calculated at projection time, while acceptance re-fetches current Shopify Variant price. A price change between display and Accept may produce a different charged line; freeze the accepted/displayed amount or refresh and disclose it if required by product policy.
+5. Validate both current failing storefront assertions and the Orders snapshot assertion against the intended current contract; do not mark them resolved by inference.
+6. Validate initial + hardening migrations, generated Prisma schema, scope constraints, cleanup/retention of customer PII and retry behavior in a real DB/deployed configuration.
+7. Keep separate checkout recovery and standard performance populations; recovered canonical Orders remain economically real, but recovered-confirmed/captured is not incremental sales or ad attribution.
+8. No current direct competitor depth check, conversion/AOV/profit measure, live install or production behavior establishes competitive advantage or a moat.
+
+**Disposition:** V1.2 migration analysis is documented; Product truth remains source-backed, with the above product/runtime blockers visible. This is not Director acceptance. Current Director Quality Gate remains pending before synthesis may treat this migration as reviewed.
+
+### V1.2 evidence register additions
+
+| ID | Current source at Product `2535c07e` | Supports | Limitation |
+|---|---|---|---|
+| EV-IC-032 | `apps/backend/src/modules/shopify/shopify-cod.service.ts` (`syncCheckoutSession`, `confirmCheckoutIntent`, `decideCheckoutUpsell`, `processDueCheckoutSessions`, `finalizeCheckoutSession`); `shopify-cod-checkout-session.processor.ts`; session model and initial/hardening migrations | Opaque-token continuation; scoped session snapshots; 30-minute expiry; persisted intent/decision cursor; lease/CAS-protected recovery and one canonical Order boundary | Unit/source tests do not establish consent policy, deployed DB parity, retention, or live behavior. |
+| EV-IC-033 | `shopify-cod-offers-upsells.service.ts` (`parseUpsellPriceRule`, `resolveUpsellUnitPrice`, `assertActivatableUpsellPriceRule`, `deleteUpsell`); embedded Upsell API/editor and tests | Fixed and percentage/fixed-amount discounts, server-side price calculation, mapped Variant validation, deletion/resequencing | No measured conversion/profit; shopper-visible price can be based on earlier Shopify price than the acceptance re-fetch. Existing activation path does not establish sequence-wide exclusivity for prior duplicate rows. |
+| EV-IC-034 | `extensions/wossol-cod-form/assets/wossol-cod-form-runtime.js` and `.spec.js`; `tests/shopify/wossol-cod-form.test.cjs`; `scripts/build-shopify-cod-runtime.cjs` | Checkout session transport, customer-visible Upsell flow, generated-runtime consistency | Storefront focused specs 46/48 pass; failures retain pre-session submit-contract and fixed-Variant presentation questions. No browser acceptance. |
+| EV-IC-035 | `apps/backend/src/modules/analytics/merchant-analytics.service.ts`; `apps/backend/src/modules/analytics/analytics.service.ts`; `04-review-history/SHOPIFY_COD_INCOMPLETE_CHECKOUT_RECOVERY_REVIEW_2026-09-27.md` (Director accepted at Product `23fd2657`) | Distinguishes incomplete recovery from standard checkout performance while preserving canonical recovered Orders in economic truth | Downstream Analytics was not changed by Product `2535c07`; no campaign attribution or learning loop. |
