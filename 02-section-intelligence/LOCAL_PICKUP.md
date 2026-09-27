@@ -2,11 +2,11 @@
 
 ## 1. Audit Metadata
 
-- **Audit date:** 2026-09-26.
-- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.1; `CODEX_OPERATING_PROTOCOL.md` v1.0.
+- **Audit date:** 2026-09-27 (incremental V1.2 migration re-audit; retains the prior accepted review and open product issues).
+- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.2; `CODEX_OPERATING_PROTOCOL.md` v1.1.
 - **Competitive reference:** `01-competitive/WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.
-- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, synchronized clean to `1826777c73a1e761f24084c5f6f286d02e2a1fc4` before task interpretation.
-- **Product source:** `jetshop7/wossol-platform`, branch `dev/wossol-integration`, commit `020593219001f857cace7bf80ad80fe2930319d4`, clean and equal to upstream at initial inspection. Final source-state verification is recorded in handoff.
+- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, synchronized clean to `cadfb6170ff1983acd3ec5ff206403940a3d6e07` before task interpretation.
+- **Product source:** `jetshop7/wossol-platform`, branch `dev/wossol-integration`, commit `23fd26572fb82ff86b74539e40eb0e1181bb07f3`; tracking ref reported equal at inspection (Product remote not freshly fetched). One uncommitted change was present in `apps/backend/src/modules/orders/orders-messaging-attribution.postgres.integration.spec.ts`; it is unrelated, was not read as evidence, and was not modified. Relevant Local Pickup UI/API/service/schema/design files had no committed changes between Product commits `de58ec2e4a89a4bc9b751ea669b053e63e8d31a8` and this HEAD; intervening committed changes were Analytics/Orders/integration documentation only.
 - **Evidence limitation:** local source and automated tests establish implemented code paths, not deployed configuration, durable production operations, actual physical collection, provider data quality, or realized economics.
 
 ## 2. Audit Coverage Map
@@ -22,6 +22,7 @@
 | Specs/tests | PARTIALLY INSPECTED | focused service, reconciliation, permission, UI source specs; local focused run | EV-LP-009 |
 | Product intent/code consistency | INSPECTED | current system design, merchant UI spec, execution-control notes vs executable flow | EV-LP-010 |
 | Competition and production | PARTIALLY INSPECTED | stable competitive baseline and repository evidence only; no live provider or competitor operation validation | §16, §24 |
+| V1.2 value synthesis and fresh verification | INSPECTED | job/friction/context/provenance/economic/decision chain, connected domains, focused current backend/UI regression tests | EV-LP-011–014 |
 
 ## 3. Executive Section Truth
 
@@ -79,7 +80,15 @@ Strengths include scoped authorization, canonical location/fee snapshots, mercha
 
 ## 10. Merchant Value Extraction
 
-The current value is reducing ambiguity between “we plan to collect these units” and “Inventory has recorded provider movement for these Variants.” Carton labels and declared/received differences aid reconciliation, while fee/goods charges wait for evidence completion. No measured improvement in collection speed, stock accuracy, loss, cost, or dispute rates was found. Avoid reliability, savings, or end-to-end sourcing claims absent operational measurements.
+**Merchant job removed/reduced:** Local Pickup structures the inbound declaration and later comparison for already-selected Products/Variants: authorized Store, destination/contact, carton contents, expected quantities, labels, and provider-evidenced receiving differences. It can reduce ambiguity and ad hoc matching for this narrow receipt workflow. It does not remove product/supplier discovery, ordering, collection coordination, physical handling, or provider follow-up. No merchant baseline or measured reduction in time, shortage, loss, error, dispute, or cost exists.
+
+**Tool/process consolidation and friction:** the Wossol record groups the declaration, labels, status, timeline, exception and evidence-linked receipt. This is partial information consolidation, not replacement of the provider's system or an external purchasing workflow. Wossol operations still manually records “Pickup Requested”; the service writes an actor/time/timeline assertion that the provider was contacted manually, but makes no provider API call and captures no contact-attempt details or provider acceptance/outcome evidence. A plausible old alternative is calls/messages plus handwritten labels or a spreadsheet, but this was not validated with users. Do not quantify steps saved.
+
+**Context continuity and provenance:** Product/Variant + Merchant/Workspace/Store context is retained from expected items through matching Inventory movement references and the Local Pickup receiving projection; relevant Finance ledger entries carry Local Pickup source identity. This is continuity inside the inbound workflow, not an upstream supplier/offer/order context. Matching pickup-code reference and Variant is an evidence association, not proof of physical collection, unique causal origin, or provider reference quality. The optional whole-pickup goods amount is especially limited: UI says the delivery company is expected to pay the supplier, while Product code only persists the amount and posts a merchant ledger debit after reconciliation; it does not prove external payment, supplier identity, invoice, or per-unit acquisition cost.
+
+**Operational truth → economic truth → decision value:** merchant declaration = captured; positive Inventory provider movements matched by pickup code/expected Variant = connected evidence; Local Pickup receiving status/quantity comparison = calculated; configured pickup fee and optional goods-value debit = Finance-recorded economic effect after the completion predicate. Exact receipt is not required: every expected Variant needs some qualifying evidence, but short/over quantities raise an alert and still complete, deactivate expected rows, and permit configured Finance postings. Local Pickup does not itself mutate stock. No supplier payable verification, full landed cost, sourcing recommendation, operational outcome measurement, decision guidance, or learning loop is established.
+
+**Connected value and proof/demo consequence:** a bounded demo can show a Store-scoped declaration, labels, manual request record, provider movement matching, expected/received difference and conditional Finance entry. It must show that an exception can coexist with completion and a debit; it must not imply exact fulfillment, physical collection proof, a supplier being paid, updated stock owned by Local Pickup, or an end-to-end sourcing chain. Inventory, Finance, Products, External Shipping, Sourcing/Network and Market Center retain their separate evidence/authority boundaries. No measured business outcome is established.
 
 ## 11. Feature Clusters
 
@@ -117,8 +126,9 @@ Current records can relate Merchant/Workspace/Store, destination, pickup request
 |---|---|---|
 | Products + Stores | Valid catalog identity restricted to a Merchant's authorized Store | Not supplier selection |
 | Local Pickup + Inventory | Expected inbound can be compared with provider movement evidence | Local Pickup does not mutate actual stock |
-| Local Pickup + Finance | Fee and optional goods debit are source-linked and completion-gated | Ledger posting does not prove cash settlement or acquisition-cost accuracy |
+| Local Pickup + Finance | Fee and optional merchant goods-value debit are source-linked and completion-gated | Ledger posting does not prove cash settlement, supplier payment, invoice truth or acquisition-cost accuracy; mismatches can still complete/post |
 | Local Pickup + External Shipping | Both contribute inbound awareness and use provider movements | Distinct models/workflows; no shared lifecycle or carrier dispatch inference |
+| Local Pickup + Sourcing / Market Center | Receipt evidence follows merchant product selection; Market Center can display bounded Wossol-observed ordered activity | No supplier/offer/source identity joins the chain; ordered units are not demand, product-fit, delivery or profitability proof |
 
 ## 16. Competitive Analysis
 
@@ -126,7 +136,7 @@ The competitive master describes broad commerce-enablement capabilities among re
 
 ## 17. Marketing Intelligence
 
-**Safe, source-bounded description:** “Record local inbound pickup requests by Store and product Variant, print carton labels, and follow expected quantities against Inventory provider evidence.” May mention optional Finance posting only with the “when configured and after accepted Inventory evidence” qualification. Avoid “book a courier,” “supplier pickup network,” “automatically receive goods,” “verified physical collection,” “accurate stock guaranteed,” “procurement,” and quantified savings or speed claims.
+**Safe, source-bounded description:** “Record local inbound pickup requests by Store and Product Variant, print carton labels, and compare declared quantities with matched Inventory provider evidence.” If mentioning Finance, say that configured ledger entries are posted after the code's evidence-completion predicate—which allows quantity mismatch. Avoid suggesting external supplier payment from `goodsPurchaseAmount`; avoid “book a courier,” “supplier pickup network,” “automatically receive goods,” “verified physical collection,” “exact fulfillment,” “accurate stock guaranteed,” “procurement,” and quantified savings or speed claims.
 
 ## 18. Surprise Findings
 
@@ -221,6 +231,14 @@ With explicit supplier/provider identity, pickup mode, dispatch/acceptance event
 
 **EV-LP-010 — Connected section and competitive context.** **Type:** P1/P3. **Paths:** intelligence `02-section-intelligence/{INVENTORY,FINANCE,EXTERNAL_SHIPPING,SOURCING_NETWORK}.md`; `01-competitive/WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md`; accepted `04-review-history/EXTERNAL_SHIPPING_REVIEW_2026-09-26.md`. **Observed:** Inventory actual stock/provider movement authority, Finance ledger ownership, External Shipping distinct workflow, and Sourcing boundary (no supplier/PO sourcing established). Competitive reference supports broad category context only. **Confidence:** High for repository text; no feature-by-feature competitor review.
 
+**EV-LP-011 — Current source state and Local Pickup delta check.** **Type:** P1. **Repository/commit:** `jetshop7/wossol-platform`, `23fd26572fb82ff86b74539e40eb0e1181bb07f3`. **Observed:** one uncommitted Orders integration-test change was excluded; current committed changes since `de58ec2e4a89a4bc9b751ea669b053e63e8d31a8` did not touch Local Pickup UI/API/service/schema/design sources. **Confidence:** High for local Git status/diff; upstream not freshly fetched.
+
+**EV-LP-012 — Current focused regression run.** **Type:** P2. **Paths:** existing Local Pickup service/scheduler and Merchant/Admin UI specs. **Observed:** backend focused suites passed 35/35; frontend focused suites passed 15/15 on 2026-09-27. These source tests do not establish production provider, scheduler, physical receipt, Finance, or UI runtime behavior. **Confidence:** High for command results.
+
+**EV-LP-013 — V1.2 merchant-work and connected-value synthesis.** **Type:** P1/P2. **Evidence:** EV-LP-001–008, current focused specs, `INVENTORY.md`, `FINANCE.md`, `EXTERNAL_SHIPPING.md`, `SOURCING_NETWORK.md`, Market Center accepted review. **Observed:** partial inbound receipt-ambiguity reduction and context continuity after product selection; no supplier-sourcing job removal, complete provider-tool consolidation, sourcing decision support, or outcome/learning loop. **Confidence:** High on code boundaries, low on merchant outcome.
+
+**EV-LP-014 — UI goods-payment expectation vs Finance ledger behavior.** **Type:** P1/P2. **Paths:** merchant Local Pickup create/edit UI; `local-pickup.service.ts`; `finance.service.ts` (`chargeLocalPickupGoodsPurchaseWithClient`); Prisma `LocalPickup` and `FinancialLedgerEntry`. **Observed:** UI labels amount as expected delivery-company payment to supplier; backend stores a scalar amount and creates a merchant-funded `LOCAL_PICKUP_GOODS_PURCHASE` debit/timeline entry after Local Pickup evidence completion. No supplier payment instruction, recipient, external execution, or settlement confirmation appears in this path. The synchronized `SOURCING_NETWORK_V1_2_MIGRATION_REVIEW_2026-09-27.md` expressly requires carrying this boundary into this audit. **Confidence:** High for inspected code/UI, external payment not verified.
+
 ## 28. Contradictions & Uncertainty
 
 1. **CONTRADICTION-LP-001 — Pickup modes and source workflow.** **Source A (P3):** `local-pickup-system.md` says V1 supports `by_courier` and `supplier_direct_delivery`. **Source B (P1):** LocalPickup schema contains no mode or supplier identifier, and controller/service offers no mode-dependent or supplier workflow; operational pickup action is manual. **Nature:** approved design scope is not represented in inspected current code. **Working conclusion:** do not claim either mode or source choice as current behavior. Resolve in product authority; this is not presumed intentional narrowing.
@@ -228,6 +246,7 @@ With explicit supplier/provider identity, pickup mode, dispatch/acceptance event
 3. **CONTRADICTION-LP-003 — Mismatch completion/charge semantics.** **Source A (P3/UI intent):** mismatch is highlighted and internal alert exists; an ordinary reader may infer exception review before completion. **Source B (P1):** code raises mismatch alert then transitions to INVENTORY_UPDATED and posts enabled service/goods charges regardless of exact received quantity, once every Variant has some evidence. **Nature:** operational/financial outcome may differ from intuitive exception control. **Working conclusion:** state the actual automatic behavior; whether it is approved policy remains an open product decision.
 4. **UNCERTAINTY-LP-004 — Evidence association and stock truth.** Reference + Variant matching is code-level association, not proof of physical collection or exclusive causality. Provider reference reuse, delayed/corrected movements, negative adjustments and real API-sync semantics were not tested in production.
 5. **UNCERTAINTY-LP-005 — Real-world operations.** No production database, live provider credentials/events, supplier/provider contract, physical receipt, production finance ledger, deployment scheduler topology, storage retention, or merchant outcome was inspected. Feature use and success rates are unknown.
+6. **CONTRADICTION-LP-006 — Goods purchase amount / supplier payment.** **Source A (P1 UI):** describes `goodsPurchaseAmount` as the amount the delivery company is expected to pay the supplier while collecting goods for Wossol. **Source B (P1 service/schema/Finance):** persists a whole-pickup amount and, after accepted Inventory-evidence completion, creates a merchant-funded Finance debit/timeline; no payment instruction, supplier identity, external recipient, execution or settlement proof is present. **Nature:** payment expectation wording exceeds the demonstrated external payment behavior. **Working conclusion:** treat as product intent/UI copy plus internal ledger evidence, not supplier-payment execution or verified payable. **Required verification:** Product/Finance authority must define whether someone actually pays a supplier and what evidence proves it; align UI and ledger semantics.
 
 ## 29. Open Questions
 
@@ -236,17 +255,26 @@ With explicit supplier/provider identity, pickup mode, dispatch/acceptance event
 3. Should quantity mismatches block Finance postings or require a documented resolution before completion?
 4. How are provider reference collisions, movement corrections/reversals and late evidence handled in deployment?
 5. Does a real operator call/message occur when marking pickup requested, and is provider acceptance/result recorded elsewhere?
-6. Which verified cost basis—if any—supports the optional whole-pickup goods-purchase amount?
+6. Does an external party actually pay the supplier in this workflow? If so, where are recipient, instruction, execution and settlement evidence recorded, and how does that reconcile with the merchant-funded debit?
 7. Which direct competitor products expose comparable local inbound workflows, and with what verified scope?
 
 ## 30. Methodology Learnings
 
-No general methodology change identified. Section-specific: for any lifecycle terminal label, trace every executable state transition to its controller, scheduler or event path, then compare against design wording. A status description allowing multiple authorities must not be treated as implemented when only one transition is present.
+No reusable methodology change identified. V1.2 was applied using existing rules: trace the executable workflow and authority; extract merchant effort only where a current end-to-end path supports it; follow declaration → provider evidence → Finance ledger without skipping to sourcing decisions or outcomes. The lifecycle terminal-state lesson from the prior audit remains section-specific and is already covered by the contradiction protocol.
 
 ## 31. Retroactive Review Impact
 
-No methodology change and no retroactive queue entry. The accepted External Shipping review identifies Local Pickup as a separate follow-on inbound audit; the audit preserves separate lifecycle, provider evidence and Finance boundaries. Sourcing/Network, Inventory and Finance boundaries are carried forward without modifying those section audits. No Local Pickup-specific authoritative review record was present at synchronization.
+No methodology change or extra retrospective item is required. RR-V12-017 is updated for this V1.2 migration; the 2026-09-26 Local Pickup review remains historical acceptance with its open Product issues, and the current V1.2 Quality Gate is pending. The newly synchronized Sourcing / Network V1.2 review asked that the supplier-payment boundary be carried into this audit; this is recorded as CONTRADICTION-LP-006. Inventory, Finance, External Shipping, and Market Center ownership/evidence limitations remain intact.
 
 ## 32. Canonical Section Takeaway
 
 Local Pickup currently provides a Store-scoped local inbound declaration, carton labels, manual pickup-request recording, and evidence-linked reconciliation against Inventory provider movements. It finalizes once each declared Variant has qualifying movement evidence, preserves short/over quantities as mismatch alerts, and conditionally posts Finance charges in the same completion transaction. It does not establish supplier sourcing, courier booking, physical collection verification, exact-quantity fulfillment, or stock mutation. The documented pickup modes and operator-verification alternative conflict with current schema and transition code and require explicit product-contract resolution before stronger claims.
+
+## 33. V1.2 Migration Delta Review
+
+- **Prior truth retained:** the prior Director-accepted Local Pickup audit's core P1 workflow and its open P1/P3 issues remain valid; the relevant Product source files have no current committed delta since the prior V1.2 Sourcing review's product HEAD. Evidence IDs EV-LP-001–010 are retained.
+- **Product truth changed:** no material Local Pickup UI/API/service/schema/design change was found from Product commit `de58ec2e4a89a4bc9b751ea669b053e63e8d31a8` to current HEAD `23fd26572fb82ff86b74539e40eb0e1181bb07f3`; unrelated Analytics/Orders commits and the one uncommitted Orders integration-test change are excluded. Product was not modified.
+- **V1.2 value extraction added:** Local Pickup reduces some inbound declaration/receipt ambiguity after Product selection and partially consolidates its internal record/labels/evidence. Provider coordination remains manual; sourcing, supplier search, purchasing, decision effort and measured time/risk reduction are not established. No upstream supplier/commercial context is carried in.
+- **Connected-domain evidence:** Product/Variant + Store scope → expected Local Pickup declaration → positive provider movement reference/Variant → receiving comparison/status → conditional Finance entry. Inventory remains stock authority; Finance entry is not proof of cash/supplier payment; Sourcing/Network/Market Center do not complete missing source/offer/cost/outcome links.
+- **Strategic/claim delta:** no new differentiator or sourcing claim. Current safe description is narrowed to comparing a declared inbound request against matched provider evidence. The payment wording/debit gap is now explicit as CONTRADICTION-LP-006; quantity mismatch can still complete and post.
+- **Queue/gate:** RR-V12-017 is updated; current Director Quality Gate pending. RR-V12-016 is marked V1.2 Quality-Gate complete per `SOURCING_NETWORK_V1_2_MIGRATION_REVIEW_2026-09-27.md`; its accepted review remains preserved.
