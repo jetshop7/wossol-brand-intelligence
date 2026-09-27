@@ -6,7 +6,7 @@ Do not recursively interrupt the current audit. Record the impact, finish the cu
 
 | Queue ID | Methodology Change | Affected Section | Reason | Priority | Status | Result |
 |---|---|---|---|---|---|---|
-| RR-V12-001 | METH-2026-09-26-001 | Orders | Re-extract provenance-to-outcome, source continuity, downstream analytics/decision value | CRITICAL | QUEUED | Preserve accepted evidence; incremental V1.2 re-audit |
+| RR-V12-001 | METH-2026-09-26-001 | Orders | Re-extract provenance-to-outcome, source continuity, downstream analytics/decision value | CRITICAL | UPDATED | V1.2 incremental re-audit recorded in `02-section-intelligence/ORDERS.md`; preserved accepted V1.1 evidence and open cancellation-contract issue; traced Shopify checkout-origin/commercial context and server-derived Messenger capture attribution into canonical Orders; verified standard vs recovery vs economic Analytics boundary; focused related source tests 100/100 pass; Director V1.2 Quality Gate pending |
 | RR-V12-002 | METH-2026-09-26-001 | Messaging / WhatsApp / Messenger Order Capture | Re-extract context continuity, merchant-job removal, deep-link/return path, provenance handoff | CRITICAL | QUEUED | Incremental V1.2 re-audit |
 | RR-V12-003 | METH-2026-09-26-001 | Analytics / Decision Center | Reclassify Merchant vs Decision Intelligence; decision-effort reduction; operational→economic→decision chain | CRITICAL | QUEUED | Incremental V1.2 re-audit |
 | RR-V12-004 | METH-2026-09-26-001 | Market Center | Reclassify Market Intelligence and Analytics/other-domain inputs; current vs future intelligence depth | CRITICAL | QUEUED | Incremental V1.2 re-audit |

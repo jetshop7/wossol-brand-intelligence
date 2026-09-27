@@ -2,12 +2,12 @@
 
 ## 1. Audit Metadata
 
-- **Audit date:** 2026-09-25.
-- **Methodology:** `MASTER_INSTRUCTIONS.md` v1.1; current operating protocol.
+- **Latest audit date:** 2026-09-27 (incremental V1.2 migration; prior V1.1 evidence retained).
+- **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.2; `CODEX_OPERATING_PROTOCOL.md` v1.1.
 - **Competitive reference:** `WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.
-- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, `38f7450`, clean and synchronized before inspection.
-- **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `e3912a967827bde06450d3510228e5a5ca9e78a7`, clean.
-- **Correction provenance:** targeted application of `04-review-history/ORDERS_REVIEW_2026-09-25.md` to audit commit `9e8c44cf6b5f4c00f85f378a7f6339e1b57aac36`; no Orders re-audit performed.
+- **Intelligence source:** `jetshop7/wossol-brand-intelligence`, branch `main`, synchronized from `origin/main` to `7804afb1f9488d721b990d686f08346f18736577`; clean at inspection start.
+- **Product source:** `jetshop7/wossol-platform`, local workspace `C:\Users\Global Tech\Documents\wossol-platform`, branch `dev/wossol-integration`, HEAD `46716c433de40fbdbeb023d297d167c49909b380`, matching local `origin/dev/wossol-integration`; clean. A read-only live remote-tip check was blocked by unavailable GitHub network, so this records the available workspace/tracking-ref state, not a newly fetched remote state. Product files were not modified.
+- **Migration provenance:** prior V1.1 audit and its accepted correction remain preserved, including `04-review-history/ORDERS_REVIEW_2026-09-25.md` and the unresolved cancellation-contract issue. This V1.2 incremental re-audit applies the current methodology and reviews the later Shopify incomplete-checkout records; it does not replace or claim a new Director Quality Gate.
 - **Evidence basis:** P1 code/schema, P2 test sources with execution status stated per evidence entry, P3 Final V1 Merchant Orders specification, and P4 architecture material only when qualified. This audit does not prove production provider connectivity, dispatch success, delivery outcomes, financial settlement, or merchant adoption.
 
 ## 2. Audit Coverage Map
@@ -17,8 +17,8 @@
 | Merchant UI | list, create, import, captures, detail, tracking activity, controlled actions | EV-ORD-001–003 |
 | Order API/service | create, list/detail/journey/activity/export, edit/cancel/delete, pricing and picker | EV-ORD-004–005 |
 | Lifecycle and allocation | stock reservation, waiting-stock promotion, confirmation/direct dispatch, cancellation | EV-ORD-006–007 |
-| Imports/commerce/attribution | workbook/import policy, idempotent commerce ingress, duplicate and attribution evidence | EV-ORD-008–009 |
-| Connected domains | Products, Inventory, Customers, Confirmation, Tracking, Finance, Commerce, Messaging | EV-ORD-010–011 |
+| Imports/commerce/attribution | workbook/import policy, idempotent commerce ingress, checkout origin/commercial snapshots, server-derived Messenger provenance and attribution | EV-ORD-008–009, EV-ORD-014–016 |
+| Connected domains | Products, Inventory, Customers, Confirmation, Tracking, Finance, Commerce, Messaging, Advertising, Analytics | EV-ORD-010–011, EV-ORD-014–016 |
 | Contract/tests | Final V1 specification and Orders test suite inventory | EV-ORD-012–013 |
 
 ## 3. Executive Section Truth
@@ -142,6 +142,16 @@ Orders, tracking, confirmation, delivery, COD collection and basic status visibi
 **Angle:** “See what your order needs next, without needing to run the operations team.”
 **Caveat:** status visibility is not control over confirmation, delivery or settlement.
 
+**Asset ID:** ORD-03 (V1.2 addition)
+**Capability:** Preserve selected Commerce/Messenger source context through canonical Order creation and distinguish incomplete-checkout recovery downstream.
+**Evidence IDs:** EV-ORD-014–016.
+**Evidence status:** GREEN for bounded source-level provenance and tested cohort separation; YELLOW for deployed checkout policy/runtime and any merchant outcome.
+**Merchant problem:** Orders arriving from external checkout/capture paths can lose their origin or blur operational outcomes with recovery cohorts.
+**Functional value:** Server-trusted origin/context is carried into the canonical Order; Analytics can separate recovery performance from standard checkout performance while retaining economic treatment for genuine Orders.
+**Marketing angle:** “Keep the source context attached as an order moves into operations.”
+**Proof point:** Demonstrate a completed and an incomplete-origin Order with their explicit labels and separate Analytics recovery cohort.
+**Claim eligibility:** qualified; do not claim complete attribution, consent correctness, recovered/incremental revenue, growth lift, or profitability.
+
 ## 18. Surprise Findings
 
 The unusually strong behavior is restraint: unknown availability is not orderable, a waiting order is not partially reserved, a blocked customer is not silently resumed, and dispatched work is not relabeled as a simple merchant cancellation. These rules are more strategically meaningful than a broad status table because they preserve trust at cross-domain handoffs.
@@ -181,6 +191,8 @@ Current defensible framing: **order operations with safe handoffs** or **orders 
 |---|---|---|
 | Create, import and follow scoped orders with merchant-safe progress | GREEN | implemented routes/projections |
 | Keep stock-aware orders from entering confirmation prematurely | GREEN, provider-qualified | reservation/waiting rules are implemented; live provider data unverified |
+| Preserve bounded checkout/Messenger source context through canonical Order creation | GREEN, scope-qualified | trusted producer path and Merchant projection are implemented; deployment and full attribution are not verified |
+| Separate incomplete-origin recovery from standard checkout performance while retaining economic evidence | YELLOW | focused source tests pass and current Analytics populations differ intentionally; browser/runtime and production data are unverified |
 | Correct orders under the implemented pre-dispatch lifecycle gates | GREEN, P1-qualified | guarded P1 behavior; broader contract relationship is unresolved |
 | Merchant cancellation only before processing starts | YELLOW / unresolved | P3's phrase is not proven equivalent to P1's `PENDING_CONFIRMATION` / `WAITING_FOR_STOCK` / `BLOCKED_CUSTOMER` status gates plus absent provider shipment ID/code |
 | Give merchants full confirmation/tracking/provider control | RED | deliberately not exposed |
@@ -266,3 +278,61 @@ No methodology change and no retroactive queue entry. Orders evidence should inf
 ## 32. Canonical Section Takeaway
 
 Orders is Wossol’s controlled commercial handoff: it turns scoped demand into a validated, stock-aware, evidence-preserving operational lifecycle while keeping sensitive confirmation, dispatch, tracking and finance work behind merchant-safe boundaries. P1 implements cancellation gates, but their relationship to the Final V1 “before processing starts” contract remains unresolved. The audit supports disciplined handoff and accountability; cancellation scope, delivery outcomes, and order-performance intelligence require the qualifications recorded above.
+
+## 33. V1.2 Incremental Migration / Delta Review
+
+This is an incremental methodology migration, not a restart. The accepted V1.1 Orders truths and EV-ORD-001–013 remain the baseline. The authoritative Orders Director record remains **ACCEPT WITH OPEN PRODUCT ISSUE**; its cancellation contract/implementation contradiction is unchanged and is not resolved by the newer checkout work.
+
+### Source delta and connected provenance
+
+Since the earlier Orders evidence snapshot (`e3912a9`), the current inspected Product workspace at `46716c4` adds meaningful Order-owned or Order-adjacent behavior:
+
+- A trusted Commerce producer can persist a bounded `checkoutCaptureOrigin` (`COMPLETED_CHECKOUT` / `INCOMPLETE_CHECKOUT`) on the canonical Order. The field is provenance, not lifecycle or confirmation status; Order list/detail projections surface it, and the Merchant Orders UI labels incomplete-origin orders and those later confirmed as “Recovered from Incomplete.” A captured incomplete checkout becomes a canonical Order only when the Commerce finalization path invokes Orders; this is not evidence that every such record represents explicit shopper submission or incremental sales.
+- Shopify COD session finalization passes the trusted origin, server-frozen customer delivery commitment, and bounded commercial snapshot into the canonical Orders seam. Orders still resolves/owns its destination and Wossol-side delivery economics, while preserving the customer-facing delivery terms committed by the checkout session. This reduces post-capture re-entry/reconciliation and retains context; it does not prove deployed persistence, correct consent policy, price continuity in every path, or business lift.
+- Messenger capture attribution is now sourced from the authoritative capture inside the serializable Order create/consume transaction. Browser-provided attribution is ignored for capture-based creation; the capture is revalidated and consumed atomically with the Order graph. The Merchant projection can show Messenger source and a return/open-inbox context. Messaging's own review still finds no general conversation archive or verified referral-touch runtime, so this is bounded capture provenance/context continuity, not full conversation or campaign attribution.
+- Existing `OrderAttribution`/Advertising evidence remains a separate, scope-checked record. Exact external references are not inferred from a Commerce mapping, unresolved evidence remains unresolved, and evidence persistence failure rolls back the canonical Order transaction. Attribution availability is therefore a prerequisite, not a complete attribution-to-profit outcome.
+
+### V1.2 second-pass value synthesis
+
+| Lens | Orders conclusion under current evidence |
+|---|---|
+| Merchant job removed / reduced | For supported Commerce and Messenger capture paths, less re-keying/reconstruction of origin and commercial context; Orders still requires its normal validation and operational lifecycle. No measured time or labor reduction. |
+| Tool / process consolidation | External checkout/capture evidence can flow into one canonical Order and scoped Merchant Orders workspace. This is partial connection, not proof Wossol replaces Shopify, Messenger, Ads Manager, provider portals, or finance tools. |
+| Friction removed | The intake path can carry source, capture origin, and committed customer delivery terms through Order creation; merchant need not assert trusted attribution from the browser. Setup/runtime reliability and step counts were not measured. |
+| Context continuity | Shopify session → canonical Order retains completed/incomplete origin and commercial snapshot; Messenger capture → Order retains bounded source identity and a safe return path. No general message thread synchronization is established. |
+| Control / trust added | Server-trusted producer boundaries, active connection/store scope, idempotency, serializable capture consumption, atomic Order/evidence write, and explicit origin labels limit provenance forgery and ambiguity. Shopify timeout-to-Order intent/consent policy remains a Product issue. |
+| Provenance / truth added | Source type/platform/connection/external identity and bounded checkout origin can accompany operational status. Some advertising evidence can be exact or explicitly unresolved. Provenance is not causal attribution. |
+| Operational → economic → decision chain | Canonical Orders feed operational truth. Analytics now separates standard checkout-performance cohorts from incomplete-recovery cohorts while keeping canonical recovered Orders in economic calculations. Finance/Analytics source logic is reviewed in the connected section and the 2026-09-27 Shopify recovery review; no profitability or decision quality is proved for any merchant dataset. |
+| Decision effort / downstream value | A later Analytics consumer can distinguish recovery from ordinary checkout and retain real economic consequences without mixing the performance denominator. This preserves interpretability; it is not a recommendation, causal lift, or learning loop. |
+| Proof / demo consequence | Demonstrate completed checkout and timeout recovery as distinct origins, then show the same canonical Order lifecycle and separate recovery/economic projections. Label recovery explicitly; never present it as ordinary submitted checkout. |
+
+### Connected-domain inputs and outputs
+
+| Direction | Domain / evidence | Current status and boundary |
+|---|---|---|
+| Upstream | Shopify Embedded COD checkout session, Store/Commerce mapping, Commerce trusted import | LIVE in source; session-to-Order provenance and frozen customer terms are passed through the trusted backend seam. Migration/deployment and browser acceptance remain unverified. |
+| Upstream | Messaging capture | LIVE bounded server-side capture consumption and Messenger source projection; general inbox/thread and referral attribution remain unestablished. |
+| Orders core | Products, Inventory, Customers, Confirmation | Prior accepted handoff, stock, customer block, and confirmation eligibility rules remain current in inspected paths; no evidence in this migration changes those boundaries. |
+| Downstream | Tracking/Delivery and Finance | Order lifecycle remains the operational source for later dispatch/outcomes and commercial snapshot inputs; no provider delivery, settlement or payout outcome was newly verified. |
+| Downstream | Advertising and Analytics | Attribution evidence is scope-checked and may remain unresolved; Analytics can distinguish standard checkout-performance from incomplete recovery while retaining recovered canonical Orders in economic evidence. It does not establish complete causal ad-to-profit intelligence. |
+
+### Strategic conclusion delta
+
+Prior conclusion remains valid: Orders is controlled commercial handoff/orchestration, not an order-performance intelligence engine. V1.2 strengthens the evidence for **provenance-preserving context continuity across selected Commerce/Messaging ingress**, and for a downstream Analytics distinction between checkout performance and recovery/economic truth. It does not justify a stronger general “full attribution,” “recovered revenue,” “growth,” “profitability,” “autonomous” or “end-to-end order intelligence” claim. No methodology change is proposed. RR-V12-001 is updated for this migration; its final Quality Gate remains pending a separate Director review.
+
+## 34. V1.2 Evidence Additions
+
+**EV-ORD-014 — Trusted checkout-to-Order context.** **Type:** P1. **Repository/commit:** `jetshop7/wossol-platform`, `46716c433de40fbdbeb023d297d167c49909b380`. **Paths/symbols:** `apps/backend/src/modules/orders/orders.service.ts` (`createCommerceImportedOrder`, `createOrderWithStockAllocationPolicy`, `applyTrustedCheckoutDeliveryCommitment`); `apps/backend/src/modules/shopify/shopify-cod.service.ts` (checkout-session finalization); `apps/backend/prisma/schema.prisma` (`Order.checkoutCaptureOrigin`) and migration `20260927_shopify_cod_checkout_session_v1`. **Observed:** trusted Commerce ingress carries bounded checkout origin, server-authoritative delivery commitment, and commercial snapshot into the canonical Order write; scoped display projection exposes origin. **Status:** LIVE in source. **Caveat:** no deployed DB, live Shopify browser path, customer intent/consent acceptance, or conversion outcome verified.
+
+**EV-ORD-015 — Server-derived Messaging capture source.** **Type:** P1, with focused P2 test execution. **Repository/commit:** same Product snapshot. **Paths/symbols:** `apps/backend/src/modules/orders/orders.service.ts` (`messagingCaptureIdentity`, `requireOpenMessagingCaptureInTransaction`, `messagingCaptureAttributionInTransaction`); `orders-messaging-capture.spec.ts`; `order-attribution*.spec.ts`. **Observed:** capture is revalidated and consumed within canonical transactional creation; browser-sent attribution is removed for capture-based Orders and server-owned evidence is derived from the capture. Merchant projection follows the consumed capture rather than caller-supplied provider identifiers. **Status:** LIVE in source. **Caveat:** does not establish a full conversation archive, referral-touch runtime, or fully resolved Ads attribution.
+
+**EV-ORD-016 — Recovery origin to Analytics cohort/economic boundary.** **Type:** P1/P2. **Repository/commit:** same Product snapshot. **Paths/symbols:** `apps/backend/src/modules/analytics/merchant-analytics.service.ts` (separate standard, recovery, and economic Order populations); `apps/frontend/src/app/merchant/orders/{page.tsx,detail/page.tsx}` (bounded origin labels); `apps/backend/src/modules/shopify/shopify-cod.service.ts`; focused `merchant-analytics.service.spec.ts`; authoritative cross-system verification `04-review-history/SHOPIFY_COD_INCOMPLETE_CHECKOUT_RECOVERY_REVIEW_2026-09-27.md`. **Observed:** incomplete-origin capture is excluded from standard checkout-performance cohort, shown in recovery metrics, and remains eligible for economic calculations as a canonical Order. **Status:** LIVE in source and covered by focused tests; acceptance/runtime remains unverified. **Caveat:** recovery confirmation is not incremental conversion, collected revenue, causal ad result, or profit by itself.
+
+**EV-ORD-017 — Focused V1.2 verification.** **Type:** P2. **Product commit:** `46716c433de40fbdbeb023d297d167c49909b380`. **Command:** backend Node test runner with `ts-node`/`tsconfig-paths`, targeting Orders messaging capture, Commerce Order ingestion, Order attribution and Advertising evidence, Shopify COD service, and Merchant Analytics service specs. **Observed:** 100 tests passed, 0 failed. **Confidence:** High that these selected source-level tests passed in the local workspace; no typecheck, DB-backed integration, browser acceptance, production migration, provider, or runtime test is claimed.
+
+## 35. V1.2 Risks / Uncertainty Carry-Forward
+
+1. Shopify incomplete-checkout timeout recovery can create a canonical Order for an `orderReady` session before explicit “Order Now”; the 2026-09-27 Shopify COD review accepts the source finding but leaves intent/consent, customer notice, merchant semantics, cancellation/duplicate/retry policy, and browser acceptance open. Do not call every recovered Order a customer-submitted purchase or incremental sale.
+2. Source state is the clean local Product workspace and its matching tracking ref at `46716c4`; live GitHub remote tip could not be checked because network access failed. No uncommitted Product changes were present, and none were made by this audit.
+3. The prior Final V1 cancellation contract versus P1 cancellation predicates remains unresolved exactly as recorded in `CONTRADICTION-ORD-002`; the new Order source work does not resolve it.
+4. Production migrations, captured records, downstream integration configuration, realized outcomes, and merchant adoption remain unverified. Stored provenance and passing unit tests do not prove the deployed or commercial result.
