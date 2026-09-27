@@ -4,21 +4,30 @@
 
 | Field | Recorded state |
 |---|---|
-| Audit date | 2026-09-25 |
+| Audit date | 2026-09-27 (incremental V1.2 migration) |
 | Product source | `jetshop7/wossol-platform` — local workspace `C:\Users\Global Tech\Documents\wossol-platform` |
-| Product branch / commit | `dev/wossol-integration` / `e842e8e4e45ba4748412232c914fdeb20063b8ab` |
-| Product local state | Clean at the reviewed source-state check. The current commit contains only the unrelated Shopify COD-form follow-up after the Home review work; no product files were modified by this intelligence correction. |
-| Local vs committed GitHub state | `origin/dev/wossol-integration` resolves to the same reviewed product commit. Home findings include the approved Home review corrections already present in the branch. |
-| Intelligence source | `jetshop7/wossol-brand-intelligence`, `main`, starting commit `a9c0b45783b750852338e49410ffbc47e12a735c`; clean at audit start |
-| Methodology | Master Instructions v1.1; no queued retroactive items |
+| Product branch / commit | `dev/wossol-integration` / `855ee94af232a460f33980b0d600b84f1f8b3643` (`HEAD` and local `origin/dev/wossol-integration` tracking ref matched) |
+| Product local state | Dirty: 16 modified paths and 3 untracked paths across schema, Orders/Commerce, Advertising, Messaging, Shopify, and related docs/tests. No Home-owned page/service/controller/test or Home UI-spec path is modified. Relevant uncommitted upstream-ingress changes are not treated as committed Home truth. |
+| Local vs committed GitHub state | Product workspace differs from committed `HEAD`; the local upstream tracking ref equals `HEAD`, but Product remote was not freshly fetched in this pass. Intelligence repo was synchronized before audit. |
+| Intelligence source | `jetshop7/wossol-brand-intelligence`, `main`, starting commit `0d998a7112f97e604ae2cb6a1b0c9de7b651add2`; clean at audit start |
+| Methodology | Master Instructions v1.2; operating protocol v1.1; retroactive item `RR-V12-013` |
 | Competitive reference | `WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.0 (2026-09-09) |
-| Verification performed | Focused backend Home suite: 18/18 passing. Focused frontend Home suite: 14/14 passing. Frontend test emitted only Node's module-type parsing warning. No running authenticated deployment or production data was available for inspection. |
+| Verification performed | Backend Home unit suite: 18/18 passed. Frontend Home source suite: 14/14 passed (Node module-type warning only). PostgreSQL Home test was blocked before database access because configured DB name `wossol_messenger_test_20260925_a` did not match its isolated Home-test database guard. No typecheck or authenticated production/runtime inspection. |
 
-**Audit status:** Complete for the current code and directly related documentation. Runtime deployment/real-data behavior remains **NOT VERIFIED**.
+**Audit status:** Incremental V1.2 source review complete; current Director Quality Gate pending. Production deployment, live data, and runtime behavior remain **NOT VERIFIED**.
 
 ### Review corrections applied
 
 The authoritative review record `04-review-history/HOME_REVIEW_2026-09-25.md` identified a contract contradiction and requires qualification, not a re-audit. The canonical record therefore preserves the reviewed current executable truth—blockers and actionable attention precede actions and summaries; Home has exactly three Today metrics; the trend chart/range controls and ring presentation are absent from the reviewed build; duplicate stock attention is not repeated in Current Work; recent updates are bounded to three; non-primary performance outcomes are conditional; and owner boundaries remain intact—while explicitly leaving unresolved whether the conflicting final specification is superseded or the implementation is incomplete against it.
+
+### V1.2 migration delta review
+
+- **Prior product truth retained:** Home still returns three Today metrics, the event-history Performance snapshot, four distinct attention predicates, two Current Work groups, a maximum-three Analytics recommendation projection, and at most three recent Workspace notifications. The layout/spec contradiction remains unresolved under `C-HOME-001`; the 2026-09-25 review and correction history are preserved in `04-review-history/`.
+- **Committed product delta:** Home-owned service/controller/page/types/tests and `MERCHANT_HOME_SHELL_UI_SPEC.md` have no changes between the prior Product evidence commit `d52fd3e8db087d914efa0d56ad12d9b56f28cb2f` and Product `HEAD` `855ee94...`. Current executable truth therefore remains the same at those Home paths. This pass found a previously under-extracted connected effect: the Analytics recommendation call from Home invokes the full Analytics path, which can persist a `DecisionRecommendation` and publish `recommendation.generated` during a Home Summary GET when new canonical recommendation evidence materializes.
+- **V1.2 value previously missed:** Home partially reduces first-look scanning and queue discovery, but does not replace owner tools or establish measured time/decision-effort savings. Scope/filter context can continue through MerchantShell; evidence and downstream action ownership remain in Orders, Analytics, Inventory, and Notifications. Home does not carry acquisition/conversation provenance into its own metrics or close the action→outcome loop.
+- **Connected-domain evidence added:** the actual Analytics materialization path and its event write; Notifications API-time authorization and projection behavior; MerchantShell scope persistence; and upstream Order-source limitations were checked. The current Product worktree has uncommitted Orders/Commerce/Advertising/Messaging/Shopify edits that may change upstream records but are not included as committed capability evidence.
+- **Strategic conclusion changed/qualified:** Home remains an operational orientation layer, not an intelligence engine or execution command center. Its visible controls are read-only, but “Home is end-to-end read-only / creates no persistent state” is not supported while the Home GET can trigger Analytics materialization. The intended read-only contract and implementation need explicit reconciliation. A second connected weakness is inherited notification permission/data-minimization risk.
+- **Queue status:** `RR-V12-013` is addressed in this incremental V1.2 audit; Director review remains pending, so methodology migration is not accepted/closed.
 
 ## 2. Audit Coverage Map
 
@@ -30,9 +39,9 @@ The authoritative review record `04-review-history/HOME_REVIEW_2026-09-25.md` id
 | Summary aggregation | INSPECTED | Today metrics, priority decomposition, current-work counts, notification composition |
 | Historical performance aggregation | INSPECTED | event-history SQL, period/timezone handling, focused unit and PostgreSQL-test source |
 | Inventory connection | INSPECTED | bounded Waiting-for-Stock availability projection and reservation policy usage |
-| Analytics / Decision Center connection | INSPECTED | canonical recommendation handoff, bounded safe projection |
-| Data / persistence | INSPECTED | `Order`, `OrderStatusHistory`, `DecisionRecommendation` / event / outcome models |
-| Notifications | INSPECTED | owner-service composition and failure isolation |
+| Analytics / Decision Center connection | INSPECTED | canonical recommendation handoff through full Analytics path, including conditional materialization/event side effect |
+| Data / persistence | INSPECTED | `Order`, `OrderStatusHistory`, `DecisionRecommendation` / event / outcome models; transitive write path traced |
+| Notifications | INSPECTED | owner-service composition, Workspace membership check, category-permission revocation gap, broad row projection, failure isolation |
 | Failure/recovery/client freshness | INSPECTED | independent request versions, retry states, scoped focus refresh, no polling |
 | Automated tests | INSPECTED / PASSED | backend 18/18; frontend 14/14 |
 | Current Home UI specification | INSPECTED | `MERCHANT_HOME_SHELL_UI_SPEC.md` |
@@ -46,7 +55,7 @@ The authoritative review record `04-review-history/HOME_REVIEW_2026-09-25.md` id
 
 The clearest current strength is not “a dashboard.” It is **truthful operational orientation with safe routing back to the owner systems**: historical outcomes are based on immutable status history rather than current status; time boundaries use the Workspace timezone; unauthorized/no-store users receive omitted order data rather than fabricated zeroes; and attention items deep-link to exact Orders predicates.
 
-It is **LIVE in the current codebase and covered by focused tests**, but live production availability is not verified. Home is not yet evidence of a full decision command center: it has no Home-owned diagnosis, calculation, mutation, automated action, learning loop, financial view, trend chart, inventory forecasting, or notification ownership.
+It is **LIVE in the current codebase and covered by focused tests**, but live production availability is not verified. Home is not yet evidence of a full decision command center: it has no Home-owned diagnosis, calculation, automated action, learning loop, financial view, trend chart, inventory forecasting, or notification ownership. Although its visible controls are read-only, its Summary GET can conditionally cause Analytics-owned recommendation persistence and an event; therefore an end-to-end “read-only/no persistent effects” claim is unresolved and unsupported.
 
 ## 4. Scope & Architecture Map
 
@@ -59,9 +68,9 @@ It is **LIVE in the current codebase and covered by focused tests**, but live pr
 | Scope | The service validates an active authorized Workspace and either an authorized active Store or authorized Stores in the selected Workspace. |
 | Orders | Supplies created/current status facts plus event-history facts. Merchant pre-confirmation deletions are excluded. |
 | Inventory | Supplies only an optional shortage explanation for visible `WAITING_FOR_STOCK` orders; Home does not reserve or allocate stock. |
-| Analytics | Supplies a maximum of three already-ranked, merchant-safe recommendations from the canonical Analytics / Decision Center path. |
-| Notifications | Supplies a bounded recipient- and Workspace-scoped recent list; failure does not fail Home. |
-| Persistence | Home creates no state. It reads Orders, immutable `OrderStatusHistory`, existing recommendations/evidence, and notification records via their owners. |
+| Analytics | Supplies a maximum of three merchant-safe recommendations through the canonical Analytics / Decision Center path; that call may calculate and materialize recommendation state/events. |
+| Notifications | Supplies a bounded recipient- and Workspace-scoped recent list; failure does not fail Home. Category-level permission revocation is not rechecked on the inspected path; Home receives broader rows than it renders. |
+| Persistence | Home has no direct write in its composition service, but calling Analytics recommendations can execute the full Analytics path, materialize `DecisionRecommendation` rows, and publish `recommendation.generated` on a Summary GET. It is not established as an end-to-end side-effect-free read model. |
 
 ## 5. Current Capability Inventory
 
@@ -131,6 +140,18 @@ Transparency limits: Home does not show calculation evidence, recommendation rea
 | Inventory-aware waiting-stock explanation | The merchant can see a relevant shortage context without opening each order first | Faster triage, with restrained claims | GREEN — do not claim automatic resolution |
 | Analytics-owned recommendation projection | Important guidance can reach the daily landing surface | A bridge from operational visibility toward guided control | YELLOW — only where canonical Analytics evidence is available; Home is not the engine |
 | Isolated requests/failure states/focus refresh | Partial service failure does not erase the full workspace picture | Reliability and calm under imperfect conditions | GREEN as product behavior; runtime uptime is not verified |
+
+### V1.2 second-pass merchant value and work removal
+
+| Merchant job / before → with Home | Work plausibly removed | Work still required / boundary | Evidence and downstream consequence | Compounding / claim limit |
+|---|---|---|---|---|
+| Orient across today’s Orders and exceptions without first opening several owner views | First-look scanning and locating a filtered Orders queue are reduced qualitatively | Merchant still opens Orders to inspect and execute; no measured minutes or avoided decisions | Home composes Orders/Inventory facts and exact filtered routes; the owner system remains downstream | Could compound with reliable domain context; no quantified savings claim |
+| Triage waiting-for-stock Orders | Some initial order-by-order shortage lookup | No reservation, allocation, supplier action, or resolution from Home | Bounded Inventory projection routes to Orders; inventory policy remains authoritative | Work reduction is triage only, not fulfillment |
+| Notice a ranked recommendation while orienting | Some discovery/navigation effort | To inspect rationale or act, merchant leaves Home for Analytics; Home does not close the action→outcome loop | Recommendation is Analytics-owned; Home GET invokes the full Analytics path, which may persist its canonical recommendation and event | This connected effect must be treated as an unresolved read-contract concern, not a Home intelligence/savings benefit |
+| Keep recent coordination context visible | A limited first-look notification scan | Notifications are Workspace-wide rather than Store-filtered; downstream action is elsewhere; category authorization may not be rechecked after source-domain access is revoked | Home uses `NotificationsService.list`; projection also returns more Notification fields than Home renders | Useful continuity is bounded; permission/projection behavior requires owner review |
+| Return to the selected merchant context | Re-selecting Workspace/Store may be avoided through shell persistence | Scope persistence is split between session/local storage and is not a durable source/provenance chain in Home metrics | MerchantShell revalidates selected context and Home routes retain relevant predicates | Context continuity is partial; do not claim end-to-end provenance |
+
+Overall, the evidence supports reduced first-look scanning and queue discovery only. It does not prove measured time saved, reduced manual analysis, or improved decisions. The operational→economic→decision chain is incomplete in Home: Home exposes operational facts and Analytics-owned guidance, no Finance/economic truth, and no Home-owned execution, outcome capture, or learning.
 
 ## 11. Feature Clusters
 
@@ -281,9 +302,11 @@ Evidence supports the implementation direction, not the proposition's superiorit
 |---|---|---|---|
 | H-R01 | **Material implementation-contract contradiction remains.** The current-looking final Home spec requires an Orders trend, four Today cards, up to three operational groups including stock, and six recent notifications; the reviewed executable code/tests show three Today facts, no trend, two current-work groups, and three notifications. | Stakeholders, QA, and marketing could treat either an incomplete implementation as complete or a required feature as superseded without an explicit decision. | **MUST FIX**: either mark the specification superseded or bring implementation into compliance; do not silently choose. See C-HOME-001. |
 | H-R02 | Home performance has percentages but no causal explanation, comparative baseline, or intervention effect. | A merchant can see an outcome without learning why it changed. | **POST-LAUNCH / WHITESPACE**; do not overclaim intelligence. |
-| H-R03 | Recommended actions have no Home-level explanation/evidence/feedback; this is intentional, but users must leave Home to understand them. | Guidance may feel opaque on the landing surface. | **WORTH ADOPTING** only after Analytics audit; preserve canonical ownership. |
+| H-R03 | Recommended actions currently have no Home-level explanation/evidence/feedback; whether that omission is an intended boundary is not established by the Home contract review. Users must leave Home to understand them. | Guidance may feel opaque on the landing surface. | **WORTH ADOPTING** only after Analytics audit and explicit owner decision; preserve canonical ownership. |
 | H-R04 | No live authenticated runtime or representative data was available. | Rendering, real data shape, role behavior, latency and deployment status are not verified. | **OPEN VERIFICATION**; not a code defect. |
 | H-R05 | The older Dashboard System document is P3 intent and includes inventory snapshot, charts, best product, and insights not verified in current Home code. | Unsafe to use as present-tense marketing or acceptance scope. | **DO NOT CLAIM** until implemented and audited. |
+| H-R06 | Home Summary calls Analytics recommendations, whose full seven-day Analytics path can materialize a persistent recommendation and publish an event during GET. | A supposedly read-only landing request may have cross-domain effects; test mocks do not traverse the real materialization path. | **MUST FIX / CONTRACT DECISION**: make GET side-effect-free or explicitly revise and document contract; add an integration regression test. |
+| H-R07 | Home delegates notifications to a list API that authorizes active Workspace membership but does not re-check source-category permission after revocation; Home also returns full rows while rendering a small projection. | A user retaining Workspace access may see notices after losing Orders/Inventory/etc access; unnecessary fields cross the Home boundary. | **MUST REVIEW** with Notifications owner: enforce category-level authorization and project only approved fields. |
 
 ## 22. Future Strategic Potential
 
@@ -304,6 +327,7 @@ Evidence supports the implementation direction, not the proposition's superiorit
 | “Home tells you why performance changed or what action will improve it.” | RED | No Home-owned causal explanation, predicted impact, or automated execution. |
 | “Wossol's Home is a complete command center with charts, stock forecasts, best products and insights.” | RED | The reviewed build does not substantiate this, while the current-looking specification requires some broader elements. The contract conflict is unresolved; do not market either interpretation as settled. |
 | “Home provides financial health.” | RED | Finance is intentionally forbidden. |
+| “Opening Home is read-only and has no persistent effects.” | RED / unresolved | Analytics recommendation retrieval can materialize state and publish an event through the Summary GET path. |
 
 ## 24. Commercial Magnitude
 
@@ -336,6 +360,8 @@ Evidence supports the implementation direction, not the proposition's superiorit
 | Consider an Analytics-owned explanation affordance reachable from Home, not a duplicate engine | WORTH ADOPTING | Can reduce opacity while retaining source-of-truth boundaries. |
 | Do not add Finance to Home merely for “business dashboard” completeness | DO NOT COPY | It would weaken deliberate financial-domain truth and access boundaries. |
 | Develop fact → explanation → action → outcome loops across owner domains | WHITESPACE / POST-LAUNCH | Potential progression from orientation to genuine guided control. |
+| Resolve Analytics recommendation materialization behind Home Summary GET and test the chosen contract | MUST FIX | Home GET reaches Analytics persistence/event path; no existing Home seam test covers the transitive effect. |
+| Recheck notification category permission and minimize Home notification DTO | MUST REVIEW | Inherited permission revocation and excess projection concerns; coordinate with Notifications owner. |
 
 ## 27. Evidence Register
 
@@ -382,10 +408,10 @@ Evidence supports the implementation direction, not the proposition's superiorit
 
 ### EV-HOME-006
 
-- **Claim / finding:** Home consumes but does not own Decision Center recommendation calculation/ranking/materialization.
+- **Claim / finding:** Home does not own Decision Center recommendation logic, but its request invokes the Analytics path that calculates/ranks and may materialize recommendations.
 - **Evidence type:** P1 + P2
 - **Files / symbols:** `merchant-portal.service.ts:582-597`; `apps/backend/src/modules/analytics/merchant-analytics.service.ts:1522-1546`; `merchant-home-summary.service.spec.ts:178-212`
-- **Observed behavior:** Home requests an Analytics-owned seven-day projection, takes max three safe rows, and isolates unavailable state.
+- **Observed behavior:** Home requests an Analytics-owned seven-day projection, takes max three safe rows, and isolates unavailable state; the transitive path may write canonical recommendation records/events (see EV-HOME-013).
 - **Status / confidence:** LIVE in code / High.
 
 ### EV-HOME-007
@@ -437,6 +463,24 @@ Evidence supports the implementation direction, not the proposition's superiorit
 - **Observed behavior:** The reviewed surface has three Today facts, no trend/ring UI or trend contract, bounded three-item updates, non-zero secondary performance outcomes, dedicated attention, and Analytics-owned recommendation projection. Focused review validation reported 9/9 frontend and 10/10 backend checks plus both typechecks and `git diff --check`.
 - **Status / confidence:** LIVE in reviewed code / High for current executable behavior; contract resolution remains UNCERTAIN. The authoritative review record reports focused validation; this correction did not re-audit Home or rerun product tests.
 
+### EV-HOME-013
+
+- **Claim / finding:** Home Summary GET can trigger Analytics-owned recommendation persistence and event publication when new canonical evidence materializes.
+- **Evidence type:** P1 source trace; focused Home seam test is mocked and does not cover the transitive write.
+- **Repository / commit:** `jetshop7/wossol-platform` / `855ee94af232a460f33980b0d600b84f1f8b3643` (local Product `HEAD`; dirty working tree elsewhere).
+- **Files / symbols:** `apps/backend/src/modules/merchant-portal/merchant-home-summary.service.ts:582-597`; `apps/backend/src/modules/analytics/merchant-analytics.service.ts:getMerchantHomeRecommendations`, `getMerchantAnalytics`, `materializeRecommendations` (around lines 185-401, 1526, 2468-2550).
+- **Observed behavior:** Home conditionally requests Analytics recommendations; this invokes full seven-day Analytics processing; `materializeRecommendations` transactionally creates canonical rows and publishes `recommendation.generated` for newly materialized evidence. Existing same-evidence records may be reused idempotently.
+- **Status / confidence:** Source path LIVE / High; runtime occurrence depends on authorization, inputs, and new evidence and was NOT VERIFIED. This is not a direct Home-service write.
+
+### EV-HOME-014
+
+- **Claim / finding:** Home's notification composition inherits category-permission revocation and broad-row projection concerns from Notifications.
+- **Evidence type:** P1 source inspection.
+- **Repository / commit:** `jetshop7/wossol-platform` / `855ee94af232a460f33980b0d600b84f1f8b3643` (local Product `HEAD`; dirty working tree elsewhere).
+- **Files / symbols:** `apps/backend/src/modules/merchant-portal/merchant-home-summary.service.ts` notification list composition; `apps/backend/src/modules/notifications/notifications.service.ts:list`; `MerchantHomeSummary.notifications` DTO/UI consumers.
+- **Observed behavior:** Home calls Workspace-scoped `list`; list checks active Workspace membership and recipient/workspace query but does not recheck each notice's category permission; query returns full Notification rows while Home consumes a narrow subset.
+- **Status / confidence:** Source behavior / High. Risk is inherited through the owner API; impact and correct policy require Notifications-owner validation.
+
 ## 28. Contradictions & Uncertainty
 
 ### C-HOME-001 — Home design/specification is not fully aligned with executable behavior
@@ -454,10 +498,25 @@ Evidence supports the implementation direction, not the proposition's superiorit
 
 The older Dashboard document calls the dashboard a command center, while current code limits Home to read composition and navigation. The safe conclusion is **operational orientation**, not Home-owned command/execution or full decision intelligence. No implementation conflict exists; this is a claim-safety interpretation conflict.
 
+### C-HOME-003 — Home Summary GET is not proven side-effect-free
+
+| Field | Record |
+|---|---|
+| Source A | `MERCHANT_HOME_SHELL_UI_SPEC.md` says Home creates no persistent state and performs no mutation. |
+| Source B | Home Summary calls `getMerchantHomeRecommendations`; Analytics calls the full `getMerchantAnalytics` path; `materializeRecommendations` can persist canonical recommendation rows and publish `recommendation.generated`. See EV-HOME-013. |
+| Evidence strength | Source A: product contract. Source B: P1 transitive executable source trace. |
+| Working conclusion | Home itself has no direct write in the composition service and its visible UI is read-only; however, the GET path can conditionally cause Analytics-owned writes/events. It is not an end-to-end side-effect-free read. |
+| Remaining uncertainty | Whether intended behavior is side-effect-free Home composition or deliberate Analytics materialization on read, and whether production path reaches new evidence. |
+| Required verification | Product owner must choose contract; preferably separate pure read from explicit materialization or document the side effect and its idempotency/authorization. Add an integration test traversing the real dependency. |
+
+### C-HOME-004 — Home notification projection inherits authorization and minimization concerns
+
+Home reads recent Workspace notices through Notifications. The inspected list path does not revalidate source-category access on each notice after that access is revoked, and Home receives more fields than it displays. This does not establish a new API exposure beyond Notifications itself, but Home broadens the projection boundary; source-owner policy and a narrow DTO need review (EV-HOME-014).
+
 ### Other uncertainty
 
 - No production deployment, authentication journey, live data distribution, latency, accessibility-tool run, or mobile rendering was directly observed.
-- Only the current product workspace was inspected; it was dirty in unrelated Shopify COD-form files. No GitHub fetch was made, so remote divergence beyond local status is **NOT VERIFIED**.
+- Only the current Product workspace was inspected; it was dirty in other domains (including Orders/Commerce, Advertising, Messaging and Shopify). The local tracking ref matched HEAD, but Product remote was not freshly fetched, so remote divergence is **NOT VERIFIED**.
 - Competitor Home/dashboard depth is insufficiently verified for direct superiority claims.
 
 ## 29. Open Questions
@@ -465,6 +524,8 @@ The older Dashboard document calls the dashboard a command center, while current
 1. Is the final Home specification superseded, or must the implementation be brought into compliance with its trend/card/current-work/notification acceptance criteria?
 2. Which canonical Analytics recommendations currently materialize against representative merchant data, and how useful/explainable are they in real use? (Requires Analytics audit/runtime access.)
 3. Does production preserve the focused-test authorization, scope, timezone, and safe-degradation behavior under real database volume and authentic sessions?
+4. Should Home Summary be a pure read, or may it materialize Analytics recommendations and events as a side effect?
+5. Should Home notifications be category-authorized after revocation and returned as a minimized projection?
 
 ## 30. Methodology Learnings
 
@@ -472,8 +533,8 @@ No reusable methodology change was identified. The existing contradiction protoc
 
 ## 31. Retroactive Review Impact
 
-No methodology change. Corrections were applied from the authoritative `04-review-history/HOME_REVIEW_2026-09-25.md` record and cross-recorded in `04-review-history/HOME_REVIEW_CORRECTIONS.md`; the retroactive methodology queue remains unchanged.
+No methodology change. The prior implementation-contract corrections remain traceable to the authoritative `04-review-history/HOME_REVIEW_2026-09-25.md` record and are preserved in `04-review-history/HOME_REVIEW_CORRECTIONS.md`. This incremental V1.2 audit updates `RR-V12-013`; Director review remains pending.
 
 ## 32. Canonical Section Takeaway
 
-**Home is not Wossol's intelligence proposition by itself. The reviewed executable build is a tested, merchant-safe orientation layer that preserves operational truth: the right scope, the right time basis, explicit exceptions, and routes back to the system that owns the action.** The conflicting final specification prevents treating the narrower shape as definitively intentional: the owning team must either supersede that contract or complete the implementation. Its strongest current brand evidence is clarity and trustworthy operational visibility; no absent feature may be marketed as live until the contradiction is resolved.
+**Home is an operational orientation layer, not Wossol's intelligence proposition by itself.** It preserves scope/time semantics and routes to owner systems, while qualitatively reducing first-look scanning; it does not establish measured savings or close the economic/decision/action/outcome chain. The prior final-spec contradiction remains unresolved. In addition, Home's Summary GET can conditionally trigger Analytics-owned persistence/event effects, and notification permission/projection concerns remain open. Resolve these contracts before claiming Home is wholly read-only or fully merchant-safe; no absent feature may be marketed as live until its contract is reconciled.
