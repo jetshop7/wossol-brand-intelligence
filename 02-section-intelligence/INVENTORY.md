@@ -8,7 +8,7 @@
 - **Competitive reference:** `WOSSOL_COMPETITIVE_INTELLIGENCE_MASTER_V1.md` v1.
 - **Intelligence source:** `jetshop7/wossol-brand-intelligence`, `main`, `2066f46`, clean and synchronized before inspection.
 - **Original Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `e3912a967827bde06450d3510228e5a5ca9e78a7`, clean at original audit.
-- **V1.2 Product source:** `dev/wossol-integration`, `46716c433de40fbdbeb023d297d167c49909b380`; remote branch tip matched at verification. The working tree contains four uncommitted Commerce/Orders/Shopify files outside Inventory. They were preserved and not treated as committed product truth; they may affect incoming Order classification and therefore remain a connected-source caveat.
+- **V1.2 Product source:** `dev/wossol-integration`, `46716c433de40fbdbeb023d297d167c49909b380`; remote branch tip matched at verification. The Product working tree was changing during the audit: three uncommitted paths were present at initial status, four during source inspection, and ten Commerce/Orders/Shopify paths at final verification (including Orders UI/tests). All are outside Inventory, were preserved, and are not treated as committed product truth. They may affect incoming Order classification and Inventory inputs; the local Product state was not stable.
 - **Evidence basis:** P1 executable code/schema, P2 focused automated tests and typechecks, P3 Final V1 Inventory UI specification, and P4 dated/architecture material only where explicitly qualified. Static evidence does not prove deployment, live provider connectivity, data quality, or merchant adoption.
 
 ## 2. Audit Coverage Map
@@ -312,7 +312,7 @@ Inventory is Wossol’s evidence-aware operational stock decision surface: it pr
 
 ### Source and migration boundary
 
-This is an incremental V1.2 migration of the accepted V1.1 audit, not a fresh audit or a Director review. The accepted findings and EV-INV-001–014 remain the baseline. No committed Inventory-owned implementation/specification delta was found between the earlier Product snapshot (`e3912a9`) and current branch tip (`46716c4`). The branch is synchronized with its remote, but the Product working tree has four uncommitted files in Commerce/Orders/Shopify. Those changes were read to establish their scope; they are not used as proof of committed behavior and Product files were not modified.
+This is an incremental V1.2 migration of the accepted V1.1 audit, not a fresh audit or a Director review. The accepted findings and EV-INV-001–014 remain the baseline. No committed Inventory-owned implementation/specification delta was found between the earlier Product snapshot (`e3912a9`) and current branch tip (`46716c4`). The branch is synchronized with its remote, but Product working-tree status changed while this task was in progress: the final status contains ten uncommitted Commerce/Orders/Shopify files, all outside Inventory. Those changes were preserved and not used as proof of committed behavior; their evolving state makes uncommitted Order classification an open input-integrity caveat. Product files were not modified.
 
 ### Prior product truth that remains valid
 
@@ -354,7 +354,7 @@ This is an incremental V1.2 migration of the accepted V1.1 audit, not a fresh au
 ### Verification / evidence added
 
 **EV-INV-015 — Current source and scoped migration**
-**Type:** P1/P2. **Repository:** `jetshop7/wossol-platform`. **Commit:** `46716c433de40fbdbeb023d297d167c49909b380`. **Paths:** Inventory module, Merchant Inventory UI and `docs/ui/merchant/MERCHANT_INVENTORY_UI_SPEC.md`. **Observed:** no committed Inventory-owned source/spec change since the original snapshot; current branch tip equals its configured remote tip; four uncommitted Commerce/Orders/Shopify files were preserved and treated only as an uncertainty boundary. **Confidence:** High for the observed Git state at audit time.
+**Type:** P1/P2. **Repository:** `jetshop7/wossol-platform`. **Commit:** `46716c433de40fbdbeb023d297d167c49909b380`. **Paths:** Inventory module, Merchant Inventory UI and `docs/ui/merchant/MERCHANT_INVENTORY_UI_SPEC.md`. **Observed:** no committed Inventory-owned source/spec change since the original snapshot; current branch tip equals its configured remote tip; Product working-tree status changed during the audit and ended with ten uncommitted Commerce/Orders/Shopify paths. These remained untouched and are an uncertainty boundary, not committed capability evidence. **Confidence:** High for observed Git states; workspace was not stable.
 
 **EV-INV-016 — Order-derived metric exclusion / supply decision boundary**
 **Type:** P1/P2. **Path:** `apps/backend/src/modules/inventory/inventory.service.ts`, Order-derived demand, waiting-stock and delivered-velocity queries; `inventory.service.spec.ts`. **Observed:** relevant Order queries specify `isTestRecord: false`; recommendations are deterministic and freshness-gated, use recent delivered velocity, available/expected stock and waiting demand, and do not claim causal learning. **Capability status:** LIVE, derived. **Confidence:** High for code and focused-test evidence; production data unverified.
