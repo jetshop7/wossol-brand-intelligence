@@ -177,7 +177,7 @@ Master Synthesis may now begin, provided it uses accepted section intelligence a
 
 - Repository: `jetshop7/wossol-platform`; branch `dev/wossol-integration`.
 - HEAD inspected: `007d317522d6e1eaa8e2e01d4a6d0608da812ce6` (`origin/dev/wossol-integration` aligned at inspection).
-- Product working tree: four modified, uncommitted paths were present: `apps/backend/src/modules/messaging/messaging-messenger-webhook.controller.ts`, `apps/frontend/src/app/shopify/app/route.ts`, `apps/frontend/src/app/shopify/embedded-cod-management.spec.ts`, and `apps/frontend/src/app/shopify/quantity-editor-runtime.spec.ts`. They were not modified. Local changes were excluded; only committed HEAD is treated as Product truth.
+- Product working tree: **clean** at current HEAD verification. An earlier draft mistook the four-file `git show --stat` of commit `007d3175` for uncommitted changes; final `git status --short` was empty. The four changed paths are committed content of `007d3175`, not excluded local modifications.
 - HEAD inventory: 118 frontend `page.{tsx,ts,jsx,js}` files and 52 backend `*.controller.ts` files, enumerated from the committed tree. Counts are files, not unique screens, endpoints, or runtime/deployment claims. The Director record’s earlier 117 frontend count used a different inventory snapshot/method; this addendum’s reproducible page-file glob yields 118 at HEAD.
 - Relative to Director snapshot `fd2b03f1b51cbba7ebc841b2e0a019c0d0159b1b`, the committed delta is limited to a Shopify App Home script cache-key update and a Messenger webhook ingress log addition; it adds no route/controller family. The other two paths in the local Shopify UI/test delta are uncommitted and excluded.
 
@@ -218,5 +218,5 @@ Focused backend tests for the new/confirmed capabilities and cross-cutting owner
 
 - Scope and gap authority: `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_REVALIDATION_2026-09-28.md`.
 - Reviewer’s requested cross-checks and decision: `04-review-history/FINAL_PRODUCT_CAPABILITY_COVERAGE_GATE_2026-09-28.md`.
-- Product state: committed source at `007d317522d6e1eaa8e2e01d4a6d0608da812ce6`; local worktree changes listed above were preserved and excluded.
+- Product state: committed source at `007d317522d6e1eaa8e2e01d4a6d0608da812ce6`; Product working tree was clean after an explicit status check.
 - This reconciliation and its new supplements are Codex evidence artifacts awaiting Director Coverage Quality Gate; they do not amend Director findings or acceptance status.

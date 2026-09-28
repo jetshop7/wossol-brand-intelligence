@@ -1,6 +1,6 @@
 # Workspace Payment Configuration — Targeted Cross-Domain Supplement
 
-**Status:** targeted clarification across accepted Products, Orders and Confirmation audits; not a standalone payments audit or claim. **Source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, HEAD `007d317522d6e1eaa8e2e01d4a6d0608da812ce6` (upstream-aligned); four local uncommitted paths were present and excluded. **Trigger/authority:** `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_REVALIDATION_2026-09-28.md` and `04-review-history/FINAL_PRODUCT_CAPABILITY_COVERAGE_GATE_2026-09-28.md`, GAP-05. Product source only; no Product files changed.
+**Status:** targeted clarification across accepted Products, Orders and Confirmation audits; not a standalone payments audit or claim. **Source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, HEAD `007d317522d6e1eaa8e2e01d4a6d0608da812ce6` (upstream-aligned); Product working tree clean at inspection. **Trigger/authority:** `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_REVALIDATION_2026-09-28.md` and `04-review-history/FINAL_PRODUCT_CAPABILITY_COVERAGE_GATE_2026-09-28.md`, GAP-05. Product source only; no Product files changed.
 
 ## Current contract
 
