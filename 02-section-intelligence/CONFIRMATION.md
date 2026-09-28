@@ -290,8 +290,46 @@ All P1 citations below refer to Product commit `e3912a967827bde06450d3510228e5a5
 
 ## 31. Retroactive Review Impact
 
-No methodology change or retroactive audit is required. Carry the Orders cancellation-contract issue into Tracking/Delivery and related future sections wherever cancellation-after-processing/dispatch authority is discussed. Do not mutate or reinterpret the Orders review record in this audit.
+No methodology change or retroactive audit is required. RR-V12-011 is the applicable V1.2 migration item; its status and evidence are tracked in `00-methodology/RETROACTIVE_REVIEW_QUEUE.md`. Carry the Orders cancellation-contract issue into Tracking/Delivery and related future sections wherever cancellation-after-processing/dispatch authority is discussed. Do not mutate or reinterpret the Orders review record in this audit.
 
 ## 32. Canonical Section Takeaway
 
 Wossol Confirmation is currently evidenced as a human-worked, capacity-routed and auditable customer-decision workflow that gives merchants bounded visibility and team-composition agency, then hands confirmed Orders into guarded Dispatch. Its strongest candidate value lies in the connected operational control and evidence trail—not in the category feature of confirmation itself. Telephony automation, AI, outcome lift, production reliability, broad merchant control and a durable data moat remain unproven; the cancellation contract boundary remains explicitly unresolved.
+
+## 33. V1.2 Delta Review (2026-09-28)
+
+### Source state and scope
+
+- Product: `C:\Users\Global Tech\Documents\wossol-platform`, branch `dev/wossol-integration`, commit `34cae67aaaa41c5967cad4b7145e67c84a8e0f34`; working tree clean and cached `origin/dev/wossol-integration` matched. Fetch could not update `.git/FETCH_HEAD` because of permission denial, so remote freshness is unverified. Product was inspected read-only.
+- Intelligence baseline before this migration: `0f56b528011c9ee1ab21c47e7dc23e492bb694cc`, clean `main`, cached `origin/main` matched; fetch likewise could not update `.git/FETCH_HEAD`.
+- This is an incremental V1.2 review of source changes relevant to Confirmation, not a replacement audit. The accepted V1.1 findings in §§1–32 and the 2026-09-25 Director review remain in force unless explicitly refined below. Director V1.2 Quality Gate is pending.
+
+### What changed and what it means
+
+V1.2 adds immutable checkout-capture origin to Confirmation-facing projections, an incomplete-origin order cohort distinct from the ordinary completed-checkout Confirmation-performance cohort, a merchant overview panel for that recovery cohort, and origin labels in Admin order list/detail and Worker UI. The standard rate continues to exclude `INCOMPLETE_CHECKOUT`; the active queue remains inclusive. This makes source provenance visible at the operational handoff and provides descriptive outcome accounting for Orders that originated in the incomplete-checkout finalization path.
+
+The phrase “Captured this operational day” is narrower in implementation than an ordinary merchant may infer: the projection selects canonical, non-test, non-duplicate Orders whose `checkoutCaptureOrigin` is incomplete and whose canonical `Order.createdAt` falls within the operational day. It does not count every interrupted checkout session or a session that never became a canonical Order. Source code can finalize a timed-out `COLLECTING/orderReady` session after 30 minutes without explicit “Order Now”; an unready session expires without producing an Order. The current panel is therefore an Order-cohort outcome view, not a complete abandoned-session funnel. `recoveryRate` is confirmed incomplete-origin Orders divided by all selected canonical incomplete-origin Orders; it is not a rate of customers re-engaged, incremental purchases, recovered revenue, or causal lift. No minimum cohort/sample-size suppression was observed.
+
+The V1.2 addition can reduce the merchant/operator effort of identifying an Order’s origin and reconciling its current Confirmation outcome, and can keep this population analytically distinct from standard checkout Confirmation. That is a plausible friction reduction, not measured time saved or workload removed. It does not remove human contact, staffing/capacity work, service-policy decisions, or dispatch/fulfilment responsibilities; no dialer or contact-provider capability follows from the new labels or metric. It is a modest tool/process consolidation within the Confirmation surface, not evidence of replacing telephony or customer-contact tools.
+
+The connected value chain is now more explicit: checkout source provenance → canonical Order → human Confirmation outcome → guarded Dispatch → downstream fulfilment/economic outcome. The new projection describes the middle of that chain; it does not learn, recommend, or decide. A useful demo would show a standard Order and incomplete-origin Order, explain that the latter appears in a separate Order-based cohort, then trace its human Confirmation and later fulfilment outcome. Do not present an auto-finalized timeout Order as proof of shopper intent or an incremental recovered purchase.
+
+### Retained conclusions and remaining risk
+
+- The best candidate strategic value remains accountable human-work coordination plus traceable handoffs; checkout-origin provenance strengthens the evidence chain but does not establish a moat or proprietary learning loop.
+- Confirmation as a category capability is table stakes in the existing competitive baseline. This code delta alone does not prove a comparative advantage.
+- The V1.1 Director review’s three open issues remain open: cancellation contract alignment; intended Admin entry/dashboard consistency; and actual contact channels, consent/contact-hour/retention policy, staffing and production service evidence. The separate Orders cancellation-contract contradiction remains unresolved; the incomplete-origin cohort does not settle it.
+- The V1.2 cohort needs merchant-safe denominator/label clarity, particularly because eligible timeout finalization can occur without an explicit shopper “Order Now” and non-ready sessions are absent. Establish intent/notice/consent policy and an eligible-session denominator before making recovery, abandoned-demand, campaign, conversion-lift, or revenue claims. Validate sample-size/privacy behavior, data completeness, and production cohort semantics.
+- Existing Claim Safety in §23 still applies. “Recovered from Incomplete” is safe only as a product status label for a canonical Order with incomplete origin and current `CONFIRMED` status, not as proof that an abandoned sale was recovered.
+
+### V1.2 verification and evidence
+
+At the Product commit above, focused backend tests `merchant-confirmation-rate.spec.ts` passed 5/5, including “Incomplete recovery is measured against the captured cohort, not terminal outcomes.” A combined run with `confirmation.service.spec.ts` had 87 passes and 2 failures: two Worker Ready for Dispatch/API Failed queue tests threw because the fixture omitted `workerContextualAttention`’s dependency (`findMany` on undefined). These failures do not exercise the new recovery projection, but the service file is not a clean pass. The frontend `confirmation-overview.spec.ts` attempt failed before tests because its source-relative path resolved to a missing backend file from the frontend working directory; it is not counted as a test result. No full suite, end-to-end/browser, database integration, deployment, or production behavior was verified.
+
+| ID | Tier | Evidence | Supports / limitation |
+|---|---|---|---|
+| EV-CONF-016 | P1 | Product `apps/backend/src/modules/confirmation/confirmation.service.ts`, `merchant-confirmation-rate.ts`, and `merchant-confirmation-rate.spec.ts` at `34cae67aaaa41c5967cad4b7145e67c84a8e0f34` | Separate standard and incomplete-origin projections; operational-day cohort is canonical Order creation day; excludes tests/duplicates; rate denominator is selected Orders, not checkout sessions. |
+| EV-CONF-017 | P1 | Product `apps/frontend/src/app/merchant/confirmation/page.tsx`, `confirmation-overview.spec.ts`, `apps/frontend/src/app/admin/confirmation/orders/**`, Worker Confirmation UI | Merchant cohort panel and origin-specific Admin/Worker labels; source tests are not all successfully executed. |
+| EV-CONF-018 | P1/P3 | Product Shopify session finalization source and `docs/wossol-system-design/01-system-design/core-systems/CONFIRMATION_MODE_PROVENANCE_P0_08.md`; Intelligence `ORDERS.md`, `SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md` | Timeout auto-finalization applies to ready sessions without explicit Order Now; unready sessions do not yield Orders; provenance is distinct from intent or incremental demand. P3 expresses governed contract, not runtime proof. |
+| EV-CONF-019 | P2 — observed pass | At Product commit above, `merchant-confirmation-rate.spec.ts`: 5 passed. | Focused projection contract only, not production behavior. |
+| EV-CONF-020 | P2 — incomplete/blocked | Combined backend focused run: 87 pass, 2 ConfirmationService fixture failures; frontend overview source test failed path resolution before execution. | Record failures and scope; not a clean suite pass. |
