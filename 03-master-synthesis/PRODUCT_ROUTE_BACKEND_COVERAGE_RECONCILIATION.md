@@ -99,3 +99,70 @@ The route inventory has no remaining unexplained merchant, worker, public-tracki
 - `04-review-history/NOTIFICATIONS_REVIEW_2026-09-26.md` — authoritative request for final route/backend reconciliation.
 - `04-review-history/MERCHANT_SURFACE_COVERAGE_REVIEW_2026-09-26.md` — prior route gap inventory and acceptance sequence.
 - Accepted section evidence and review records listed in `02-section-intelligence/` and `04-review-history/`; this reconciliation changes no prior Director decision.
+
+
+---
+
+## V1.2 Synthesis Readiness Addendum — 2026-09-28
+
+This addendum supersedes the historical **"Synthesis readiness: conditional"** conclusion above for current governance purposes. The historical text is preserved to show what was true at the time of the 2026-09-26 reconciliation.
+
+### Current Product state
+
+- Product branch checked from GitHub: `dev/wossol-integration`.
+- Current committed HEAD: `34cae67aaaa41c5967cad4b7145e67c84a8e0f34`.
+- Comparison from the original reconciliation baseline `4e26b4369e6416c22c731b8be706d72562a19d5b` to current HEAD shows **no newly added frontend page route file and no newly added backend controller file**.
+- Route/controller changes in that interval are modifications within already reconciled owner families: Confirmation, Advertising, Analytics, Orders, Products, Messaging and Shopify.
+- Those material product deltas were subsequently inspected through the relevant V1.2 migrations and Director Quality Gates.
+
+Therefore the 118-page / 52-controller inventory remains a valid **coverage-family crosswalk**, even though individual source files have evolved.
+
+### V1.2 governance state
+
+RR-V12-001 through RR-V12-021 are now all `ACCEPTED` in `00-methodology/RETROACTIVE_REVIEW_QUEUE.md`.
+
+The governance reconciliation is recorded in:
+
+`04-review-history/V1_2_GOVERNANCE_RECONCILIATION_2026-09-28.md`
+
+Each migration has an authoritative V1.2 Director review with decision:
+
+**ACCEPT WITH OPEN PRODUCT ISSUES**
+
+The Shopify Embedded App / COD Commerce Experience supplement has also passed its V1.2 Director Quality Gate; the older "supplement pending" language above is historical and no longer controls readiness.
+
+### Coverage conclusion
+
+No unexplained route/controller family is currently identified at Product HEAD `34cae67...`.
+
+This does **not** prove every runtime path, provider behavior, deployment, test harness, production outcome or competitive state is complete. It establishes that the planned Product-surface intelligence coverage is sufficient to proceed to synthesis under the open-issue constraints below.
+
+### Mandatory synthesis constraints
+
+Master Synthesis must preserve, not erase, at least these cross-domain boundaries:
+
+1. **Test Order population inconsistency** — explicit exclusions exist in Inventory, Customers commercial/reputation, Market Center/H-C04 and selected Confirmation/Tracking paths, while active Merchant Analytics populations remain inconsistent.
+2. **Incomplete-checkout origin / shopper-intent boundary** — timeout-finalized canonical Orders can exist without explicit Order Now; origin is provenance, not proof of intent, incremental recovery or recovered revenue.
+3. **Delivery / Finance / cost / profit authority separation** — delivery outcome, human Finance collection recognition, external cash settlement, Inventory FIFO cost and Analytics profitability are distinct truths.
+4. **Historical cost mutability** — Analytics can read current Inventory cost-layer values for historical allocations; immutable historical COGS is not established.
+5. **Messaging referral identity vs attribution** — exact Messenger referral Ad identity can be preserved/resolved, but freshness, conversation identity, causality and multi-touch winner attribution are not established.
+6. **Market Center scope** — Wossol-observed ordered activity is not national demand, market share, delivered demand or profitability; checkout-origin population policy remains unresolved.
+7. **Consent/contact boundary** — stored customer/contact evidence and operator contact affordances are not active consent authorization or verified message/contact delivery.
+8. **Orders cancellation contract** — executable predicates and Final V1 "before processing starts" language remain unresolved.
+9. **YouCan ingestion gap** — connection/webhook infrastructure does not establish successful canonical Order ingestion while deterministic Wossol Destination resolution is missing.
+10. **Shopify COD policy/deployment gaps** — incomplete-origin intent/notice, DB migration/deployment parity, price commitment and live/browser acceptance remain open.
+11. **Customer identity/reputation gap** — country-aware canonical identity and phone-keyed reputation semantics remain unresolved; reputation remains retrospective, not predictive.
+12. **Notifications reliability/authorization gaps** — persisted-domain-permission recheck, batching unread semantics, pagination and poison-event recovery remain open.
+13. **Inbound money semantics** — Local Pickup supplier-payment wording is not backed by external payment execution/settlement evidence.
+14. **Inventory specification conflicts** — the five preserved Final V1/P1 contradictions remain open.
+15. **Production/competitive proof** — source depth and test evidence do not equal live provider reliability, measured merchant outcomes or competitive superiority.
+
+### Current readiness conclusion
+
+**Product-surface coverage: READY FOR SYNTHESIS.**
+
+**V1.2 governance: READY FOR SYNTHESIS.**
+
+**Open Product issues: MUST BE CARRIED INTO SYNTHESIS.**
+
+Master Synthesis may now begin, provided it uses accepted section intelligence and Director review records as authorities and does not upgrade open issues, future architecture or unverified outcomes into current claims.
