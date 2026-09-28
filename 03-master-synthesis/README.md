@@ -1,8 +1,11 @@
 # Master Synthesis
 
-**Status:** V1.2 master synthesis initialized and Director-controlled.
+**Status:** PROVISIONAL — current Product capability coverage revalidation hold is active.
 
-Master Synthesis is authorized by:
+Master Synthesis was initialized after the V1.2 readiness gate, but current Product capability coverage revalidation found under-audited surfaces. Final reliance is paused by:
+- `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_REVALIDATION_2026-09-28.md`
+
+Original readiness references:
 - `04-review-history/SYNTHESIS_READINESS_GATE_2026-09-28.md`
 - `04-review-history/V1_2_GOVERNANCE_RECONCILIATION_2026-09-28.md`
 
