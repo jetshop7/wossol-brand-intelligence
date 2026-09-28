@@ -1,9 +1,8 @@
 # Master Synthesis
 
-**Status:** V1.2 Master Synthesis may resume — current Product capability coverage hold closed by Director at Product `007d3175...`; targeted synthesis patch pending.
+**Status:** CURRENT V1.2 EVIDENCE SYNTHESIS — Product capability coverage hold closed and targeted capability-closure patch applied at Product `007d3175...`.
 
-Master Synthesis was initialized after the V1.2 readiness gate, but current Product capability coverage revalidation found under-audited surfaces. Final reliance is paused by:
-- `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_REVALIDATION_2026-09-28.md`
+Master Synthesis was initialized after the V1.2 readiness gate. A later Product capability revalidation temporarily reopened coverage; that hold is now closed by `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_CLOSURE_REVIEW_2026-09-28.md`. The earlier revalidation record is preserved as historical governance.
 
 Original readiness references:
 - `04-review-history/SYNTHESIS_READINESS_GATE_2026-09-28.md`
@@ -61,4 +60,4 @@ The capability-universe coverage hold is closed. Six targeted supplements are ac
 
 Open Product issue retained: Canonical Geography focused test/source supersession-contract mismatch (7/8).
 
-Before treating the three synthesis masters as current, patch them incrementally for the newly accepted evidence. Do not rewrite accepted synthesis from scratch.
+The three synthesis masters have now been patched incrementally for the newly accepted evidence and are current as the Product-evidence synthesis foundation. They remain pre-Brand-Strategy evidence artifacts, not final positioning or identity.
