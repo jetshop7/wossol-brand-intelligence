@@ -42,7 +42,7 @@ Merchant routes are `/merchant/products`, `/merchant/products/create`, `/merchan
 |---|---|---|
 | Scoped catalog list | LIVE | workspace/store scope, pagination, search by Product/Variant/SKU/code, sort, taxonomy filter, exact-store Shopify health filter |
 | Product and Variant creation | LIVE, provider-dependent | local inactive foundation, required provider mapping, activation only on complete success |
-| Test Product eligibility | LIVE | merchant create/edit flag, default off; downstream Manual Test Order eligibility only |
+| Test Product eligibility | LIVE | merchant create/edit flag, default off; eligible for Manual Test Orders and supported Shopify COD test flows; analytics exclusion is not universal |
 | Catalog editing | LIVE | safe Product/default-Variant fields; Variant edits sync provider before local save |
 | Product/Variant images | LIVE | bounded local Product images and Wossol-owned staged Variant image storage; auditable association changes |
 | Taxonomy | LIVE | active global categories and historical/superseded assignment evidence |
@@ -56,7 +56,7 @@ Merchant routes are `/merchant/products`, `/merchant/products/create`, `/merchan
 
 ## 6. Workflow & Lifecycle
 
-1. An authorized merchant chooses an active Store in an active Workspace and creates a Product with at least one Variant. The merchant may mark it as a Test Product; that flag is for future Manual Test Order eligibility only.
+1. An authorized merchant chooses an active Store in an active Workspace and creates a Product with at least one Variant. The merchant may mark it as a Test Product; this is a Wossol-wide classification used by supported Manual Test Order and Shopify COD test flows.
 2. Product, Variant(s), taxonomy assignment, Store association, and an audit foundation are written inactive in a serializable transaction.
 3. Each Variant is linked to Accurate/Mayar. Only complete mapping activates the Product/Variants and creates initial versioned payment-policy evidence.
 4. A failed create compensates newly created provider records where possible; otherwise the inactive foundation is retained only for audited reconciliation. Failed Variant creation is likewise archived/compensated.
@@ -73,7 +73,7 @@ Merchant routes are `/merchant/products`, `/merchant/products/create`, `/merchan
 | Downstream operations | stable Product/Variant identifiers, active-state gating, Store/Workspace ownership, mapping evidence |
 | Customer-facing channels | explicit Shopify Product/Variant identity and selected Wossol-owned media transfer |
 | Support | Product context can be referenced; Product Detail links to a pre-scoped Product/Inventory support request |
-| Merchant demand-validation operator | Test Products can be selected for eligible Manual Test Orders under Orders rules; this does not rewrite commercial history or stock truth |
+| Test-flow operator | Test Products can be selected in supported Manual Test Order and Shopify COD flows under Orders rules; this does not itself establish commercial history, stock truth, or analytics exclusion |
 
 ## 8. Control & Merchant Agency
 
@@ -100,7 +100,7 @@ The immediate merchant value is operational confidence: a Product only becomes o
 1. **Operationally safe catalog creation:** inactive foundation + provider mapping + compensation + activation + audit. This is more valuable than a basic create form because it avoids a locally visible but operationally unusable SKU.
 2. **Exact channel identity:** Store-scoped Shopify Product/Variant mappings + explicit selector + opaque correlation recovery + media evidence. The capability is not merely an integration badge.
 3. **Merchant-safe product truth:** taxonomy + read-only availability + payment-policy versioning + history + immutable order guard. Together these make Product data more dependable downstream.
-4. **Bounded demand-validation flag:** Test Product is a small but meaningful Product/Orders control. It exposes eligibility for future Manual Test Orders while preserving separation from historical Order purpose, stock, and commercial Analytics.
+4. **Bounded test-flow classification:** Test Product is a Product/Orders/Shopify control for supported Manual Test Orders and Shopify COD test flows. Test Order purpose remains distinct from commercial truth; downstream analytics exclusion must be verified per projection.
 
 ## 12. Merchant Journey / Old Way vs Wossol Way
 
@@ -129,7 +129,7 @@ This is a credible foundation for later Product-level operational or commercial 
 ## 15. Cross-Section Compound Advantages
 
 - **Products × Inventory:** exact Variants and reserved-availability projection support operationally honest catalog availability without mutable duplicate stock.
-- **Products × Orders/Finance:** Product payment-policy versions can be captured against order lines, preserving historical economic context instead of rewriting it. The Test Product flag is checked by Orders for future Manual Test Order eligibility; it does not rewrite historical Order purpose, stock, or commercial Analytics.
+- **Products × Orders/Finance:** Product payment-policy versions can be captured against order lines, preserving historical economic context instead of rewriting it. Test Product classification gates supported test flows and is preserved as Order purpose; it does not itself guarantee exclusion from every analytics projection.
 - **Products × Shopify:** Wossol Product identity can be carried into a draft channel Product with exact Variant and media evidence.
 - **Products × Advertising:** Product/Variant links create a prerequisite identity layer for later attribution, but do not prove attribution or performance today.
 - **Products × Support:** a merchant can enter support with the relevant Product context without granting Support ownership of catalog mutation.
@@ -202,7 +202,7 @@ These are current product qualities, not a final brand promise.
 | Claim | Safety | Reason |
 |---|---|---|
 | Manage products and variants in a scoped merchant workspace/store | GREEN | implemented UI/API/schema |
-| Mark a Product for future Manual Test Order eligibility | GREEN, qualified | Product create/edit and Orders eligibility checks are implemented; the flag does not change historical Order purpose, stock, or commercial Analytics |
+| Mark a Product for supported test-flow eligibility | GREEN, qualified | Product create/edit, Manual Test Order, and Shopify COD checks are implemented; downstream analytics exclusion is unresolved in some projections |
 | Keep stock read-only while showing known availability | GREEN | current Product/Inventory boundary |
 | Create an unpublished Shopify draft and explicitly map variants | GREEN, qualified to eligible connected stores | implemented but connectivity/permissions are prerequisites |
 | Product creation is operationally safe | YELLOW | strong code evidence, but no live reliability/SLA evidence |
@@ -233,7 +233,7 @@ These are current product qualities, not a final brand promise.
 | MUST MATCH | Establish a safe bulk/import or assisted catalog-onboarding path if target merchants arrive with existing catalogs. | Manual single-Product creation creates adoption friction. |
 | MUST BEAT | Join existing Product identity to verified downstream outcome projections before presenting Product intelligence. | This turns good data foundations into merchant decisions. |
 | MUST MATCH | Resolve the Final V1 Store-mapping contract against the executable ProductStore lifecycle; implement or explicitly narrow the approved behavior before marketing multi-Store management. | P3 intent is broader than targeted P1 evidence. |
-| WORTH ADOPTING | Make Test Product eligibility and its Manual Test Order-only boundary clear in merchant education. | The capability is useful for demand validation but unsafe to imply as commercial analytics or stock bypass. |
+| WORTH ADOPTING | Explain Test Product eligibility across supported test flows and distinguish it from commercial analytics. | Test-flow capability does not prove analytics exclusion or commercial performance. |
 | DO NOT COPY | Do not present raw historical confirmation/delivery rates as universal product promises. | Competitive master identifies context and trust risk. |
 | POTENTIAL MOAT | Preserve exact cross-domain provenance and historical policy/mapping evidence as the outcome graph expands. | History is slower to recreate than a catalog UI. |
 
@@ -316,7 +316,7 @@ These are current product qualities, not a final brand promise.
 1. **CONTRADICTION-PROD-001 — Documentation status:** the dated architecture-reading summary describes Product create/edit/delete, real provider sync, and image storage as closed future work. P1 code and focused tests show these are implemented. The summary is P4 historical context, not current capability evidence.
 2. **CONTRADICTION-PROD-002 — Contract versus executable Product UI:** the Final V1 UI specification is P3 approved intent; P1 establishes what the reviewed build executes. Where they differ materially, both remain recorded as executable truth versus unresolved contract intent. P1 does not by itself prove that the Final V1 contract was superseded.
 3. **CONTRADICTION-PROD-003 — Store mapping:** P3 describes broader All Stores/Store-mapping behavior, while targeted P1 evidence verifies one creation association and scoped reads but not a general merchant mapping mutation flow. This remains PARTIAL / unresolved and is not resolved by inference.
-4. **Test Product alignment:** P3 says the flag controls future Manual Test Order eligibility only. P1 confirms create/edit persistence and Orders eligibility checks; no evidence indicates it changes historical Order purpose, stock, or commercial Analytics.
+4. **Test Product alignment:** P3 describes Manual Test Order eligibility, while current P1 also supports Shopify COD test flows. The flag preserves test purpose and avoids ordinary stock/delivery handling, but Analytics V1.2 identifies unresolved Test Order inclusion in some operational, recovery, and economic projections; do not conclude all commercial Analytics exclude these records.
 5. No live provider, database, production deployment, or merchant session was inspected. “LIVE” in this audit means code implemented and covered by static checks, not proven production availability.
 6. Product connection health is a projection: restricted/unavailable states must not be read as disconnected, and a generic attention label must not be read as a merchant-remediable provider diagnosis.
 
@@ -335,8 +335,59 @@ No reusable methodology change identified. This correction applies the existing 
 
 ## 31. Retroactive Review Impact
 
-No methodology change; no retroactive queue entry. The dated Product/Variant architecture summary does not itself justify re-auditing completed sections. Connected-domain findings should be considered when those domains are independently audited.
+No methodology change. V1.2 migration is tracked as RR-V12-009 in the retroactive review queue and §§33–35 below. The dated Product/Variant architecture summary does not itself justify recursively re-auditing completed sections; connected-domain findings remain with their independently audited owner sections.
 
 ## 32. Canonical Section Takeaway
 
-**Products is a controlled execution-identity system: it gives merchants a simple catalog surface while requiring exact Variant identity, scoped ownership, external mapping, history, and payment-policy evidence before the catalog can safely drive commerce. It also carries a bounded Test Product flag for future Manual Test Order eligibility. Its present value is trustworthy control, not product intelligence; broader Store-mapping behavior remains an explicit contract-versus-executable question.**
+**Products is a controlled execution-identity system: it gives merchants a simple catalog surface while requiring exact Variant identity, scoped ownership, external mapping, history, and payment-policy evidence before the catalog can safely drive commerce. Test Product classification supports Manual Test Orders and Shopify COD, but unresolved Analytics population handling means it cannot be assumed to stay outside all operational/economic reporting. Its present value is trustworthy control and provenance, not product intelligence; broader Store-mapping behavior remains an explicit contract-versus-executable question.**
+
+## 33. V1.2 Delta Review — RR-V12-009
+
+- **Review date:** 2026-09-28. **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.2. This is an incremental re-audit; §§1–32 and EV-PROD-001–018 remain preserved evidence/history, not presumed complete under V1.2.
+- **Intelligence baseline:** `jetshop7/wossol-brand-intelligence`, `main`, `08453aeb7c7c578a922879c98c14856084b7798f`, synchronized at startup.
+- **Product source:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `34cae67aaaa41c5967cad4b7145e67c84a8e0f34`; workspace reported clean and local `origin/dev/wossol-integration` matched at inspection. A fresh fetch could not write `.git/FETCH_HEAD` (permission denied), so GitHub freshness is unverified. Product repository was read-only for this review.
+- **Change scope:** current Product source since the prior Product correction contains no new general Store-mapping mutation flow. The materially relevant connected-domain V1.2 implementation extends Shopify COD session/product identity, test classification, provenance, and canonical Order handling. This re-audit does not close the accepted Store-mapping contract issue.
+
+### 33.1 Cross-domain identity and provenance trace
+
+The supported chain is **Product → Variant → ProductStore / provider identity → exact Shopify Product/Variant mapping → Shopify COD session snapshot → canonical Order**. The V1.2 checkout schema relates the session to Product, ProductStore, Store, and Commerce connection; the checkout snapshots Test classification and fails closed if that classification changes. Order creation derives/validates test purpose against the selected Product classification and retains checkout origin. These joins strengthen identity and source continuity, but they are not a Product-owned attribution or outcome model.
+
+Downstream ownership remains separated: Inventory owns availability/reservation and Test Orders bypass reservation; Confirmation, Tracking/Delivery and Finance own their respective operational/economic truth. Product identity can be carried into those domains, but this review found no current Product-level join that calculates delivery quality, returns, revenue, contribution, profitability, demand, or recommendations. Shopify COD test completion is a supported flow, not evidence of commercial performance or a measured demand-validation result. Timed-out Test checkout does not create incomplete-recovery Order truth.
+
+### 33.2 V1.2 merchant-work and compound-value extraction
+
+Exact scoped Product/Variant mappings can reduce repeated identity matching between catalog, channel, and Order workflows; guarded creation/recovery can reduce operator uncertainty about whether a catalog record is usable. The Test Product path permits a deliberately classified test transaction through supported Manual Test Order and Shopify COD flows without requiring ordinary stock availability. These are plausible removals of reconciliation/setup effort, not measured time savings. Remaining work includes provider setup/recovery, Store mapping where needed, and interpreting downstream results across their owning sections.
+
+The compound asset is preserved identity and bounded provenance across domains. Its current value is operational traceability. The chain reaches captured operational/economic data only conditionally; calculation, interpretation, recommendations, action guidance, and a Product learning loop are not established here. No “product intelligence,” automatic attribution, or measured validation claim follows from the data model alone.
+
+### 33.3 Test Product correction and unresolved population risk
+
+The V1.1 wording that limited Test Product eligibility to future Manual Test Orders is superseded by current V1.2 evidence: Product UI copy and Shopify COD code support Test Products in Shopify COD as well as Manual Test Orders. The flag is Wossol-wide, persists on Product, and is independent of stock quantity. Shopify snapshots it; a classification mismatch fails closed; test Orders avoid ordinary Inventory reservation and delivery. This expands eligible test paths, but does not turn a Test Order into a commercial Order or prove that all analytics populations exclude it.
+
+The Analytics V1.2 record identifies unresolved Test Order inclusion in active operational, recovery, and economic projections. Product-level classification is therefore not sufficient evidence that every downstream query excludes test records. This is a material cross-domain risk; preserve the analytics population boundary as open until each projection is verified/fixed by its owner. Market Center’s separate exclusion does not prove exclusion elsewhere.
+
+### 33.4 Contract issue, competition, and claim boundary
+
+The Final V1 Store-mapping issue (EV-PROD-018) remains unresolved: the approved P3 contract describes All Stores creation requiring at least one selected Store and optional broader mapping management; inspected P1 supports scoped reads and a ProductStore association on creation, but no general merchant ProductStore mutation route was verified. Shopify checkout’s exact ProductStore relation is session context, not a general mapping-management capability. Do not characterize this as intentional absence or as resolved.
+
+Catalog, exact channel identity, and provider connectivity remain table stakes; no current, verified competitor evidence supports superiority. Exact cross-domain identity and preserved source context are candidate strengths, conditional on reliable provider operation and complete downstream outcome joins. No new competitive claim is authorized by this delta.
+
+### 33.5 Verification and limits
+
+- Product backend focused specs: **153 total; 152 passed, 1 failed**. The failure is `product-read-projection.service.spec.ts`, “reuses the local Product projection within workspace and merchant scope”: the test expected `status: { not: 'ARCHIVED' }`, while current service queries `status: 'ACTIVE'`. It is recorded as a test/source expectation mismatch, not silently counted as a pass or resolved behavior.
+- Backend typecheck: `pnpm run typecheck` in `apps/backend` **passed**.
+- The Product workspace remained unchanged. No live provider, deployed environment, merchant session, or production dataset was validated. Product remote freshness was unavailable as noted in §33 metadata.
+
+## 34. V1.2 Evidence Additions
+
+**EV-PROD-019 — Shopify COD Product identity and Test classification**
+**Type:** P1/P2. **Paths:** `apps/backend/prisma/schema.prisma` (`CommerceCodCheckoutSession` relations); `apps/backend/src/modules/shopify/shopify-cod.service.ts`; `apps/backend/src/modules/orders/orders.service.ts`; Product create/edit UI pages.
+**Observed:** checkout session is tied to Product/Store/connection context, snapshots Test classification, rejects classification drift, and derives test Order purpose from matched Product identity. Test Product is supported for Shopify COD as well as Manual Test Order flows; Test Orders do not use ordinary Inventory reservation/delivery. **Confidence:** High for inspected source; deployed behavior unverified.
+
+**EV-PROD-020 — Product identity does not establish outcome intelligence**
+**Type:** P1/P2 cross-section synthesis. **Paths:** Products read projection, Orders, Shopify COD and related Inventory/Confirmation/Tracking/Finance/Analytics V1.2 records.
+**Observed:** Product/Variant/source identity can traverse into canonical Orders and downstream domains, each of which owns its truth. No current Product-owned performance/economic projection, recommendation, or learning loop was established. Analytics V1.2 separately records unresolved Test Order inclusion in active operational, recovery, and economic projections. **Confidence:** High for the scoped inspected chain; full production joins and all query populations unverified.
+
+## 35. Retroactive Review Impact — RR-V12-009
+
+RR-V12-009 is **UPDATED**: this V1.2 incremental re-audit preserves prior Products evidence and the open Store-mapping contract issue; corrects Test Product coverage to include Shopify COD; adds identity/provenance and operational/economic/analytics boundaries; and records unresolved Test Order analytics inclusion. No methodology change was made. Current Director V1.2 Quality Gate remains pending.
