@@ -255,8 +255,65 @@ No reusable methodology change identified. Existing evidence hierarchy and contr
 
 ## 31. Retroactive Review Impact
 
-No prior section audit or methodology change was identified as requiring retroactive review. The unresolved identity/reputation and consent integration risks should be considered by reviewers of related Customers, Orders, Confirmation and Messaging claims, but do not by themselves establish a retroactive source correction in those records.
+RR-V12-010 is tracked below. No methodology change is proposed. The unresolved identity/reputation and consent integration risks should be considered by reviewers of related Customers, Orders, Confirmation and Messaging claims, but do not by themselves establish a retroactive source correction in those records.
 
 ## 32. Canonical Takeaway
 
 Wossol Customers is currently a scoped merchant relationship register connected to Orders, plus a cross-merchant delivery-history aggregate and internal identity/acquisition/consent foundations. Its strongest defensible value is continuity with controlled boundaries. The aggregate reputation's country-insensitive key and conflict with the approved Final V1 formula must be resolved before stronger network-intelligence claims; consent storage must not be presented as consent-managed communication.
+
+## 33. V1.2 Incremental Migration / Delta Review — RR-V12-010
+
+- **Review date:** 2026-09-28. **Methodology:** `00-methodology/MASTER_INSTRUCTIONS.md` v1.2. This incremental migration preserves §§1–32 and EV-CUS-001–014; the original V1.1 evidence remains historical evidence, not presumed V1.2 completeness.
+- **Intelligence baseline:** `jetshop7/wossol-brand-intelligence`, `main`, `2fc7fd4c0c8280c87de4b77d8fab76cdb8c5dfd9`. Startup fetch could not write `.git/FETCH_HEAD`; local HEAD matched cached `origin/main`. A no-op fast-forward attempt could not write `.git/ORIG_HEAD`; no divergence was present in the cached refs.
+- **Product source:** `jetshop7/wossol-platform`, `C:\Users\Global Tech\Documents\wossol-platform`, branch `dev/wossol-integration`, commit `34cae67aaaa41c5967cad4b7145e67c84a8e0f34`, audit date 2026-09-28. Worktree was clean and local cached `origin/dev/wossol-integration` matched HEAD; fetch could not write `.git/FETCH_HEAD`, so GitHub freshness and local-vs-current-remote equality are unverified. Product was not modified.
+- **Change check:** no Customers module/UI/spec/Customer contract file changes were found between the prior evidence baseline `e3912a967827bde06450d3510228e5a5ca9e78a7` and current HEAD. Rechecked current Customer source plus connected Orders, Confirmation and Tracking pathways; V1.2 changes elsewhere expand Commerce/Shopify/Messenger Order provenance, but do not create a Customers-owned profile, consent workflow, identity correction path, or validated intelligence layer.
+
+### 33.1 V1.2 customer value and work removed
+
+The merchant job is continuity, not CRM replacement: when a repeat Order is created, the merchant need not reconstruct all of that merchant's linked Order history from isolated records; bounded Order-entry signals can surface own history and delivery-reliability categories, while notes/overrides and a reasoned future-Order block remain in the merchant's scope. Customer Detail also provides filtered history and links to Order-owned resolution when a customer block has left older Orders in `BLOCKED_CUSTOMER`.
+
+This consolidates a narrow Customer lookup/history workflow inside Wossol. It does not establish replacement of an external CRM, general campaign tool, customer-support inbox, spreadsheet or messaging platform. Remaining operator work includes evaluating context, deciding whether to create/block an Order, handling blocked Orders in Orders, contacting the customer through separate domain tools, and interpreting delivery outcomes. No time, conversion, loss-avoidance or step-count study was found; describe effort reduction qualitatively.
+
+### 33.2 Provenance-to-outcome and connected-domain trace
+
+The supported path is **Commerce / Manual / supported Messaging Order source → canonical Order attribution and customer facts → merchant-scoped `MerchantCustomer` + country-aware internal `PlatformCustomer`/link → per-Order `CustomerAcquisitionOwnership` observation → Confirmation and shipment outcome → recalculated merchant and Wossol delivery-evidence projections → descriptive Customer UI context**. Current Commerce and Shopify COD sources can enrich Order source/context; Messenger referral data may conditionally become structured Order-attribution evidence. This source evidence is not itself Customer identity: Customer identity still resolves from the authoritative Workspace country plus normalized Order phone. A messaging participant or external account ID does not become the Customer's canonical identity through the attribution join.
+
+`CustomerAcquisitionOwnership` records an immutable, idempotent observation associated with the Order and Platform Customer. Owner type may be Merchant or UNKNOWN under the source trust rules; the Merchant request cannot assert Wossol/Partner/Seller ownership. It is not customer ownership, an authorization or contact grant, transfer semantics, commission entitlement, raw campaign data, or proof of causal acquisition. Where no attribution exists, UNKNOWN is explicitly recorded. The related source journey may preserve external Order/Ad/session evidence elsewhere, but Customer ownership evidence does not automatically retain all such detail.
+
+Operational outcome is partly connected: Customer projections recalculate from delivered Orders and cancelled Orders with shipment evidence, while pre-confirmation merchant-deleted Orders are removed from the Customer evidence set. Test Orders remain visible and marked in Customer history, but are excluded from reputation and the commercial Customer projection. This is an important population boundary within Customers; it does not prove that other Analytics projections exclude Test Orders (see the separate Analytics V1.2 review). The Customer aggregate reaches calculated retrospective delivery counts and rule labels. It does not reach a validated interpretation of future behavior, a recommended action, automated execution, measured intervention outcome, or learning loop.
+
+### 33.3 V1.2 intelligence, control, and privacy boundaries
+
+The merchant profile, own Order history, note, and manual block represent operational control. Bounded history/reputation and Wossol's cross-merchant delivery summary are descriptive decision context; not risk prediction, fraud detection, identity guarantee, or customer quality score validated against future outcomes. Confirmation and Tracking cause recalculation, but Customer consent remains a separate foundation and was not found in active contact call sites. The system must not turn possession of a phone, Order history, acquisition evidence, or a previous contact into consent.
+
+The previously accepted high-risk issues remain unchanged: cross-merchant reputation is keyed/read by normalized phone while canonical identity includes country; P1 reputation label thresholds conflict with approved P3 Final V1 wording; no merge/split/correction or historic reconciliation workflow is established; low-volume, privacy, calibration, fairness and live data-quality behavior are unverified. The Customer consent helper still has no observed non-test producer, endpoint, UI, projection, or sender/contact enforcement integration in repository-wide source search. These remain open and are not converted to “by design” absences.
+
+### 33.4 Competitive and marketing synthesis
+
+Basic customer records and repeat-order history are category table stakes in the competitive reference. The evidence does not support a competitor-absence claim or a comparative advantage in customer outcome quality. The candidate strategic asset is the combination of a private merchant relationship, internal country-aware identity, per-Order source evidence, and later delivery outcomes, subject to key inconsistency, correction governance, privacy thresholds and actual use. This is a foundation, not a moat or network effect demonstrated today.
+
+Current defensible communication remains scoped: “Keep your customer history, notes and order context together in your workspace.” A Wossol Reputation delivery-history summary requires qualification and should expose evidence count/context. Do not market prediction, fraud prevention, globally correct resolution, consent-managed outreach, compliant campaigns, customer ownership, commission, customer lifetime value, or outcome improvement. A useful demo can show prior own history → bounded signal → deliberate Order decision → later visible delivery outcome, while explaining what is private and what is aggregated.
+
+### 33.5 Verification and remaining limits
+
+- Focused Customers backend suite: **37/37 passed** (`apps/backend/src/modules/customers/*.spec.ts`). This includes country-aware identity, same-local-phone cross-country separation, reputation thresholds, deleted pre-confirmation exclusion, Test Order history-vs-commercial-population boundaries, bounded advisory projection, ownership and consent-helper behavior.
+- Customers frontend structural/UI specs: **13/13 passed** (`apps/frontend/src/app/merchant/customers/*.spec.ts`). These test source/UI contracts; they are not browser or live API tests.
+- Backend and frontend typechecks both passed. No database-backed migration, production dataset, live contact-provider, merchant-session, identity match-quality, consent-enforcement, privacy-threshold or predictive-validation test was run.
+
+## 34. V1.2 Evidence Additions
+
+**EV-CUS-015 — Customer outcome population and recomputation boundary**
+**Type:** P1/P2. **Product:** `jetshop7/wossol-platform`, `dev/wossol-integration`, `34cae67aaaa41c5967cad4b7145e67c84a8e0f34`. **Paths/symbols:** `apps/backend/src/modules/customers/customers.service.ts` (`customerHistoricalOrderWhere`, `customerCommercialEvidenceOrderWhere`, `deliveryEvidence`, `recalculateForPhone`, `recalculateForOrder`); `orders.service.ts`; `confirmation.service.ts`; `delivery-tracking-sync.service.ts`; Customer specs.
+**Observed:** Test Orders remain in Customer history with purpose, while Customer commercial projections/reputation exclude Test Orders and qualifying merchant-deleted pre-confirmation Orders; delivery evidence is refreshed from Order/Confirmation/Tracking lifecycle calls. **Confidence:** High for source/unit behavior; production freshness and full Analytics population consistency unverified.
+
+**EV-CUS-016 — Order provenance to Customer acquisition observation**
+**Type:** P1/P2. **Product:** same commit. **Paths/symbols:** `orders.service.ts` (canonical create and `createCommerceImportedOrder` path); `customers.service.ts` (`linkOrder`, `observePlatformCustomerIdentity`, `observeAcquisitionOwnership`); `customer-acquisition-ownership.ts`; Prisma ownership/identity models.
+**Observed:** Order linking uses workspace-derived country plus normalized phone; an Order-scoped immutable evidence observation uses canonical persisted attribution owner/time or explicit UNKNOWN. External commerce and supported Messaging/Shopify origins may be preserved by Order attribution, but the Customer observation is not full acquisition attribution, customer ownership, consent, commission, or causality. **Confidence:** High for inspected source; external production identity and data correctness unverified.
+
+**EV-CUS-017 — Consent-ledger integration boundary rechecked**
+**Type:** P1/P2/P3. **Paths:** `customer-consent-ledger.ts`, `customer-consent-ledger.spec.ts`, Customer Consent Ledger P0-04, repository-wide call-site search.
+**Observed:** typed append/current-state helpers and unit tests remain, but outside the helper/spec/schema no application call site, customer API/UI/projection, or communication sender/enforcement integration was found. UNKNOWN remains non-affirmative. This is a source-search non-finding, not a claim about all deployed/external systems. **Confidence:** High for repository search scope.
+
+## 35. Retroactive Review Impact — RR-V12-010
+
+RR-V12-010 is **UPDATED**. V1.2 adds the Customer merchant-job reduction, Order-source-to-customer identity/acquisition evidence and downstream delivery-outcome chain, distinguishes history from commercial/reputation populations including Test Orders, and carries forward key inconsistency, contract drift, identity-correction and consent-enforcement risks. No methodology change or additional queue item is proposed. Prior Director acceptance with open Product issues remains intact; no V1.2 Director quality gate has been performed.
