@@ -39,3 +39,12 @@ Current strongest evidence-backed strategic hypothesis:
 This remains a hypothesis to test against refreshed competitive depth, merchant research, desired global category framing and future Product ambition.
 
 Do not turn open Product issues, future architecture, competitive silence, stored data or deterministic guidance into stronger claims than the accepted evidence supports.
+
+
+## Coverage gate reopened — 2026-09-28
+
+A deeper module/service/shell reverse inventory found material current capabilities outside the original 21-section route/controller-driven coverage model. The authoritative record is:
+
+- `04-review-history/FINAL_PRODUCT_CAPABILITY_COVERAGE_GATE_2026-09-28.md`
+
+Until that gate closes, treat the three synthesis masters as **provisional evidence synthesis**, not a final complete Product foundation. Preserve them; patch only affected conclusions after targeted audits.
