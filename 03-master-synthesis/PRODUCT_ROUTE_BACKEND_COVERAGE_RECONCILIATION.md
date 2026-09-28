@@ -166,3 +166,57 @@ Master Synthesis must preserve, not erase, at least these cross-domain boundarie
 **Open Product issues: MUST BE CARRIED INTO SYNTHESIS.**
 
 Master Synthesis may now begin, provided it uses accepted section intelligence and Director review records as authorities and does not upgrade open issues, future architecture or unverified outcomes into current claims.
+
+---
+
+## Current Product Capability Coverage Closure — 2026-09-28
+
+**This addendum supersedes the preceding 2026-09-28 readiness conclusion for current coverage status.** It does not revoke any of the 21 accepted V1.2 section reviews. The authoritative trigger and gap definitions are `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_REVALIDATION_2026-09-28.md` and `04-review-history/FINAL_PRODUCT_CAPABILITY_COVERAGE_GATE_2026-09-28.md`; those records, not Codex task history, define the closure scope.
+
+### Inspected Product state
+
+- Repository: `jetshop7/wossol-platform`; branch `dev/wossol-integration`.
+- HEAD inspected: `007d317522d6e1eaa8e2e01d4a6d0608da812ce6` (`origin/dev/wossol-integration` aligned at inspection).
+- Product working tree: four modified, uncommitted paths were present: `apps/backend/src/modules/messaging/messaging-messenger-webhook.controller.ts`, `apps/frontend/src/app/shopify/app/route.ts`, `apps/frontend/src/app/shopify/embedded-cod-management.spec.ts`, and `apps/frontend/src/app/shopify/quantity-editor-runtime.spec.ts`. They were not modified. Local changes were excluded; only committed HEAD is treated as Product truth.
+- HEAD inventory: 118 frontend `page.{tsx,ts,jsx,js}` files and 52 backend `*.controller.ts` files, enumerated from the committed tree. Counts are files, not unique screens, endpoints, or runtime/deployment claims. The Director record’s earlier 117 frontend count used a different inventory snapshot/method; this addendum’s reproducible page-file glob yields 118 at HEAD.
+- Relative to Director snapshot `fd2b03f1b51cbba7ebc841b2e0a019c0d0159b1b`, the committed delta is limited to a Shopify App Home script cache-key update and a Messenger webhook ingress log addition; it adds no route/controller family. The other two paths in the local Shopify UI/test delta are uncommitted and excluded.
+
+### Targeted capability closure crosswalk
+
+| Capability / gap from Director record | Current source verification | Intelligence owner / artifact | Closure classification and boundary |
+|---|---|---|---|
+| Merchant Settings / account & security | Authenticated profile/business/contact/avatar/email/password/email-preference APIs; session invalidation for email/password; audit evidence | New `02-section-intelligence/MERCHANT_SETTINGS_DELIVERY_PRICING.md`; linked boundaries: `STORES.md`, `TEAM.md`, `NOTIFICATIONS.md` | LIVE Settings surface; in-app notices remain enabled when email preference is off. No deployment/adoption assertion. |
+| Store Delivery Pricing (GAP-03) | Owner/Admin Store+Workspace-scoped override/reset; Fee Profile remains authoritative provider cost; Product override/free delivery precedence; Order/Confirmation use historical pricing snapshots | New `MERCHANT_SETTINGS_DELIVERY_PRICING.md`; `PRODUCTS.md`, `ORDERS.md`, `TRACKING_DELIVERY.md`, `STORES.md` | LIVE customer-price control, not control of provider fees or proof of better margin/conversion. |
+| Merchant Global Search (GAP-01) | MerchantShell UI + authenticated read-only projection; Workspace/Store/section scope; Store/Team results role-gated; bounded results and owner-workflow deep links | New `MERCHANT_GLOBAL_SEARCH.md`; shared Home/Portal surface, underlying data remains with accepted domain owners | LIVE context/navigation aid; plausible but unmeasured work reduction. Does not unify domain truth or grant control. |
+| Merchant Growth Profile (GAP-02) | Authenticated Owner/Admin declaration API; immutable versions/supersession + audit; no dedicated frontend surface found; no cohort/automation/projection consumer | New `MERCHANT_GROWTH_PROFILE.md`; future Analytics/Market Center links only | PARTIAL backend evidence foundation. Merchant-declared data, not inferred acquisition/growth intelligence. |
+| Canonical Geography / Order provenance (GAP-04) | Order create/edit optional enrichment; effective-dated exact provider IDs or unique exact aliases; immutable raw/canonical evidence; explicit partial/unmatched; no fuzzy/AI; failure to access optional geography storage does not reject Order | New `CANONICAL_GEOGRAPHY_ORDER_PROVENANCE.md`; `ORDERS.md`, `ANALYTICS_DECISION_CENTER.md`, `MARKET_CENTER.md` | SCAFFOLD / provenance foundation; config catalogue unseeded, deployment/mappings not verified, no downstream non-test consumer located. Not current geographic intelligence. |
+| Workspace Payment Configuration (GAP-05) | Versioned/reasoned/audited Workspace operational gate + stored fee-share policy; eligibility combines gate and exact immutable sold-line Product snapshots; Orders and Confirmation consume resolver | New `WORKSPACE_PAYMENT_CONFIGURATION.md`; `PRODUCTS.md`, `ORDERS.md`, `CONFIRMATION.md`, `FINANCE.md` | LIVE eligibility/configuration contract. No provider connection, charge execution, electronic settlement, or evidence that stored charge allocation is applied to a transaction. |
+| Admin Workspace Settings / schedule | Timezone, weekdays and open/close settings are versioned/audited. Consumer search confirms Confirmation schedule/call policy and External Shipping warehouse schedule consume schedule fields; Orders and Analytics consume timezone for calendar interpretation. UI says this is not a global platform/provider shutdown. | New `WORKSPACE_OPERATING_SCHEDULE.md`; `CONFIRMATION.md`, `EXTERNAL_SHIPPING.md`, `ORDERS.md`, `ANALYTICS_DECISION_CENTER.md` | LIVE bounded supporting control, with consumer-specific effects. Not a universal service-hours switch; not every domain shown to honor every field. |
+| Current Shopify delta (GAP-06) | `fd2b` committed source includes read-only Test Product badge/projection, fail-closed `CHECKOUT_RESTART_REQUIRED` on classification drift and stale token clearing on restart/finalized no-Upsell paths. At `007d`, Shopify App Home cache key changed; remaining Product checkout caveats are preserved. | `SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md` §12, `PRODUCTS.md`, `INTEGRATIONS_COMMERCE_CHANNELS.md` | Delta mapped; no full Shopify re-audit, no live/deployed acceptance; previous open consent, migration, fixed-Variant and test/contract issues remain. |
+
+### Cross-cutting capabilities confirmed against owner coverage
+
+| Capability | Current mapping | Coverage result |
+|---|---|---|
+| Product Connection Health | Product endpoint composes permission-aware provider + Advertising health projections; `PRODUCTS.md` EV-PROD-010 and EV-PROD-012, Product Connection Health source/controller/spec; Advertising and Integrations owner seams | Explicitly covered; projection is not provider diagnosis or proof of repair. |
+| Admin Merchant management | `admin-merchants` service/controller and workspace-assignment/edit tests; Team identity/scope boundaries, Stores Workspace lifecycle and Finance fee-profile ownership | Platform-operational merchant lifecycle is mapped across owners; no new merchant self-service capability or unsupported promise inferred. |
+| Admin Employees | Separate internal identity/workspace roles/direct permissions and credential lifecycle; `TEAM.md` EV-TEAM-009 and role boundary | Explicit owner coverage exists; distinct from merchant Team and operational workers. |
+| System Override | Privileged preview/execute/reason/evidence/fingerprint/history/reconciliation controls; reconciliation crosswalk plus Products/Tracking/Integrations owning actions | Mapped as privileged recovery/control, not a merchant feature or proof recovery succeeded. |
+| Data Quality / Admin Platform Analytics | Admin controllers/services and `ANALYTICS_DECISION_CENTER.md` owner audit; no unique merchant page inferred from controller alone | Covered in Analytics; admin operational projections remain distinct from merchant decision intelligence. |
+| External Integrations / Accurate Mayar | Product activation/mapping/recovery evidence in `PRODUCTS.md`; provider connection/health boundaries in `INTEGRATIONS_COMMERCE_CHANNELS.md` and Tracking where applicable | Cross-domain provider capability and its limits explicitly owned; not silent route omission. |
+| Auth/session, permissions, Workspace/Store scope, audit/events, secure credentials | `TEAM.md`, `STORES.md` plus each consuming owner audit and service enforcement | Shared infrastructure is mapped; never counted as a standalone capability solely because a module exists. |
+
+### Closure outcome and remaining limits
+
+The targeted material gaps named in both Director records now have explicit source-to-artifact coverage. The Shopify committed delta is bounded and mapped. The 21 accepted V1.2 section audits remain their respective domain authorities; no section was re-audited from scratch. Six focused supplements were added (the four named GAP-01–04 plus payment configuration and operating schedule), and the Shopify supplement was extended with this HEAD closure. The authoritative Director records remain unchanged.
+
+**Coverage result: targeted source-to-intelligence mapping closed at Product HEAD `007d3175…`; Director Coverage Quality Gate pending.** This means no material capability identified by the revalidation/gate remains unmapped after targeted inspection. It does not establish production deployment, all runtime paths, data completeness, competitor depth, measured work reduction or business outcomes. Final Master Synthesis content was not modified; its readiness remains on hold until the pending Director gate.
+
+Focused backend tests for the new/confirmed capabilities and cross-cutting owners produced **103 passed, 0 failed** across Global Search, Growth Profile, Merchant Settings/Delivery Pricing, Workspace Payment Configuration, System Settings, Admin Merchant/Employee controls, Product Connection Health, System Override and Admin Platform Analytics. Canonical Geography produced **7 passed, 1 failed**: the rematch test expects one update containing both supersession fields, but the implementation performs two updates within the caller transaction (first closes the current row to preserve the partial unique invariant, then links `supersededById`). Treat this as an unresolved test/source contract mismatch; no Product changes were made. Results are unit/source tests, not database integration, migration deployment, browser acceptance or production validation.
+
+### Evidence and provenance
+
+- Scope and gap authority: `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_REVALIDATION_2026-09-28.md`.
+- Reviewer’s requested cross-checks and decision: `04-review-history/FINAL_PRODUCT_CAPABILITY_COVERAGE_GATE_2026-09-28.md`.
+- Product state: committed source at `007d317522d6e1eaa8e2e01d4a6d0608da812ce6`; local worktree changes listed above were preserved and excluded.
+- This reconciliation and its new supplements are Codex evidence artifacts awaiting Director Coverage Quality Gate; they do not amend Director findings or acceptance status.

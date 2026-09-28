@@ -28,3 +28,11 @@ Planned order:
 
 Targeted supplement for the accepted Integrations / Commerce Channels section:
 - SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE.md (targeted Shopify COD supplement; V1.2 Director Quality Gate accepted with open Product issues in `04-review-history/SHOPIFY_EMBEDDED_APP_COD_COMMERCE_EXPERIENCE_V1_2_MIGRATION_REVIEW_2026-09-27.md`)
+
+Targeted current-product capability closure supplements (not new section re-audits):
+- MERCHANT_SETTINGS_DELIVERY_PRICING.md
+- MERCHANT_GLOBAL_SEARCH.md
+- MERCHANT_GROWTH_PROFILE.md
+- CANONICAL_GEOGRAPHY_ORDER_PROVENANCE.md
+- WORKSPACE_PAYMENT_CONFIGURATION.md
+- WORKSPACE_OPERATING_SCHEDULE.md
