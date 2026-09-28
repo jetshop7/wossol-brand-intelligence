@@ -630,3 +630,90 @@ The stronger current system thesis to carry into Brand Strategic Evidence is:
 
 This is a **current evidence synthesis**, not final positioning.
 
+
+
+---
+
+# Current Product Capability Coverage Delta — 2026-09-28
+
+**Authority:** `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_CLOSURE_REVIEW_2026-09-28.md`  
+**Product evidence:** `007d317522d6e1eaa8e2e01d4a6d0608da812ce6`  
+**Director decision:** **ACCEPT WITH OPEN PRODUCT ISSUE**
+
+This delta extends the existing V1.2 synthesis. It does not replace the accepted section evidence or re-rank technical foundations as hero advantages without merchant consequence.
+
+## Newly reinforced current advantages
+
+### Cross-domain object finding / context continuation
+
+Merchant Global Search provides a bounded, permission-aware read projection across selected Products/Variants, Orders, Customers, External Shipments, Withdrawal references, Support tickets, Team and Stores, with deep links back to owner workflows.
+
+**Advantage contribution:** reduces object-location, navigation and identifier-reconstruction effort across already connected domains.
+
+**Boundary:** search does not unify owner-domain semantics, calculate business truth, grant new action authority or establish Search/AI intelligence. Efficiency is qualitative and unmeasured.
+
+### Merchant commercial control over delivery pricing
+
+Store Delivery Pricing adds a concrete merchant-controlled customer-price layer while preserving Fee Profile authority for provider/platform delivery cost and preserving historical Order pricing snapshots.
+
+**Advantage contribution:** stronger Merchant Agency plus commercial-policy provenance. A merchant can configure/reset a bounded Store-level customer-facing price without silently rewriting historical Orders.
+
+**Boundary:** not provider-rate control, dynamic pricing optimization, margin optimization or proof of conversion improvement.
+
+### Workspace policy continuity
+
+Workspace Payment Configuration creates a current operational gate that combines with immutable sold-line Product payment-policy snapshots for Order/Confirmation eligibility.
+
+**Advantage contribution:** policy continuity across Products → Orders → Confirmation and protection against silently rewriting historical sold-line eligibility.
+
+**Boundary:** eligibility/configuration is not payment-provider integration, authorization, charge execution or settlement.
+
+Workspace Operating Schedule adds bounded timezone/working-window configuration consumed by selected downstream workflows.
+
+**Advantage contribution:** selected operational/calendar rules can remain Workspace-scoped and reusable rather than being reconstructed independently.
+
+**Boundary:** not a universal platform/provider-hours kill switch.
+
+## Newly documented compounding substrates — not current intelligence advantages
+
+### Merchant Growth Profile
+
+Versioned Merchant-declared acquisition/business/market/team context is a structured future personalization/cohort substrate.
+
+It does **not** currently establish inferred merchant behavior, acquisition performance, cohort intelligence, recommendation or automated personalization.
+
+### Canonical Geography
+
+Canonical Geography can preserve raw provider/geographic evidence, deterministic exact mappings and explicit MATCHED/PARTIAL/UNMATCHED states.
+
+Its current strategic contribution is **provenance and uncertainty discipline**, not geographic intelligence.
+
+No current non-test downstream Analytics/Market consumer was established in the targeted closure.
+
+## Advantage hierarchy impact
+
+The new evidence **strengthens rather than replaces** the existing hierarchy:
+
+1. Connected Commercial Truth — strengthened by payment-policy continuity and geography provenance.
+2. Operational Control / Merchant Agency — strengthened materially by Delivery Pricing and Workspace policy controls.
+3. Reduced Reconstruction / Reconciliation — strengthened materially by Merchant Global Search and reusable Workspace settings.
+4. Accountability / Provenance — strengthened by historical pricing snapshots, versioned declarations/policies and explicit geography uncertainty.
+5. Context Continuity — strengthened by cross-domain search/deep-link behavior.
+6. Decision Preparation / Bounded Guidance — unchanged materially.
+7. Market / Commerce Access — unchanged materially.
+
+Growth Profile and Canonical Geography do not justify upgrading current Decision, Market or Learning Intelligence.
+
+## Open Product issue added to synthesis
+
+Canonical Geography focused verification is **7/8**. The rematch test and current two-step transactional supersession implementation disagree on the expected update contract.
+
+Treat this as an unresolved Product/test-contract issue. Do not claim the exact supersession implementation is fully verified until resolved.
+
+## Product Advantage conclusion after coverage closure
+
+The newly accepted evidence increases confidence that Wossol's strongest current advantage pattern is not the number of modules. It is the repeated combination of:
+
+**connected operational context + bounded merchant/admin control + preserved provenance + less reconstruction between workflows.**
+
+No newly accepted capability changes the conclusion that full Decision Intelligence, Learning Intelligence, autonomous optimization and broad Market Intelligence remain future territory.
