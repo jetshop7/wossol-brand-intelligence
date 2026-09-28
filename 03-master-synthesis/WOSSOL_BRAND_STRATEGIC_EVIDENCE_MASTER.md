@@ -916,3 +916,107 @@ It is the strongest evidence-backed strategic hypothesis produced by the current
 3. desired global category framing;
 4. future Product ambition.
 
+
+
+---
+
+# Current Product Capability Coverage Delta — 2026-09-28
+
+**Authority:** `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_CLOSURE_REVIEW_2026-09-28.md`  
+**Product evidence:** `007d317522d6e1eaa8e2e01d4a6d0608da812ce6`
+
+The final capability-coverage closure does not overturn the existing Brand Evidence hierarchy. It adds meaningful support to four already-emerging truths and sharpens the current/future boundary around Intelligence.
+
+## Brand Truth reinforcement
+
+### Reduced Reconstruction / Re-entry / Reconciliation — strengthened
+
+Merchant Global Search is direct Product evidence that Wossol can reduce the work of locating already-known operational objects across domains before continuing in the owner workflow.
+
+This makes “less work between the work” more concrete than a purely architectural claim.
+
+Still unmeasured: time saved, error reduction, throughput and staffing impact.
+
+### Operational Control / Merchant Agency — strengthened
+
+Store Delivery Pricing gives a concrete example of bounded commercial agency: authorized merchants can set/reset selected customer-facing delivery pricing while provider/platform cost authority remains separate.
+
+Workspace Payment Configuration and Operating Schedule add privileged policy/control layers with versioning/audit and downstream consumption.
+
+This strengthens “control” only in the bounded sense of visible/configurable Wossol policy. It does not imply control over external provider outcomes.
+
+### Accountability / Provenance — strengthened
+
+The closure adds:
+- historical Order pricing snapshots surviving later Settings edits;
+- immutable sold-line payment-policy snapshots;
+- versioned Merchant-declared Growth Profile context;
+- versioned/audited Workspace configuration;
+- raw + canonical geography evidence with explicit partial/unmatched states.
+
+This strengthens the evidence for accountability and traceability.
+
+### Explicit Uncertainty — strengthened
+
+Canonical Geography is a particularly useful behavioral proof: ambiguous or unavailable mappings can remain unmatched/partial rather than being converted into fabricated confidence.
+
+This supports the emerging personality principle:
+
+**precise, grounded and evidence-aware rather than theatrically certain.**
+
+It does not establish current geographic intelligence.
+
+## Intelligence boundary after coverage closure
+
+Merchant Growth Profile and Canonical Geography increase the **quality of future intelligence substrate**, not the level of current intelligence.
+
+Therefore the existing hierarchy remains:
+
+**Current:** connected evidence, operational control, provenance, bounded analytics/guidance.  
+**Emerging:** better-prepared decisions and context continuity.  
+**Future:** personalized Decision Intelligence, Learning Intelligence and stronger Market Intelligence.
+
+Do not use the new foundations to reposition current Wossol as an AI/growth/geographic intelligence platform.
+
+## International relevance
+
+The newly documented behaviors are geographically portable:
+- cross-domain context finding;
+- bounded commercial configuration;
+- versioned policy;
+- explicit provenance;
+- canonicalization without forced certainty.
+
+That strengthens the case for an internationally extensible brand identity without tying Wossol to Libya, COD, logistics or one provider.
+
+It does **not** prove current multi-country execution.
+
+## Brand hypothesis impact
+
+The existing hypothesis remains the strongest evidence-backed hypothesis:
+
+> **Wossol is becoming a connected commercial operating layer that reduces the work of rebuilding context, preserves the evidence behind operations, and gives merchants clearer control as commerce moves from source to outcome.**
+
+The coverage closure **strengthens** the “reduces rebuilding context,” “preserves evidence,” and “clearer control” clauses.
+
+It does not justify replacing “becoming” with a stronger intelligence/autonomy promise.
+
+## Additional pre-brand-lock Product issue
+
+Add to the existing Product issue map:
+
+- Canonical Geography rematch supersession test/source contract mismatch: focused suite 7/8. Coverage is accepted, but exact supersession implementation remains unresolved.
+
+## Brand Evidence conclusion after capability closure
+
+No material current Product capability identified by the Director coverage revalidation remains unmapped.
+
+The Product evidence foundation is therefore sufficiently closed to proceed to the next strategic phase without pretending the Product itself is issue-free.
+
+The next phase should test the synthesis against:
+1. refreshed competitor depth;
+2. merchant/customer research;
+3. global category framing;
+4. future Product ambition.
+
+Do not lock final positioning, naming, tagline, archetype, verbal identity or visual identity from Product evidence alone.
