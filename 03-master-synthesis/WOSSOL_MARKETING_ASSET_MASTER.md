@@ -717,3 +717,86 @@ A concise evidence thesis for future messaging work:
 > **Wossol connects the commercial journey so merchants spend less effort rebuilding context and more time acting on evidence they can trace.**
 
 This is a synthesis hypothesis for message development, **not yet the final brand promise or tagline**.
+
+
+---
+
+# Current Product Capability Coverage Delta — 2026-09-28
+
+**Authority:** `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_CLOSURE_REVIEW_2026-09-28.md`  
+**Product evidence:** `007d317522d6e1eaa8e2e01d4a6d0608da812ce6`
+
+The capability closure adds several useful proof/demo assets. They remain supporting proof; none independently becomes a hero claim.
+
+## New proof assets
+
+### Merchant Global Search
+
+**Proof point:** authorized merchants can search selected operational objects across multiple Wossol domains from the Merchant Shell and continue into the owning workflow.
+
+**Merchant problem:** repeated navigation and reconstruction of where a Product, Order, Customer, Shipment, Withdrawal, Support ticket, Team member or Store lives.
+
+**Demo moment:** search a known identifier/name → show bounded result → open the owner workflow without manually navigating section-by-section.
+
+**Safe language:** “Find selected operational records across Wossol and continue in the workflow that owns them.”
+
+**Do not claim:** universal search, unified intelligence, AI search, all-data search or measured time savings.
+
+### Store Delivery Pricing
+
+**Proof point:** an authorized merchant can set/reset a Store-scoped customer-facing delivery-price override while Wossol preserves separate provider/platform cost authority and historical Order price snapshots.
+
+**Merchant problem:** repeated customer-price configuration and ambiguity about whether later configuration rewrites old Orders.
+
+**Demo moment:** show inherited pricing → set Store override → create/inspect persisted Order snapshot → change Settings → demonstrate historical Order evidence remains its recorded snapshot.
+
+**Safe language:** “Control selected customer-facing delivery pricing without rewriting the price evidence already attached to past Orders.”
+
+**Do not claim:** control of carrier/provider rates, dynamic pricing, guaranteed margin or conversion lift.
+
+### Workspace Payment Configuration
+
+**Proof point:** Workspace electronic-method eligibility is versioned/audited and combined with immutable sold-line Product policy snapshots when Orders/Confirmation resolve allowed methods.
+
+**Demo moment:** show Workspace method gate + Product policy → inspect eligible method decision for an Order.
+
+**Safe language:** “Keep payment-method eligibility tied to Workspace policy and the Product policy captured with the sold Order.”
+
+**Do not claim:** integrated payments, payment processing, authorization, collection or settlement.
+
+### Workspace Operating Schedule
+
+**Proof point:** Workspace timezone and working-window settings are versioned/audited and consumed by selected operational/calendar workflows.
+
+**Safe language:** “Keep selected Wossol scheduling and calendar behavior anchored to Workspace operating settings.”
+
+**Do not claim:** platform shutdown outside hours, provider availability enforcement or universal SLA control.
+
+## Foundation proof — use only when explaining architecture/future readiness
+
+### Merchant Growth Profile
+
+Useful as evidence that Wossol can preserve versioned Merchant-declared business/growth context.
+
+Not a current marketing claim for growth intelligence, segmentation intelligence or personalization.
+
+### Canonical Geography
+
+Useful as evidence of explicit provenance/unknown-state discipline: exact configured matching and explicit partial/unmatched outcomes rather than fabricated certainty.
+
+Not a current marketing claim for geographic intelligence, geocoding, market opportunity detection or geo-optimization.
+
+Focused verification remains 7/8 due to an unresolved supersession test/source contract mismatch.
+
+## Marketing implication
+
+The strongest new material is **not “more features.”**
+
+It gives more concrete demonstrations of:
+- less navigation/reconstruction;
+- merchant-controlled commercial policy;
+- historical-policy continuity;
+- evidence preserved instead of silently overwritten;
+- explicit unknown states instead of invented certainty.
+
+These assets reinforce the existing marketing direction around connected context, control and traceability. They do not justify stronger AI, growth, payments or intelligence language.
