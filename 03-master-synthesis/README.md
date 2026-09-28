@@ -1,6 +1,6 @@
 # Master Synthesis
 
-**Status:** PROVISIONAL — current Product capability coverage revalidation hold is active.
+**Status:** V1.2 Master Synthesis may resume — current Product capability coverage hold closed by Director at Product `007d3175...`; targeted synthesis patch pending.
 
 Master Synthesis was initialized after the V1.2 readiness gate, but current Product capability coverage revalidation found under-audited surfaces. Final reliance is paused by:
 - `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_REVALIDATION_2026-09-28.md`
@@ -48,3 +48,17 @@ A deeper module/service/shell reverse inventory found material current capabilit
 - `04-review-history/FINAL_PRODUCT_CAPABILITY_COVERAGE_GATE_2026-09-28.md`
 
 Until that gate closes, treat the three synthesis masters as **provisional evidence synthesis**, not a final complete Product foundation. Preserve them; patch only affected conclusions after targeted audits.
+
+
+## Capability coverage closure — 2026-09-28
+
+Director review:
+- `04-review-history/CURRENT_PRODUCT_CAPABILITY_COVERAGE_CLOSURE_REVIEW_2026-09-28.md`
+- Decision: **ACCEPT WITH OPEN PRODUCT ISSUE**
+- Product HEAD: `007d317522d6e1eaa8e2e01d4a6d0608da812ce6`
+
+The capability-universe coverage hold is closed. Six targeted supplements are accepted as evidence inputs for synthesis.
+
+Open Product issue retained: Canonical Geography focused test/source supersession-contract mismatch (7/8).
+
+Before treating the three synthesis masters as current, patch them incrementally for the newly accepted evidence. Do not rewrite accepted synthesis from scratch.
