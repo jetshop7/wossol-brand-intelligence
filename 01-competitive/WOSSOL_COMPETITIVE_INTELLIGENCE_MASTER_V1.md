@@ -1675,3 +1675,31 @@ Wossol founder has supplied direct operational observations and screenshots from
 # 28. One-Sentence Competitive Working Thesis
 
 > **Wossol should win not merely by giving merchants access to foreign markets, but by giving them deeper control over those markets and progressively turning real commerce data into better decisions, better execution, and accumulated merchant intelligence.**
+
+---
+
+# 29. V1.2 Competitive Depth Refresh Addendum — 2026-09-29
+
+This dated addendum preserves the historical V1 snapshot above while superseding competitive conclusions challenged by current first-party public evidence. The detailed source register, per-competitor seven-lens assessment, caveats and research questions are in [`WOSSOL_COMPETITIVE_DEPTH_REFRESH_V1_2.md`](WOSSOL_COMPETITIVE_DEPTH_REFRESH_V1_2.md). The refresh uses the accepted V1.2 Product synthesis; it does not re-audit Product or select positioning.
+
+## What changed
+
+The 2026-09-29 benchmark of Ximpli, Fufills, Delivered, MDM Express, COD Mastery, COD Network, CODZOSS, LoftyService, CODLeaders, CODPARTNER and SHIPBOX finds substantially more current public claims and artifacts around connected operations, merchant workspaces, source/history fields, payout/reconciliation, profit or market metrics, dashboards, AI and decision support than the September 9 snapshot conveyed. Public claims do not prove deployed depth, quality, outcomes or comparative equivalence. “Not publicly verified” must not be read as competitor absence.
+
+## Explicitly superseded / qualified hypotheses
+
+- **“Deep merchant control” as a competitor whitespace:** superseded as a broad category claim. CODZOSS and CODLeaders publicly show/claim seller dashboards and control/customization; COD Mastery describes seller-owned product, funnel and traffic decisions; CODPARTNER publishes seller-workspace capabilities. Their exact edit, approval, override, assignment and audit rights remain unverified. Compare specific consequential rights, not the word “control.”
+- **“Customer intelligence” as a Wossol advantage:** qualified. Wossol's current customer/reputation evidence may support bounded operational views, but the name “Network Reputation” does not establish predictive cross-merchant intelligence or consumer reputation coverage. Ximpli claims customer-risk scoring and COD Mastery/others claim shared benchmarks; data methods and transferability are unverified. Do not infer competitor absence or Wossol uniqueness.
+- **“Market Center” as whitespace:** superseded as broad marketplace/benchmark absence. COD Mastery explicitly markets cross-seller delivery/confirmation/product benchmarks; CODZOSS publishes operational/market guides; MDM claims live product conversion data and CODPARTNER app claims product/country insights. This does not prove a full interactive, comparable Market Center or sound benchmark methodology. Wossol's bounded descriptive market evidence is not itself a differentiated decision system.
+- **“Advertising Intelligence” whitespace:** qualified, not disproved as an end-to-end capability. Competitor AI sales/recovery, seller-run advertising and market/product insight claims exist; the refresh found no public proof of a competitor's complete campaign → ad → order → delivered → net-profit lineage with validated causal recommendations. Wossol likewise does not have a verified complete advertising-to-profit learning loop. Thus this is not a current Wossol advantage.
+- **“Data Architecture” as a potential moat:** demoted to foundational capability/hypothesis. COD Network's public API contract includes source/UTM fields, external references, order history and lifecycle webhooks; others claim order-level records and statements. Wossol architecture is not a moat without durable data quality, use, accumulation, user value and comparative proof.
+- **“Decision Intelligence” / dashboard-versus-Wossol-learning contrast:** superseded. Ximpli, MDM, COD Mastery and CODPARTNER make public claims about P&L/risk, conversion data, benchmarks or analytics. Their decision depth remains unverified; Wossol Decision Center remains bounded deterministic guidance with known validation/evaluator and outcome-learning limitations. No public evidence establishes a competitor-wide closed learning loop, and no Wossol learning-loop advantage is established.
+- **“Access + Control + Intelligence + Guidance + Learning” as the one-sentence competitive thesis:** withdrawn as a comparative thesis. It packages generic or future-facing capability labels and is not validated by this evidence. The current research question is narrower: whether Wossol can demonstrably carry evidence and context across merchant workflows while preserving truth authorities and useful bounded agency better than both seller workspaces and managed COD operators. This is a hypothesis, not a replacement positioning decision.
+
+## Current competitive baseline
+
+Market access, COD/fulfillment, sourcing, store/channel integration, dashboards, basic analytics, automation/AI labels, settlement visibility, reconciliation claims and “one platform” are category/table-stakes language in this set. Public evidence strengthens the case that provider-operated confirmation, delivery, cash collection, payout and, for some vendors, per-order remittance are established competitor claims. It does not prove identical product depth or actual merchant outcomes.
+
+The remaining potentially distinctive Wossol patterns are precise, workflow-level evidence carryover; separation of source/actor/provider evidence and unresolved operational versus financial truth; bounded merchant agency across provider-controlled execution; and measurable reduction of reconstruction/reconciliation work. None is yet demonstrated as competitive superiority. Do not market future architecture, network effects, personalization, causal intelligence or learning as current truth.
+
+**Research state:** public sources retrieved 2026-09-29; competitor accounts, private docs, contracts and live workflows not inspected. See the refresh document for source dates/status conflicts, evidence grades and merchant-research questions. This addendum changes competitive interpretation only; it does not modify Product, the accepted V1.2 synthesis, or final brand positioning.
