@@ -44,6 +44,35 @@
 - Evidence: [products.service.ts lines 399–665](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/products.service.ts#L399-L665); [electronic tests](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-electronic-payment-settings.service.spec.ts).
 - **UX / reliability caveat:** Edit Product frontend saves catalog via `merchant-edit`, then separately saves electronic settings if changed. Product save can succeed while payment update fails; UI explicitly displays partial success. Do **not** describe combined edit as atomic. [edit/page.tsx lines 142–225](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/frontend/src/app/merchant/products/edit/page.tsx#L142-L225); [frontend test](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/frontend/src/app/merchant/product-payment-settings.spec.ts).
 
+### P-06 Structured global Product category, historical classification
+- `ProductTaxonomyService` lists only active canonical categories, requires active ID at create/edit, and replaces the *current* Product category assignment while retaining prior assignment history and its source/provenance; re-selecting the same category is idempotent, not spurious history.
+- Current V1 migration seeds **26 approved global ROOT categories**, not a live merchant-defined hierarchy. Each has code, name, version and a nullable parent for *possible* later hierarchy; do not assert V1 contains deployed subcategories. Unknown legacy labels remain unclassified, not guessed into OTHER. Legacy `categoryLabel/categoryKey` remain compatibility evidence; Product views filter/read current canonical assignments.
+- Source semantics `MERCHANT` / `ADMIN` / `AI` are modeled; AI classification requires confidence and model version **if supplied**, but none of this proves a live AI classifier in Merchant Product creation/edit. These send source `MERCHANT`.
+- Merchant problem: disparate ad-hoc names make categorizing, finding, and filtering a growing catalog harder, and reclassification can erase knowledge of prior choices.
+- Work reduced: repeated manual normalization/search; changes to categories produce an audit-like chronological assignment trail.
+- Value/control: explicit allowed choices, stable category identity, active/retired gates, current category filters including UNCATEGORIZED, no guessed legacy categorization.
+- Section Strength: **Canonical Category Discipline & Historical Classification**.
+- Brand: precision, disciplined catalog structure, historical truth (supporting, not a standalone top-level brand promise).
+- Visibility/friction: Create/Edit drop-down displays `canonicalName` in English. V1 static legacy labelAr entries are missing for some categories; no claim of fully localized Arabic category UX.
+- Evidence: [taxonomy service](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-taxonomy.service.ts), [migration contract](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-taxonomy-migration.spec.ts), [migration](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/prisma/migrations/20261004_p0_10_structured_product_taxonomy/migration.sql), [list/filter](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/merchant-products-list.controller.ts), [frontend Create](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/frontend/src/app/merchant/products/create/page.tsx).
+
+### P-07 Wossol Product and Variant image management
+- Product Create/Edit provides ordered shared Product image collection, up to **five**, individual Product images **2 MB** max. First image is shown as main in Merchant UI; Product create preserves ordered reference in local transaction. Product upload currently validates claimed MIME and size (JPEG/PNG/WebP/GIF) but not file signatures at that initial upload point; later Shopify image source performs a byte-signature check.
+- Each Variant supports **one** canonical image in current V1, up to **5 MB**, JPEG/PNG/WebP bytes verified against claimed MIME. Staging is bound to actor + exact Workspace/Merchant/Product/Store link, promoted to final Variant-specific reference only on successful create; replacement/removal updates Audit and cleans appropriate local references under defined conditions.
+- Variant image local storage implementation explicitly refuses use in `NODE_ENV=production` or non-local storage mode and tells callers a production storage adapter is needed. **DO NOT claim deployable production Variant image uploads from this implementation**, and do not assume an adapter is deployed without evidence.
+- Product Image Upload UI performs sequential uploads. If a later upload in the batch fails, completed earlier uploads may already be stored but the UI only calls `onChange` after the whole batch; potential unreferenced/orphan file clean-up risk — require end-to-end verification before labeling defect. Failed Product creation archives and clears Product image reference, but whether pre-uploaded binaries are cleaned must be checked separately.
+- Merchant benefit: visible multi-photo catalog and Variant-specific visual identification; reduce separate asset lookups within Wossol and potential wrong Variant visual association. This is *not* AI image creation and not proof of instant Shopify media replication.
+- Section Strength: **Product Media with Variant Precision and Local Audit**; current production deployment constraint is a material caveat.
+- Evidence: [ProductImageUploadSection](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/frontend/src/app/merchant/products/ProductImageUploadSection.tsx), [ProductsService upload](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/products.service.ts#L1270-L1320), [Variant storage](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-variant-image-storage.service.ts), [Variant upload tests](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-variant-image-upload.spec.ts), [Product create image test](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-create-image-persistence.spec.ts).
+
+### P-08 Multi-source merchant landing references
+- Product stores an optional manually provided `landingPageUrl`; Commerce owns separate persisted, scoped Shopify `storefrontUrl` per Product mapping and Store. Merchant Product Detail may compose manual + authorized Shopify URLs labeled by Store. Commerce source is omitted when permission denied (manual reference still visible).
+- `safeHttpUrl` accepts only HTTP/HTTPS and rejects javascript:/data: or malformed links at *display/navigation composition*; it does **not** verify current availability, actual conversion performance, merchant ownership of a manual URL, or the external page's content.
+- Read/UX is direct outgoing navigation, not embedded iframe, live fetch, analytics, checkout completion, or auto-publishing.
+- Merchant job: know where this Product is presented to customers across Store channels without switching separately into all Shopify stores; could reduce tab-search and link-copy workload.
+- Section Strength: **Store-aware Product Destination Visibility**.
+- Evidence: [merchant Product detail](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/merchant-products-detail.controller.ts#L200-L245), [safe landing references](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-landing-references.ts), [landing tests](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-landing-references.spec.ts), [Product detail UI tests](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/frontend/src/app/merchant/product-detail/product-landing-pages-ui.spec.ts). `creativeUrl` is stored/displayed in Product; automatic connection to Ads asset ingestion **not verified** and cannot be advertised.
+
 ## Research B — Cross-Section Discovery Register
 
 Classification: **Verified Compound Advantage** only where both relevant pathways were checked, with limited, exact wording. **Pending Cross-Section Verification** cannot become public marketing claim.
@@ -148,6 +177,36 @@ Order creation invokes Finance operational charge with fee type `TEST_ORDER_CREA
 Sources: [Orders fee invocation](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/orders/orders.service.ts#L1604-L1625); [Confirmation overview cohort](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/confirmation/confirmation.service.ts#L1530-L1583).  
 **Pending:** exact Finance fee schedule, settlement exclusion, delivery/shipping enforcement across all system paths.
 
+### C-14 Products ↔ Canonical Taxonomy ↔ Merchant List
+**Status: Verified Compound Advantage (classification and Product list filter paths).**  
+Products create/edit enforces canonical active category; current assignments support list filtering by category or UNCATEGORIZED, while prior assignments remain traceable. Merchant value: consistent classification and faster search/finding across catalog; no personalized AI categorization proven.  
+Evidence: ProductTaxonomyService + MerchantProductsListController + migration above.
+
+### C-15 Products Media ↔ Shopify Commerce Media
+**Status: Verified Compound Advantage (bounded explicit sync and safe retry/fence).**  
+Products owns ordered image references and Variant canonical image; Shopify product Create/Sync Missing explicitly reads exact scoped Wossol local binaries, uses Product image mapping + Variant-to-media association, stores exact Shopify media IDs and Audit, and reuses known successful mappings. Before non-idempotent Shopify media creation it records an uncertainty fence; on uncertain provider response or failed local persistence it enters `ACTION_REQUIRED / MEDIA_RECONCILIATION_REQUIRED` and will not blindly recreate duplicate media. A read-only exact Shopify media snapshot reconciliation may mark it `MEDIA_SAFE_TO_RETRY` when provider identity sets match; unknown/contradictory media remains fenced. **Shopify media is NOT synchronized on every Product Edit and NOT by background job.**
+- Merchant pain: wrong Variant image, repeated manual media upload, duplicate Shopify images after failed requests, difficult guesswork on whether a file was already transmitted.
+- Value: one authorized sync action may transfer and associate product content, with verified identities and bounded uncertainty. Not a guarantee of continuous media parity.
+- Control: explicit action and failure states; not automatic per-edit.
+- Safety/transparency: scoped binary read, idempotent known mappings, precreate fence, auditable reconciliation, no speculative matching.
+- Demo: Wossol Product 2 photos + Variant image → explicit Create in Shopify → compare exact media/Variant association; intentionally failed-response case only in isolated test fixture; show ACTION_REQUIRED and no duplicate creation on retry.
+- Brand: **Controlled Cross-Channel Merchandising** + **Verified, not guessed, synchronization**; evidence supports exact paths, not all-store promise.
+- Evidence: [ShopifyProductService media methods](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-product.service.ts#L426-L631), [Shopify media tests](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-product.service.spec.ts#L272-L426), [ProductImageSource scoped bytes](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-image-source.service.ts), [image-source tests](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/product-image-source.service.spec.ts).
+
+### C-16 Products ↔ Commerce Product Mapping ↔ Landing Destinations
+**Status: Verified Compound Advantage (authorized read-only composition).**  
+Manual Product URL + Commerce-owned, permitted per-Store Shopify storefront URLs shown together with source and Store labels; URL scheme validated at navigation projection. Merchant benefit: less back-and-forth to find the customer-facing page for each listed Store; not proof the storefront is currently published, reachable, or converting.  
+Sources: ProductLandingReferences + MerchantProductDetailController + ShopifyProductService provider URL snapshots.
+
+### C-17 Products creativeUrl ↔ Advertising creative execution
+**Status: Pending Cross-Section Verification.**  
+`creativeUrl` appears in Product Create/Edit, Product detail/read projections and is *not* consumed by the Advertising mapping services examined. Do **not** market automated creative library, media asset handoff, Meta campaign creative propagation, or performance optimization absent a verified consumer. Determine any other relevant downstream usage before closing.
+
+### C-18 Image storage deployment and media lifecycle
+**Status: Pending Deployment Verification + confirmed development-mode limitation.**  
+Backend Variant image local service rejects production (requires storage adapter); production adapter wiring/deployment not established. Product image upload writes local filesystem, and its failure/rollback/orphan behavior and cross-host persistence must be tested. This is a **high-priority merchant experience/commercial reliability risk**, not brand differentiator until fixed/verified.  
+Sources: ProductVariantImageStorageService; ProductImageUploadSection; ProductsService upload.
+
 ## Proof moments to script and verify in UI
 1. Create multiple Variants → external link prerequisite → activation/failure states and audit. Do not perform destructive provider mutation solely for demo without isolation.
 2. Shopify product mapping `PARTIAL` → explicit Variant linking → `COMPLETE`; then demonstrate bounded commerce order identity acceptance vs conflict.
@@ -158,6 +217,9 @@ Sources: [Orders fee invocation](https://github.com/jetshop7/wossol-platform/blo
 7. Create Test Product with stock (and separately with zero/unknown effective stock) → confirm purpose differs from inventory classification; inspect manual Test Order eligibility and no reservation.
 8. Shopify COD mapped Test base Product → no usable Upsell choices or Test targets; expire incomplete checkout → no recovery Order; freeze session and change Product classification → checkout restart.
 9. Verify selected standard merchant Analytics excludes Test Orders but do **not** claim every operational/finance view excludes them.
+10. Product categorized Electronics → filter by exact canonical category → change category → confirm current list change and historical assignment remains (do not claim AI classification).
+11. Product image gallery (5 × max 2 MB) and one Variant image; Create in Shopify explicitly then inspect exact product/Variant media mapping. Test uncertain upload only against isolated mocks or non-production sandbox.
+12. Open Product Detail Landing pages with manual and multiple authorized Shopify stores; verify source labels and that unauthorized Commerce data is omitted.
 
 ## Marketing & Website extraction — working hypotheses (NOT approved)
 - Narrative: **Operationally connected product management**, with accurate identities, usable stock context, controlled publishing, and payment decision traceability.
@@ -185,9 +247,28 @@ Sources: [Orders fee invocation](https://github.com/jetshop7/wossol-platform/blo
 
 **Product/UX critical observation:** The merchant may change Test/Real on the same Product, including one with earlier operational context. Session restart protects ongoing checkout from mismatched purpose, but merchant-facing warnings about impact on past Upsell configuration and live funnels need observation before future product-design recommendations.
 
+## Merchant-to-Brand Extraction — Taxonomy, Media, and Landing Destinations
+
+**Merchant job narrative A — `Find and manage a growing catalog without losing category meaning`:** merchant selects from active globally consistent categories, filters the Product list by current category, and the system preserves prior classification when a deliberate reclassification occurs. **Control:** explicit category choices. **Effort compression:** lower manual normalizing/filtering load, amount unmeasured. **Proof:** category switch + list filters + historical records. **Marketing:** `Organize your catalog with consistent product categories` (validated wording only). **Website:** Catalog/Products feature explainer; FAQ `Can I find products by category?` yes for current active classifications.
+
+**Merchant job narrative B — `Present the correct option across Wossol and Shopify`:** product owns shared image gallery, Variant owns exact image reference; authorized, explicit Commerce sync maps media to known external Product/Variant IDs and makes uncertain retry safe rather than duplicating uploads. **Control:** explicit publishing/sync action. **Trust:** strict mapping and reconciliation. **Effort compression:** some duplicated upload/matching may be reduced; no instantaneous sync claim. **Proof:** safe staged image/Shopify sandbox demonstration. **Marketing:** `Connect product images to their mapped Shopify variants through an explicit, verified sync` (technical draft; simplify after UX demo). **Website:** Show Product → Variant → Shopify association, and accurate caveat about manual sync. **Design/brand relevance:** consistency/precision of imagery and connected merchandising, *not* arbitrary decoration.
+
+**Merchant job narrative C — `Open the right sales page from one place`:** Product Detail surfaces manual and per-Store authorized Shopify storefront URL snapshots. **Control:** access to specific Store; **Transparency:** source labels; **Safety:** safe HTTP(S) URL projection; **Work reduced:** fewer searches/tabs to find destination URLs. **Proof:** two stores plus manual URL within same Product detail. **Marketing:** `Find the landing pages linked to each product and store` (do not imply monitoring/live reachability/conversion).
+
+**Key risk register:**
+1. Current Variant local image storage explicitly rejects production without an adapter: **cannot market production availability absent deployment proof**.
+2. Initial Product image upload validates claimed MIME/size but does not sniff binary signatures at upload; Shopify consumption does signature-check later.
+3. Product image upload batch has no demonstrated compensating cleanup for prior successful file writes after later failure; possible orphan binary references. Validate safely.
+4. Frontend upload placeholder `not sent to external systems` is true at upload time but could mislead about *later explicit Shopify sync*. Improve merchant copy context after UX QA.
+5. Shopify media does not auto-update on every Product Edit; explicitly check how merchant discovers resync of changed Product/Variant pictures.
+6. No proven AI image creation, automatic merchandising, AI category assignment, Meta Creative URL import or live landing-page performance monitoring.
+7. Legacy category translations partly absent and Create/Edit drop-down uses English canonical names; multilingual visual/verbal identity decisions should not presume end-to-end bilingual product experience.
+
+**Emerging brand pattern:** Identity and provenance preserved across category changes, sales destinations and images; merchants receive structure plus bounded cross-system alignment. This is a *provisional pattern*, not final Wossol positioning.
+
 ## Outstanding QA gates before PRODUCTS.md
 - Systematic Product list/search/pagination/permissions plus all product-detail panels (screenshots ↔ current UI ↔ backend).
-- Product category/taxonomy, images/storage/media propagation, Test/Real transition UX and Offer-vs-Upsell distinction, variant matrix, payment merchant-facing accessibility and advanced override UI, provider recovery, deletion test coverage.
+- Verify active-category current UI, true Arabic category coverage, orphan Product image cleanup, production Variant media storage adapter, explicit Shopify media sync discoverability, Product image security, creativeUrl consumers, Test/Real transition UX and Offer-vs-Upsell distinction, variant matrix, payment merchant-facing accessibility and advanced override UI, provider recovery, deletion test coverage.
 - Inventory reservation lifecycle, Shopify media and uncertain reconciliation, Meta product mappings, attribution origin to final order projection/analytics, and payment ↔ Finance.
 - Validate Home rollup, lifecycle downstream effects, limitations, weakest UX points; extract proof moments, SEO/AEO opportunities, explainable merchant job stories.
 - Perform **mandatory legacy Brand Intelligence cross-check only after independent research**, verify each old finding in current code, log discoveries/conflicts.
