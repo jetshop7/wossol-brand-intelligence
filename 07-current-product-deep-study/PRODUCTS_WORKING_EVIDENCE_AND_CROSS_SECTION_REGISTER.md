@@ -97,9 +97,56 @@ Products list projects targeted provider / Shopify incomplete operational attent
 **Status: Pending Cross-Section Verification.**  
 Product/Variant payment processing shares and historic snapshots are verified. Do not infer Finance fee settlements, reconciled charges, net profit, or explicit ROI yet. Trace consumer path before promotion.
 
-### C-10 Test Product ↔ Orders ↔ Upsell / Incomplete Recovery
-**Status: Pending Cross-Section Verification, with independent rule leads.**  
-Classification is independent of stock. Orders picker tests confirm test product may be selectable at zero/unknown availability for designated test flow. Must check exact source of Test Product upsell restrictions, Shopify test propagation, and incomplete recovery before final marketing claims.
+### C-10 Products ↔ Test/Real Order Purpose ↔ Inventory ↔ Shopify COD ↔ Upsells ↔ Incomplete Recovery
+**Status: Verified Compound Advantage (bounded Test-purpose pathways reviewed from both sides).**  
+- A Product's boolean `isTestProduct` is **commercial purpose**, independent of stock. Product creation and edit write this classification; create/edit UI explicitly states it is independent of quantity.
+- Orders' manual picker and validation enforce Test Product ↔ Test Order, Real Product ↔ Real Order. Zero/unknown effective available stock does **not** prevent a designated Test Order's variant from being selected. Real Orders need positive known effective stock in the picker path.
+- Canonical Order creation revalidates **all** Product purposes within the scoped transaction: a single Order cannot mix Test and Real Product purposes; trusted Shopify checkout expectation must agree with current canonical Products. For Test Orders, Orders skips inventory reservation; no automatic assumption of stock deduction.
+- Shopify COD product context reads current Wossol classification; a properly completed mapped Test checkout passes `trustedExpectedIsTestRecord` into canonical Order ingestion. Incomplete `INCOMPLETE_TIMEOUT` for a Test Product expires checkout as `EXPIRED_UNFINALIZABLE` without creating a Recovery Order.
+- Test Product cannot be **base** or **target** in Shopify COD Upsell config. Create/update/activation revalidate both sides inside transaction; read/projection and actual checkout suppress prior stale Upsells; test checkout cannot accept Upsell decision. Real-only eligible targets additionally scoped to Shopify/Store mappings.
+- A checkout session whose frozen Test/Real classification no longer matches current Product classification must restart with `CHECKOUT_RESTART_REQUIRED`; critical merchant/visitor safety contract when merchant changes Product purpose during shopping.
+- Analytics' studied standard/recovery queries exclude `isTestRecord: true`; Confirmation's studied merchant performance rate and attention cohorts also exclude Test Orders (operational queue counts are not universally excluded). Orders uses `TEST_ORDER_CREATED` operational fee type, **not** proof that Test Orders are free.
+- **Merchant problem:** testing product-market response without contaminating normal stock allocation, add-on sales workflow, checkout recovery, or selected merchant performance metrics.
+- **Manual work removed/reduced:** fewer spreadsheet/manual markers to separate tests from real sales, fewer manual stock adjustments and mistaken recovery follow-ups for test sessions; actual measured savings not established.
+- **Control:** merchant can classify and reclassify Product in create/edit, with active checkout restart guard; cannot freely mix purposes at Order level.
+- **Transparency:** Product checkbox explanation; Order `isTestRecord`, Shopify COD `isTestProduct`, explicit control messages; classification state projected rather than guessed from stock.
+- **Safety/Trust:** exact purpose checks against canonical Products, no mixed-purpose Orders, no Test inventory reservations, no Test Upsells or incomplete recovery.
+- **Section strength:** commercial product-purpose control; **Compound strength:** purpose-aware orchestration from Product to Checkout, Order, Inventory, Upsells, selected Analytics/Confirmation reporting.
+- **Claim tier:** Proven Current Capability for these code-path rules, not a full A/B testing suite, automatic market validation, all payment/fulfillment behavior, or blanket exclusion from every KPI.
+
+**Evidence (current branch):**
+[Product create service](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/products.service.ts#L981-L1050);
+[Product edit class persistence](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/merchant-products-edit.controller.ts#L110-L350);
+[create UI wording](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/frontend/src/app/merchant/products/create/page.tsx#L245-L247);
+[edit UI wording](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/frontend/src/app/merchant/products/edit/page.tsx#L540-L546);
+[Orders picker & purpose checks](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/orders/orders.service.ts#L4350-L4425);
+[Orders canonical purpose](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/orders/orders.service.ts#L4780-L4810);
+[Orders reservation exclusion](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/orders/orders.service.ts#L1398-L1437);
+[Orders picker tests](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/orders/orders.orderable-product-picker.spec.ts);
+[Shopify Upsell policy](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-cod-offers-upsells.service.ts#L95-L140);
+[Shopify Upsell write checks](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-cod-offers-upsells.service.ts#L215-L240);
+[Shopify Upsell tests](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-cod-offers-upsells.service.spec.ts#L8-L75);
+[Shopify checkout timeout and trusted Order flag](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-cod.service.ts#L445-L488);
+[Checkout state/classification tests](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-cod-checkout-session.spec.ts#L130-L177);
+[Analytics standard/recovery isolation](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/analytics/analytics.service.ts#L124-L172);
+[Confirmation merchant overview](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/confirmation/confirmation.service.ts#L1530-L1583).
+
+### C-11 Test Product ↔ Product Offers (not the same as Upsells)
+**Status: Pending Cross-Section Verification (do not conflate).**  
+Shopify COD `availableOffers` does **not** currently test `context.isTestProduct`, while `availableUpsells` does. Therefore a categorical claim that Test Products cannot use any promotional **Offers** is **not supported** by this study. Inspect promotion and order rules separately before settling whether a Test base Product may receive regular Offers.  
+Source: [Shopify COD availableOffers](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-cod.service.ts#L612-L637).
+
+### C-12 Test/Real reclassification and historical boundaries
+**Status: Verified guard, open risk/UX review.**  
+Merchant edit path saves `isTestProduct` through a scoped serializable Product transaction and audits before/after; the checked method contains no explicit rejection for a Product with historical Orders or already-configured Upsells. Existing Order rows retain their `isTestRecord` purpose, and a Shopify COD checkout session with a mismatched frozen Product purpose is forced to restart.
+**Open question:** product reclassification may affect still-persisted Upsell configuration, ongoing unfinalized flows, merchant explanation, old/new performance reporting. Do not call a bug without end-to-end reproduction; add to QA.  
+Sources: [edit controller](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/merchant-products-edit.controller.ts#L203-L350); [session classification guard](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-cod.service.ts#L375-L383).
+
+### C-13 Products ↔ Test Order financial/confirmation boundaries
+**Status: Verified narrow facts; broader effects pending.**  
+Order creation invokes Finance operational charge with fee type `TEST_ORDER_CREATED` for Test Orders vs `ORDER_CREATED` for Real Orders. Confirmation analytics/rate queries exclude Test for specific cohorts, but operational work queues may still include them. It is **wrong** to market Test Orders as guaranteed free/no-cost or universally excluded from Confirmation.  
+Sources: [Orders fee invocation](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/orders/orders.service.ts#L1604-L1625); [Confirmation overview cohort](https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/confirmation/confirmation.service.ts#L1530-L1583).  
+**Pending:** exact Finance fee schedule, settlement exclusion, delivery/shipping enforcement across all system paths.
 
 ## Proof moments to script and verify in UI
 1. Create multiple Variants → external link prerequisite → activation/failure states and audit. Do not perform destructive provider mutation solely for demo without isolation.
@@ -108,6 +155,9 @@ Classification is independent of stock. Orders picker tests confirm test product
 4. Product settings: optional electronic methods, fee share percentages, and permission-gated effective Order methods. Validate both Product and Workspace settings.
 5. Advertising origin: `UNRESOLVED` → `LATE_RESOLVED` only with unique canonical evidence, and a remaining ambiguous example. Never link automatically using Product mapping.
 6. Attempt to delete a Product with OrderItem history → rejection; no provider deletion.
+7. Create Test Product with stock (and separately with zero/unknown effective stock) → confirm purpose differs from inventory classification; inspect manual Test Order eligibility and no reservation.
+8. Shopify COD mapped Test base Product → no usable Upsell choices or Test targets; expire incomplete checkout → no recovery Order; freeze session and change Product classification → checkout restart.
+9. Verify selected standard merchant Analytics excludes Test Orders but do **not** claim every operational/finance view excludes them.
 
 ## Marketing & Website extraction — working hypotheses (NOT approved)
 - Narrative: **Operationally connected product management**, with accurate identities, usable stock context, controlled publishing, and payment decision traceability.
@@ -118,7 +168,7 @@ Classification is independent of stock. Orders picker tests confirm test product
 
 ## Outstanding QA gates before PRODUCTS.md
 - Systematic Product list/search/pagination/permissions plus all product-detail panels (screenshots ↔ current UI ↔ backend).
-- Product category/taxonomy, images/storage/media propagation, Test/Real restrictions, variant matrix, payment merchant-facing accessibility and advanced override UI, provider recovery, deletion test coverage.
+- Product category/taxonomy, images/storage/media propagation, Test/Real transition UX and Offer-vs-Upsell distinction, variant matrix, payment merchant-facing accessibility and advanced override UI, provider recovery, deletion test coverage.
 - Inventory reservation lifecycle, Shopify media and uncertain reconciliation, Meta product mappings, attribution origin to final order projection/analytics, and payment ↔ Finance.
 - Validate Home rollup, lifecycle downstream effects, limitations, weakest UX points; extract proof moments, SEO/AEO opportunities, explainable merchant job stories.
 - Perform **mandatory legacy Brand Intelligence cross-check only after independent research**, verify each old finding in current code, log discoveries/conflicts.
