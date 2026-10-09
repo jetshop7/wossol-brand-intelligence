@@ -166,6 +166,25 @@ Sources: [Orders fee invocation](https://github.com/jetshop7/wossol-platform/blo
 - Potential brand territory: `Operational Clarity + Controlled Commerce + Traceable Decisions`. This is an emerging strategic pattern to test across all sections, not final positioning.
 - Negative claims: no `all-in-one`, `fully automated`, `real-time stock`, `complete tracking`, `all orders attributed`, `guaranteed profitable ads`, `atomic cross-system actions`, or `best/only/first`.
 
+## Test/Real — Feature-to-Merchant-to-Brand extraction (current-study working section)
+
+**Feature → Merchant problem:** Merchant wishes to test a product or retest a limited-stock product, while live stock commitments, recovery follow-ups and advertising/reporting should not be confused with real sales. Wossol uses an explicit Product `isTestProduct` commercial-purpose flag rather than deducing test intent from on-hand stock.
+
+**Mechanism → work reduced:** The classification gates Manual Order variant eligibility and trusted imported Shopify COD Orders, skips Test Order stock reservation, prevents Shopify COD Upsells for Test bases/targets, expires incomplete Test checkout instead of creating recoverable Order, and excludes Test records from selected standard Analytics cohorts. It reduces repeated human filtering and manual classification work **in those specific paths**. No benchmarked time savings, experimental performance assessment or universal Finance/Analytics/Confirmation isolation is established.
+
+**Merchant value → control / safety:** Product checkbox allows purpose changes; Order canonical checks prevent mixed Test/Real order lines and mismatched trusted source; Shopify checkout session requires restart when commercial purpose changes mid-session. Historical Order purpose is stored separately. Fee operations still have a Test-specific operational type.
+
+**Section Strength:** Purpose-aware Product classification with UI explanation. **Compound Strength:** Connected commercial testing boundaries across Products, Inventory, Orders, Shopify COD, Upsells, and selected reporting. **Proof/Demo Moment:** show Test Product with positive stock, no stock and unknown stock; create an eligible Test Order and show no reservation; compare Shopify COD Upsell absence and non-recovered incomplete Test session; demonstrate session restart if purpose changes. All demo stages must be tested in a safe isolated environment.
+
+**Potential website feature page (draft, requires demo validation):**
+- Working headline: `Test a product without treating it as a normal sale`.
+- Supporting explanation: `In supported Wossol flows, Test Product status controls order purpose, inventory reservation, Shopify COD upsells and incomplete-checkout recovery. Stock quantity alone does not decide whether an item is being tested.`
+- Proof section: step-by-step Test vs Real flow showing exact exclusions, without promises of free tests or universal analytics isolation.
+- FAQ / SEO / AEO topics: `Can a Test Product have stock?` (yes); `Does a Test Order reserve inventory?` (not on the confirmed Order creation path); `Can I upsell a Test Product in Shopify COD?` (no); `What happens to an incomplete Shopify Test checkout?` (timeout does not create a recovery order); `Does changing Test status affect an open checkout?` (requires restart if frozen classification conflicts).
+- **Disallowed marketing claims:** `Run A/B product tests automatically`, `Test orders cost nothing`, `Every test event is invisible to all analytics`, `Test Products disable all Offers`, `no stock is ever required in any downstream fulfillment scenario`, `test purchases always reach delivery`, `Test status is Shopify's own product classification`.
+
+**Product/UX critical observation:** The merchant may change Test/Real on the same Product, including one with earlier operational context. Session restart protects ongoing checkout from mismatched purpose, but merchant-facing warnings about impact on past Upsell configuration and live funnels need observation before future product-design recommendations.
+
 ## Outstanding QA gates before PRODUCTS.md
 - Systematic Product list/search/pagination/permissions plus all product-detail panels (screenshots ↔ current UI ↔ backend).
 - Product category/taxonomy, images/storage/media propagation, Test/Real transition UX and Offer-vs-Upsell distinction, variant matrix, payment merchant-facing accessibility and advanced override UI, provider recovery, deletion test coverage.
