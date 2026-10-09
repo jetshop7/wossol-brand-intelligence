@@ -1,5 +1,17 @@
 # PRODUCTS — Independent Working Evidence & Cross-Section Register
 
+## Handoff checkpoint — 2026-10-09 (Products batches 13–16)
+**Status:** This Working Register remains active, not final. The chat reached its length limit; all research after earlier register entries is consolidated in [PRODUCTS_RESEARCH_CONTINUITY_BATCHES_13_TO_16_AND_NEXT.md](https://github.com/jetshop7/wossol-brand-intelligence/blob/main/07-current-product-deep-study/PRODUCTS_RESEARCH_CONTINUITY_BATCHES_13_TO_16_AND_NEXT.md), including Product Detail/Support, provider-first Delete and Store scope, Product-specific delivery pricing/Shopify COD/Preset, Offers/Upsells, exact cross-section classifications, risks, source paths, proof moments, and immediate next verification. **Read this addendum before resuming; it is part of the active evidence register.**
+
+**New conversation restart:** [PRODUCTS_NEW_CHAT_RESTART_PROMPT_2026-10-09.md](https://github.com/jetshop7/wossol-brand-intelligence/blob/main/07-current-product-deep-study/PRODUCTS_NEW_CHAT_RESTART_PROMPT_2026-10-09.md).
+
+**Immediate next:** trace free Offer Variant rewards (zero-priced order lines) through Inventory reservation, fulfillment, FIFO COGS and merchant Order Item origin visibility, plus accepted Upsells. **This next batch was announced but NOT completed** before handoff.
+
+**Cadence confirmed with user:** Discover deeply, verify cross-section connections during each section, keep Pending links to future sections, save consolidated meaningful milestones only. No commit after every answer; no final `PRODUCTS.md` until comprehensive independent discovery and historical Brand Intelligence cross-check.
+
+---
+
+
 **Status:** ACTIVE RESEARCH — NOT FINAL / NOT APPROVED FOR PUBLIC CLAIMS  
 **Source:** `jetshop7/wossol-platform` · branch `dev/wossol-integration` · tree `bf2d82f46d3189250e2a0ced6e6010d85c4de699`  
 **Method:** Current-code-first, test-confirmed where possible. Existing Brand Intelligence and legacy findings intentionally **not yet reviewed**.  
