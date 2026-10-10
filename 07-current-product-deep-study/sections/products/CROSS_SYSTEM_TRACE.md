@@ -165,3 +165,12 @@ Merchant create UI
 - Merchant Orders UI includes Waiting for Stock filter; Order Detail renders merchantSafeStatus and merchant-safe Tracking & Activity.
 - `WaitingStockPromotionService` emits merchant-safe `order.stock_allocated` timeline event before post-commit Confirmation assignment.
 - No explicit manual stock retry button in inspected `merchant/orders/detail/page.tsx`. No live browser or test execution.
+
+
+## Waiting-stock edge boundaries — 2026-10-10
+
+- `OrdersService` edit: `stockDemandSignature` comparison controls reset of waitingForStockAt; after transaction `waitingStockPromotion.promoteOrder` is called for non-test waiting Orders.
+- `OrdersService.cancelMerchantOrder`: pre-dispatch guard, Order row lock, `releaseOrderReservations`, terminal CANCELLED status and merchant-safe timeline in transaction.
+- `WaitingStockPromotionService`: returns BLOCKED without transition if full stock not reserved; orders processed by ascending waitingForStockAt and ID, maximum 100 per scoped call.
+- `WaitingStockPromotionProcessor`: event consumption retries when scoped processing reports failed Orders; bounded recovery sweep separately revisits waiting scopes.
+- Unit test source covers PROMOTED/BLOCKED/FIFO, not executed. No code changes.
