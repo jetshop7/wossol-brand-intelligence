@@ -174,3 +174,10 @@ Merchant create UI
 - `WaitingStockPromotionService`: returns BLOCKED without transition if full stock not reserved; orders processed by ascending waitingForStockAt and ID, maximum 100 per scoped call.
 - `WaitingStockPromotionProcessor`: event consumption retries when scoped processing reports failed Orders; bounded recovery sweep separately revisits waiting scopes.
 - Unit test source covers PROMOTED/BLOCKED/FIFO, not executed. No code changes.
+
+
+## Waiting-stock edit policy and test definitions — 2026-10-10
+
+- Frontend `merchant/orders/create/page.tsx` edit submit -> `updateMerchantOrder` -> redirect to Order Detail; no priority-reset notice found in inspected submit path.
+- Backend `OrdersService`: stockDemandSignature(existing.items) vs stockDemandSignature(new items); waitingForStockAt resets on changed stock demand; promotion attempted after save.
+- Service spec defines mocked PROMOTED, BLOCKED and FIFO checks; processor spec defines transient retry, checkpoint lease and recovery checks. These are not live test results.
