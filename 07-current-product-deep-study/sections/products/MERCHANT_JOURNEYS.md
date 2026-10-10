@@ -178,3 +178,12 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 5. Automatic Confirmation assignment happens after promotion transaction; failure is logged separately, so handoff reliability still needs proof.
 
 Potential merchant outcome: visibility and continuity for orders affected by shortages. Must verify actual merchant UI, trigger/scheduling and channel coverage before marketing.
+
+
+## MJ-06 — Waiting stock across Order entry and merchant visibility (2026-10-10)
+
+- Canonical commerce Order creation uses `allowWaitingForStock`; ordinary Order create may persist `WAITING_FOR_STOCK` rather than assigning Confirmation workload when stock is insufficient.
+- Order import has explicit `VALID_WAITING_FOR_STOCK` classification.
+- Merchant Orders page provides `Waiting for Stock` status filter; Order Detail includes message for resumed Order still awaiting stock.
+- Background processor runs a 30-second wake loop only when write mode permits, consumes durable availability events, and runs bounded 10-minute recovery scans. These are configured intervals, not merchant-facing SLAs.
+- Exclusions and exceptions: test Orders do not reserve; blocked-customer Orders are handled separately. Need end-to-end UI and production checks.
