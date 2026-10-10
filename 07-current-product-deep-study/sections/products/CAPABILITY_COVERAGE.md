@@ -113,3 +113,17 @@
 | P-V2-055 | Checkout optimistic revision, cursor, scoped FK hardening | `20260928_shopify_cod_checkout_session_hardening_v1/migration.sql` | S1 MIGRATION FILE | Verify applied in target DB |
 
 **Important:** the repository also contains migration directories dated after the study date; their presence does not establish deployment or execution. No database or test runner was accessed.
+
+
+## Product creation and media persistence — 2026-10-10
+
+| ID | Capability | Code evidence | Grade | Gap |
+|---|---|---|---|---|
+| P-V2-056 | Authenticated Store-scoped Product creation via POST merchant-create | `create/page.tsx`, `products.controller.ts`, `ProductsService.createMerchantProduct` | S1 TRACE | API/runtime test |
+| P-V2-057 | Atomic Product, Variant, Store link, taxonomy and audit creation | `ProductsService.createMerchantProduct` Prisma transaction | S1 TRACE | Rollback and concurrent code generation tests |
+| P-V2-058 | Inactive Product/Variant foundation before Accurate/Mayar sync | Same service; audit metadata REQUIRED_BEFORE_ACTIVATION | S1 TRACE | Activation lifecycle and failure UX |
+| P-V2-059 | Five Product images, 2MB each, validated MIME and local storage | `ProductImageUploadSection.tsx`, `ProductsController`, `ProductsService.uploadMerchantProductImage` | S1 TRACE | Orphan file cleanup, deployment persistence |
+| P-V2-060 | Variant image stage/move/DB update with best-effort old binary cleanup | `ProductsService.uploadMerchantVariantImage` | S1 TRACE | Failure injection, rollback and cleanup |
+| P-V2-061 | Delete guard on historical Order usage; provider-first delete then archive | `ProductsService.deleteMerchantProduct` | S1 TRACE | Provider partial success and local transaction failure |
+
+**New risks for shared register:** Product image uploaded before Product creation uses `product-images/<merchantId>/new-product` and may be orphaned on cancelled/failed creation; provider deletes occur before local archive transaction, creating a possible partial-success divergence. Neither is a confirmed production defect. Product image UI explicitly states images are Wossol-only and not propagated to external systems.
