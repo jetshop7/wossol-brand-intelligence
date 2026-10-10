@@ -187,3 +187,14 @@ Potential merchant outcome: visibility and continuity for orders affected by sho
 - Merchant Orders page provides `Waiting for Stock` status filter; Order Detail includes message for resumed Order still awaiting stock.
 - Background processor runs a 30-second wake loop only when write mode permits, consumes durable availability events, and runs bounded 10-minute recovery scans. These are configured intervals, not merchant-facing SLAs.
 - Exclusions and exceptions: test Orders do not reserve; blocked-customer Orders are handled separately. Need end-to-end UI and production checks.
+
+
+## MJ-07 — Merchant manages a waiting-stock Order (2026-10-10)
+
+1. Merchant navigates Orders -> Confirmation -> Waiting for Stock status filter.
+2. Order Detail shows merchant-safe current status and Tracking & Activity timeline.
+3. Waiting-for-stock status is pre-dispatch: `canEdit` and `canCancel` are true under OrdersService status policy. Merchant can edit or cancel.
+4. No dedicated manual retry-stock action appears in inspected Order Detail page; background processor owns stock availability wake-up.
+5. After successful stock allocation, merchant-safe `Stock allocated` event is recorded and Order becomes Pending Confirmation; post-commit automatic Confirmation assignment may separately fail.
+
+Merchant outcome is conditional on runtime UI, stock source and background recovery. No live test performed.
