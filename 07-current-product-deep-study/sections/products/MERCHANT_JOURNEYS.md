@@ -217,3 +217,11 @@ Critical merchant question: should editing quantities reset queue priority? Veri
 - Backend `stockDemandSignature` determines whether waitingForStockAt is replaced with current time; unrelated edits preserve previous priority.
 - Source tests in `waiting-stock-promotion.service.spec.ts` cover PROMOTED/BLOCKED/FIFO with mocks; processor spec covers event retry, lease, malformed facts and bounded recovery. None executed here.
 - Merchant-impact risk: changed demand may reorder waiting queue without clear explanation. Need real UI and business policy review.
+
+
+## MJ-10 — Waiting stock to Confirmation assignment and recovery (2026-10-10)
+
+- Successful stock reservation transitions Order to PENDING_CONFIRMATION; automatic assignment is a separate best-effort step.
+- Normal lack of eligible Confirmation capacity records pending Overflow, with bounded retry and privileged manual retry paths.
+- Exceptional failure before Overflow persistence has no established guaranteed automatic recovery in inspected code; verify with failure injection and actual database evidence.
+- Do not market guaranteed automatic assignment or no stranded Orders until recovery coverage is proven.
