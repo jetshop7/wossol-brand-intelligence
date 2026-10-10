@@ -138,3 +138,14 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 - On first non-success, attempts compensation for newly created external records. Successful compensation => local foundation archived; failed compensation => Product stays inactive with audit evidence. Merchant receives `Product creation did not complete.` rather than false success.
 - `retryMerchantVariantProviderSync` permits retry for `FAILED_RETRYABLE` link operations only; `ACTION_REQUIRED` refuses blind retry and calls for review. A stale running claim is classified according to whether an external attempt started.
 - Merchant outcome hypothesis: less ambiguity about product readiness and safer retry decisions. **Do not promote until runtime/UX validated**; external provider details remain internal.
+
+
+## MJ-02 — Merchant-visible Product connection attention (2026-10-10)
+
+1. Products list presents an attention badge when projection identifies an issue; Shopify-specific attention opens Product Detail > Connections.
+2. Product Detail warns when Shopify Product is unlinked or partly linked, showing missing Variant count and review action.
+3. Connections offers create unpublished Shopify draft, link an existing Shopify Product, inspect exact Variant mappings, link missing Variants manually or sync missing Variants when eligible.
+4. Changing the Product link warns that Variant links will be cleared and require review; ending the link warns that the remote Shopify Product and Store connection are retained.
+5. Failed status refresh or sync displays contextual message. No claim of guaranteed successful retry or fully automatic publishing.
+
+**Important exclusion:** Products page intentionally does not expose internal provider retry/status controls, as checked by `provider-sync-recovery-ui.spec.ts` (test not executed). Do not market hidden backend recovery as merchant self-service.
