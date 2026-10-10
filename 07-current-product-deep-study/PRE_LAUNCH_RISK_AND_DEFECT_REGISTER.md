@@ -118,3 +118,10 @@
 - Evidence: WaitingStockPromotionService.promoteOrder commits PENDING_CONFIRMATION and stock reservation before best-effort assignOrderAutomatically; assignment errors are logged without reverting promotion.
 - Risk: Order may remain unassigned until another Confirmation recovery path processes it.
 - Acceptance: Inject assignment failure after successful stock promotion; inspect Confirmation workload, retry schedulers, merchant-visible status and eventual assignment. Verify no duplicate assignment and no stranded Orders.
+
+
+### RISK-011 — Confirmation recovery investigation update (2026-10-10)
+
+- Confirmed from current code: assignOrderAutomatically records a pending Confirmation Overflow entry for TEAM_PROVISIONING_FAILED or NO_ELIGIBLE_CAPACITY. drainPendingOverflowForWorkspace retries bounded pending Overflow entries; authorized retryAutomaticAssignment also exists.
+- Remaining gap: WaitingStockPromotionService catches an exception thrown by assignOrderAutomatically after successful promotion and logs it. No proof yet that an exception occurring before Overflow recording creates a durable recovery item or is found by a periodic scan of all unassigned PENDING_CONFIRMATION Orders.
+- Revised acceptance: separately inject (a) no capacity with successful Overflow recording and (b) exception before Overflow recording. Verify durable recovery and eventual assignment for each. Keep RISK-011 OPEN until both are proven.
