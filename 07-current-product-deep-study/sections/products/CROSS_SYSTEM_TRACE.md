@@ -48,3 +48,20 @@ Merchant Wossol Product UI
 - **Storefront block:** `extensions/wossol-cod-form/blocks/wossol-cod-form.liquid` exposes Product ID, App Proxy root, form runtime URL and actual customer controls for variants, bundles, destination, totals and upsell modal.
 - **Storefront backend:** `shopify-cod.service.ts` `bootstrap()` reads variants/destinations/form/offers; `quote()` calculates merchandise, discounts, delivery and upsells. Checkout and normalized Commerce Order handoff not yet followed to completion.
 - **New gap:** distinguish the existence of Shopify Theme App Extension code from evidence that it is enabled on a live Shopify theme and fully functional. Runtime/browser test required.
+
+
+## COD checkout edge trace (2026-10-10)
+
+```text
+Shopify Product Theme App Extension
+  -> signed Shopify App Proxy bootstrap (mapped variants + destinations + form + offers)
+  -> quote / preflight (pricing + phone validation)
+  -> persisted scoped checkout session (COLLECTING; 30-min TTL)
+  -> Order intent (freeze quote + Upsell sequence; ORDER_INTENT_CONFIRMED)
+  -> sequential Upsell accept/skip with cursor/replay controls
+  -> finalizeCheckoutSession (immediate or due-session recovery)
+  -> normalized Commerce Order ingest (downstream transaction trace PENDING)
+  -> Orders / Inventory / Confirmation (downstream proof PENDING)
+```
+
+**Evidence:** `shopify.controller.ts`, `shopify-cod.service.ts`, `shopify-cod-checkout-session.processor.ts`, `shopify-cod-checkout-session.spec.ts`. Direct `/shopify/cod/submit` endpoint exists but its service deliberately rejects bypass with session-confirmation error. The processor does not poll Shopify; it processes durable due sessions with lease-aware scheduling. **No end-to-end test was run.**
