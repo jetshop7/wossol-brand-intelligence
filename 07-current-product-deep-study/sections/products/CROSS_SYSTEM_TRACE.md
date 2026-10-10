@@ -65,3 +65,19 @@ Shopify Product Theme App Extension
 ```
 
 **Evidence:** `shopify.controller.ts`, `shopify-cod.service.ts`, `shopify-cod-checkout-session.processor.ts`, `shopify-cod-checkout-session.spec.ts`. Direct `/shopify/cod/submit` endpoint exists but its service deliberately rejects bypass with session-confirmation error. The processor does not poll Shopify; it processes durable due sessions with lease-aware scheduling. **No end-to-end test was run.**
+
+
+## Verified static trace — finalization to Orders transaction (2026-10-10)
+
+**Sources:** `apps/backend/src/modules/shopify/shopify-cod.service.ts` (`finalizeCheckoutSession`), `apps/backend/src/modules/commerce/commerce-order-resolution.service.ts` (`ingestNormalizedCommerceOrder`), `apps/backend/src/modules/orders/orders.service.ts` (`createCommerceImportedOrder`, `createOrderWithStockAllocationPolicy`). Source only; tests not executed.
+
+1. Session finalization uses optimistic revision and an expiring lease/claim token; its canonical external identity is `wossol-cod-session:<session.id>`.
+2. Commerce validates the normalized input, verifies active Connection scope and resolves exact mapped Product/Variant identities and destination; then calls Orders-owned `createCommerceImportedOrder`.
+3. Orders uses `allowWaitingForStock`, a **Serializable Prisma transaction**, and a transactional `commerceImport.findExisting(tx)` mapping lookup. If the mapping exists, it returns `ALREADY_IMPORTED` and the scoped existing Order.
+4. If no mapping exists, the same transaction creates the canonical Order, resolves pricing/delivery and purpose, handles Inventory reservation or waiting-for-stock (Test Products skip reservation), writes audit data, and calls `commerceImport.createMapping(tx, order.id)` **inside the same transaction**.
+5. The caller retries once on designated Commerce import race errors. This strongly supports transactional deduplication for repeated session finalization; database unique constraints and concurrent replay tests still need inspection.
+6. After the Order is committed, Shopify mirror/projection is best effort for completed checkouts only. The session is then marked `FINALIZED` and linked to `finalizedOrderId`. If session update fails after commit, the stable external identity plus transactional mapping is designed to return the existing Order on retry.
+
+**Critical distinction:** `INCOMPLETE_CHECKOUT` timeout can create a canonical Order when `orderReady` and eligible; not every abandoned session is merely discarded. Non-ready `COLLECTING` sessions expire without an Order. This must be described carefully in merchant messaging and Orders classification.
+
+**Remaining:** check unique index on Commerce mapping, precise retryable error types, runtime tests for concurrent finalization, Inventory waiting and rollback, Confirmation routing, projection failure and status-page behavior.
