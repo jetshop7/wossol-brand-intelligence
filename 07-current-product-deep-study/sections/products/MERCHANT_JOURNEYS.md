@@ -130,3 +130,11 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 6. Product image upload occurs before Product creation, with maximum five images / 2MB per file and Wossol-local storage. Potential abandoned-image lifecycle remains unverified.
 
 **Deletion caveat:** Backend rejects Product deletion with Order history; otherwise it prepares/deletes each Accurate/Mayar provider target before locally archiving Product/Variants in a transaction. Partial provider deletion or local archive failure needs compensation/reconciliation proof.
+
+
+## MJ-01 — Completion and partial failure (2026-10-10)
+
+- After local inactive Product/Variants creation, backend sequentially links every Variant; all success => local activation transaction and merchant-safe `Product created.` response.
+- On first non-success, attempts compensation for newly created external records. Successful compensation => local foundation archived; failed compensation => Product stays inactive with audit evidence. Merchant receives `Product creation did not complete.` rather than false success.
+- `retryMerchantVariantProviderSync` permits retry for `FAILED_RETRYABLE` link operations only; `ACTION_REQUIRED` refuses blind retry and calls for review. A stale running claim is classified according to whether an external attempt started.
+- Merchant outcome hypothesis: less ambiguity about product readiness and safer retry decisions. **Do not promote until runtime/UX validated**; external provider details remain internal.
