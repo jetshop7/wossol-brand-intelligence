@@ -102,3 +102,19 @@
 - Validation: Edit stock demand on an older waiting Order, compare waitingForStockAt and FIFO processing; repeat with an unrelated edit; inspect UI messaging and actual promotion.
 - Resolution: Approve priority policy first; then disclose its effect before saving and verify the resulting status is clear. Do not invent a numeric queue position.
 - Release gate: Policy decision, UI acceptance evidence and changed-versus-unchanged-demand regression coverage.
+
+## RISK-010 — Bounded waiting-stock batch may repeatedly revisit blocked oldest Orders
+
+- Status: PERFORMANCE / FAIRNESS HYPOTHESIS; load reproduction required.
+- Severity: MEDIUM provisional.
+- Evidence: WaitingStockPromotionService.processScoped selects first 100 waiting Orders by waitingForStockAt then id; blocked Orders remain waiting and eligible for the next batch.
+- Risk: If the oldest 100 remain blocked, later Orders might not be reached by this scoped sweep even when their own stock is available. Other event paths and direct edit-triggered promotion may mitigate; do not claim starvation as confirmed.
+- Acceptance: Create over 100 waiting Orders with old blocked Orders and newer stock-ready Orders; test scoped wake-up, recovery, fairness and eventual processing. Document batch progression policy.
+
+## RISK-011 — Stock promotion succeeds but automatic Confirmation assignment fails
+
+- Status: HANDOFF RECOVERY UNVERIFIED; not a confirmed lost Order.
+- Severity: MEDIUM–HIGH provisional.
+- Evidence: WaitingStockPromotionService.promoteOrder commits PENDING_CONFIRMATION and stock reservation before best-effort assignOrderAutomatically; assignment errors are logged without reverting promotion.
+- Risk: Order may remain unassigned until another Confirmation recovery path processes it.
+- Acceptance: Inject assignment failure after successful stock promotion; inspect Confirmation workload, retry schedulers, merchant-visible status and eventual assignment. Verify no duplicate assignment and no stranded Orders.
