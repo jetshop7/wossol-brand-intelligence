@@ -158,3 +158,12 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 - Missing Variant combinations are generated from option groups and existing signatures filtered out. The UI submits each new Variant separately. An attached new Variant image is restricted to one new combination.
 - Variant edits use `PATCH /products/merchant-variants`; the dedicated Variant edit screen separately uploads or removes its image. If image operation fails after catalog PATCH, a partial save is possible; recovery UX must be checked.
 - Merchant outcome candidates: clearer catalog organization and individual option control. No comparative speed/accuracy claims without user testing.
+
+
+## MJ-04 — Quantities and deletion (2026-10-10)
+
+- Products list displays sum of effective available quantities across active (non-archived) Variants only if every quantity is numeric; otherwise `Unknown` rather than false zero.
+- Refresh action reports updated/skipped/failed counts; BUSY displays that cached quantities remain available.
+- Delete Product/Variant prompts merchant with available-quantity-zero condition. Backend rejects deletion when historical OrderItem exists, or when required deletability cannot be verified.
+- Successful deletion is local archival; deleting final Variant archives its Product. Product deletion archives all remaining Variants.
+- Partial external deletion before local archival is a known code-level risk (RISK-008), not a merchant-value claim.
