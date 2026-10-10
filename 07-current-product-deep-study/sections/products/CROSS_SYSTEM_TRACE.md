@@ -97,3 +97,20 @@ Shopify Product Theme App Extension
 - Hardening migration `20260928_shopify_cod_checkout_session_hardening_v1` adds optimistic `revision`, Upsell decision cursor, scoped foreign keys and an additional composite unique constraint.
 - These are **migration definitions**, not evidence of applied migrations or real PostgreSQL concurrent replay behavior.
 - Product UI sources now identified: create (options/chips/combination generation, category, images), edit (provider sync confirmation), variant-edit (name/SKU/price/weight/image), list (thumbnail, variant expansion, actions). Backend request/response trace remains open.
+
+
+## Product create / media / provider delete boundary (2026-10-10)
+
+```text
+Merchant create UI
+  -> Product image uploads (filesystem: uploads/product-images/<merchant>/new-product)
+  -> POST /products/merchant-create
+  -> active Store + permission + category validation
+  -> Prisma transaction: Product(INACTIVE), Variant(INACTIVE), ProductStore, taxonomy, audit
+  -> merchant Product Detail / Products list
+  -> Accurate/Mayar sync + activation (SEPARATE, not yet traced)
+```
+
+**Image ownership:** Product image upload uses Wossol filesystem, no external provider sync. Variant image upload stages/moves storage and updates Variant reference transactionally, with best-effort old image cleanup. These are distinct media lifecycles.
+
+**Delete boundary:** Order history blocks Product deletion; without history, provider Accurate/Mayar deletes precede local archival. This is a possible distributed consistency failure window and requires detailed compensation checks, not an assumed defect.
