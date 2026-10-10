@@ -39,3 +39,12 @@ Merchant Wossol Product UI
 7. What is the merchant's actual reduction in copying, rematching, tool switching and error handling? Do not quantify without measurements.
 
 **Gate C:** NOT PASSED. Edges remain partially inspected.
+
+
+## Second-pass traced nodes and edges (2026-10-10)
+
+- **Shopify Admin entry:** `apps/frontend/src/app/shopify/app/route.ts` serves App Bridge and loads `/shopify-app-home.js`. The actual browser controller is still to be inspected.
+- **Store linking:** `apps/frontend/src/app/shopify/link/page.tsx` connects merchant-authenticated Store selection to Shopify return; backend link-intent contract pending.
+- **Storefront block:** `extensions/wossol-cod-form/blocks/wossol-cod-form.liquid` exposes Product ID, App Proxy root, form runtime URL and actual customer controls for variants, bundles, destination, totals and upsell modal.
+- **Storefront backend:** `shopify-cod.service.ts` `bootstrap()` reads variants/destinations/form/offers; `quote()` calculates merchandise, discounts, delivery and upsells. Checkout and normalized Commerce Order handoff not yet followed to completion.
+- **New gap:** distinguish the existence of Shopify Theme App Extension code from evidence that it is enabled on a live Shopify theme and fully functional. Runtime/browser test required.
