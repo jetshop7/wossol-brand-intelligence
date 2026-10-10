@@ -189,3 +189,10 @@ Merchant create UI
 - `ConfirmationService.assignOrderAutomatically` creates a pending Overflow entry on TEAM_PROVISIONING_FAILED or NO_ELIGIBLE_CAPACITY; existing active assignments are idempotently recognized.
 - `ConfirmationService.drainPendingOverflowForWorkspace` retries pending Overflow entries; `retryAutomaticAssignment` is a privileged manual retry.
 - Unresolved: exception before Overflow recording may leave a PENDING_CONFIRMATION Order unassigned with no confirmed durable retry record. No executed failure-injection tests.
+
+
+## Confirmation orphan-assignment recovery evidence — 2026-10-10
+
+- ConfirmationOversightService counts active unassigned Orders separately from pending Overflow entries; its periodic processor performs oversight reconciliation, not proven assignment recovery for orders missing Overflow.
+- Confirmation Overflow tests define bounded drain and capacity-triggered retry using mocks; no specific failure-injection proof of post-promotion exception before Overflow creation.
+- Therefore monitoring != guaranteed recovery; RISK-011 remains OPEN.
