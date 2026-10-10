@@ -222,3 +222,17 @@
 | P-V2-097 | Orders list exposes Waiting for Stock filter | Merchant-visible capability | Detail/status clarity and merchant actions |
 
 **No claims of universal channel coverage or guaranteed timing.** Code contains separate blocked-customer and test-order paths. Source inspected, tests not run.
+
+
+## Merchant waiting-stock UX — 2026-10-10
+
+| ID | Code-backed behavior | Value classification | Remaining proof |
+|---|---|---|---|
+| P-V2-098 | Orders list has explicit Waiting for Stock filter | Merchant-visible | Real UI and discoverability |
+| P-V2-099 | Order Detail presents merchant-safe current status and tracking/activity history | Merchant-visible | Verify stock allocation event renders in actual journey |
+| P-V2-100 | Waiting-for-stock Order is merchant-editable before dispatch | Merchant-visible | Actual edit and reservation recalculation |
+| P-V2-101 | Waiting-for-stock Order is cancellable before dispatch | Merchant-visible | Cancellation behavior and inventory release |
+| P-V2-102 | Promotion emits merchant-safe `Stock allocated` event and moves Order to Pending Confirmation | Merchant-visible candidate | End-to-end transition and notification discoverability |
+| P-V2-103 | No dedicated manual stock-retry control found in inspected Order Detail UI | UX limitation | Check other routes and operations before universal claim |
+
+**Merchant promise candidate:** keep shortage-affected Orders visible and manageable while waiting for full stock, then return them to Confirmation when available. Avoid promising user-triggered recovery, guaranteed timing, or that no Order is lost.
