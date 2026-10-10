@@ -145,3 +145,15 @@
 - OrdersService also calls automatic Confirmation assignment after normal Order creation and selected blocked-customer corrections. Some exceptions are logged after Order commit.
 - Confirmation lifecycle manages team configuration, while Oversight reconciles alerts and Overflow drain retries only persisted Overflow entries.
 - Expand verification to every eligible Order entry path. Inject assignment failure before Overflow persistence and check durable recovery. This is still a suspected gap, not a verified production defect.
+
+## RISK-012 — Waiting-stock edit can fail after its changes are saved
+
+- Status: suspected post-commit response mismatch; requires failure injection.
+- Severity: MEDIUM provisional.
+- Evidence: Merchant Order edit commits its database transaction, then awaits waitingStockPromotion.promoteOrder without a local catch. A promotion exception can make the request fail after edits were persisted.
+- Impact: Merchant may see an error and retry a change already saved.
+- Acceptance: Inject promotion failure after commit; verify database state, HTTP response, frontend message and safe retry. Ensure merchant sees an accurate save result.
+
+### RISK-011 test coverage
+
+- Inspected waiting-stock-promotion.service.spec.ts and confirmation-overflow.spec.ts. No inspected test proves automatic recovery after an assignment exception before Overflow persistence. Tests were not executed.
