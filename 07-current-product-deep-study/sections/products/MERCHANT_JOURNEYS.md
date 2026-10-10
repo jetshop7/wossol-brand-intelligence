@@ -167,3 +167,14 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 - Delete Product/Variant prompts merchant with available-quantity-zero condition. Backend rejects deletion when historical OrderItem exists, or when required deletability cannot be verified.
 - Successful deletion is local archival; deleting final Variant archives its Product. Product deletion archives all remaining Variants.
 - Partial external deletion before local archival is a known code-level risk (RISK-008), not a merchant-value claim.
+
+
+## MJ-05 — Stock shortage to Order confirmation (2026-10-10)
+
+1. Effective available stock is calculated from cached stock less active reservations and pending stock consumption; unknown stays unknown.
+2. On Order allocation, service locks Variant rows, validates scope and aggregate quantity, then reserves available demand; shortage rejects or returns WAITING_FOR_STOCK according to allocation policy.
+3. Waiting-stock processor rechecks stock inside Serializable transaction; if still short, Order remains waiting.
+4. If full demand is available, reservations are created and Order transitions to PENDING_CONFIRMATION with merchant-safe timeline entry `Stock allocated`.
+5. Automatic Confirmation assignment happens after promotion transaction; failure is logged separately, so handoff reliability still needs proof.
+
+Potential merchant outcome: visibility and continuity for orders affected by shortages. Must verify actual merchant UI, trigger/scheduling and channel coverage before marketing.
