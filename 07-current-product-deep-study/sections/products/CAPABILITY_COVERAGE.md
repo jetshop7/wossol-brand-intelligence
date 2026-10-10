@@ -250,3 +250,15 @@
 | P-V2-109 | Waiting promotion uses FIFO order by waitingForStockAt and bounded batches of 100 | Operational fairness candidate | Starvation, repeated failures and scale |
 
 No runtime tests executed. Do not market partial-stock fulfilment, guaranteed fairness, guaranteed recovery or immediate promotion.
+
+
+## Waiting-stock editing clarity and test-evidence review — 2026-10-10
+
+| ID | Source-supported finding | Classification | Verification needed |
+|---|---|---|---|
+| P-V2-110 | Editing Order form redirects to Order Detail after successful update, without an identified stock-priority explanation in submit flow | Merchant UX clarity gap | Live UI, notices elsewhere |
+| P-V2-111 | Backend compares stock-demand signature; changed demand resets waiting priority timestamp, unchanged demand retains it | Operational policy, not automatic differentiator | Fairness rationale and merchant disclosure |
+| P-V2-112 | Promotion service spec defines PROMOTED, BLOCKED, FIFO mocked scenarios | Test-definition evidence only | Execute tests, physical database |
+| P-V2-113 | Processor spec defines transient event retry, lease recovery, malformed events, bounded recovery mocked scenarios | Test-definition evidence only | Execute tests, restart/outage recovery |
+
+Do not claim priority policy is merchant-explained or fairness is proven. Test definitions were read, not run.
