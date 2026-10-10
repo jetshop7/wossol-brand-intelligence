@@ -122,3 +122,12 @@ Merchant create UI
 - Product Detail warns on `UNMAPPED_PRODUCT` or `PARTIAL`; Connections reads connection health and Shopify status.
 - Merchant actions: create unpublished Shopify draft, link/change/end Shopify Product, manually link Variant, sync missing Variants. Changing or ending links includes confirmation and may clear Variant mappings, without deleting the remote Shopify Product.
 - Internal provider sync recovery status and Retry are intentionally not shown in Products list; static test `provider-sync-recovery-ui.spec.ts` asserts this. Do not market hidden provider integration or recovery as customer-facing features.
+
+
+## Product catalog UI save boundaries (2026-10-10)
+
+- Product list: search Product/name/code/Variant/SKU, category filter, Shopify connection health filter, age/name sorting; quantity unknown is not displayed as zero.
+- Product edit: `POST /products/merchant-edit` -> optionally separate `POST /products/merchant-electronic-payment-settings`; explicit partial-success warning if second fails.
+- Variant matrix: filter existing option signatures -> sequential `POST /products/merchant-variants` per new combination; one-image-per-new-Variant restriction when attaching an image.
+- Variant edit: `PATCH /products/merchant-variants` followed by optional `POST/DELETE /products/merchant-variant-image`; these are separate requests, so partial save is possible.
+- These findings are code-reading evidence, not live UI acceptance. Merchant-facing benefits only; no promotion of hidden provider internals.
