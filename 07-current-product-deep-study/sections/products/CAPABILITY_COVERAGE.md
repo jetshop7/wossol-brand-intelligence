@@ -38,3 +38,18 @@
 - Identify models, DTOs, API endpoints, tests, permissions, jobs, events and all significant error paths.
 - No historical-document comparison until independent inventory is sufficiently complete.
 - **Closure: FAIL / IN PROGRESS**. This matrix is an initial, explicitly incomplete inventory.
+
+
+## Second-pass discovery additions (2026-10-10)
+
+| ID | Capability | Evidence | Journey | Status | Next proof |
+|---|---|---|---|---|---|
+| P-V2-021 | Shopify App Home as App Bridge HTML route | `apps/frontend/src/app/shopify/app/route.ts` | MJ-03 | S1 PARTIAL | Read `public/shopify-app-home.js`, auth, API and tests |
+| P-V2-022 | Shopify-initiated secure Store selection | `apps/frontend/src/app/shopify/link/page.tsx` | MJ-02 | S1 PARTIAL | Validate proof expiry, claims and scope in backend |
+| P-V2-023 | Real Shopify Product-template COD Theme App Extension | `extensions/wossol-cod-form/blocks/wossol-cod-form.liquid` | MJ-04 | S1 PARTIAL | JS runtime, Shopify theme installation, browser test |
+| P-V2-024 | Multi-variant/quantity composition on customer form | Same Liquid block | MJ-04 | S1 PARTIAL | JS events, server quote and order line validation |
+| P-V2-025 | Customer-facing offer selection and dynamic price breakdown | Same Liquid block; `shopify-cod.service.ts` quote/bootstrap | MJ-04 | S1 PARTIAL | Pricing consistency and full checkout trace |
+| P-V2-026 | Customer upsell modal with image gallery, variant and quantity | Same Liquid block | MJ-04 | S1 PARTIAL | Runtime, availability, price and accepted upsell flow |
+| P-V2-027 | Shopify App Proxy storefront bootstrap and provider-neutral order adapter | `shopify-cod.service.ts` | MJ-04 | S1 PARTIAL | Checkout processor and canonical Orders handoff |
+
+**Discovery correction:** The Shopify COD Form is not just a planned feature: a concrete Shopify Theme App Extension block and storefront adapter exist in source. Actual deployment, merchant enablement, successful execution and marketing claims remain unverified.
