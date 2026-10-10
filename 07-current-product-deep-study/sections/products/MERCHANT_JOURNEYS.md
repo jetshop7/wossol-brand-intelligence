@@ -103,3 +103,18 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 **Merchant Order detail:** `apps/frontend/src/app/merchant/orders/detail/page.tsx` implements the same checkout-origin labeling independent of the lifecycle status. A source-based test `checkout-origin-projection.spec.ts` checks these code markers; it has not been run here.
 
 **Experience inference:** merchant can distinguish recovered COD checkout provenance from the Order's operational status, and find waiting-for-stock work via the Confirmation filter. Exact rendering, status transitions, and recovery actions still require browser/DB verification.
+
+
+## MJ-01 — Product creation/edit merchant journey, first UI source pass (2026-10-10)
+
+| Stage | Merchant action (code-inferred) | UI/source | Verification gap |
+|---|---|---|---|
+| Create | Open Product create; enter base fields and select category | `merchant/products/create/page.tsx`; active category fetch | Exact labels, validation and API outcome |
+| Options | Add group (color, size, material, gender or custom), enter distinct chips | Same page; `variantCombinations` | Combination limits, generated Variant persistence |
+| Images | Select/manage Product images | `ProductImageUploadSection` in create/edit | Storage, order, failed upload and provider handling |
+| Edit | Load Product, change fields and Variants | `merchant/products/edit/page.tsx` | Full save lifecycle and rollback |
+| Provider sync | Respond to confirmation dialog when new Variant not linked | `ProviderVariantSyncDialog` | Sync failure/retry and merchant-visible result |
+| Variant edit | Update name/SKU/price/weight and optional image | `merchant/products/variant-edit/page.tsx` | Provider/storefront propagation |
+| Product list | Inspect Product thumbnail, expand Variants, view/edit/delete | `merchant/products/page.tsx` | Live UI, delete guards, cross-store permissions |
+
+**Evidence:** UI source only. Do not claim these flows work end-to-end before inspecting API and runtime.
