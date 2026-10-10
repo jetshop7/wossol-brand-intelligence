@@ -180,3 +180,17 @@
 | P-V2-079 | Product and Variant images have distinct upload paths; new Variant image requires single-combination creation | Merchant-visible capability with constraints | Image persistence and accessibility |
 
 **Do not claim** bulk editing, speed advantage, reduced errors or superior competitor experience from these sources. Batch generation of missing combinations is not bulk edit of existing Variants. No live UI or tests executed.
+
+
+## Inventory and deletion merchant-value review — 2026-10-10
+
+| ID | Code evidence | Classification | Caveat |
+|---|---|---|---|
+| P-V2-080 | Product list sums effective available quantities across non-archived Variants | Merchant-visible value candidate | Any unknown Variant quantity makes total `Unknown` |
+| P-V2-081 | Merchant can refresh Product quantities; UI reports updated/skipped/failed or BUSY with cached quantities | Merchant-visible value candidate | Freshness, accuracy and provider failure need runtime proof |
+| P-V2-082 | Product/Variant deletion blocks historical OrderItem references before external calls | Merchant-protection candidate | Deletion restrictions may frustrate catalog maintenance; no competitive differentiation established |
+| P-V2-083 | Delete eligibility verified before local archive; UI warns available quantity must be zero | Merchant-protection candidate | Backend uses deletability verification, not only displayed numeric quantity |
+| P-V2-084 | Variant deletion archives Variant and automatically archives Product if final non-archived Variant | Merchant-visible behavior, not automatically a strength | Verify expectation and messaging |
+| P-V2-085 | Product deletion archives Product and all non-archived Variants, not physical deletion | Internal safety enabler / customer transparency | Provider-first sequential delete consistency window (RISK-008) |
+
+**Marketing screen:** Product quantity visibility and actionable refresh are stronger customer-value candidates than provider integration. Do not claim real-time stock, perfect accuracy, inventory automation or safe deletion under every failure condition without end-to-end proof.
