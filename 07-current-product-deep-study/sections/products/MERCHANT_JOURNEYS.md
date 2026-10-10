@@ -52,3 +52,16 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 - End-to-end browser session: **NOT EXECUTED**.
 - External Shopify sandbox: **NOT TESTED**.
 - Source excerpt review: **S1 only**.
+
+
+## MJ-03/MJ-04 — Second-pass source discoveries (2026-10-10)
+
+**Shopify merchant entry:** `apps/frontend/src/app/shopify/app/route.ts` serves an actual HTML App Home document with Shopify App Bridge loaded as first executable script and `/shopify-app-home.js` deferred. The page contains a hidden COD Products section and client-controlled navigation, rather than a conventional Next.js React page. **Next evidence:** read the served `public/shopify-app-home.js` and backend App Home endpoints before claiming exact controls are live.
+
+**Store linking:** `apps/frontend/src/app/shopify/link/page.tsx` checks a time-bounded-looking proof format (40–256 URL-safe characters), restores/login session, fetches eligible Stores, lets the merchant select the Wossol Store and confirm, and restricts the return URL to same-origin `/shopify/app`. The expiry/security properties must be verified in the backend, not inferred from UI wording.
+
+**Customer-facing Shopify Theme App Extension:** `extensions/wossol-cod-form/blocks/wossol-cod-form.liquid` defines a Product-template section containing variant/quantity composition, preset bundle selector, governorate/destination, dynamic totals/discount/delivery, customer details and a modal upsell with product image gallery, variant/quantity selection and accept/skip. This is **actual storefront block source**, not proof of installation or successful checkout. The block loads `wossol-cod-form.js` and a dynamic runtime script; full JS/runtime interaction is pending.
+
+**Backend storefront bootstrap:** `apps/backend/src/modules/shopify/shopify-cod.service.ts` reads scoped orderable mapped variants, delivery destinations, form configuration and offers, then supplies Shopify variant labels/prices and COD availability. Its header explicitly describes a Shopify App Proxy → provider-neutral Commerce Order adapter, leaving Orders responsible for creation, Inventory and Confirmation. Trace the checkout method and its consumers before verifying this contract end-to-end.
+
+**Evidence:** static code S1 only. **Observed merchant UI:** no. **Observed storefront:** no. **External provider:** not tested.
