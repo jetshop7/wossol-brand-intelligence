@@ -157,3 +157,11 @@ Merchant create UI
 - `WaitingStockPromotionProcessor`: when writes enabled, 30-second wake, durable checkpoint and lease over `inventory.availability.increased` events; 10-minute bounded recovery discovery for non-test waiting Orders.
 - `WaitingStockPromotionService` reserves full stock in Serializable transaction, transitions to PENDING_CONFIRMATION, and attempts post-commit automatic Confirmation assignment.
 - Merchant Orders page filters WAITING_FOR_STOCK. No runtime or production timing guarantees established.
+
+
+## Waiting-stock merchant UX authorization and history — 2026-10-10
+
+- `OrdersService.isMerchantPreDispatchStatus` includes PENDING_CONFIRMATION and WAITING_FOR_STOCK; therefore Order Detail projections expose canEdit/canCancel/canDelete for waiting status. Distinguish displayed affordances from actual endpoint eligibility, which must be tested.
+- Merchant Orders UI includes Waiting for Stock filter; Order Detail renders merchantSafeStatus and merchant-safe Tracking & Activity.
+- `WaitingStockPromotionService` emits merchant-safe `order.stock_allocated` timeline event before post-commit Confirmation assignment.
+- No explicit manual stock retry button in inspected `merchant/orders/detail/page.tsx`. No live browser or test execution.
