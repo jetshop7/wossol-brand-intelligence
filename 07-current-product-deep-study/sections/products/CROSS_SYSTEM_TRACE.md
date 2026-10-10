@@ -89,3 +89,11 @@ Shopify Product Theme App Extension
 - Prisma `CommerceCodCheckoutSession`: unique `opaqueToken` and unique `finalizedOrderId`; lease and revision are persisted. **Schema review only**; physical migrations and concurrency tests pending.
 - `merchant/orders/page.tsx` and `detail/page.tsx` render separate `Incomplete` / `Recovered from Incomplete` origin labels; list includes `Waiting for Stock` filter. The messaging `Order Captures` page is unrelated to COD incomplete origin.
 - Checkout session unit tests contain mock-based replay/lease/timeout/projection checks; they are **not executed** and do not substitute for PostgreSQL concurrency or live merchant UI tests.
+
+
+## Migration files and Products UI discovery (2026-10-10)
+
+- Checkout persistence migration `20260927_shopify_cod_checkout_session_v1` creates checkout-session table, state enum, unique token/finalized Order indexes, and lease/due indexes.
+- Hardening migration `20260928_shopify_cod_checkout_session_hardening_v1` adds optimistic `revision`, Upsell decision cursor, scoped foreign keys and an additional composite unique constraint.
+- These are **migration definitions**, not evidence of applied migrations or real PostgreSQL concurrent replay behavior.
+- Product UI sources now identified: create (options/chips/combination generation, category, images), edit (provider sync confirmation), variant-edit (name/SKU/price/weight/image), list (thumbnail, variant expansion, actions). Backend request/response trace remains open.
