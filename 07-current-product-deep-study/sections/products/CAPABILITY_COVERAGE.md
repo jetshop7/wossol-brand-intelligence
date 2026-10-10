@@ -97,3 +97,19 @@
 | P-V2-047 | Waiting-for-stock filter and order state | `merchant/orders/page.tsx`, `OrdersService` | S1 UI SOURCE VERIFIED | Live list/filter with waiting stock |
 
 **Caution:** Existing checkout-session unit tests include mocked DB and projection services. Test presence does not prove applied constraints, successful test runs or real concurrent PostgreSQL behavior.
+
+
+## Products merchant UI and migrations — 2026-10-10
+
+| ID | Capability | Static evidence | Status | Next |
+|---|---|---|---|---|
+| P-V2-048 | Create Product with option-group combinator | `merchant/products/create/page.tsx`; groups color/size/material/gender/custom | S1 UI CODE | Validate combination cap, duplicate handling and save payload |
+| P-V2-049 | Product image selection/upload in create/edit | `ProductImageUploadSection` imported in create/edit | S1 UI CODE | Trace upload API, storage, ordering and provider propagation |
+| P-V2-050 | Category selection from active taxonomy | create/edit `fetchActiveProductCategories` | S1 UI CODE | Trace backend taxonomy and invalid category |
+| P-V2-051 | Edit Product with provider Variant sync confirmation | `edit/page.tsx` `ProviderVariantSyncDialog` | S1 UI CODE | Follow save/sync outcomes and cancellation |
+| P-V2-052 | Variant editing with independent image handling | `variant-edit/page.tsx` | S1 UI CODE | Trace image upload/remove and variant authorization |
+| P-V2-053 | Product list variants and per-item actions | `merchant/products/page.tsx` | S1 UI CODE | Follow delete guards and list filters |
+| P-V2-054 | Checkout session migration foundation | `20260927_shopify_cod_checkout_session_v1/migration.sql` | S1 MIGRATION FILE | Verify applied in target DB |
+| P-V2-055 | Checkout optimistic revision, cursor, scoped FK hardening | `20260928_shopify_cod_checkout_session_hardening_v1/migration.sql` | S1 MIGRATION FILE | Verify applied in target DB |
+
+**Important:** the repository also contains migration directories dated after the study date; their presence does not establish deployment or execution. No database or test runner was accessed.
