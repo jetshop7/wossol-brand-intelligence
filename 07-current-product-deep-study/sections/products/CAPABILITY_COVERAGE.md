@@ -236,3 +236,17 @@
 | P-V2-103 | No dedicated manual stock-retry control found in inspected Order Detail UI | UX limitation | Check other routes and operations before universal claim |
 
 **Merchant promise candidate:** keep shortage-affected Orders visible and manageable while waiting for full stock, then return them to Confirmation when available. Avoid promising user-triggered recovery, guaranteed timing, or that no Order is lost.
+
+
+## Waiting-stock edge cases — 2026-10-10
+
+| ID | Code observation | Merchant-facing assessment | Validation |
+|---|---|---|---|
+| P-V2-104 | Editing a waiting Order computes changed stock demand and resets waiting priority timestamp if demand changes | Important operational behavior; not automatically a benefit | Verify merchant expectations and FIFO fairness |
+| P-V2-105 | After waiting-Order edit, service directly invokes promotion attempt | Merchant outcome candidate | Edit with partial/full stock and failure behavior |
+| P-V2-106 | Pre-dispatch cancellation releases reservations transactionally and records merchant-safe cancellation history | Merchant-visible protection | Real cancellation and reservation state |
+| P-V2-107 | Waiting Order promotion requires full demand allocation; partial availability remains BLOCKED | Important constraint | Multi-Variant partial restock journey |
+| P-V2-108 | Promotion processor catches individual failures, logs and retries availability wake-up events | Internal reliability enabler | Persistent failures, event checkpoint, retries |
+| P-V2-109 | Waiting promotion uses FIFO order by waitingForStockAt and bounded batches of 100 | Operational fairness candidate | Starvation, repeated failures and scale |
+
+No runtime tests executed. Do not market partial-stock fulfilment, guaranteed fairness, guaranteed recovery or immediate promotion.
