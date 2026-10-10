@@ -81,3 +81,11 @@ Shopify Product Theme App Extension
 **Critical distinction:** `INCOMPLETE_CHECKOUT` timeout can create a canonical Order when `orderReady` and eligible; not every abandoned session is merely discarded. Non-ready `COLLECTING` sessions expire without an Order. This must be described carefully in merchant messaging and Orders classification.
 
 **Remaining:** check unique index on Commerce mapping, precise retryable error types, runtime tests for concurrent finalization, Inventory waiting and rollback, Confirmation routing, projection failure and status-page behavior.
+
+
+## Identity constraints and Merchant Orders UI — 2026-10-10
+
+- Prisma `CommerceOrderMapping`: `@@unique([commerceConnectionId, externalOrderId])`, `@@unique([orderId])`; this is the database-backed uniqueness design supporting Commerce import idempotency.
+- Prisma `CommerceCodCheckoutSession`: unique `opaqueToken` and unique `finalizedOrderId`; lease and revision are persisted. **Schema review only**; physical migrations and concurrency tests pending.
+- `merchant/orders/page.tsx` and `detail/page.tsx` render separate `Incomplete` / `Recovered from Incomplete` origin labels; list includes `Waiting for Stock` filter. The messaging `Order Captures` page is unrelated to COD incomplete origin.
+- Checkout session unit tests contain mock-based replay/lease/timeout/projection checks; they are **not executed** and do not substitute for PostgreSQL concurrency or live merchant UI tests.
