@@ -133,3 +133,9 @@
 - This is detection/monitoring evidence, not proof of an automatic assignment retry for an unassigned Order without a persisted Overflow entry.
 - Confirmation Overflow mocked tests cover idempotent pending-entry creation, recovery, bounded drain and worker-capacity triggers. They do not demonstrate an injected exception before Overflow persistence followed by automatic recovery of the resulting unassigned Order.
 - Required test: promote waiting Order successfully, force assignOrderAutomatically to throw before recordOverflow, restart background workers, verify whether an independent process creates durable recovery work and eventually assigns; inspect merchant/admin visibility. Keep OPEN.
+
+### RISK-011 — Narrowed missing-Overflow recovery case (2026-10-10)
+
+- Source verification: drainPendingOverflowForWorkspace queries only ConfirmationOverflowEntry rows with status PENDING. ConfirmationOversightService.reconcileWorkspace reconciles ConfirmationAlert conditions; idleOrders specifically requires an active Confirmation assignment. Neither proves re-assignment of a PENDING_CONFIRMATION Order that lacks both an active assignment and Overflow entry.
+- The mocked Confirmation Overflow drain test verifies one thrown assignment attempt is isolated *after* an Overflow entry already exists; it does not cover a missing Overflow entry.
+- Test priority: Inject an exception before recordOverflow while promoting a waiting Order, then execute all scheduled recovery paths and verify eventual assignment, alerting and operator discoverability. If no recovery exists, propose bounded idempotent scan for eligible unassigned Orders with safe scope and retry controls; do not modify application code before approval.
