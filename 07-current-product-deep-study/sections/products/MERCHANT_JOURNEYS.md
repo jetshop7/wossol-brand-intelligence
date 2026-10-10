@@ -83,3 +83,14 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 **Failure/timeout evidence:** session TTL 30 minutes; due processor batches up to 25 sessions. `COLLECTING` sessions without `orderReady` expire as `EXPIRED_UNFINALIZABLE` without Order; order-ready `COLLECTING` and `ORDER_INTENT_CONFIRMED` sessions take different timeout finalization paths. Processor uses a lease-aware schedule and catches failures. A source test checks Test Product timeout does not create an Order; further test execution and production observation remain pending.
 
 **Merchant-value hypothesis:** supports recovery from interrupted customer checkout and avoids direct order creation before upsell choices. Do not market as “zero lost orders” or “guaranteed exactly once” until persistence/transaction/replay tests and live verification establish those claims.
+
+
+## MJ-04 — Order handoff and stock effects (2026-10-10)
+
+- When the customer completes the final Upsell decision (or no Upsell exists), Shopify COD finalizes a session and submits a normalized Order using the stable `wossol-cod-session:<sessionId>` identity.
+- Commerce checks the Shopify Connection and exact mapped Product/Variant, resolves destination and passes canonical input to Orders.
+- Orders creates the canonical record and Commerce mapping within one Serializable transaction; existing mapping returns `ALREADY_IMPORTED` rather than a second Order. Stock allocation happens in this transaction for eligible real orders; `allowWaitingForStock` means insufficient stock may result in a waiting state rather than hard rejection. Test Products bypass reservation.
+- Incomplete order-ready sessions can be captured as `INCOMPLETE_CHECKOUT` on timeout; non-order-ready sessions are expired without Order. Completed Orders may be mirrored to Shopify best-effort, after Wossol Order commit.
+- **Merchant experience pending:** which Orders list bucket and status labels show incomplete captures, waiting-for-stock and projection failure; whether merchant sees alerts/recovery actions; verify in UI and screenshots.
+
+**Value hypothesis:** cross-system canonical identity and transactional deduplication protect merchant Orders from duplicate imports on retry; Stock waiting can preserve demand without falsely promising available inventory. Requires DB/behavioral verification before marketing claim.
