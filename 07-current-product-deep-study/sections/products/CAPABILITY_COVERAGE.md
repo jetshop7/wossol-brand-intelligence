@@ -68,3 +68,18 @@
 | P-V2-034 | Test Product-specific timeout and Upsell exclusion | `shopify-cod-checkout-session.spec.ts` | S1 + S2 TEST DEFINED | Run tests, verify downstream Test Order handling |
 
 **Important:** “test defined” is not “test executed/passed”. Source claims of exactly-once are implementation intent pending transaction/ingestion verification.
+
+
+## Finalization-to-Orders findings (2026-10-10)
+
+| ID | Capability | Evidence | Status | Unverified |
+|---|---|---|---|---|
+| P-V2-035 | Session-bound stable external order identity | `ShopifyCodService.finalizeCheckoutSession` | S1 TRACED | Database replay test |
+| P-V2-036 | Commerce scope and exact Product/Variant resolution | `CommerceOrderResolutionService.ingestNormalizedCommerceOrder` | S1 TRACED | Live mismapping test |
+| P-V2-037 | Transactional mapping lookup + canonical Order + mapping insert | `OrdersService.createCommerceImportedOrder`, `createOrderWithStockAllocationPolicy` | S1 TRACED | DB uniqueness and concurrent tests |
+| P-V2-038 | Inventory reservation / waiting-for-stock inside Order transaction | `OrdersService.createOrderWithStockAllocationPolicy` | S1 TRACED | Stock shortage and rollback execution |
+| P-V2-039 | Test Product reservation bypass | Same Orders service | S1 TRACED | Test Order downstream visibility |
+| P-V2-040 | Completed vs incomplete checkout capture provenance | Shopify finalization → Commerce → Orders | S1 TRACED | Merchant-facing classification and recovery |
+| P-V2-041 | Post-commit best-effort Shopify projection | Shopify COD finalization | S1 TRACED | Provider failures and recovery queue |
+
+**Correction to prior open question:** transactional Commerce deduplication is now visible in Orders source: mapping lookup, Order creation and mapping insertion share a Serializable transaction. Do not claim runtime exactly-once until unique constraints and tests are verified.
