@@ -157,3 +157,10 @@
 ### RISK-011 test coverage
 
 - Inspected waiting-stock-promotion.service.spec.ts and confirmation-overflow.spec.ts. No inspected test proves automatic recovery after an assignment exception before Overflow persistence. Tests were not executed.
+
+### RISK-012 — Backend-to-frontend trace
+
+- OrdersService.updateMerchantOrder commits the edit transaction, then awaits waitingStockPromotion.promoteOrder without a local catch.
+- promoteOrder performs a separate Serializable transaction and can throw before its internal post-promotion Confirmation assignment catch. That internal catch only handles Confirmation assignment errors after successful promotion.
+- Merchant orders/create/page.tsx edit handleSubmit awaits updateMerchantOrder, navigates to Order Detail only on success, and otherwise calls presentSubmitError.
+- Therefore an injected promotion transaction failure after successful edit commit can produce a merchant-visible save error despite persisted edits. Verify via actual failure-injection test before marking reproduced.
