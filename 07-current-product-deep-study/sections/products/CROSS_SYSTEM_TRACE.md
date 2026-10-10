@@ -181,3 +181,11 @@ Merchant create UI
 - Frontend `merchant/orders/create/page.tsx` edit submit -> `updateMerchantOrder` -> redirect to Order Detail; no priority-reset notice found in inspected submit path.
 - Backend `OrdersService`: stockDemandSignature(existing.items) vs stockDemandSignature(new items); waitingForStockAt resets on changed stock demand; promotion attempted after save.
 - Service spec defines mocked PROMOTED, BLOCKED and FIFO checks; processor spec defines transient retry, checkpoint lease and recovery checks. These are not live test results.
+
+
+## Confirmation handoff recovery investigation — 2026-10-10
+
+- `WaitingStockPromotionService.promoteOrder` commits stock reservation and PENDING_CONFIRMATION, then calls `ConfirmationService.assignOrderAutomatically` best-effort.
+- `ConfirmationService.assignOrderAutomatically` creates a pending Overflow entry on TEAM_PROVISIONING_FAILED or NO_ELIGIBLE_CAPACITY; existing active assignments are idempotently recognized.
+- `ConfirmationService.drainPendingOverflowForWorkspace` retries pending Overflow entries; `retryAutomaticAssignment` is a privileged manual retry.
+- Unresolved: exception before Overflow recording may leave a PENDING_CONFIRMATION Order unassigned with no confirmed durable retry record. No executed failure-injection tests.
