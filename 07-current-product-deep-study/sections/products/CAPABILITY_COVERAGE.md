@@ -194,3 +194,17 @@
 | P-V2-085 | Product deletion archives Product and all non-archived Variants, not physical deletion | Internal safety enabler / customer transparency | Provider-first sequential delete consistency window (RISK-008) |
 
 **Marketing screen:** Product quantity visibility and actionable refresh are stronger customer-value candidates than provider integration. Do not claim real-time stock, perfect accuracy, inventory automation or safe deletion under every failure condition without end-to-end proof.
+
+
+## Cross-system stock allocation — 2026-10-10
+
+| ID | Code-backed behavior | Merchant-value qualification | Required verification |
+|---|---|---|---|
+| P-V2-086 | Effective available stock subtracts active reservations and pending consumption; unknown stock remains unknown | Candidate: clearer availability and fewer false stock assumptions | Freshness and live stock projections |
+| P-V2-087 | Order reservation locks Variant rows, aggregates demand by Variant and checks effective availability | Technical enabler for merchant outcome | Concurrent PostgreSQL execution and all order channels |
+| P-V2-088 | Insufficient stock either blocks reservation or yields WAITING_FOR_STOCK depending on allocation policy | Candidate: explicit handling of unavailable stock | Merchant journey and channel policy |
+| P-V2-089 | Waiting-stock promotion rechecks and reserves full stock within Serializable transaction | Technical enabler for order recovery outcome | Scheduler/events and concurrency |
+| P-V2-090 | Successful promotion moves Order to PENDING_CONFIRMATION with merchant-safe timeline event | Merchant-visible candidate: continuity from waiting to confirmation | UI and operational confirmation handoff |
+| P-V2-091 | Stock snapshot can emit availability-increased event; promotion service processes waiting orders in bounded batches | Technical enabler for eventual recovery | Trigger consumer, retries and scheduling |
+
+**Claims restriction:** Do not promise zero overselling, no lost orders, guaranteed automatic promotion or real-time stock. Sources are code paths; no live acceptance tests executed.
