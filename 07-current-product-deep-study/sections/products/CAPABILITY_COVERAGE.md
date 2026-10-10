@@ -127,3 +127,14 @@
 | P-V2-061 | Delete guard on historical Order usage; provider-first delete then archive | `ProductsService.deleteMerchantProduct` | S1 TRACE | Provider partial success and local transaction failure |
 
 **New risks for shared register:** Product image uploaded before Product creation uses `product-images/<merchantId>/new-product` and may be orphaned on cancelled/failed creation; provider deletes occur before local archive transaction, creating a possible partial-success divergence. Neither is a confirmed production defect. Product image UI explicitly states images are Wossol-only and not propagated to external systems.
+
+
+## Merchant-value qualification rule — approved 2026-10-10
+
+**Study objective:** extract differentiated, evidenced benefits that the merchant/customer experiences and that can legitimately inform public website messaging, positioning, verbal identity and visual identity. Wossol-internal capabilities are not strengths for this purpose.
+
+- API integrations, carrier/provider identities, internal orchestration, infrastructure, database architecture and operational advantages to Wossol are **technical evidence only**, not merchant-facing strengths. Do not disclose the identity or existence of the delivery provider in merchant-facing claims.
+- A capability qualifies as a merchant-value candidate only when a specific merchant job/problem, observable outcome, credible proof and communication-safe wording are established.
+- Translate backend mechanics into merchant outcomes only when evidence supports the outcome (e.g. reliable Order handling, fewer duplicate Orders, simpler Product management); do not claim measured speed, error reduction or reliability without measurement.
+- Maintain three classifications for every finding: **Merchant-visible value candidate**, **technical enabler only**, or **unverified hypothesis**. Technical enablers may remain in cross-system audit but must not be promoted into strengths/website/identity.
+- Provider sync analysis remains necessary to validate real Product behavior and failure modes, **not** to promote delivery-provider/API integration as a Wossol customer benefit.
