@@ -125,3 +125,11 @@
 - Confirmed from current code: assignOrderAutomatically records a pending Confirmation Overflow entry for TEAM_PROVISIONING_FAILED or NO_ELIGIBLE_CAPACITY. drainPendingOverflowForWorkspace retries bounded pending Overflow entries; authorized retryAutomaticAssignment also exists.
 - Remaining gap: WaitingStockPromotionService catches an exception thrown by assignOrderAutomatically after successful promotion and logs it. No proof yet that an exception occurring before Overflow recording creates a durable recovery item or is found by a periodic scan of all unassigned PENDING_CONFIRMATION Orders.
 - Revised acceptance: separately inject (a) no capacity with successful Overflow recording and (b) exception before Overflow recording. Verify durable recovery and eventual assignment for each. Keep RISK-011 OPEN until both are proven.
+
+
+### RISK-011 — Oversight and test-coverage refinement (2026-10-10)
+
+- ConfirmationOversightService counts unassigned Orders with no active assignment and separately counts pending Overflow; ConfirmationOversightProcessor periodically runs workspace oversight reconciliation (60-second interval in code, subject to write mode).
+- This is detection/monitoring evidence, not proof of an automatic assignment retry for an unassigned Order without a persisted Overflow entry.
+- Confirmation Overflow mocked tests cover idempotent pending-entry creation, recovery, bounded drain and worker-capacity triggers. They do not demonstrate an injected exception before Overflow persistence followed by automatic recovery of the resulting unassigned Order.
+- Required test: promote waiting Order successfully, force assignOrderAutomatically to throw before recordOverflow, restart background workers, verify whether an independent process creates durable recovery work and eventually assigns; inspect merchant/admin visibility. Keep OPEN.
