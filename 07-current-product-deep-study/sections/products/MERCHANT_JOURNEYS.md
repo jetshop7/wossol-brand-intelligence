@@ -198,3 +198,14 @@ Potential merchant outcome: visibility and continuity for orders affected by sho
 5. After successful stock allocation, merchant-safe `Stock allocated` event is recorded and Order becomes Pending Confirmation; post-commit automatic Confirmation assignment may separately fail.
 
 Merchant outcome is conditional on runtime UI, stock source and background recovery. No live test performed.
+
+
+## MJ-08 — Waiting-stock edit, cancellation, partial restock and failure (2026-10-10)
+
+- Merchant edit of WAITING_FOR_STOCK Order: compare stock demand signatures; if stock demand changes, update waiting priority timestamp; after save, invoke waiting-stock promotion attempt.
+- Merchant cancellation before dispatch: transactional Order lock, release reservations, set CANCELLED, create merchant-safe cancellation timeline event. Authorization and state are checked again in transaction.
+- Partial restock: allocation requires full requested demand; if insufficient, promotion returns BLOCKED and Order remains waiting without promotion lifecycle evidence.
+- Promotion failures: processor logs per-Order failures and retries event consumption; bounded recovery sweep also checks waiting Orders. This does not guarantee eventual success.
+- Existing source-level unit tests define promoted/blocked/FIFO cases; not executed in this study.
+
+Critical merchant question: should editing quantities reset queue priority? Verify intended fairness policy and visibility before claiming a superior waiting-order experience.
