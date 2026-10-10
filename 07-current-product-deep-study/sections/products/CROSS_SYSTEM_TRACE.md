@@ -131,3 +131,11 @@ Merchant create UI
 - Variant matrix: filter existing option signatures -> sequential `POST /products/merchant-variants` per new combination; one-image-per-new-Variant restriction when attaching an image.
 - Variant edit: `PATCH /products/merchant-variants` followed by optional `POST/DELETE /products/merchant-variant-image`; these are separate requests, so partial save is possible.
 - These findings are code-reading evidence, not live UI acceptance. Merchant-facing benefits only; no promotion of hidden provider internals.
+
+
+## Product quantity and archive boundary (2026-10-10)
+
+- `productQuantity`: sum effectiveAvailableQuantity over non-archived Variants only when all numeric; else `Unknown`.
+- `handleRefreshProducts` -> `refreshMerchantInventory` -> list reload; UI reports BUSY/cached or updated/skipped/failed.
+- `deleteMerchantVariant` / `deleteMerchantProduct`: merchant authorization -> historical OrderItem guard -> external deletability check -> external delete -> local Prisma archive transaction and audit. Product delete loops all Variant targets before local transaction; partial external failure risk remains.
+- Variant deletion archives Product if no non-archived Variants remain. This is archive, not physical delete. No application code changed and no live tests run.
