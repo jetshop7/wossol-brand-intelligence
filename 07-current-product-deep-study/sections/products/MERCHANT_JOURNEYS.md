@@ -94,3 +94,12 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 - **Merchant experience pending:** which Orders list bucket and status labels show incomplete captures, waiting-for-stock and projection failure; whether merchant sees alerts/recovery actions; verify in UI and screenshots.
 
 **Value hypothesis:** cross-system canonical identity and transactional deduplication protect merchant Orders from duplicate imports on retry; Stock waiting can preserve demand without falsely promising available inventory. Requires DB/behavioral verification before marketing claim.
+
+
+## MJ-04 — Merchant-visible Orders result (2026-10-10, static source)
+
+**Merchant Orders list:** `apps/frontend/src/app/merchant/orders/page.tsx` has a Confirmation filter including **Waiting for Stock** and a separate `checkoutOriginLabel`: `INCOMPLETE_CHECKOUT` displays **Incomplete** until confirmation, then **Recovered from Incomplete**. It also exposes an **Order Captures** navigation button; that route is for messaging captures and must not be conflated with COD incomplete checkouts.
+
+**Merchant Order detail:** `apps/frontend/src/app/merchant/orders/detail/page.tsx` implements the same checkout-origin labeling independent of the lifecycle status. A source-based test `checkout-origin-projection.spec.ts` checks these code markers; it has not been run here.
+
+**Experience inference:** merchant can distinguish recovered COD checkout provenance from the Order's operational status, and find waiting-for-stock work via the Confirmation filter. Exact rendering, status transitions, and recovery actions still require browser/DB verification.
