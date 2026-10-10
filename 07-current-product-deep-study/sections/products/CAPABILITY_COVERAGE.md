@@ -152,3 +152,17 @@
 | P-V2-067 | Stale provider claim projected to merchant attention | `resolveMerchantProviderSyncState` | Technical enabler until actual actionable UI proven | List/detail status and screenshot |
 
 **Marketing exclusion:** Do not present delivery-company API integration, Accurate/Mayar provider identity or internal orchestration as customer benefits. Distill only verifiable merchant outcomes; avoid unsupported zero-error/zero-loss claims. Test files are defined but not executed in this study.
+
+
+## Merchant-visible recovery audit — 2026-10-10
+
+| ID | Evidence | Classification | Validation |
+|---|---|---|---|
+| P-V2-068 | `provider-sync-recovery-ui.spec.ts` explicitly asserts no internal recovery status or Retry controls on merchant Products page | INTERNAL ONLY; EXCLUDE FROM MARKETING | Static test not executed; no live UI |
+| P-V2-069 | Product list attention badge routes to detail or Shopify Connections | MERCHANT-VISIBLE CANDIDATE | Verify alert priority and click |
+| P-V2-070 | Product Detail warns on unmapped or partially mapped Shopify Product and opens Connections | MERCHANT-VISIBLE CANDIDATE | Live UI and permissions |
+| P-V2-071 | Connections displays Shopify mapping counts and missing Variant names | MERCHANT-VISIBLE CANDIDATE | Verify current status accuracy |
+| P-V2-072 | Connections offers create unpublished Shopify draft, link existing Product, manual Variant link and missing Variant sync | MERCHANT-VISIBLE CANDIDATE | Live end-to-end outcomes |
+| P-V2-073 | Changing/ending Shopify Product link requires explicit confirmation; end does not delete remote Product | MERCHANT-VISIBLE CANDIDATE | Check partial failures and recovery |
+
+**Correction:** Do not suggest that merchant can use the internal Accurate/Mayar retry path in Products UI. Its absence is intentional per static test definition. Shopify connection controls are separate merchant-visible functionality; their value must be tested and framed without promises of automatic publication.
