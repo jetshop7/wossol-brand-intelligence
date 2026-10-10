@@ -118,3 +118,15 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 | Product list | Inspect Product thumbnail, expand Variants, view/edit/delete | `merchant/products/page.tsx` | Live UI, delete guards, cross-store permissions |
 
 **Evidence:** UI source only. Do not claim these flows work end-to-end before inspecting API and runtime.
+
+
+## MJ-01 — Creation request to persistence (2026-10-10)
+
+1. Merchant selects an active Store; UI rejects absent Store and redirects unauthenticated users to login.
+2. Merchant enters Product, category, images and option groups. Browser builds matrix Variants and POSTs `/products/merchant-create` with ordered encoded image references and generated Variants.
+3. Backend validates active Store, Merchant permission and active category; a Prisma transaction creates inactive Product and Variants, ProductStore link, taxonomy assignment and audit event.
+4. UI refreshes Product list and redirects to Product Detail if matching Store link found; otherwise returns to Products list. Errors display generic `Product creation failed.` message.
+5. Provider synchronization and activation are separate. Do not interpret the creation form's wording as automatic Accurate/Mayar provisioning.
+6. Product image upload occurs before Product creation, with maximum five images / 2MB per file and Wossol-local storage. Potential abandoned-image lifecycle remains unverified.
+
+**Deletion caveat:** Backend rejects Product deletion with Order history; otherwise it prepares/deletes each Accurate/Mayar provider target before locally archiving Product/Variants in a transaction. Partial provider deletion or local archive failure needs compensation/reconciliation proof.
