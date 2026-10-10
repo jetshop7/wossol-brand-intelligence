@@ -208,3 +208,17 @@
 | P-V2-091 | Stock snapshot can emit availability-increased event; promotion service processes waiting orders in bounded batches | Technical enabler for eventual recovery | Trigger consumer, retries and scheduling |
 
 **Claims restriction:** Do not promise zero overselling, no lost orders, guaranteed automatic promotion or real-time stock. Sources are code paths; no live acceptance tests executed.
+
+
+## Waiting-stock channel and recovery verification — 2026-10-10
+
+| ID | Code evidence | Merchant-value status | Verification gap |
+|---|---|---|---|
+| P-V2-092 | Canonical commerce Order create uses allowWaitingForStock allocation policy | Merchant outcome candidate | Each integration entry point and real order acceptance |
+| P-V2-093 | Standard Order creation persists WAITING_FOR_STOCK and excludes it from Confirmation workload | Merchant outcome candidate | Merchant creation modes and blocked/test exceptions |
+| P-V2-094 | Order import classifies VALID_WAITING_FOR_STOCK and can create waiting Orders | Merchant outcome candidate | Workbook UI and import acceptance |
+| P-V2-095 | Background processor polls every 30 seconds when writes enabled and consumes availability events with durable checkpoint | Internal enabler only | Deployment runtime, event replay and outage recovery |
+| P-V2-096 | Recovery sweep every 10 minutes scans non-test WAITING_FOR_STOCK Orders | Internal enabler only | Actual scheduling, batch coverage and fairness |
+| P-V2-097 | Orders list exposes Waiting for Stock filter | Merchant-visible capability | Detail/status clarity and merchant actions |
+
+**No claims of universal channel coverage or guaranteed timing.** Code contains separate blocked-customer and test-order paths. Source inspected, tests not run.
