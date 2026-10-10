@@ -36,3 +36,39 @@
 3. Keep product-strength analysis in section study documents; keep defects and verification tasks here.
 4. Do not delete closed findings: preserve outcome, fix commit and regression evidence.
 5. Before launch, review all unresolved HIGH/CRITICAL findings, and explicitly disposition every other entry.
+
+## RISK-003 — Test Orders included in commercial Analytics populations
+
+- **Source:** Historical Products V1.2 Director review (`04-review-history/PRODUCTS_V1_2_MIGRATION_REVIEW_2026-09-28.md`).
+- **Status:** HISTORICALLY VERIFIED; CURRENT BRANCH REVALIDATION REQUIRED.
+- **Provisional severity:** HIGH if still present: Test Orders can contaminate commercial metrics and Decision Center inputs.
+- **Observation at historical audit:** Merchant Analytics `orderWhere` lacked `isTestRecord: false`; Inventory and Market Center had narrower explicit exclusions. The older audit explicitly warns that Test classification is not universal Analytics exclusion.
+- **Test:** Audit every Analytics/economic/decision projection's population predicates on current HEAD; create mixed Test/Real fixtures; verify metrics, recovery measures, revenue and recommendations against intended business-truth semantics.
+- **Expected:** Each projection has an explicit, documented Test population policy; commercial truth excludes Test transactions unless a deliberately labeled test metric is requested.
+
+## RISK-004 — Final V1 Store-mapping contract vs merchant implementation
+
+- **Source:** Historical Products intelligence and V1.2 review.
+- **Status:** PRODUCT-CONTRACT GAP — CURRENT REVALIDATION REQUIRED.
+- **Provisional severity:** MEDIUM; release scope decision required.
+- **Observation:** Older Final V1 specification describes broader All Stores / mapping management; historical executable audit verified ProductStore association and scoped reads but did not establish general merchant ProductStore mutation management.
+- **Test:** Compare approved current UI contract with ProductStore management endpoints/UI on current HEAD. Decide whether contract is still binding, superseded, or deferred. Do not mark “by design” without an approved decision.
+- **Expected:** Implement contracted behavior or explicitly update the product contract and launch scope.
+
+## RISK-005 — Product read-projection test/source mismatch
+
+- **Source:** Historical Products V1.2 review.
+- **Status:** HISTORICAL TEST ISSUE — CURRENT REVALIDATION REQUIRED.
+- **Provisional severity:** LOW–MEDIUM.
+- **Observation:** Historical focused suite reported 152/153 passing; one assertion expected non-archived Product visibility while actual projection required `ProductStatus.ACTIVE`.
+- **Test:** Run focused current suite; confirm intended read-projection eligibility, repair stale assertion or implementation as appropriate.
+- **Expected:** Agreed product visibility contract and passing tests. Historical failure does not alone establish a runtime defect.
+
+## RISK-006 — External provider lifecycle and live readiness proof
+
+- **Source:** Historical Products intelligence and current code review.
+- **Status:** LIVE ACCEPTANCE REQUIRED.
+- **Provisional severity:** MEDIUM–HIGH.
+- **Observation:** Guarded inactive creation, provider mapping/compensation, recovery and provider-first deletion are source-backed, but no live-provider acceptance evidence was established in the historical review or this study.
+- **Test:** Sandbox create, multi-variant partial failure, compensation failure, retry/manual review, variant edit and deletion with order-history guard.
+- **Expected:** Merchant-visible states accurately reflect actual external outcomes and do not falsely indicate readiness.
