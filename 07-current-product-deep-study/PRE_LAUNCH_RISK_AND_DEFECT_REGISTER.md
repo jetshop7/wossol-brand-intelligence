@@ -139,3 +139,9 @@
 - Source verification: drainPendingOverflowForWorkspace queries only ConfirmationOverflowEntry rows with status PENDING. ConfirmationOversightService.reconcileWorkspace reconciles ConfirmationAlert conditions; idleOrders specifically requires an active Confirmation assignment. Neither proves re-assignment of a PENDING_CONFIRMATION Order that lacks both an active assignment and Overflow entry.
 - The mocked Confirmation Overflow drain test verifies one thrown assignment attempt is isolated *after* an Overflow entry already exists; it does not cover a missing Overflow entry.
 - Test priority: Inject an exception before recordOverflow while promoting a waiting Order, then execute all scheduled recovery paths and verify eventual assignment, alerting and operator discoverability. If no recovery exists, propose bounded idempotent scan for eligible unassigned Orders with safe scope and retry controls; do not modify application code before approval.
+
+### RISK-011 — Additional entry-path review
+
+- OrdersService also calls automatic Confirmation assignment after normal Order creation and selected blocked-customer corrections. Some exceptions are logged after Order commit.
+- Confirmation lifecycle manages team configuration, while Oversight reconciles alerts and Overflow drain retries only persisted Overflow entries.
+- Expand verification to every eligible Order entry path. Inject assignment failure before Overflow persistence and check durable recovery. This is still a suspected gap, not a verified production defect.
