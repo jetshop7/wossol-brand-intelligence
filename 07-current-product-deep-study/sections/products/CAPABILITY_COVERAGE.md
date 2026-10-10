@@ -166,3 +166,17 @@
 | P-V2-073 | Changing/ending Shopify Product link requires explicit confirmation; end does not delete remote Product | MERCHANT-VISIBLE CANDIDATE | Check partial failures and recovery |
 
 **Correction:** Do not suggest that merchant can use the internal Accurate/Mayar retry path in Products UI. Its absence is intentional per static test definition. Shopify connection controls are separate merchant-visible functionality; their value must be tested and framed without promises of automatic publication.
+
+
+## Daily merchant Product management — 2026-10-10
+
+| ID | Code-backed finding | Merchant-value screen | Remaining proof |
+|---|---|---|---|
+| P-V2-074 | Product list searches Product/name/code/Variant/SKU and filters category/Shopify state; sorts age/name | Merchant-visible candidate: find and organize catalog | Runtime pagination/search scope |
+| P-V2-075 | Product edit generates missing option combinations while skipping existing signatures | Merchant-visible candidate: manage multi-option catalog | Edge cases, duplicate rules and performance |
+| P-V2-076 | Per-Variant name/SKU/price/weight PATCH | Merchant-visible candidate: individual control | Backend validation and UI acceptance |
+| P-V2-077 | Product edits and electronic payment settings save in separate requests with partial-success message | Merchant-visible UX; not yet a selling point | Verify retry semantics and consistency |
+| P-V2-078 | Variant catalog edits and image upload/removal are separate requests | Merchant-visible capability with partial-success risk | Failure injection and merchant feedback |
+| P-V2-079 | Product and Variant images have distinct upload paths; new Variant image requires single-combination creation | Merchant-visible capability with constraints | Image persistence and accessibility |
+
+**Do not claim** bulk editing, speed advantage, reduced errors or superior competitor experience from these sources. Batch generation of missing combinations is not bulk edit of existing Variants. No live UI or tests executed.
