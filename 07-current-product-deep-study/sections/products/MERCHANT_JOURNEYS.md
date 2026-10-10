@@ -209,3 +209,11 @@ Merchant outcome is conditional on runtime UI, stock source and background recov
 - Existing source-level unit tests define promoted/blocked/FIFO cases; not executed in this study.
 
 Critical merchant question: should editing quantities reset queue priority? Verify intended fairness policy and visibility before claiming a superior waiting-order experience.
+
+
+## MJ-09 — Editing feedback and evidence limits (2026-10-10)
+
+- Merchant Edit Order form submits `updateMerchantOrder` and redirects to Order Detail on success. Inspected submit path does not show a specific explanation that changed stock demand resets waiting priority.
+- Backend `stockDemandSignature` determines whether waitingForStockAt is replaced with current time; unrelated edits preserve previous priority.
+- Source tests in `waiting-stock-promotion.service.spec.ts` cover PROMOTED/BLOCKED/FIFO with mocks; processor spec covers event retry, lease, malformed facts and bounded recovery. None executed here.
+- Merchant-impact risk: changed demand may reorder waiting queue without clear explanation. Need real UI and business policy review.
