@@ -149,3 +149,12 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 5. Failed status refresh or sync displays contextual message. No claim of guaranteed successful retry or fully automatic publishing.
 
 **Important exclusion:** Products page intentionally does not expose internal provider retry/status controls, as checked by `provider-sync-recovery-ui.spec.ts` (test not executed). Do not market hidden backend recovery as merchant self-service.
+
+
+## MJ-03 — Daily catalog maintenance (2026-10-10)
+
+- Merchant can search by Product name/code or Variant/SKU, filter by category and Shopify connection state, and sort by newest/oldest/name.
+- Product edit saves catalog fields first via `POST /products/merchant-edit`; if payment settings changed, it separately calls `POST /products/merchant-electronic-payment-settings`. On latter failure, UI explicitly says Product changes were saved but payment settings need retry.
+- Missing Variant combinations are generated from option groups and existing signatures filtered out. The UI submits each new Variant separately. An attached new Variant image is restricted to one new combination.
+- Variant edits use `PATCH /products/merchant-variants`; the dedicated Variant edit screen separately uploads or removes its image. If image operation fails after catalog PATCH, a partial save is possible; recovery UX must be checked.
+- Merchant outcome candidates: clearer catalog organization and individual option control. No comparative speed/accuracy claims without user testing.
