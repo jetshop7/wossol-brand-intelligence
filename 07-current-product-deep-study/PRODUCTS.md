@@ -323,3 +323,69 @@ This is a substantive evidence baseline, **not a claim that the mandatory deep-s
 7. Revisit Website claims after those acceptance results.
 
 **Decision:** Products is a connected operational identity layer with credible strengths in truthful state, scoped context and cross-workflow consistency. Its brand should express those demonstrated strengths without promising more automation or reliability than the verified code supports.
+
+## 25. Historical Products intelligence reconciliation — main branch (2026-10-10)
+
+**Historical sources inspected:**
+- `main:02-section-intelligence/PRODUCTS.md` (35 numbered sections, including V1.2 delta and evidence additions).
+- `main:04-review-history/PRODUCTS_REVIEW_2026-09-25.md`.
+- `main:04-review-history/PRODUCTS_V1_2_MIGRATION_REVIEW_2026-09-28.md`.
+- `main:03-master-synthesis/PRODUCT_ROUTE_BACKEND_COVERAGE_RECONCILIATION.md`.
+
+These are **historical intelligence/review records**, not substitutes for verification on the current Product code branch. Their accepted judgment was **ACCEPT WITH OPEN PRODUCT ISSUES**, not an unconditional closure of product defects.
+
+### A. Findings preserved and corroborated by the new independent code study
+
+| Historical assertion | New study result | Disposition |
+|---|---|---|
+| Products is an execution-identity/catalog layer, not Product Intelligence | Local Product/Variant identities are used by scoped commerce and order workflows; no Product recommendation/performance engine verified in this study | Retain as primary category framing |
+| Product and Variant are different identities | Variant eligibility and reservations rely on exact IDs | Retain |
+| Store/Workspace/Merchant scoping | Explicit in list/detail, reservation and Confirmation selection | Retain |
+| Provider-dependent guarded activation, compensation, recovery | Current partial-sync and recovery code/tests inspected | Retain, qualified by live acceptance |
+| Inventory owns stock truth; Products displays a projection | Read model preserves unknown quantities and reservation policy uses effective stock | Retain |
+| Test Product is an operational classification | Verified across Orders and Shopify COD | Retain, qualified by Confirmation Upsell and Analytics gaps |
+| Exact Shopify/Advertising mapping matters | Health and mapping eligibility reviewed | Retain, distinguish local completeness from live health |
+| Audit/history and bounded deletion | Observed in selected edit/upsell paths and provider lifecycle tests | Retain with path-specific evidence |
+| Reduced rematching and context continuity | Product → Variant → Store/provider → checkout → Order/Confirmation | Retain as unquantified merchant benefit |
+
+### B. Material details from old Products intelligence underrepresented in the initial new study
+
+1. **Creation readiness lifecycle:** local Product/Variants begin inactive; required Accurate/Mayar mapping must succeed before ordinary activation. Provider-dependent readiness is more central than a generic “catalog create” story.
+2. **Variant edit ordering differs from Product edit:** historical audit distinguishes provider-first Variant edits from local Product edit transactions followed by provider synchronization. Do not flatten all edit operations into one atomicity claim.
+3. **Taxonomy:** active global categories, historical/superseded category assignment evidence and category filtering were specifically covered in the old audit.
+4. **Media:** local Product image handling, staged Variant images, Shopify media transfer/reconciliation and audit evidence are more substantial than the initial study described.
+5. **Shopify identity:** unpublished draft creation, exact Product and Variant linking, bounded selectors, explicit correction/relink and uncertain-outcome correlation deserve distinct demonstrations.
+6. **Payment policy:** COD mandatory, optional electronic methods paired under eligibility rules, versioned effective periods, audit/events and OrderItem snapshots. These specifics require present-code revalidation before strong public copy.
+7. **Product Detail:** historical audit records actor/time history, Product/Variant codes, category, payment-policy status, landing references and a pre-scoped Product/Inventory Support link.
+8. **Deletion:** historical audit says archive rather than hard-delete after history/provider guards. Distinguish archival of local identity from external provider deletion.
+9. **Merchant agency:** product-scoped users should not infer Commerce connection existence; explicit channel mapping controls are important permission boundaries.
+10. **Commercial/competitive caveat:** product catalog/channel mapping is table stakes; trustworthy execution identity is a candidate distinction, **not demonstrated competitor superiority**.
+
+These items are **historical leads imported for completeness**, not automatically upgraded to current-branch verified claims. The source paths and acceptance checks must be revisited where the new study did not inspect the underlying implementation.
+
+### C. Important old open issues recovered and carried into the defect register
+
+- **Analytics Test population contamination:** old V1.2 review found missing `isTestRecord:false` in main Analytics `orderWhere`, potentially affecting metrics, incomplete recovery derivatives, economic figures and Decision Center guidance. Historical finding, current revalidation needed. **RISK-003**.
+- **All Stores / ProductStore mutation contract:** Final V1 product intent describes broader Store-mapping management than historically established in merchant implementation. The contract remains unresolved unless formally superseded. **RISK-004**.
+- **Product read-projection test mismatch:** historical focused suite 152/153 passed, with ACTIVE vs non-archived assertion discrepancy. Re-run before making a current claim. **RISK-005**.
+- **Provider live integration verification:** external-provider failure/recovery remains unverified in live/sandbox conditions. **RISK-006**.
+- **New discovery not covered by the older review:** Confirmation Upsell Test/Real eligibility gap. **RISK-001**.
+- **End-to-end failure acceptance:** Confirmation Upsell reservation rollback needs execution proof. **RISK-002**.
+
+### D. Historical brand/marketing material vs independent synthesis
+
+The old study's central phrase **“trustworthy product execution identity”** aligns with the new **“one product identity connected to operations”** finding. The combined recommendation is:
+
+**Primary:** *Stable Product/Variant identity from setup to selected commercial operations, with scoped relationships and visible readiness.*
+
+**Support:** provider-gated activation; exact channel mapping; truthful stock; versioned commercial context; bounded Test flows; auditable reconciliation.
+
+Do **not** elevate older speculative Product Intelligence, demand discovery, profit insights, AI recommendations, full omnichannel sync, competitor superiority or numerical efficiency claims to current capabilities.
+
+### E. Closure decision and residual evidence limits
+
+**Historical comparison: completed for the four named core Products/review/reconciliation sources.** The older Products audit's main strategic findings and its material open issues are now represented in this study or the centralized risk register. The initial document had underrepresented several implementation details; they are explicitly restored above.
+
+**Products intelligence study: conditionally closed for section progression** — proceed to the next section without treating engineering release gates as resolved. This is not a declaration that every line of historical evidence or every current endpoint has received a fresh exhaustive execution test.
+
+**Pre-launch engineering release: NOT closed.** RISK-001 through RISK-006 remain subject to their documented verification and disposition. The study's claim eligibility must be tightened if those tests contradict the historical/current code reading.
