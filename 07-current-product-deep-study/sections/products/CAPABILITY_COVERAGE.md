@@ -138,3 +138,17 @@
 - Translate backend mechanics into merchant outcomes only when evidence supports the outcome (e.g. reliable Order handling, fewer duplicate Orders, simpler Product management); do not claim measured speed, error reduction or reliability without measurement.
 - Maintain three classifications for every finding: **Merchant-visible value candidate**, **technical enabler only**, or **unverified hypothesis**. Technical enablers may remain in cross-system audit but must not be promoted into strengths/website/identity.
 - Provider sync analysis remains necessary to validate real Product behavior and failure modes, **not** to promote delivery-provider/API integration as a Wossol customer benefit.
+
+
+## Provider lifecycle — merchant-value screen (2026-10-10)
+
+| ID | Observed capability | Evidence | Merchant-value classification | Proof needed |
+|---|---|---|---|---|
+| P-V2-062 | Product activates only after all Variant links complete | `ProductsService.createMerchantProduct` and `finalizeMerchantProductCreate` | Merchant-value candidate: avoid falsely ready products | Live multi-variant acceptance |
+| P-V2-063 | Failed multi-variant creation attempts compensation and archives local foundation when successful | `compensateNewAccurateMayarProductsAfterFailedCreate`, `archiveCreatedProductAfterFailedProviderSync` | Technical enabler; customer outcome still unverified | Failure injection and merchant UI |
+| P-V2-064 | Compensation failure leaves inactive audit evidence | `recordMerchantProductCreateCompensationFailure` | Technical enabler; possible customer protection | Reconciliation and UI proof |
+| P-V2-065 | Merchant-safe success response omits providerSync implementation | `createMerchantProduct`, `product-accurate-mayar-partial-sync.spec.ts` | Merchant-facing UX candidate; provider details not a marketing strength | Live response and UI |
+| P-V2-066 | Variant recovery distinguishes safe retry from review-required | `retryMerchantVariantProviderSync`, `product-provider-sync-state.ts` | Merchant-value candidate: clear recovery action | Real UI affordance and retry behavior |
+| P-V2-067 | Stale provider claim projected to merchant attention | `resolveMerchantProviderSyncState` | Technical enabler until actual actionable UI proven | List/detail status and screenshot |
+
+**Marketing exclusion:** Do not present delivery-company API integration, Accurate/Mayar provider identity or internal orchestration as customer benefits. Distill only verifiable merchant outcomes; avoid unsupported zero-error/zero-loss claims. Test files are defined but not executed in this study.
