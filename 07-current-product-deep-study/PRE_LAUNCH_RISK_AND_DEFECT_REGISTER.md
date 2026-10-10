@@ -91,3 +91,14 @@
 - **Observation:** Accurate/Mayar Variant deletes execute sequentially before local Prisma archive transaction. If a later provider delete or local archive fails, earlier provider-side deletes may already have succeeded. Recovery/compensation logic has not yet been fully traced.
 - **Test:** Simulate provider delete success on first Variant and failure on second, plus DB archive failure after all provider deletes; inspect merchant status, provider mappings, retry idempotency and audit/reconciliation.
 - **Expected:** Durable, operator-visible reconciliation and safe retry without misleading active Product state.
+
+## RISK-009 — Waiting-stock priority change is not explained during Order editing
+
+- Section: Products / Inventory / Orders merchant experience.
+- Status: CODE-SUPPORTED UX GAP; live reproduction pending.
+- Severity: MEDIUM provisional.
+- Evidence: OrdersService resets waitingForStockAt when stockDemandSignature changes. Merchant Edit Order submit flow saves and redirects without an identified priority-change notice.
+- Impact: Merchant may expect the earlier waiting position to remain after changing requested items or quantities.
+- Validation: Edit stock demand on an older waiting Order, compare waitingForStockAt and FIFO processing; repeat with an unrelated edit; inspect UI messaging and actual promotion.
+- Resolution: Approve priority policy first; then disclose its effect before saving and verify the resulting status is clear. Do not invent a numeric queue position.
+- Release gate: Policy decision, UI acceptance evidence and changed-versus-unchanged-demand regression coverage.
