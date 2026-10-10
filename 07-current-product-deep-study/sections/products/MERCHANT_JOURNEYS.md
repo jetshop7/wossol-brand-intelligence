@@ -65,3 +65,21 @@ For each, complete: persona, trigger, entry point, prerequisites, every visible 
 **Backend storefront bootstrap:** `apps/backend/src/modules/shopify/shopify-cod.service.ts` reads scoped orderable mapped variants, delivery destinations, form configuration and offers, then supplies Shopify variant labels/prices and COD availability. Its header explicitly describes a Shopify App Proxy → provider-neutral Commerce Order adapter, leaving Orders responsible for creation, Inventory and Confirmation. Trace the checkout method and its consumers before verifying this contract end-to-end.
 
 **Evidence:** static code S1 only. **Observed merchant UI:** no. **Observed storefront:** no. **External provider:** not tested.
+
+
+## MJ-04 — Checkout session and finalization trace (2026-10-10)
+
+**Static-source verified sequence, NOT a live storefront test:** `GET /shopify/cod/bootstrap` → `POST /shopify/cod/quote` → optional `POST /shopify/cod/preflight` → `POST /shopify/cod/checkout/session` → `POST /shopify/cod/checkout/intent` → zero or more `POST /shopify/cod/checkout/upsell-decision` → session finalization → normalized Commerce Order handoff. Endpoints are defined in `apps/backend/src/modules/shopify/shopify.controller.ts`; browser ordering still needs verification in runtime.
+
+| Step | Customer-facing intent | Backend behavior evidenced | Important boundary |
+|---|---|---|---|
+| Select variants, quantities, destination and offer | Configure purchase and see total | `ShopifyCodService.bootstrap` resolves mapped variants, destinations, form and offers; `quote` calculates commercial totals | Quote is not an Order |
+| Enter phone and review | Start/continue checkout | `preflight` normalizes phone and quotes; `syncCheckoutSession` stores scoped continuation and bounded snapshots | Session sync explicitly does **not** create Order/Inventory/Finance/Confirmation records |
+| Order Now | Confirm order intent | `confirmCheckoutIntent` freezes base quote and ordered Upsell sequence; session becomes `ORDER_INTENT_CONFIRMED` | No Order until sequence exhausted |
+| Upsell accept/skip | Choose or decline each offer | `decideCheckoutUpsell` validates frozen token, cursor, variant/quantity and records decision | Identical replay allowed; conflicting replay rejected in source/test |
+| End of sequence or recovery | Complete request | `finalizeCheckoutSession` is called when last decision is saved; due-session processor handles eligible timeouts | Exact-once and Order result require further transaction/ingestion proof |
+| Old client sends direct submit | Attempt legacy submission | `submit()` now immediately throws `Checkout session confirmation is required.` | Legacy implementation is commented out, not active |
+
+**Failure/timeout evidence:** session TTL 30 minutes; due processor batches up to 25 sessions. `COLLECTING` sessions without `orderReady` expire as `EXPIRED_UNFINALIZABLE` without Order; order-ready `COLLECTING` and `ORDER_INTENT_CONFIRMED` sessions take different timeout finalization paths. Processor uses a lease-aware schedule and catches failures. A source test checks Test Product timeout does not create an Order; further test execution and production observation remain pending.
+
+**Merchant-value hypothesis:** supports recovery from interrupted customer checkout and avoids direct order creation before upsell choices. Do not market as “zero lost orders” or “guaranteed exactly once” until persistence/transaction/replay tests and live verification establish those claims.
