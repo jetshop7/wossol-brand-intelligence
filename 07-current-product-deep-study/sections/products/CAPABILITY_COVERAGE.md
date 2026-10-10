@@ -53,3 +53,18 @@
 | P-V2-027 | Shopify App Proxy storefront bootstrap and provider-neutral order adapter | `shopify-cod.service.ts` | MJ-04 | S1 PARTIAL | Checkout processor and canonical Orders handoff |
 
 **Discovery correction:** The Shopify COD Form is not just a planned feature: a concrete Shopify Theme App Extension block and storefront adapter exist in source. Actual deployment, merchant enablement, successful execution and marketing claims remain unverified.
+
+
+## Checkout-session evidence expansion (2026-10-10)
+
+| ID | Capability | Code evidence | Status | Open question |
+|---|---|---|---|---|
+| P-V2-028 | App Proxy bootstrap/quote/preflight/session/intent/upsell-decision endpoints | `shopify.controller.ts` | S1 TRACED | Runtime storefront invocation order |
+| P-V2-029 | Bounded persisted COD continuation, 30-minute TTL | `shopify-cod.service.ts` | S1 PARTIAL | Database persistence and restart tests |
+| P-V2-030 | Freeze base quote and Upsell sequence before Order | `confirmCheckoutIntent` | S1 PARTIAL | Exact session transition and concurrency outcomes |
+| P-V2-031 | Upsell cursor and replay conflict handling | `decideCheckoutUpsell`; `shopify-cod-checkout-session.spec.ts` | S1 + S2 TEST DEFINED | Execute focused tests; inspect all variant and price guards |
+| P-V2-032 | Due-session recovery and lease-aware retry | `shopify-cod-checkout-session.processor.ts`; service `processDueCheckoutSessions` | S1 + S2 TEST DEFINED | Execute tests, verify process restarts and error recovery |
+| P-V2-033 | Fail-closed legacy direct submit | `ShopifyCodService.submit` | S1 VERIFIED SOURCE | Verify deployed runtime compatibility |
+| P-V2-034 | Test Product-specific timeout and Upsell exclusion | `shopify-cod-checkout-session.spec.ts` | S1 + S2 TEST DEFINED | Run tests, verify downstream Test Order handling |
+
+**Important:** “test defined” is not “test executed/passed”. Source claims of exactly-once are implementation intent pending transaction/ingestion verification.
