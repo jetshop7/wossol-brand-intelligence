@@ -114,3 +114,11 @@ Merchant create UI
 **Image ownership:** Product image upload uses Wossol filesystem, no external provider sync. Variant image upload stages/moves storage and updates Variant reference transactionally, with best-effort old image cleanup. These are distinct media lifecycles.
 
 **Delete boundary:** Order history blocks Product deletion; without history, provider Accurate/Mayar deletes precede local archival. This is a possible distributed consistency failure window and requires detailed compensation checks, not an assumed defect.
+
+
+## UI-facing Product connections vs hidden recovery — 2026-10-10
+
+- Merchant Products list `attention` -> Product Detail Connections when Shopify review required.
+- Product Detail warns on `UNMAPPED_PRODUCT` or `PARTIAL`; Connections reads connection health and Shopify status.
+- Merchant actions: create unpublished Shopify draft, link/change/end Shopify Product, manually link Variant, sync missing Variants. Changing or ending links includes confirmation and may clear Variant mappings, without deleting the remote Shopify Product.
+- Internal provider sync recovery status and Retry are intentionally not shown in Products list; static test `provider-sync-recovery-ui.spec.ts` asserts this. Do not market hidden provider integration or recovery as customer-facing features.
