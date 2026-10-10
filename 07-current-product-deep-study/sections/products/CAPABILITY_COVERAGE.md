@@ -83,3 +83,17 @@
 | P-V2-041 | Post-commit best-effort Shopify projection | Shopify COD finalization | S1 TRACED | Provider failures and recovery queue |
 
 **Correction to prior open question:** transactional Commerce deduplication is now visible in Orders source: mapping lookup, Order creation and mapping insertion share a Serializable transaction. Do not claim runtime exactly-once until unique constraints and tests are verified.
+
+
+## Database and merchant Orders projection — 2026-10-10
+
+| ID | Capability | Evidence | Grade / status | Next verification |
+|---|---|---|---|---|
+| P-V2-042 | Unique Commerce external Order identity per connection | Prisma `CommerceOrderMapping @@unique([commerceConnectionId, externalOrderId])` | S1 SCHEMA VERIFIED | Applied migration, physical concurrent inserts |
+| P-V2-043 | One Commerce mapping per canonical Order | Prisma `CommerceOrderMapping @@unique([orderId])` | S1 SCHEMA VERIFIED | Applied database constraints |
+| P-V2-044 | Checkout session token and finalized Order uniqueness | Prisma `CommerceCodCheckoutSession` unique token and finalizedOrderId | S1 SCHEMA VERIFIED | Runtime race/rollback tests |
+| P-V2-045 | Incomplete checkout origin badge in Merchant Orders list/detail | `merchant/orders/page.tsx`, `detail/page.tsx` | S1 UI SOURCE VERIFIED | Browser screenshots and actual order projection |
+| P-V2-046 | Recovered-from-incomplete label after confirmation | Same UI files; `checkout-origin-projection.spec.ts` | S1 + test defined | Execute UI test, check lifecycle semantics |
+| P-V2-047 | Waiting-for-stock filter and order state | `merchant/orders/page.tsx`, `OrdersService` | S1 UI SOURCE VERIFIED | Live list/filter with waiting stock |
+
+**Caution:** Existing checkout-session unit tests include mocked DB and projection services. Test presence does not prove applied constraints, successful test runs or real concurrent PostgreSQL behavior.
