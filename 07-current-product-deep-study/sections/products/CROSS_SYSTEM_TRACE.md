@@ -139,3 +139,12 @@ Merchant create UI
 - `handleRefreshProducts` -> `refreshMerchantInventory` -> list reload; UI reports BUSY/cached or updated/skipped/failed.
 - `deleteMerchantVariant` / `deleteMerchantProduct`: merchant authorization -> historical OrderItem guard -> external deletability check -> external delete -> local Prisma archive transaction and audit. Product delete loops all Variant targets before local transaction; partial external failure risk remains.
 - Variant deletion archives Product if no non-archived Variants remain. This is archive, not physical delete. No application code changed and no live tests run.
+
+
+## Products -> Inventory reservation -> Orders (2026-10-10)
+
+- `inventory-reservation-policy.ts`: `effectiveAvailable=max(0,providerOnHand-activeReservations-pendingProviderSyncConsumption)`, null on-hand yields null.
+- `InventoryReservationService.reserveOrderItems`: row-locks Variant IDs, validates merchant/store/product/Variant ownership, aggregates per-Variant requested quantities, rejects insufficient stock or returns WAITING_FOR_STOCK under allowed mode, creates active reservations otherwise.
+- `WaitingStockPromotionService.promoteOrder`: Order row lock, Serializable transaction, full stock recheck/reservation, Order WAITING_FOR_STOCK -> PENDING_CONFIRMATION, merchant-safe timeline and domain event. Post-commit automatic Confirmation assignment may fail separately.
+- `InventoryReservationService.recordProviderSnapshot` may publish `inventory.availability.increased` after availability rises.
+- Provider names and mechanisms remain internal. No live UI or PostgreSQL concurrency testing performed here.
