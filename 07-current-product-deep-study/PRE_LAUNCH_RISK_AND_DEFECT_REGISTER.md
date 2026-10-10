@@ -72,3 +72,22 @@
 - **Observation:** Guarded inactive creation, provider mapping/compensation, recovery and provider-first deletion are source-backed, but no live-provider acceptance evidence was established in the historical review or this study.
 - **Test:** Sandbox create, multi-variant partial failure, compensation failure, retry/manual review, variant edit and deletion with order-history guard.
 - **Expected:** Merchant-visible states accurately reflect actual external outcomes and do not falsely indicate readiness.
+
+
+## RISK-007 — Product image upload before creation: orphaned binaries
+
+- **Source:** `merchant/products/create/page.tsx`, `ProductImageUploadSection.tsx`, `ProductsService.uploadMerchantProductImage`.
+- **Status:** SUSPECTED / CLEANUP CONTRACT UNVERIFIED (not confirmed defect).
+- **Provisional severity:** MEDIUM.
+- **Observation:** Image upload writes filesystem files under `uploads/product-images/<merchantId>/new-product` before Product creation. Product save separately persists ordered image references. User cancellation, failed save and image removal from the form could leave unreferenced files; cleanup service/retention has not yet been exhaustively searched.
+- **Test:** Upload then cancel, upload then fail Product POST, remove uploaded image, retry creation; inspect disk and any cleanup job. Test container/redeploy storage persistence.
+- **Expected:** Explicit lifecycle/retention and cleanup of unreferenced media, with no accidental deletion of referenced images.
+
+## RISK-008 — Provider-first deletion and local archive divergence
+
+- **Source:** `ProductsService.deleteMerchantProduct`.
+- **Status:** SUSPECTED DISTRIBUTED CONSISTENCY WINDOW (not confirmed defect).
+- **Provisional severity:** HIGH.
+- **Observation:** Accurate/Mayar Variant deletes execute sequentially before local Prisma archive transaction. If a later provider delete or local archive fails, earlier provider-side deletes may already have succeeded. Recovery/compensation logic has not yet been fully traced.
+- **Test:** Simulate provider delete success on first Variant and failure on second, plus DB archive failure after all provider deletes; inspect merchant status, provider mappings, retry idempotency and audit/reconciliation.
+- **Expected:** Durable, operator-visible reconciliation and safe retry without misleading active Product state.
