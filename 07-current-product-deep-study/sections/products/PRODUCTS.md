@@ -31,3 +31,27 @@ Backend Shopify/Advertising mapping ownership, Product payment policy and Order 
 https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/products.service.ts
 https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/orders/orders.service.ts
 https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/inventory/inventory-reservation.service.ts
+
+---
+
+# Products — Payment policy, Shopify and Advertising: verified addendum (2026-10-11)
+
+Status: code-inspected, tests not executed, deployment not verified. Supplements the independent Products study.
+
+## Product payment policy to Orders
+`ProductsService.capturePaymentPolicySnapshots` selects policies effective at Order creation time for each active OUT Order line and every supported PaymentMethod. Exact Variant policy overrides Product fallback; missing or ambiguous resolution throws ConflictException. Each snapshot retains source policy ID/version, scope, effective date, enabled state and merchant/customer fee shares. `OrdersService` calls capture within the Order creation transaction after persisting OrderItems. `allowedPaymentMethodsForOrder` requires every sale line to enable a method. This preserves historical commercial policy evidence; it does not prove payment collection or settlement success. Checked-in `product-payment-policy.service.spec.ts` covers fallback and fail-closed resolution but was not executed.
+
+## Shopify backend mapping
+`ShopifyProductService.manualLinkProduct` authorizes `merchant.commerce.products.publish`, reads the selected remote Shopify Product, blocks conflicting ownership in the Store, requires explicit confirmation for replacement, retires old Variant/Media associations, fences old automatic-create operations, and audits changes. `endProductLink` removes local Product/Variant/Media links and fences old operations, leaving Shopify Product and Store connection untouched. `manualLinkVariant` requires ACTIVE local Variant and an exact remote Variant belonging to linked Shopify Product; forbids external Variant being owned by another local Variant. No name/SKU inference. These are code-proven controls, not deployed success claims.
+
+## Meta Advertising backend mapping
+`MerchantAdvertisingService` gates mapping mutations with `advertising.mappings.manage` and validates eligible Meta target; Product and Variant mapping lifecycle includes create, retire, correct wrong, relink. `productMappings` requires Advertising section access and returns a Workspace-wide Product-owned read projection, including historical links even if Meta authorization later changes. Advertising owns mapping lifecycle; Product UI is an access surface. No evidence that Products creates campaigns or optimizes ads.
+
+## Next gates
+Trace policy update UX and authorization, Shopify automatic create and uncertain outcomes, Meta ownership/attribution use in Orders, stock-promotion trigger, and relevant integration tests.
+
+Sources:
+https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/products.service.ts
+https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/orders/orders.service.ts
+https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/shopify/shopify-product.service.ts
+https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/advertising/merchant-advertising.service.ts

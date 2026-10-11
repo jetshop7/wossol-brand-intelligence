@@ -22,3 +22,20 @@ https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/bac
 https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/inventory/inventory-reservation.service.ts
 https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/orders/waiting-stock-promotion.service.ts
 https://github.com/jetshop7/wossol-platform/blob/dev/wossol-integration/apps/backend/src/modules/products/products.service.ts
+
+---
+
+# Products cross-system addendum — payment policy, Shopify, Advertising
+
+Status: code-inspected, not runtime-verified; 2026-10-11.
+
+## P-CS-06 Product/Variant payment policy to immutable Order line snapshot
+Product policy is versioned and effective-dated. Orders creation captures policy for each active OUT line and each PaymentMethod inside the Order transaction, preferring exact Variant over Product policy; missing/ambiguous resolution fails closed. Allowed Order payment methods require all sale lines enabled. Merchant benefit hypothesis: auditability of historical commercial rules. No payment-processing guarantee.
+
+## P-CS-07 Shopify explicit identity mapping
+ShopifyProductService verifies remote Product/Variant identity, Store-local uniqueness, explicit relink confirmation, removal of old local Variant/Media mapping and audit evidence. Unlink preserves Shopify resources. No SKU/title inferred matching.
+
+## P-CS-08 Meta advertising mapping lifecycle
+MerchantAdvertisingService validates advertising.mappings.manage and Meta target eligibility, exposes explicit Product/Variant mapping lifecycle and Workspace-wide historical projection. Not equivalent to advertising campaign creation or performance attribution proof.
+
+Sources: ProductsService, OrdersService, ShopifyProductService, MerchantAdvertisingService on dev/wossol-integration.
