@@ -11,6 +11,7 @@
 | D-005 | User instruction | APPROVED | Use and organize the existing brand-intelligence GitHub repository for durable records | Repository is public; exclude confidential strategy details. |
 | H-001 | Assistant recommendation | UNDER_REVIEW | 'Merchant-Led Progress' as possible brand essence | Not user-approved. |
 | H-002 | Assistant hypothesis | DRAFT | 'Expanding merchant capability to trade and lead' as alternative essence | Requires comparison and validation. |
+| H-005 | Assistant recommendation | UNDER_REVIEW | Advance 'Expanding merchant capability to trade and lead' as the leading internal essence hypothesis | Comparative assessment V0.4; user has NOT approved a final essence. |
 | H-003 | Assistant recommendation | UNDER_REVIEW | 'From opportunity to growth' as strategic positioning umbrella | Not validated with merchants or approved as final. |
 | H-004 | Assistant recommendation | UNDER_REVIEW | Empowerment, clarity/accountability, shared progress as brand values | Proposed, not approved. |
 
