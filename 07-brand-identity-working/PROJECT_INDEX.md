@@ -17,3 +17,7 @@
 - [Competitive refresh](../01-competitive/WOSSOL_COMPETITIVE_DEPTH_REFRESH_V1_2.md)
 
 The files above are distinct evidence layers, not duplicate copies.
+
+## Naming work
+- [Global Naming Strategy V0.1](06-naming-verbal/GLOBAL_NAMING_STRATEGY_V0.1.md) — approved global scope, screening requirements.
+- [Naming Territories V0.1](06-naming-verbal/NAMING_TERRITORIES_V0.1.md) — three exploratory creative directions (DRAFT).
