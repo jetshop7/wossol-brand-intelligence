@@ -8,6 +8,7 @@
 | [PROJECT_STATUS](PROJECT_STATUS.md) | Progress and next steps | ACTIVE |
 | [Decision Log](00-governance/DECISION_LOG.md) | User decisions versus recommendations | ACTIVE |
 | [Brand Strategy Working](04-brand-strategy/BRAND_STRATEGY_WORKING.md) | Positioning, personality, values and essence candidates | DRAFT |
+| [Brand Essence Comparative Assessment V0.4](04-brand-strategy/BRAND_ESSENCE_COMPARATIVE_ASSESSMENT_V0.4.md) | Four-candidate evaluation, recommendation, risks, falsification | UNDER_REVIEW |
 | [CHANGELOG](CHANGELOG.md) | Recorded updates | ACTIVE |
 
 ## Related existing evidence
