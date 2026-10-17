@@ -17,10 +17,10 @@
 - 'Merchant-Led Progress' and 'Expanding Merchant Capability' are hypotheses, not approved essence.
 
 ## Current step
-Compare core brand essence candidates and articulate a durable merchant transformation without prematurely fixing naming or visual design.
+Completed comparative essence assessment V0.4. Lead **assistant hypothesis**, not user-approved: expanding merchant capability to trade and lead. Merchant validation and audience segmentation remain pending.
 
 ## Next actions
-1. Validate essence against product truths, market-entry ambition, merchant control and future extensibility.
+1. Review [Brand Essence Comparative Assessment V0.4](04-brand-strategy/BRAND_ESSENCE_COMPARATIVE_ASSESSMENT_V0.4.md); test its claims against merchant research and actual product capabilities.
 2. Run merchant discovery/positioning tests before final claims.
 3. Build naming strategy and evaluate the temporary Wossol name alongside alternatives.
 4. Update this status, decision log, index and changelog after substantive progress.
