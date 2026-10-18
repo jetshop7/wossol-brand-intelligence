@@ -6,3 +6,6 @@
 - Recorded user-approved hybrid relationship, central merchant control/transparency, 10-15-year design horizon, provisional Wossol naming, and repository reuse.
 - Recorded positioning, personality, values and essence as hypotheses rather than approved decisions.
 - Added resume instructions, index, status and source boundaries; no existing intelligence files modified.
+
+## 2026-10-18
+- Replaced random-syllable naming approach with meaning-first semantic foundation and traceable construction/evidence gates. No name approved.
