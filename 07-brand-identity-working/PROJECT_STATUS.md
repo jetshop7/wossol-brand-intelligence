@@ -27,3 +27,6 @@ Completed comparative essence assessment V0.4. Lead **assistant hypothesis**, no
 
 ## Evidence boundary
 Historical intelligence supports bounded connected workflows, scoped merchant agency, accountability and qualitative reduction of repeated work; broad market intelligence, universal control and guaranteed outcomes are not verified current claims.
+
+## Naming update — 2026-10-18
+Global scope remains user-approved. Following user feedback, random syllable generation and invented personality/etymology are rejected as a method. [Semantic Naming Foundation V0.1](06-naming-verbal/SEMANTIC_NAMING_FOUNDATION_V0.1.md) defines proposed meaning territories and evidence gates. Next: traceable name constructions and cross-language screening. No name approved.
