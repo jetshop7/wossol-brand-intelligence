@@ -21,3 +21,6 @@ The files above are distinct evidence layers, not duplicate copies.
 ## Naming work
 - [Global Naming Strategy V0.1](06-naming-verbal/GLOBAL_NAMING_STRATEGY_V0.1.md) — approved global scope, screening requirements.
 - [Naming Territories V0.1](06-naming-verbal/NAMING_TERRITORIES_V0.1.md) — three exploratory creative directions (DRAFT).
+
+- [Semantic Naming Foundation V0.1](06-naming-verbal/SEMANTIC_NAMING_FOUNDATION_V0.1.md) — meaning-first roots, metaphors, candidate evidence requirements (UNDER_REVIEW).
+- [Naming Method Correction V0.1](06-naming-verbal/NAMING_METHOD_CORRECTION_V0.1.md) — prevents invented etymologies.
