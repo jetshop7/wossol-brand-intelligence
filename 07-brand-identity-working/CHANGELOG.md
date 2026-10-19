@@ -9,3 +9,6 @@
 
 ## 2026-10-18
 - Replaced random-syllable naming approach with meaning-first semantic foundation and traceable construction/evidence gates. No name approved.
+
+## 2026-10-19
+- Recorded user-directed naming preference for familiar, meaningful words and transparent combinations rather than invented syllables; no name approved.
