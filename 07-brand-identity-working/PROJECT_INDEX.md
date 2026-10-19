@@ -24,3 +24,5 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [Semantic Naming Foundation V0.1](06-naming-verbal/SEMANTIC_NAMING_FOUNDATION_V0.1.md) — meaning-first roots, metaphors, candidate evidence requirements (UNDER_REVIEW).
 - [Naming Method Correction V0.1](06-naming-verbal/NAMING_METHOD_CORRECTION_V0.1.md) — prevents invented etymologies.
+
+- [Meaningful & Familiar Naming Direction V0.1](06-naming-verbal/MEANINGFUL_FAMILIAR_NAMING_DIRECTION_V0.1.md) — user preference for actual words, meaningful compounds and accessible Arabic names (UNDER_REVIEW).
