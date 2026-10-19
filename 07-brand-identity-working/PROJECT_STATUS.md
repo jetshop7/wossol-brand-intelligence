@@ -30,3 +30,6 @@ Historical intelligence supports bounded connected workflows, scoped merchant ag
 
 ## Naming update — 2026-10-18
 Global scope remains user-approved. Following user feedback, random syllable generation and invented personality/etymology are rejected as a method. [Semantic Naming Foundation V0.1](06-naming-verbal/SEMANTIC_NAMING_FOUNDATION_V0.1.md) defines proposed meaning territories and evidence gates. Next: traceable name constructions and cross-language screening. No name approved.
+
+## Naming preference update — 2026-10-19
+User favors immediately understandable, memorable actual English words, transparent meaningful word combinations, or Arabic words accessible internationally. Previous arbitrary pseudo-Romance coined naming style is not suitable. No final name selected. Next: screened meaningful shortlist versus Wossol.
