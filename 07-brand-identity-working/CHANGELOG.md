@@ -18,3 +18,6 @@
 
 ## 2026-10-22 — Visual brand methodology
 - Researched international agency identity methods, real visual systems, design framework, accessibility and implementation guidance; audited Wossol progress. Created professional visual identity method audit V0.1. No design decision approved.
+
+## 2026-10-22 — Integrated brand/creative brief
+- Added `04-brand-strategy/INTEGRATED_BRAND_AND_CREATIVE_BRIEF_V0.1.md`: one evidence-bound strategic and creative handoff, with proposed naming, verbal/visual, architecture, touchpoint and validation requirements. No decisions approved.
