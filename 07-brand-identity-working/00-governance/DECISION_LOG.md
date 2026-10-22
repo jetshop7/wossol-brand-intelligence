@@ -17,4 +17,6 @@
 
 | H-006 | Assistant recommendation | UNDER_REVIEW | Adopt evidence-based naming protocol (brief, competitor-name map, meaningful concept exploration, multilingual user tests, legal clearance) | Sourced research 2026-10-22; pending user approval; NO candidate selected. |
 
+| H-007 | Assistant recommendation | UNDER_REVIEW | Keep research-first brand workflow; repair merchant validation, brand/creative brief, architecture, visual competitor mapping and touchpoint gates before final design | Professional methodology audit 2026-10-22; user has not approved final identity/name. |
+
 No final naming, tagline, category, positioning or visual decisions have been made.
