@@ -33,3 +33,6 @@ Global scope remains user-approved. Following user feedback, random syllable gen
 
 ## Naming preference update — 2026-10-19
 User favors immediately understandable, memorable actual English words, transparent meaningful word combinations, or Arabic words accessible internationally. Previous arbitrary pseudo-Romance coined naming style is not suitable. No final name selected. Next: screened meaningful shortlist versus Wossol.
+
+## 2026-10-22: External professional naming-method research
+Reviewed Igor, Siegel+Gale, reported Lexicon practices, peer-reviewed name fluency/spelling studies, and USPTO/INTA/WIPO trademark guidance. New study: [Professional Naming Research & Protocol V0.1](06-naming-verbal/PROFESSIONAL_NAMING_RESEARCH_AND_PROTOCOL_V0.1.md). Proposed meaning/market-first multi-gate protocol; pending user review. NO NAME APPROVED. Next: one-page Naming Brief + naming landscape, then structured generation and merchant testing.
