@@ -28,3 +28,6 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Meaningful & Familiar Naming Direction V0.1](06-naming-verbal/MEANINGFUL_FAMILIAR_NAMING_DIRECTION_V0.1.md) — user preference for actual words, meaningful compounds and accessible Arabic names (UNDER_REVIEW).
 
 - [Professional Naming Research & Protocol V0.1](06-naming-verbal/PROFESSIONAL_NAMING_RESEARCH_AND_PROTOCOL_V0.1.md) — agency processes, peer-reviewed naming research, trademark authorities, and proposed Wossol workflow (UNDER_REVIEW).
+
+## Visual Identity Method and Audit
+- [Professional Brand & Visual Identity Method Audit V0.1](08-visual-identity/PROFESSIONAL_BRAND_IDENTITY_METHOD_AUDIT_V0.1.md) — agency evidence, end-to-end workflow, assessment of actual Wossol work and repair gates (UNDER_REVIEW).
