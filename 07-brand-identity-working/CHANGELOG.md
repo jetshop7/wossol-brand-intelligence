@@ -12,3 +12,6 @@
 
 ## 2026-10-19
 - Recorded user-directed naming preference for familiar, meaningful words and transparent combinations rather than invented syllables; no name approved.
+
+## 2026-10-22
+- Added sourced review of agency naming methodology, consumer psycholinguistic research and official trademark screening guidance; proposed Wossol-specific naming protocol. No final name or territory approval.
