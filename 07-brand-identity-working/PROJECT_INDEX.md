@@ -31,3 +31,6 @@ The files above are distinct evidence layers, not duplicate copies.
 
 ## Visual Identity Method and Audit
 - [Professional Brand & Visual Identity Method Audit V0.1](08-visual-identity/PROFESSIONAL_BRAND_IDENTITY_METHOD_AUDIT_V0.1.md) — agency evidence, end-to-end workflow, assessment of actual Wossol work and repair gates (UNDER_REVIEW).
+
+## Integrated Strategic / Creative Handoff
+- [Integrated Brand & Creative Brief V0.1](04-brand-strategy/INTEGRATED_BRAND_AND_CREATIVE_BRIEF_V0.1.md) — consolidated evidence-backed and hypothetical requirements for naming, architecture, visual concepts, applications and validation (UNDER_REVIEW).
