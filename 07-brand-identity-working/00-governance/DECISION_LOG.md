@@ -15,4 +15,6 @@
 | H-003 | Assistant recommendation | UNDER_REVIEW | 'From opportunity to growth' as strategic positioning umbrella | Not validated with merchants or approved as final. |
 | H-004 | Assistant recommendation | UNDER_REVIEW | Empowerment, clarity/accountability, shared progress as brand values | Proposed, not approved. |
 
+| H-006 | Assistant recommendation | UNDER_REVIEW | Adopt evidence-based naming protocol (brief, competitor-name map, meaningful concept exploration, multilingual user tests, legal clearance) | Sourced research 2026-10-22; pending user approval; NO candidate selected. |
+
 No final naming, tagline, category, positioning or visual decisions have been made.
