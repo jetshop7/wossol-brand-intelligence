@@ -24,3 +24,6 @@
 
 ## 2026-10-23
 - Created competitor naming/public visual-artifact landscape and practical meaning-led Naming Brief, linking existing intelligence instead of duplicating it. Documented visible competitor visual artifacts and unresolved fonts/palette/app screenshot facts. No brand decision approved.
+
+## 2026-10-23 — Meaning-led naming first screen
+- Recorded evidence-based collision screen of nine meaning-led English name constructions; no legally cleared candidate or final name selected.
