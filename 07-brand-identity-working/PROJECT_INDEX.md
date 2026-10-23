@@ -40,3 +40,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Naming Brief V0.1](06-naming-verbal/NAMING_BRIEF_V0.1.md) — operational cross-language, audience-led brief for actual-word and compound naming (UNDER_REVIEW).
 
 - [MDM & COD Network Screenshot Visual Audit V0.1](03-market-competitors/MDM_COD_NETWORK_VISUAL_SCREENSHOT_AUDIT_V0.1.md) — user-supplied Arabic/English/French marketing and dashboard images, observed visual cues and system implications (UNDER_REVIEW).
+
+- [Meaning-based Naming First-Pass Screen V0.1](06-naming-verbal/MEANINGFUL_NAMES_FIRST_PASS_SCREEN_V0.1.md) — researched English meaningful compounds, existing-use collisions, and revised candidate directions (UNDER_REVIEW).
