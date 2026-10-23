@@ -79,3 +79,6 @@ Located official national trademark inquiry services at INAPI (Algeria), SAIP (S
 
 ## 2026-10-23 — Creative concept territories
 [Creative Concept Territories V0.1](07-brand-concept/CREATIVE_CONCEPT_TERRITORIES_V0.1.md) documented and verified. Three candidates: Expanded Possibilities, Connected Commerce, Intelligent Progress. Assistant recommends the first as leading emotional territory with second as system logic; no concept/design approved. Next: distinctive graphic system exploration and competitor/touchpoint testing before reviewing the existing logo.
+
+## 2026-10-23 — Visual exploration
+[Initial Visual System Directions V0.1](08-visual-identity/INITIAL_VISUAL_SYSTEM_DIRECTIONS_V0.1.md) saved: Expanded Possibilities vs Connected Commerce. Both need ownable geometry and touchpoint/competitor tests. No design decisions approved.
