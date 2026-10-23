@@ -30,3 +30,6 @@
 
 ## 2026-10-23 — Short naming correction
 - Recorded user preference for compact brand names and disfavoring misleading Shop names; documented 14 evidence-linked Arabic/English lexical-name screens; no final candidate approved.
+
+## 2026-10-23 — Creative naming construction
+- Corrected name-generation method to user's requested clipped/combined meaningful English words; logged eight newly generated candidates and their public-use collisions. No approval or trademark clearance.
