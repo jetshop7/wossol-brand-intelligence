@@ -34,3 +34,7 @@ The files above are distinct evidence layers, not duplicate copies.
 
 ## Integrated Strategic / Creative Handoff
 - [Integrated Brand & Creative Brief V0.1](04-brand-strategy/INTEGRATED_BRAND_AND_CREATIVE_BRIEF_V0.1.md) — consolidated evidence-backed and hypothetical requirements for naming, architecture, visual concepts, applications and validation (UNDER_REVIEW).
+
+## Competitive identity and naming execution — 2026-10-23
+- [Competitor Naming & Visual Landscape V0.1](03-market-competitors/COMPETITOR_NAMING_VISUAL_LANDSCAPE_V0.1.md) — 9-brand naming and public visual evidence audit; verified artifacts vs incomplete full identity checks (UNDER_REVIEW).
+- [Naming Brief V0.1](06-naming-verbal/NAMING_BRIEF_V0.1.md) — operational cross-language, audience-led brief for actual-word and compound naming (UNDER_REVIEW).
