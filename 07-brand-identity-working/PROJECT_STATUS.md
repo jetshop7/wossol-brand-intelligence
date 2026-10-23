@@ -76,3 +76,6 @@ Located official national trademark inquiry services at INAPI (Algeria), SAIP (S
 - **CONTINGENCY ONLY:** Trade Up and Rise Up are user-liked backup names, not legally screened or approved.
 - User has Wossol logo source files to review later at the logo stage, not now.
 - **NEXT:** resume brand-strategy and audience/positioning validation using Integrated Brand & Creative Brief, then articulate central brand concept; only after that evaluate existing logo files and visual system.
+
+## 2026-10-23 — Creative concept territories
+[Creative Concept Territories V0.1](07-brand-concept/CREATIVE_CONCEPT_TERRITORIES_V0.1.md) documented and verified. Three candidates: Expanded Possibilities, Connected Commerce, Intelligent Progress. Assistant recommends the first as leading emotional territory with second as system logic; no concept/design approved. Next: distinctive graphic system exploration and competitor/touchpoint testing before reviewing the existing logo.
