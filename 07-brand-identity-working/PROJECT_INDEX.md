@@ -72,3 +72,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Opportunity to Capability Creative Direction V0.1](07-brand-concept/OPPORTUNITY_TO_CAPABILITY_CREATIVE_DIRECTION_V0.1.md) — refined concept grounded in existing competitor audits (UNDER_REVIEW).
 
 - [Geometric System Exploration V0.1](08-visual-identity/GEOMETRIC_SYSTEM_EXPLORATION_V0.1.md) — Open Field vs Adaptive Structure; exploratory, no approved geometry.
+
+- [Open Field A1/A2 Form Development V0.1](08-visual-identity/OPEN_FIELD_A1_A2_FORM_DEVELOPMENT_V0.1.md) — progressive opening vs adaptive path; A2 provisionally preferred, not approved.
