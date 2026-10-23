@@ -75,3 +75,5 @@
 - 2026-10-23: Compared logo round 02 directions; provisionally advanced wordmark-led route, flagged legibility and generic-icon risks, documented no-approval status.
 
 - 2026-10-23: Completed third Wossol logo concept comparison, narrowed exploratory focus to flow-symbol and custom wordmark, and established formal craft tests before further applications.
+
+- 2026-10-23: Reviewed B/C logo craft illustrations, explicitly separated illustrative grid/size imagery from validated vector geometry, provisionally prioritized custom wordmark C.
