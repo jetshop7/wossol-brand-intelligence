@@ -39,3 +39,6 @@
 
 ## 2026-10-23 — Naming creative round 3
 - Logged eight fresh English-word blends and preserved the seven user-chosen creative favorites; noted early near-use concerns and pending formal screening. No adopted name.
+
+## 2026-10-23 — Naming favorites and fourth batch
+- Preserved ten user-preferred names (including Ledway/Dovent/Meract), and recorded five new experimental blends with preliminary conflict caveats; no final name approved.
