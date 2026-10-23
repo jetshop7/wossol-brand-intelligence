@@ -70,3 +70,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Initial Visual System Directions V0.1](08-visual-identity/INITIAL_VISUAL_SYSTEM_DIRECTIONS_V0.1.md) — preliminary A/B visual grammar and tests; no approved design.
 
 - [Opportunity to Capability Creative Direction V0.1](07-brand-concept/OPPORTUNITY_TO_CAPABILITY_CREATIVE_DIRECTION_V0.1.md) — refined concept grounded in existing competitor audits (UNDER_REVIEW).
+
+- [Geometric System Exploration V0.1](08-visual-identity/GEOMETRIC_SYSTEM_EXPLORATION_V0.1.md) — Open Field vs Adaptive Structure; exploratory, no approved geometry.
