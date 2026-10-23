@@ -54,3 +54,6 @@ User prefers compact names (soft target 4–7 Latin letters / 1–3 syllables) a
 
 ## 2026-10-23 — User correction: create names, not Arabic dictionary-word lists
 User explicitly requires invented brand candidates via shortening/blending understandable English words, not recycling known Arabic business names. Created Ownity, Tradon, Leador, Opvia, Mergo, Flowen, Ownpath and Univra; first public-use check found existing businesses for all eight. [Candidate and collision ledger](06-naming-verbal/CREATED_ENGLISH_BLEND_NAMES_ROUND_V0.1.md). These are genuine newly proposed blends but NONE recommended to adopt or legally cleared. Next: develop more distinct short word blends before final evaluation; preserve Wossol baseline.
+
+## 2026-10-23 — Short blend round 2
+User particularly likes Mergo, and also Leador, Flowen, Tradon; directed that an existing unrelated business must not automatically disqualify a name. Explained trademark confusion turns on related goods/services and audience/jurisdiction, not literal identity of offerings. New creative options: Merflo, Ownigo, Ledon, Mergon, Opado, with preliminary public existing-use findings recorded in [Round 2](06-naming-verbal/BLEND_NAMES_ROUND_2_AND_COLLISION_RISK_V0.1.md). None cleared or approved. Next: user preference shortlist + focused multilingual, category, trademark and domain review.
