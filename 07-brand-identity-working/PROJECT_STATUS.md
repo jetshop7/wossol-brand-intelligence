@@ -57,3 +57,6 @@ User explicitly requires invented brand candidates via shortening/blending under
 
 ## 2026-10-23 — Short blend round 2
 User particularly likes Mergo, and also Leador, Flowen, Tradon; directed that an existing unrelated business must not automatically disqualify a name. Explained trademark confusion turns on related goods/services and audience/jurisdiction, not literal identity of offerings. New creative options: Merflo, Ownigo, Ledon, Mergon, Opado, with preliminary public existing-use findings recorded in [Round 2](06-naming-verbal/BLEND_NAMES_ROUND_2_AND_COLLISION_RISK_V0.1.md). None cleared or approved. Next: user preference shortlist + focused multilingual, category, trademark and domain review.
+
+## 2026-10-23 — Naming creative round 3
+User retained Mergo, Ownigo, Flowen, Ledon, Leador, Mergon and Tradon for future comparison. New generated possibilities: Meract, Dovent, Owngo, Ledway, Ownver, Mergain, Actown and Merlift; none approved or cleared. [Documented here](06-naming-verbal/SHORT_CREATED_BLENDS_ROUND_3_V0.1.md). Next: gather user reactions, compare favored new/old names with linguistic and sector-related mark screening, test with merchants. Do not automatically reject unrelated third-party use or claim freedom to use.
