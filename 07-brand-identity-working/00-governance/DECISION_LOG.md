@@ -34,4 +34,6 @@
 
 | H-012 | Assistant research finding / recommendation | UNDER_REVIEW | Wossol / وصول is creatively strong but direct exact-Arabic-name collision exists with Saudi WOSUL merchant operations and Kuwait WUSOOL merchant platform; do not finalize prior to official territorial rights clearance | Public businesses verified as name users 2026-10-23; trademark registration/legal prohibition NOT verified. User may retain Wossol provisionally. |
 
+| H-013 | Assistant legal-screen finding | UNDER_REVIEW | Official registry search pathways verified for INAPI, SAIP, Kuwait MOCI and WIPO, but no inspectable mark-specific registration/application results obtained for وصول / WOSSOL variants | Existing overlapping merchant software is publicly evidenced, but registration/legal availability remains UNKNOWN. Proceed with official similarity search before final brand-name adoption. |
+
 No final naming, tagline, category, positioning or visual decisions have been made.
