@@ -54,3 +54,6 @@
 
 ## 2026-10-23 — Kuwait WUSOOL scope clarification
 - Checked official WUSOOL Kuwait SaaS terms and merchant-app listing. Documented that merchant, not Kuwaiti SaaS platform, bears order-preparation, shipping and customer-service obligations; partial ecommerce software overlap and naming risk remain.
+
+## 2026-10-23 — Wossol selected as brand name
+- User explicitly selected وصول / Wossol for identity development; naming exploration closed, Trade Up and Rise Up kept as unverified contingencies. Trademark clearance remains unresolved. Existing Wossol logo assets to be reviewed later in logo stage. Updated decision log/status/index and dedicated naming decision record.
