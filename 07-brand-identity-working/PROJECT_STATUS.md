@@ -60,3 +60,6 @@ User particularly likes Mergo, and also Leador, Flowen, Tradon; directed that an
 
 ## 2026-10-23 — Naming creative round 3
 User retained Mergo, Ownigo, Flowen, Ledon, Leador, Mergon and Tradon for future comparison. New generated possibilities: Meract, Dovent, Owngo, Ledway, Ownver, Mergain, Actown and Merlift; none approved or cleared. [Documented here](06-naming-verbal/SHORT_CREATED_BLENDS_ROUND_3_V0.1.md). Next: gather user reactions, compare favored new/old names with linguistic and sector-related mark screening, test with merchants. Do not automatically reject unrelated third-party use or claim freedom to use.
+
+## 2026-10-23 — Ten preferred names compared
+[Ten Favorites Comparative Shortlist V0.1](06-naming-verbal/TEN_FAVORITES_COMPARATIVE_SHORTLIST_V0.1.md) compares the user's ten liked names and Wossol baseline. Assistant recommends prioritizing Ownigo, Dovent, Ledon and Mergo for next targeted linguistic/merchant and legal gates; keeps all ten as user preference, no finalist legally cleared or brand name approved. Flowen and Tradon have especially meaningful software/business/finance overlap; status is not automatic rejection. Next: short name perception and spelling tests, target-jurisdiction trademark screens.
