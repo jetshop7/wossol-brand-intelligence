@@ -97,3 +97,6 @@ User confirmed the supplied Wossol brand PDF is an unused experimental reference
 
 ## 2026-10-23 — Logo script correction
 User rejected the assistant's unwarranted suggestion that a new logo should specifically explore Arabic letters. The old waw experiment does NOT create an Arabic-letterform requirement. Logo routes should be open to abstract symbols, wordmarks, or letterforms only when supported by strategy and design evaluation; no mandatory Arabic or Latin symbol. Next: build strategy-led logo concept directions without a preselected script, arrow or geometry.
+
+## 2026-10-23 — New logo concept round 01
+[Logo Concept Round 01 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_01_V0.1.md) records A Open Flow, B Connected Structure, C Growth Partner. A/B remain weak exploratory references; C rejected in its current generic rising-bars form. Requested wordmark-led third route was not produced in the visual board. No logo, colors or typography approved. Next: generate distinct symbol routes plus genuine bespoke Wossol wordmark, assess monochrome and small sizes.
