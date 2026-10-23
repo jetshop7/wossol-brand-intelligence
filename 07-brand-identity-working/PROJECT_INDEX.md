@@ -46,3 +46,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Short Arabic/English Name Screening V0.1](06-naming-verbal/SHORT_NAME_ARABIC_ENGLISH_SCREEN_V0.1.md) — short/meaningful name preference, Shop exclusion and 14 researched early collisions (UNDER_REVIEW).
 
 - [Created English Blend Names Round V0.1](06-naming-verbal/CREATED_ENGLISH_BLEND_NAMES_ROUND_V0.1.md) — newly generated clipped English word combinations and direct collision results; no name approved.
+
+- [Short Meaningful Blends Round 2 & Risk V0.1](06-naming-verbal/BLEND_NAMES_ROUND_2_AND_COLLISION_RISK_V0.1.md) — user favorites, new blends and corrected related-sector name collision assessment (UNDER_REVIEW).
