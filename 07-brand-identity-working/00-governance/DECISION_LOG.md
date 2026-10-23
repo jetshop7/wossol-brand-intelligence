@@ -26,4 +26,6 @@
 
 | D-006 | User naming constraint | APPROVED AS DIRECTION | Prefer short memorable names; do not lead with Shop because company is wider than a store builder | Not a final name or hard letter limit; candidate screening remains necessary. |
 
+| D-007 | User preference / screening instruction | APPROVED AS DIRECTION | Preserve Mergo, Leador, Flowen and Tradon as liked alternatives; assess existing same-name firms by relatedness rather than auto-rejecting | No legal availability conclusion or final name selection. |
+
 No final naming, tagline, category, positioning or visual decisions have been made.
