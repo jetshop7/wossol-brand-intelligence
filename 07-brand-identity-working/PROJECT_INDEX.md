@@ -76,3 +76,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Open Field A1/A2 Form Development V0.1](08-visual-identity/OPEN_FIELD_A1_A2_FORM_DEVELOPMENT_V0.1.md) — progressive opening vs adaptive path; A2 provisionally preferred, not approved.
 
 - [A2 Adaptive Path Construction & Desk Test V0.1](08-visual-identity/A2_ADAPTIVE_PATH_CONSTRUCTION_AND_DESK_TEST_V0.1.md) — preliminary repeatability and illustrative size review; distinctiveness unproven (UNDER_REVIEW).
+
+- [Logo Concept Round 01 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_01_V0.1.md) — first new-logo concepts, critique, no approval; visual board remains in conversation.
