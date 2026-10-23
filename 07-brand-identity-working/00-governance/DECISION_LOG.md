@@ -28,4 +28,6 @@
 
 | D-007 | User preference / screening instruction | APPROVED AS DIRECTION | Preserve Mergo, Leador, Flowen and Tradon as liked alternatives; assess existing same-name firms by relatedness rather than auto-rejecting | No legal availability conclusion or final name selection. |
 
+| D-008 | User naming preference | APPROVED AS PREFERENCE, NOT FINAL NAME | Add Ledway, Dovent, Meract to seven existing favorites, for ten options total | Other candidates are proposals, no legal availability or final name approval. |
+
 No final naming, tagline, category, positioning or visual decisions have been made.
