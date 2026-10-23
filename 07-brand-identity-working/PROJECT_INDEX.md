@@ -78,3 +78,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [A2 Adaptive Path Construction & Desk Test V0.1](08-visual-identity/A2_ADAPTIVE_PATH_CONSTRUCTION_AND_DESK_TEST_V0.1.md) — preliminary repeatability and illustrative size review; distinctiveness unproven (UNDER_REVIEW).
 
 - [Logo Concept Round 01 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_01_V0.1.md) — first new-logo concepts, critique, no approval; visual board remains in conversation.
+
+- [Logo Concept Round 02 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_02_V0.1.md) — compares open ribbons, modular cross, and custom Wossol wordmark; wordmark prioritized for development only.
