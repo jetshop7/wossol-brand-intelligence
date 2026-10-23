@@ -92,3 +92,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Logo Round 05 Critical Review](08-visual-identity/logo/LOGO_ROUND_05_CRITICAL_REVIEW_V0.1.md) — compares gateway, infinity-like path, and two wordmarks; A/D exploratory only.
 
 - [A/C Competitor Evidence Comparison V0.1](08-visual-identity/logo/A_C_COMPETITOR_EVIDENCE_COMPARISON_V0.1.md) — uses existing competitor audits, rejects generic focus/offset symbols without asserting direct logo collision.
+
+- [Strategy-led Logo Design Brief V0.1](08-visual-identity/logo/STRATEGY_LED_LOGO_DESIGN_BRIEF_V0.1.md) — three distinct construction routes, explicit rejection gates and validation rules; no logo approved.
