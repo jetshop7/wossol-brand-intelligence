@@ -118,3 +118,6 @@ User rejected the assistant's unwarranted suggestion that a new logo should spec
 
 ## 2026-10-23 — A/C competitor-informed comparison
 [A/C Competitor Evidence Comparison V0.1](08-visual-identity/logo/A_C_COMPETITOR_EVIDENCE_COMPARISON_V0.1.md) finds neither A Focus nor C Offset meets conceptual distinctiveness gate. Existing competitor studies reused; no new market research. Next: precise strategy-led logo design brief and small set of deliberately distinct vector concepts. No logo approved.
+
+## 2026-10-23 — Strategy-led logo design brief
+[Strategy-led Logo Design Brief V0.1](08-visual-identity/logo/STRATEGY_LED_LOGO_DESIGN_BRIEF_V0.1.md) sets three deliberately different routes: distinctive abstract signature, proprietary Wossol wordmark, transformable graphic unit. Avoid repeated literal arrows, doors, ribbons, grids. No artwork approved. Next: construct one precise editable monochrome prototype per route and assess with real-size exports before mockups.
