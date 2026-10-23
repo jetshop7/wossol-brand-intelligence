@@ -86,3 +86,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Logo Craft B/C Review V0.1](08-visual-identity/logo/LOGO_CRAFT_B_C_REVIEW_V0.1.md) — evaluates illustrated construction/size boards, prioritizes wordmark craft; not validated vector artwork.
 
 - [Custom Vector Wordmark C1/C2 V0.2](08-visual-identity/logo/WORDMARK_CUSTOM_VECTOR_C1_C2_V0.2.md) — editable SVG outlines and actual raster export study, assets remain conversation-local.
+
+- [Logo Round 04 Critical Review V0.1](08-visual-identity/logo/LOGO_ROUND_04_CRITICAL_REVIEW_V0.1.md) — rejected repeated ribbon symbols, retained wordmarks only as studies.
