@@ -45,3 +45,6 @@
 
 ## 2026-10-23 — Ten favorites assessment
 - Produced evidence-linked qualitative comparison of all ten preferred names, separating user aesthetic favorites from proposed next-screen priorities and sector adjacency risk. No name approved or registered.
+
+## 2026-10-23 — Wossol direct name risk audit
+- Added direct-competitor/adjacent name audit for Wossol/Wosul/Wusool, documented official Saudi/Kuwaiti merchant platform product claims and phonetic/Arabic collision, with explicit unresolved trademark status. No name approved.
