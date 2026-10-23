@@ -24,4 +24,6 @@
 | H-009 | Assistant research finding | UNDER_REVIEW | COD + service/partner naming and generic All-in-One/Scale benefits are crowded in a selected competitor sample; published purple/orange/red visual artifacts do not establish full identity whitespace | 2026-10-23 first-party public-site and artifact study; limited COD-heavy set, no design/name approved. |
 | H-010 | Assistant working brief | UNDER_REVIEW | Naming Brief V0.1 prioritizes meaningful, pronounceable globally extensible real-word/metaphor/compound/accessible Arabic candidates subject to merchant and trademark checks | Captures user preference and competitive findings, not a final naming decision. |
 
+| D-006 | User naming constraint | APPROVED AS DIRECTION | Prefer short memorable names; do not lead with Shop because company is wider than a store builder | Not a final name or hard letter limit; candidate screening remains necessary. |
+
 No final naming, tagline, category, positioning or visual decisions have been made.
