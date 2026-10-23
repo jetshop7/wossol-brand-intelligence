@@ -109,3 +109,6 @@ User rejected the assistant's unwarranted suggestion that a new logo should spec
 
 ## 2026-10-23 — Wordmark vector craft C1/C2
 [Custom Vector Wordmark C1/C2 V0.2](08-visual-identity/logo/WORDMARK_CUSTOM_VECTOR_C1_C2_V0.2.md) documents two SVG-outlined experimental Wossol wordmarks and actual 512/256/128/64/32px raster exports. Files are conversation-local, not GitHub binaries. Both remain generic and not approved; next: develop a more distinctive yet legible typographic gesture and compare with an original independent symbol.
+
+## 2026-10-23 — Logo round 04 critical review
+[Logo Round 04 Critical Review V0.1](08-visual-identity/logo/LOGO_ROUND_04_CRITICAL_REVIEW_V0.1.md) identifies repeated ribbon motifs (A/B) and insufficiently differentiated wordmarks (C/D). No logo approved. Stop mockup-first boards; next: original geometry and typographic construction with actual vector tests and clear strategic distinctiveness criteria.
