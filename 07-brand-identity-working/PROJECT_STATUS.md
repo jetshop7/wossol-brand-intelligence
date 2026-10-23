@@ -115,3 +115,6 @@ User rejected the assistant's unwarranted suggestion that a new logo should spec
 
 ## 2026-10-23 — Logo round 05
 [Logo Round 05 Critical Review](08-visual-identity/logo/LOGO_ROUND_05_CRITICAL_REVIEW_V0.1.md) reviews A gateway, B connected path, C/D wordmarks. A symbol and D wordmark remain exploratory challengers; no logo approved. Next: exact monochrome editable vector comparison and genuine reduction checks, not more mockup-first boards.
+
+## 2026-10-23 — A/C competitor-informed comparison
+[A/C Competitor Evidence Comparison V0.1](08-visual-identity/logo/A_C_COMPETITOR_EVIDENCE_COMPARISON_V0.1.md) finds neither A Focus nor C Offset meets conceptual distinctiveness gate. Existing competitor studies reused; no new market research. Next: precise strategy-led logo design brief and small set of deliberately distinct vector concepts. No logo approved.
