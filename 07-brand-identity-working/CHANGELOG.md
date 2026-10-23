@@ -51,3 +51,6 @@
 
 ## 2026-10-23 — Official Wossol rights investigation
 - Established authoritative search routes, published inquiry fee schedules and relevant Nice-class screening for وصول / WOSSOL variants. Clearly documented that no registration-specific records were retrieved and no search application or fee was submitted. No approval or legal determination.
+
+## 2026-10-23 — Kuwait WUSOOL scope clarification
+- Checked official WUSOOL Kuwait SaaS terms and merchant-app listing. Documented that merchant, not Kuwaiti SaaS platform, bears order-preparation, shipping and customer-service obligations; partial ecommerce software overlap and naming risk remain.
