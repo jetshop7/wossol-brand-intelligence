@@ -30,4 +30,6 @@
 
 | D-008 | User naming preference | APPROVED AS PREFERENCE, NOT FINAL NAME | Add Ledway, Dovent, Meract to seven existing favorites, for ten options total | Other candidates are proposals, no legal availability or final name approval. |
 
+| H-011 | Assistant recommendation | UNDER_REVIEW | Prioritize Ownigo, Dovent, Ledon, Mergo for next tests while preserving all ten user-liked candidates | Qualitative assessment, not merchant test or trademark clearance; no approved name. |
+
 No final naming, tagline, category, positioning or visual decisions have been made.
