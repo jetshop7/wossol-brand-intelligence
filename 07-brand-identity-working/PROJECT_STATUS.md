@@ -88,3 +88,6 @@ Existing competitor visual studies were read and reused, not restarted. [Opportu
 
 ## 2026-10-23 — Geometric concept exploration
 [Geometric System Exploration V0.1](08-visual-identity/GEOMETRIC_SYSTEM_EXPLORATION_V0.1.md) compares Open Field and Adaptive Structure in monochrome. A leads emotional opportunity; B leads modular flexibility; neither distinctive or approved yet. Next: refine A into two precise form-construction variants and test scale/recognition, then enter logo-system exploration.
+
+## 2026-10-23 — A1/A2 form development
+[Open Field A1/A2 Form Development V0.1](08-visual-identity/OPEN_FIELD_A1_A2_FORM_DEVELOPMENT_V0.1.md) documents two actual geometric explorations and comparative risks. Assistant provisionally favors A2 Adaptive Path for systematic extensibility, not as a final logo/identity. Next: formal construction rules and no-logo recognition/scale tests; existing logo review follows at logo-system stage.
