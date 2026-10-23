@@ -45,3 +45,5 @@ Name Wossol/وصول is user-approved as the brand name for identity development
 | H-014 | Assistant recommendation | UNDER_REVIEW | Lead positioning with market entry, supported by connected operations and actionable decision intelligence | Founder vision synthesis V0.1; verify present-day capabilities and merchant relevance before approval. |
 
 | D-012 | User clarification | APPROVED AS DIRECTION | Previously supplied Wossol PDF logo is an old unused experiment; its symbol is Arabic waw (و) with upward arrow, not Latin W; new logo may be designed entirely from scratch | No obligation to preserve previous symbol, palette or fonts; previous retain/refine recommendation superseded. |
+
+| D-013 | User clarification | APPROVED AS DIRECTION | No requirement or preference for an Arabic-letterform logo; Wossol identity is internationally oriented and may use abstract symbol, Latin/other lettermark, or wordmark only when strategically justified | Do not infer logo script from old Arabic waw experiment; avoid prescribing any script or shape before evaluating concepts. |
