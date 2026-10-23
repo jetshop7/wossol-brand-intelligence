@@ -106,3 +106,6 @@ User rejected the assistant's unwarranted suggestion that a new logo should spec
 
 ## 2026-10-23 — Logo concept round 03
 [Logo Concept Round 03 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_03_V0.1.md) evaluated A open slabs, B continuous flow, C wordmark, D modular cross. B and C are exploratory contenders only; A and D not recommended as drawn. Next: targeted monochrome symbol and letterform construction, negative space and 16/24/32px tests; no more generic mockup-first concept boards. No logo approved.
+
+## 2026-10-23 — Wordmark vector craft C1/C2
+[Custom Vector Wordmark C1/C2 V0.2](08-visual-identity/logo/WORDMARK_CUSTOM_VECTOR_C1_C2_V0.2.md) documents two SVG-outlined experimental Wossol wordmarks and actual 512/256/128/64/32px raster exports. Files are conversation-local, not GitHub binaries. Both remain generic and not approved; next: develop a more distinctive yet legible typographic gesture and compare with an original independent symbol.
