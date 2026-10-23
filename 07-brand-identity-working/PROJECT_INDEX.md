@@ -48,3 +48,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Created English Blend Names Round V0.1](06-naming-verbal/CREATED_ENGLISH_BLEND_NAMES_ROUND_V0.1.md) — newly generated clipped English word combinations and direct collision results; no name approved.
 
 - [Short Meaningful Blends Round 2 & Risk V0.1](06-naming-verbal/BLEND_NAMES_ROUND_2_AND_COLLISION_RISK_V0.1.md) — user favorites, new blends and corrected related-sector name collision assessment (UNDER_REVIEW).
+
+- [Short Created Blends Round 3 V0.1](06-naming-verbal/SHORT_CREATED_BLENDS_ROUND_3_V0.1.md) — eight novel candidate constructions, preservation of seven user-selected favorites, and preliminary collision cautions (UNDER_REVIEW).
