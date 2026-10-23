@@ -64,3 +64,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Wossol Naming Decision — 2026-10-23](06-naming-verbal/WOSSOL_NAMING_DECISION_2026-10-23.md) — user-approved brand name, backup candidates, legal caveat, and handoff to strategy (APPROVED CREATIVE DECISION).
 
 - [Founder Future Vision and Positioning Synthesis V0.1](04-brand-strategy/FOUNDER_FUTURE_VISION_AND_POSITIONING_SYNTHESIS_V0.1.md) — founder vision, market access + operations + intelligence synthesis, evidence limits, proposed positioning (UNDER_REVIEW).
+
+- [Creative Concept Territories V0.1](07-brand-concept/CREATIVE_CONCEPT_TERRITORIES_V0.1.md) — three alternative concept directions and provisional creative recommendation (UNDER_REVIEW).
