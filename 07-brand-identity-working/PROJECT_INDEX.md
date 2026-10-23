@@ -88,3 +88,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Custom Vector Wordmark C1/C2 V0.2](08-visual-identity/logo/WORDMARK_CUSTOM_VECTOR_C1_C2_V0.2.md) — editable SVG outlines and actual raster export study, assets remain conversation-local.
 
 - [Logo Round 04 Critical Review V0.1](08-visual-identity/logo/LOGO_ROUND_04_CRITICAL_REVIEW_V0.1.md) — rejected repeated ribbon symbols, retained wordmarks only as studies.
+
+- [Logo Round 05 Critical Review](08-visual-identity/logo/LOGO_ROUND_05_CRITICAL_REVIEW_V0.1.md) — compares gateway, infinity-like path, and two wordmarks; A/D exploratory only.
