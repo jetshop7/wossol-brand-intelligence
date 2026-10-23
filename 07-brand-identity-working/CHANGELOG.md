@@ -27,3 +27,6 @@
 
 ## 2026-10-23 — Meaning-led naming first screen
 - Recorded evidence-based collision screen of nine meaning-led English name constructions; no legally cleared candidate or final name selected.
+
+## 2026-10-23 — Short naming correction
+- Recorded user preference for compact brand names and disfavoring misleading Shop names; documented 14 evidence-linked Arabic/English lexical-name screens; no final candidate approved.
