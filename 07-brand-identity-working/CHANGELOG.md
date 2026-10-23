@@ -61,3 +61,5 @@
 - 2026-10-23: Added founder future-vision synthesis and provisional integrated positioning; separated current evidence from roadmap and recorded validation questions.
 
 - 2026-10-23: Developed three Wossol creative concept territories; documented risks, recommended hierarchy, and validation gates.
+
+- 2026-10-23: Refined Wossol creative direction from existing competitor visual evidence; proposed opportunity-to-capability grammar, retained counterconcept and approval boundaries.
