@@ -80,3 +80,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Logo Concept Round 01 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_01_V0.1.md) — first new-logo concepts, critique, no approval; visual board remains in conversation.
 
 - [Logo Concept Round 02 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_02_V0.1.md) — compares open ribbons, modular cross, and custom Wossol wordmark; wordmark prioritized for development only.
+
+- [Logo Concept Round 03 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_03_V0.1.md) — compares A/B/C/D; prioritize focused B/C logo craft rather than more decorative mockup boards.
