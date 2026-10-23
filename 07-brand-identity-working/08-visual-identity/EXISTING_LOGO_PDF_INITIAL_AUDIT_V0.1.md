@@ -20,3 +20,11 @@ Assistant recommends RETAIN FOR COMPARATIVE REFINEMENT, not approve unchanged an
 
 ## Next
 Detailed logo audit: silhouette at 16/24/32px, monochrome/reversed, Arabic/Latin wordmark, strategic and category fit, and retain/refine/redesign recommendation. Request vector source files if available before production decisions.
+
+## User correction — 2026-10-23 (authoritative)
+- The uploaded PDF contains an OLD EXPERIMENTAL logo shown for reference only, not a deployed or approved Wossol identity.
+- Symbol is based on Arabic letter waw (و) with an upward arrow, NOT an English W. Earlier assistant interpretation was wrong.
+- User explicitly permits discarding it entirely and designing a new logo from scratch, including but not limited to previously explored forms.
+- The PDF is archival reference only. Its logo, colors and typefaces impose NO design constraints.
+- SUPERSEDES earlier assistant recommendation to retain the old symbol for comparative refinement. Do not treat previous logo evaluation as a required logo development route.
+- Next: create genuinely distinct logo concept routes grounded in Wossol strategy; assess Arabic-letterform and independent geometric approaches without presupposing arrows or A2.
