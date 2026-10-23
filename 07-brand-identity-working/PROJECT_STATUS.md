@@ -51,3 +51,6 @@ Started candidate exploration from the Naming Brief alongside visual screenshot 
 
 ## 2026-10-23 — Short-name direction updated
 User prefers compact names (soft target 4–7 Latin letters / 1–3 syllables) and rejects Shop-root positioning because Wossol is broader than a store builder. Screened Zimam, Madar, Sanad, Mizan, Darb, Nawah, Nasaq, Samt, Awn, Amad, Forsa, Steer, Sawa, Mada; found multiple existing uses including a very close Algerian COD seller app called Zimam. [Source screen](06-naming-verbal/SHORT_NAME_ARABIC_ENGLISH_SCREEN_V0.1.md). No candidate cleared or approved. Next: less generic real-word metaphors, short forms, and early legal/category screening; Wossol remains baseline.
+
+## 2026-10-23 — User correction: create names, not Arabic dictionary-word lists
+User explicitly requires invented brand candidates via shortening/blending understandable English words, not recycling known Arabic business names. Created Ownity, Tradon, Leador, Opvia, Mergo, Flowen, Ownpath and Univra; first public-use check found existing businesses for all eight. [Candidate and collision ledger](06-naming-verbal/CREATED_ENGLISH_BLEND_NAMES_ROUND_V0.1.md). These are genuine newly proposed blends but NONE recommended to adopt or legally cleared. Next: develop more distinct short word blends before final evaluation; preserve Wossol baseline.
