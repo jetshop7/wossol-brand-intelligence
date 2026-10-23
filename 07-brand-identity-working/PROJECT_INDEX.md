@@ -68,3 +68,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Creative Concept Territories V0.1](07-brand-concept/CREATIVE_CONCEPT_TERRITORIES_V0.1.md) — three alternative concept directions and provisional creative recommendation (UNDER_REVIEW).
 
 - [Initial Visual System Directions V0.1](08-visual-identity/INITIAL_VISUAL_SYSTEM_DIRECTIONS_V0.1.md) — preliminary A/B visual grammar and tests; no approved design.
+
+- [Opportunity to Capability Creative Direction V0.1](07-brand-concept/OPPORTUNITY_TO_CAPABILITY_CREATIVE_DIRECTION_V0.1.md) — refined concept grounded in existing competitor audits (UNDER_REVIEW).
