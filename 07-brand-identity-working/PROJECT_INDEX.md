@@ -90,3 +90,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Logo Round 04 Critical Review V0.1](08-visual-identity/logo/LOGO_ROUND_04_CRITICAL_REVIEW_V0.1.md) — rejected repeated ribbon symbols, retained wordmarks only as studies.
 
 - [Logo Round 05 Critical Review](08-visual-identity/logo/LOGO_ROUND_05_CRITICAL_REVIEW_V0.1.md) — compares gateway, infinity-like path, and two wordmarks; A/D exploratory only.
+
+- [A/C Competitor Evidence Comparison V0.1](08-visual-identity/logo/A_C_COMPETITOR_EVIDENCE_COMPARISON_V0.1.md) — uses existing competitor audits, rejects generic focus/offset symbols without asserting direct logo collision.
