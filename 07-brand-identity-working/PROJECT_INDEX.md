@@ -58,3 +58,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Wossol Direct Name Collision Audit V0.1](06-naming-verbal/WOSSOL_NAME_DIRECT_COMPETITOR_COLLISION_AUDIT_V0.1.md) — 2026-10-23 investigation: Saudi WOSUL and Kuwait WUSOOL merchant-operations platform overlap, adjacent WUSOOL 360 and others; trademark registration unverified.
 
 - [Wossol Official Trademark Clearance Path V0.1](06-naming-verbal/WOSSOL_OFFICIAL_TRADEMARK_CLEARANCE_PATH_V0.1.md) — official INAPI, SAIP, Kuwait MOCI and WIPO search routes and fees; no individual mark result obtained (UNDER_REVIEW).
+
+- [WUSOOL Kuwait Business Model Comparison V0.1](06-naming-verbal/WUSOOL_KUWAIT_BUSINESS_MODEL_DIFFERENTIATION_V0.1.md) — official terms establish storefront/POS SaaS, merchant-owned fulfilment responsibility, material but not identical Wossol overlap.
