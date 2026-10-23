@@ -9,11 +9,11 @@
 - Hybrid model: Wossol as both commercial operating partner and merchant-controlled platform.
 - Merchant visibility, transparency, and meaningful operational control are central, including confirmation team/process outcomes and control of advertising, products and inventory within actual available permissions.
 - Brand must remain relevant to an ambitious 10-15-year horizon, while present-day claims must be supported by current evidence.
-- 'Wossol / وصول' is a WORKING NAME only; replacement is explicitly allowed.
+- 2026-10-23 update: User explicitly SELECTED وصول / Wossol as brand name for identity development; legal trademark clearance remains pending.
 - Reuse the existing repository, organize work for long-term retrieval, and save substantive outcomes rather than rely on conversation history.
 
 ## Not approved
-- Final brand essence, positioning, category, tagline, name, visual concept, logo, colors.
+- Final brand essence, positioning, category, tagline, visual concept, logo, colors. Trademark clearance for selected name is not yet verified.
 - 'Merchant-Led Progress' and 'Expanding Merchant Capability' are hypotheses, not approved essence.
 
 ## Current step
@@ -69,3 +69,10 @@ User retained Mergo, Ownigo, Flowen, Ledon, Leador, Mergon and Tradon for future
 
 ## 2026-10-23 — Official trademark search route verified, legal status still unknown
 Located official national trademark inquiry services at INAPI (Algeria), SAIP (Saudi Arabia), Kuwait MOCI and WIPO Global Brand Database, and documented the exact-search variants, likely classes and local requirements in [Official Trademark Clearance Path V0.1](06-naming-verbal/WOSSOL_OFFICIAL_TRADEMARK_CLEARANCE_PATH_V0.1.md). Accessible web results did NOT provide mark-specific application/registration IDs, owner, legal status, classes or territorial protection for وصول / WOSSOL / WOSUL / WUSOOL. Do NOT claim the name legal/illegal or cleared. INAPI published similarity prior search costs 3,000 DZD up to three classes, 6,000 DZD above three, with official submission/payment required. User-preferred Wossol remains provisional. Next: request/obtain official trademark records and legal assessment before final naming and design signoff.
+
+## 2026-10-23 — User name selection: Wossol / وصول
+- **APPROVED USER DECISION:** Wossol / وصول is selected as the master brand name for ongoing strategy and visual identity. Stop generating replacement names unless requested.
+- **LEGAL GATE STILL OPEN:** Similar Arabic-name merchant SaaS brands WOSUL Saudi Arabia and WUSOOL Kuwait; no official mark-specific clearance in Algeria or expansion markets. Selection is not proof of registrability.
+- **CONTINGENCY ONLY:** Trade Up and Rise Up are user-liked backup names, not legally screened or approved.
+- User has Wossol logo source files to review later at the logo stage, not now.
+- **NEXT:** resume brand-strategy and audience/positioning validation using Integrated Brand & Creative Brief, then articulate central brand concept; only after that evaluate existing logo files and visual system.
