@@ -48,3 +48,6 @@
 
 ## 2026-10-23 — Wossol direct name risk audit
 - Added direct-competitor/adjacent name audit for Wossol/Wosul/Wusool, documented official Saudi/Kuwaiti merchant platform product claims and phonetic/Arabic collision, with explicit unresolved trademark status. No name approved.
+
+## 2026-10-23 — Official Wossol rights investigation
+- Established authoritative search routes, published inquiry fee schedules and relevant Nice-class screening for وصول / WOSSOL variants. Clearly documented that no registration-specific records were retrieved and no search application or fee was submitted. No approval or legal determination.
