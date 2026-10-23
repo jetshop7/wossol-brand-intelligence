@@ -91,3 +91,6 @@ Existing competitor visual studies were read and reused, not restarted. [Opportu
 
 ## 2026-10-23 — A1/A2 form development
 [Open Field A1/A2 Form Development V0.1](08-visual-identity/OPEN_FIELD_A1_A2_FORM_DEVELOPMENT_V0.1.md) documents two actual geometric explorations and comparative risks. Assistant provisionally favors A2 Adaptive Path for systematic extensibility, not as a final logo/identity. Next: formal construction rules and no-logo recognition/scale tests; existing logo review follows at logo-system stage.
+
+## 2026-10-23 — Old logo clarification
+User confirmed the supplied Wossol brand PDF is an unused experimental reference only; mark depicts Arabic waw (و) with upward arrow. User authorizes an entirely new logo, with no requirement to preserve old mark, palette or fonts. Previous recommendation to retain/refine old mark is superseded. Next: develop distinct new logo concept routes grounded in strategy, including but not limited to Arabic-letterform and independent geometric symbols.
