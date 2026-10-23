@@ -40,3 +40,6 @@ Name Wossol/وصول is user-approved as the brand name for identity development
 
 | D-009 | User decision | APPROVED (creative selection; legal clearance pending) | Select وصول / Wossol as the brand name and proceed with brand identity work | Explicitly approved 2026-10-23 after naming exploration. Kuwait/Saudi related-sector use known; no legal clearance or registered rights established. Do not quietly substitute a name. |
 | D-010 | User instruction | APPROVED | Retain Trade Up and Rise Up as contingency options; user has existing Wossol logo files for later logo-stage assessment | Do not imply either alternate is legally available or approved. Logo evaluation follows strategy and visual concept. |
+
+| D-011 | User clarification | APPROVED AS DIRECTION | Market expansion/opportunity and operational simplification/control are complementary pillars of Wossol value | User clarified both are essential; no final positioning/tagline approved. |
+| H-014 | Assistant recommendation | UNDER_REVIEW | Lead positioning with market entry, supported by connected operations and actionable decision intelligence | Founder vision synthesis V0.1; verify present-day capabilities and merchant relevance before approval. |
