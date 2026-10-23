@@ -56,3 +56,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Ten Favorites Comparative Shortlist V0.1](06-naming-verbal/TEN_FAVORITES_COMPARATIVE_SHORTLIST_V0.1.md) — evaluation of ten user-liked blends by language, real usage proximity and strategic fit; four next validation priorities (UNDER_REVIEW).
 
 - [Wossol Direct Name Collision Audit V0.1](06-naming-verbal/WOSSOL_NAME_DIRECT_COMPETITOR_COLLISION_AUDIT_V0.1.md) — 2026-10-23 investigation: Saudi WOSUL and Kuwait WUSOOL merchant-operations platform overlap, adjacent WUSOOL 360 and others; trademark registration unverified.
+
+- [Wossol Official Trademark Clearance Path V0.1](06-naming-verbal/WOSSOL_OFFICIAL_TRADEMARK_CLEARANCE_PATH_V0.1.md) — official INAPI, SAIP, Kuwait MOCI and WIPO search routes and fees; no individual mark result obtained (UNDER_REVIEW).
