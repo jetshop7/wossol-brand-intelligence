@@ -32,4 +32,6 @@
 
 | H-011 | Assistant recommendation | UNDER_REVIEW | Prioritize Ownigo, Dovent, Ledon, Mergo for next tests while preserving all ten user-liked candidates | Qualitative assessment, not merchant test or trademark clearance; no approved name. |
 
+| H-012 | Assistant research finding / recommendation | UNDER_REVIEW | Wossol / وصول is creatively strong but direct exact-Arabic-name collision exists with Saudi WOSUL merchant operations and Kuwait WUSOOL merchant platform; do not finalize prior to official territorial rights clearance | Public businesses verified as name users 2026-10-23; trademark registration/legal prohibition NOT verified. User may retain Wossol provisionally. |
+
 No final naming, tagline, category, positioning or visual decisions have been made.
