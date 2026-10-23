@@ -48,3 +48,6 @@ Reviewed competitive master and first-party competitor websites (COD Network, CO
 
 ## 2026-10-23 — Meaningful naming first-pass screening
 Started candidate exploration from the Naming Brief alongside visual screenshot study. Checked TradeSpring, ShopRise, MerchantFlow, TradeBridge, ShopOrbit, ClearStride, TradeNorth, MerchCompass and OwnWay against published companies/services. None approved; most are direct commercial collisions. [Results](06-naming-verbal/MEANINGFUL_NAMES_FIRST_PASS_SCREEN_V0.1.md). Next: distinctive familiar-word metaphors and non-generic meaningful compounds; compare with Wossol, test with merchants and legal databases.
+
+## 2026-10-23 — Short-name direction updated
+User prefers compact names (soft target 4–7 Latin letters / 1–3 syllables) and rejects Shop-root positioning because Wossol is broader than a store builder. Screened Zimam, Madar, Sanad, Mizan, Darb, Nawah, Nasaq, Samt, Awn, Amad, Forsa, Steer, Sawa, Mada; found multiple existing uses including a very close Algerian COD seller app called Zimam. [Source screen](06-naming-verbal/SHORT_NAME_ARABIC_ENGLISH_SCREEN_V0.1.md). No candidate cleared or approved. Next: less generic real-word metaphors, short forms, and early legal/category screening; Wossol remains baseline.
