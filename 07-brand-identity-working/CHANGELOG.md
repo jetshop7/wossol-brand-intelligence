@@ -21,3 +21,6 @@
 
 ## 2026-10-22 — Integrated brand/creative brief
 - Added `04-brand-strategy/INTEGRATED_BRAND_AND_CREATIVE_BRIEF_V0.1.md`: one evidence-bound strategic and creative handoff, with proposed naming, verbal/visual, architecture, touchpoint and validation requirements. No decisions approved.
+
+## 2026-10-23
+- Created competitor naming/public visual-artifact landscape and practical meaning-led Naming Brief, linking existing intelligence instead of duplicating it. Documented visible competitor visual artifacts and unresolved fonts/palette/app screenshot facts. No brand decision approved.
