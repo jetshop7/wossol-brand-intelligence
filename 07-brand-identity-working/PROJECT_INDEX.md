@@ -54,3 +54,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Favorites and Creative Round 4 V0.1](06-naming-verbal/FAVORITES_AND_CREATIVE_ROUND_4_V0.1.md) — canonical ten user-liked names plus five experimental names and evidence status.
 
 - [Ten Favorites Comparative Shortlist V0.1](06-naming-verbal/TEN_FAVORITES_COMPARATIVE_SHORTLIST_V0.1.md) — evaluation of ten user-liked blends by language, real usage proximity and strategic fit; four next validation priorities (UNDER_REVIEW).
+
+- [Wossol Direct Name Collision Audit V0.1](06-naming-verbal/WOSSOL_NAME_DIRECT_COMPETITOR_COLLISION_AUDIT_V0.1.md) — 2026-10-23 investigation: Saudi WOSUL and Kuwait WUSOOL merchant-operations platform overlap, adjacent WUSOOL 360 and others; trademark registration unverified.
