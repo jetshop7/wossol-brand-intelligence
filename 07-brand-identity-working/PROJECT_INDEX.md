@@ -44,3 +44,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Meaning-based Naming First-Pass Screen V0.1](06-naming-verbal/MEANINGFUL_NAMES_FIRST_PASS_SCREEN_V0.1.md) — researched English meaningful compounds, existing-use collisions, and revised candidate directions (UNDER_REVIEW).
 
 - [Short Arabic/English Name Screening V0.1](06-naming-verbal/SHORT_NAME_ARABIC_ENGLISH_SCREEN_V0.1.md) — short/meaningful name preference, Shop exclusion and 14 researched early collisions (UNDER_REVIEW).
+
+- [Created English Blend Names Round V0.1](06-naming-verbal/CREATED_ENGLISH_BLEND_NAMES_ROUND_V0.1.md) — newly generated clipped English word combinations and direct collision results; no name approved.
