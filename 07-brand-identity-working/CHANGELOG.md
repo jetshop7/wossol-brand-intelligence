@@ -67,3 +67,5 @@
 - 2026-10-23: Explored two monochrome geometric systems for Wossol's opportunity-to-capability concept; recorded comparative tradeoffs and no-approval boundary.
 
 - 2026-10-23: Developed A1 Progressive Opening and A2 Adaptive Path visual concept board, compared tradeoffs, provisionally prioritized A2; no visual approval.
+
+- 2026-10-23: Added A2 construction constraints and preliminary scale desk test; did not approve generic path motif; recommended existing-logo review next.
