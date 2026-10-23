@@ -60,3 +60,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Wossol Official Trademark Clearance Path V0.1](06-naming-verbal/WOSSOL_OFFICIAL_TRADEMARK_CLEARANCE_PATH_V0.1.md) — official INAPI, SAIP, Kuwait MOCI and WIPO search routes and fees; no individual mark result obtained (UNDER_REVIEW).
 
 - [WUSOOL Kuwait Business Model Comparison V0.1](06-naming-verbal/WUSOOL_KUWAIT_BUSINESS_MODEL_DIFFERENTIATION_V0.1.md) — official terms establish storefront/POS SaaS, merchant-owned fulfilment responsibility, material but not identical Wossol overlap.
+
+- [Wossol Naming Decision — 2026-10-23](06-naming-verbal/WOSSOL_NAMING_DECISION_2026-10-23.md) — user-approved brand name, backup candidates, legal caveat, and handoff to strategy (APPROVED CREATIVE DECISION).
