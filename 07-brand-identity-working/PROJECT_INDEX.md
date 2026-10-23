@@ -52,3 +52,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Short Created Blends Round 3 V0.1](06-naming-verbal/SHORT_CREATED_BLENDS_ROUND_3_V0.1.md) — eight novel candidate constructions, preservation of seven user-selected favorites, and preliminary collision cautions (UNDER_REVIEW).
 
 - [Favorites and Creative Round 4 V0.1](06-naming-verbal/FAVORITES_AND_CREATIVE_ROUND_4_V0.1.md) — canonical ten user-liked names plus five experimental names and evidence status.
+
+- [Ten Favorites Comparative Shortlist V0.1](06-naming-verbal/TEN_FAVORITES_COMPARATIVE_SHORTLIST_V0.1.md) — evaluation of ten user-liked blends by language, real usage proximity and strategic fit; four next validation priorities (UNDER_REVIEW).
