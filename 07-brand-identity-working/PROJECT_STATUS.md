@@ -94,3 +94,6 @@ Existing competitor visual studies were read and reused, not restarted. [Opportu
 
 ## 2026-10-23 — Old logo clarification
 User confirmed the supplied Wossol brand PDF is an unused experimental reference only; mark depicts Arabic waw (و) with upward arrow. User authorizes an entirely new logo, with no requirement to preserve old mark, palette or fonts. Previous recommendation to retain/refine old mark is superseded. Next: develop distinct new logo concept routes grounded in strategy, including but not limited to Arabic-letterform and independent geometric symbols.
+
+## 2026-10-23 — Logo script correction
+User rejected the assistant's unwarranted suggestion that a new logo should specifically explore Arabic letters. The old waw experiment does NOT create an Arabic-letterform requirement. Logo routes should be open to abstract symbols, wordmarks, or letterforms only when supported by strategy and design evaluation; no mandatory Arabic or Latin symbol. Next: build strategy-led logo concept directions without a preselected script, arrow or geometry.
