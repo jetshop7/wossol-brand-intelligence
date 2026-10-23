@@ -66,3 +66,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Founder Future Vision and Positioning Synthesis V0.1](04-brand-strategy/FOUNDER_FUTURE_VISION_AND_POSITIONING_SYNTHESIS_V0.1.md) — founder vision, market access + operations + intelligence synthesis, evidence limits, proposed positioning (UNDER_REVIEW).
 
 - [Creative Concept Territories V0.1](07-brand-concept/CREATIVE_CONCEPT_TERRITORIES_V0.1.md) — three alternative concept directions and provisional creative recommendation (UNDER_REVIEW).
+
+- [Initial Visual System Directions V0.1](08-visual-identity/INITIAL_VISUAL_SYSTEM_DIRECTIONS_V0.1.md) — preliminary A/B visual grammar and tests; no approved design.
