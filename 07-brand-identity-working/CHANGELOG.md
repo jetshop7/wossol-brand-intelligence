@@ -69,3 +69,5 @@
 - 2026-10-23: Developed A1 Progressive Opening and A2 Adaptive Path visual concept board, compared tradeoffs, provisionally prioritized A2; no visual approval.
 
 - 2026-10-23: Added A2 construction constraints and preliminary scale desk test; did not approve generic path motif; recommended existing-logo review next.
+
+- 2026-10-23: Started new Wossol logo concept design from documented strategy; critically evaluated A/B/C, rejected generic C, documented missing wordmark route and no-approval status.
