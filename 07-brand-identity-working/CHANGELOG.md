@@ -71,3 +71,5 @@
 - 2026-10-23: Added A2 construction constraints and preliminary scale desk test; did not approve generic path motif; recommended existing-logo review next.
 
 - 2026-10-23: Started new Wossol logo concept design from documented strategy; critically evaluated A/B/C, rejected generic C, documented missing wordmark route and no-approval status.
+
+- 2026-10-23: Compared logo round 02 directions; provisionally advanced wordmark-led route, flagged legibility and generic-icon risks, documented no-approval status.
