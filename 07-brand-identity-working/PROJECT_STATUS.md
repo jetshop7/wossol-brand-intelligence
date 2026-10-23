@@ -82,3 +82,6 @@ Located official national trademark inquiry services at INAPI (Algeria), SAIP (S
 
 ## 2026-10-23 — Visual exploration
 [Initial Visual System Directions V0.1](08-visual-identity/INITIAL_VISUAL_SYSTEM_DIRECTIONS_V0.1.md) saved: Expanded Possibilities vs Connected Commerce. Both need ownable geometry and touchpoint/competitor tests. No design decisions approved.
+
+## 2026-10-23 — Creative direction refined
+Existing competitor visual studies were read and reused, not restarted. [Opportunity to Capability V0.1](07-brand-concept/OPPORTUNITY_TO_CAPABILITY_CREATIVE_DIRECTION_V0.1.md) proposes 'From Opportunity to Capability' and a potential-to-clarity visual grammar; Connected Commerce remains a counterconcept. No design choices approved. Next: create and evaluate two distinctive geometric rule sets before logo exploration; no final mockups yet.
