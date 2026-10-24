@@ -130,3 +130,6 @@ User rejected the assistant's unwarranted suggestion that a new logo should spec
 
 ## 2026-10-24 — R2 merchant perception test prepared
 [Protocol](11-validation/R2_WORDMARK_MERCHANT_PERCEPTION_TEST_PROTOCOL_V0.1.md) defines randomized, short first-read, personality and delayed-recall checks for R2-B vs R2-C. No actual merchants tested; 0 participant responses. Internal desk preference for B on legibility remains provisional. Next: gather responses before further logo iteration or approval.
+
+## 2026-10-24 — Creative leadership governance and project recovery
+User directed ChatGPT to lead expert brand/visual identity decisions independently and challenge weak user suggestions, while preserving user approval of major/final decisions. Full [Master Instructions V2.0](00-governance/BRAND_IDENTITY_MASTER_INSTRUCTIONS_V2.md) and [Project Entrypoint](00-governance/CHATGPT_PROJECT_ENTRYPOINT.md) are archived. Current visual next step remains two full C vs B/C logo systems per [direction](08-visual-identity/logo/LOGO_SYSTEM_DIRECTION_C_VS_BC_V0.1.md). No logo approved. This section supersedes outdated top-of-file 'no logo/design yet' status for current activity.
