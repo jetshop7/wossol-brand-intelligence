@@ -145,3 +145,6 @@ Tested original R2-C vector paths in Arabic-first desktop and narrow-screen layo
 
 ## 2026-10-25 — Bilingual C/B lockup test
 Original C and B Latin vectors compared with provisional Arabic وصول in three schematic layouts. C remains unapproved lead; B readability reference. No Arabic logo or final identity approved. Study: 08-visual-identity/typography/C_VS_B_BILINGUAL_LOCKUP_COMPARISON_V0.1.md. Next: two distinct Arabic wordmark treatments and merchant first-read testing.
+
+## 2026-10-25 — Arabic wordmark treatments A/B
+Compared two Arabic treatments of وصول with original R2-C vector: structural Kufi A and open humanist B. Desk recommendation: refine B; retain A as comparator. Both remain font-based prototypes, not custom lettering or approved logo. Source SVGs and assessment saved at 08-visual-identity/typography/; outlined local vector package delivered in conversation. No merchant tests or production UI tests. NEXT: custom B-derived Arabic lettering and small-size comparative stimuli.
