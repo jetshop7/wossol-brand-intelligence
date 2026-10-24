@@ -37,3 +37,6 @@ No new user approval, no final logo, icon, typography or color decision.
 
 ## Next actions
 Collect real consented anonymized merchant responses and analyze errors/reasons; inspect exact merchant-brand markup and CSS for production header dimensions before final lockup. Then decide whether custom Arabic drawing is justified.
+
+## Additional code verification
+Actual MerchantShell.tsx uses a temporary W mark, and Wossol text only when sidebar is expanded. globals.css specifies 280px expanded sidebar, 88px collapsed sidebar, and a 36x36px brand-mark box. No approved icon. Local CURRENT_CODE_BRAND_SLOT.png illustrates these code facts; it is not a screenshot.
