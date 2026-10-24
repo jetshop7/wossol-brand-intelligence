@@ -100,3 +100,8 @@ The files above are distinct evidence layers, not duplicate copies.
 - [R2 Wordmark Letterform Craft V0.2](08-visual-identity/logo/R2_WORDMARK_LETTERFORM_CRAFT_V0.2.md) — two archived custom SVG wordmarks R2-A/R2-B and critical comparison; neither approved.
 
 - [R2 Merchant Perception Test Protocol V0.1](11-validation/R2_WORDMARK_MERCHANT_PERCEPTION_TEST_PROTOCOL_V0.1.md) — ready-to-run qualitative pilot; no participant results yet.
+
+## Project governance and recovery — 2026-10-24
+- [Brand Identity Master Instructions V2.0](00-governance/BRAND_IDENTITY_MASTER_INSTRUCTIONS_V2.md) — complete independent creative leadership, methodology, quality, GitHub and Wossol-specific operating rules.
+- [ChatGPT Project Entrypoint](00-governance/CHATGPT_PROJECT_ENTRYPOINT.md) — short mandatory read sequence and phase routing for cross-chat/account recovery.
+- [C vs B/C Logo System Direction](08-visual-identity/logo/LOGO_SYSTEM_DIRECTION_C_VS_BC_V0.1.md) — latest unapproved creative handoff.
