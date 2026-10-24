@@ -87,3 +87,5 @@
 - 2026-10-23: Established strategy-led logo construction brief after A/C rejection, with three distinct routes and objective failure gates.
 
 - 2026-10-24: Archived first three actual monochrome logo prototype SVGs (R1/R2/R3) and comparative review; R2 remains exploratory, no approval.
+
+- 2026-10-24: Created and archived two fully editable R2-A/R2-B custom-path Wossol wordmarks and review; neither approved.
