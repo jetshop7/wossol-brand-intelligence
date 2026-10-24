@@ -112,3 +112,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [B/C lockup SVG](08-visual-identity/logo/WOSSOL_BC_lockup.svg), [B/C symbol SVG](08-visual-identity/logo/WOSSOL_BC_symbol.svg) — experimental only.
 
 - [RTL Graphic Grammar Comparison V0.1](08-visual-identity/graphic-system/RTL_GRAPHIC_GRAMMAR_COMPARISON_V0.1.md) — critical review of three schematic visual devices; none approved; local SVG/PNG delivered in conversation.
+
+- [C Bilingual RTL Layout Stress Test V0.1](08-visual-identity/typography/C_BILINGUAL_RTL_LAYOUT_STRESS_TEST_V0.1.md) — original C vector placed in schematic Arabic-first desktop/mobile; PNG and SVG provided in conversation, not live UI.
