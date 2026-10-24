@@ -94,3 +94,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [A/C Competitor Evidence Comparison V0.1](08-visual-identity/logo/A_C_COMPETITOR_EVIDENCE_COMPARISON_V0.1.md) — uses existing competitor audits, rejects generic focus/offset symbols without asserting direct logo collision.
 
 - [Strategy-led Logo Design Brief V0.1](08-visual-identity/logo/STRATEGY_LED_LOGO_DESIGN_BRIEF_V0.1.md) — three distinct construction routes, explicit rejection gates and validation rules; no logo approved.
+
+- [Three-route Vector Prototypes Review V0.1](08-visual-identity/logo/THREE_ROUTE_VECTOR_PROTOTYPES_REVIEW_V0.1.md) — actual archived R1/R2/R3 SVG sources; R2 retained for typographic refinement only.
