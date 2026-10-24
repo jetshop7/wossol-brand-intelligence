@@ -151,3 +151,6 @@ Compared two Arabic treatments of وصول with original R2-C vector: structural
 
 ## 2026-10-25 — Merchant first-read pilot READY, 0 participants
 B2 Arabic terminal-cut variation was rejected in the preceding local desk test (GitHub archive of B2 assets not confirmed). Prepared four blind-code stimuli for original Latin C/B and Arabic A/B, a 10-person balanced-order sheet, Arabic moderator guide and empty responses CSV; all available as conversation ZIP. Verified real merchant shell code and merchant UI specification in jetshop7/wossol-platform main: collapsible left sidebar, prominent workspace/store selectors; full Arabic RTL polish deferred. [Pilot study](11-validation/MERCHANT_FIRST_READ_PILOT_STIMULI_AND_REAL_UI_GATE_V0.1.md). No merchant research conducted. NEXT: gather 6-10 consenting merchant responses and inspect exact header CSS before final logo refinement.
+
+### Product brand-slot constraint verified
+wossol-platform main MerchantShell.tsx currently shows a temporary 36x36 W in both sidebar states and full text Wossol only expanded. CSS sidebar widths are 280px and 88px. This is a future compact-logo test gate, not approval of the placeholder W.
