@@ -139,3 +139,6 @@ Constructed and archived four editable SVGs for two monochrome symbol+wordmark s
 
 ## 2026-10-25 — RTL graphic grammar comparison
 Three schematic monochrome UI graphic devices evaluated (directional rail, offset cut, open corner). None passes distinctiveness threshold as an official brand device. Third remains optional UI-layout hypothesis only. [Study](08-visual-identity/graphic-system/RTL_GRAPHIC_GRAMMAR_COMPARISON_V0.1.md). C remains unapproved leading typographic exploration; no logo or visual system approved. NEXT: verify real dashboard constraints and Arabic/Latin typography; stop generic pattern rounds.
+
+## 2026-10-25 — C bilingual RTL schematic stress test
+Tested original R2-C vector paths in Arabic-first desktop and narrow-screen layouts, with provisional system-font Arabic labels. [Assessment](08-visual-identity/typography/C_BILINGUAL_RTL_LAYOUT_STRESS_TEST_V0.1.md). No Arabic wordmark, font pairing, icon or logo approved; no live UI verified. Attempted jetshop7/wossol-platform README on main returned 404. NEXT: verify actual app repository/branch, compare Arabic/Latin lockups, conduct merchant reading pilot.
