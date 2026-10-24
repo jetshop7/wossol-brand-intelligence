@@ -119,3 +119,5 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [Arabic Wordmark A/B Treatment Assessment](08-visual-identity/typography/ARABIC_WORDMARK_A_B_TREATMENT_ASSESSMENT_V0.1.md) — critical comparison, under review.
 - [Arabic A Geometric + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_A_GEOMETRIC_WITH_C_V0.1.svg) and [Arabic B Humanist + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_B_HUMANIST_WITH_C_V0.1.svg) — editable exploratory vectors with live Arabic text; local outlined versions supplied separately.
+
+- [Merchant First-Read Pilot and Real UI Gate V0.1](11-validation/MERCHANT_FIRST_READ_PILOT_STIMULI_AND_REAL_UI_GATE_V0.1.md) — four blinded stimuli, counterbalanced order and empty results sheet delivered in conversation; real merchant shell evidence verified; zero participants.
