@@ -124,3 +124,6 @@ User rejected the assistant's unwarranted suggestion that a new logo should spec
 
 ## 2026-10-24 — R2 wordmark craft
 [Letterform Craft V0.2](08-visual-identity/logo/R2_WORDMARK_LETTERFORM_CRAFT_V0.2.md) and R2_A_CUSTOM_WORDMARK_V0.2.svg / R2_B_CUSTOM_WORDMARK_V0.2.svg archived. Both legible but too generic; B a provisional craft challenger only. Next: materially distinct letter anatomy and optical rhythm, not more stroke-weight tweaks. No logo approved.
+
+## 2026-10-24 — R2-C angular wordmark challenge
+[R2-B vs R2-C Letterform Comparison V0.3](08-visual-identity/logo/R2_B_VS_R2_C_LETTERFORM_COMPARISON_V0.3.md) documents materially different bespoke angular R2-C SVG, archived as R2_C_ANGULAR_CUSTOM_WORDMARK_V0.3.svg. R2-C is distinct in construction but too industrial; R2-B more readable but generic. Neither approved. Next: reconcile personality and legibility with real merchant perception checks rather than repeating superficial variants.
