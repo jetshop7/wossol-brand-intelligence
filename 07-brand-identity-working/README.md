@@ -14,3 +14,6 @@ This is an isolated, evolving brand-strategy workspace within the existing PUBLI
 6. Cross-check claims against `03-master-synthesis/` and current product code before public marketing.
 
 **Authority:** User-approved choices are recorded separately from assistant recommendations. Brand name, essence, positioning, tagline, visuals remain unapproved.
+
+## Mandatory creative leadership startup (2026-10-24)
+Before substantive brand identity work, read [Master Instructions V2.0](00-governance/BRAND_IDENTITY_MASTER_INSTRUCTIONS_V2.md) and [ChatGPT Project Entrypoint](00-governance/CHATGPT_PROJECT_ENTRYPOINT.md), then this README, PROJECT_STATUS, PROJECT_INDEX, DECISION_LOG and the current phase's studies/assets. These govern brand identity work inside this workspace; root repository intelligence audit protocols remain separate. ChatGPT leads expert recommendations; user approves major/final decisions.
