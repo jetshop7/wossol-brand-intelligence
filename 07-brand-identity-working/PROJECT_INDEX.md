@@ -116,3 +116,6 @@ The files above are distinct evidence layers, not duplicate copies.
 - [C Bilingual RTL Layout Stress Test V0.1](08-visual-identity/typography/C_BILINGUAL_RTL_LAYOUT_STRESS_TEST_V0.1.md) — original C vector placed in schematic Arabic-first desktop/mobile; PNG and SVG provided in conversation, not live UI.
 
 - [C vs B Bilingual Lockup Comparison V0.1](08-visual-identity/typography/C_VS_B_BILINGUAL_LOCKUP_COMPARISON_V0.1.md) — Arabic/Latin comparison, under review; local editable SVG and PNG.
+
+- [Arabic Wordmark A/B Treatment Assessment](08-visual-identity/typography/ARABIC_WORDMARK_A_B_TREATMENT_ASSESSMENT_V0.1.md) — critical comparison, under review.
+- [Arabic A Geometric + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_A_GEOMETRIC_WITH_C_V0.1.svg) and [Arabic B Humanist + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_B_HUMANIST_WITH_C_V0.1.svg) — editable exploratory vectors with live Arabic text; local outlined versions supplied separately.
