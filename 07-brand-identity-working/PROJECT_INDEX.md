@@ -105,3 +105,8 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Brand Identity Master Instructions V2.0](00-governance/BRAND_IDENTITY_MASTER_INSTRUCTIONS_V2.md) — complete independent creative leadership, methodology, quality, GitHub and Wossol-specific operating rules.
 - [ChatGPT Project Entrypoint](00-governance/CHATGPT_PROJECT_ENTRYPOINT.md) — short mandatory read sequence and phase routing for cross-chat/account recovery.
 - [C vs B/C Logo System Direction](08-visual-identity/logo/LOGO_SYSTEM_DIRECTION_C_VS_BC_V0.1.md) — latest unapproved creative handoff.
+
+## Logo system SVG prototypes — 2026-10-24
+- [C vs B/C vector system critical review](08-visual-identity/logo/LOGO_SYSTEM_C_VS_BC_VECTOR_PROTOTYPES_V0.1.md) — actual SVG prototype construction and rejection rationale; UNDER_REVIEW.
+- [C lockup SVG](08-visual-identity/logo/WOSSOL_C_lockup.svg), [C symbol SVG](08-visual-identity/logo/WOSSOL_C_symbol.svg) — experimental only.
+- [B/C lockup SVG](08-visual-identity/logo/WOSSOL_BC_lockup.svg), [B/C symbol SVG](08-visual-identity/logo/WOSSOL_BC_symbol.svg) — experimental only.
