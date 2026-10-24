@@ -136,3 +136,6 @@ User directed ChatGPT to lead expert brand/visual identity decisions independent
 
 ## 2026-10-24 — C vs B/C actual vector system prototype test
 Constructed and archived four editable SVGs for two monochrome symbol+wordmark systems and [critical assessment](08-visual-identity/logo/LOGO_SYSTEM_C_VS_BC_VECTOR_PROTOTYPES_V0.1.md). C angular typography remains the stronger exploratory wordmark direction; both independent symbols were professionally rejected as generic (octagonal technical frame and G-like circle). PNG 16/24/32/64/128px exports and comparison sheet are available as conversation download. NO logo/icon/color approved. NEXT: strategy-led distinctive graphic device or justified wordmark-first system, using existing brand pillars; test actual-size UI contexts.
+
+## 2026-10-25 — RTL graphic grammar comparison
+Three schematic monochrome UI graphic devices evaluated (directional rail, offset cut, open corner). None passes distinctiveness threshold as an official brand device. Third remains optional UI-layout hypothesis only. [Study](08-visual-identity/graphic-system/RTL_GRAPHIC_GRAMMAR_COMPARISON_V0.1.md). C remains unapproved leading typographic exploration; no logo or visual system approved. NEXT: verify real dashboard constraints and Arabic/Latin typography; stop generic pattern rounds.
