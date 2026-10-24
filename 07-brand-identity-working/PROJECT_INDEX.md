@@ -110,3 +110,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [C vs B/C vector system critical review](08-visual-identity/logo/LOGO_SYSTEM_C_VS_BC_VECTOR_PROTOTYPES_V0.1.md) — actual SVG prototype construction and rejection rationale; UNDER_REVIEW.
 - [C lockup SVG](08-visual-identity/logo/WOSSOL_C_lockup.svg), [C symbol SVG](08-visual-identity/logo/WOSSOL_C_symbol.svg) — experimental only.
 - [B/C lockup SVG](08-visual-identity/logo/WOSSOL_BC_lockup.svg), [B/C symbol SVG](08-visual-identity/logo/WOSSOL_BC_symbol.svg) — experimental only.
+
+- [RTL Graphic Grammar Comparison V0.1](08-visual-identity/graphic-system/RTL_GRAPHIC_GRAMMAR_COMPARISON_V0.1.md) — critical review of three schematic visual devices; none approved; local SVG/PNG delivered in conversation.
