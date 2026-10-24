@@ -96,3 +96,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Strategy-led Logo Design Brief V0.1](08-visual-identity/logo/STRATEGY_LED_LOGO_DESIGN_BRIEF_V0.1.md) — three distinct construction routes, explicit rejection gates and validation rules; no logo approved.
 
 - [Three-route Vector Prototypes Review V0.1](08-visual-identity/logo/THREE_ROUTE_VECTOR_PROTOTYPES_REVIEW_V0.1.md) — actual archived R1/R2/R3 SVG sources; R2 retained for typographic refinement only.
+
+- [R2 Wordmark Letterform Craft V0.2](08-visual-identity/logo/R2_WORDMARK_LETTERFORM_CRAFT_V0.2.md) — two archived custom SVG wordmarks R2-A/R2-B and critical comparison; neither approved.
