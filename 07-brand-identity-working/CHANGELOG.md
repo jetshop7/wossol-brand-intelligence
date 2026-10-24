@@ -99,3 +99,5 @@
 - 2026-10-25: Evaluated three RTL-oriented monochrome visual grammar devices, rejected all as official brand devices, documented review and retained only an open-corner UI hypothesis.
 
 - 2026-10-25: Tested original C wordmark vector in schematic Arabic-first desktop and mobile layouts; documented missing real app UI evidence and unapproved bilingual typography questions.
+
+- 2026-10-25: Compared original C and B vectors in bilingual layouts; no design approved.
