@@ -142,3 +142,6 @@ Three schematic monochrome UI graphic devices evaluated (directional rail, offse
 
 ## 2026-10-25 — C bilingual RTL schematic stress test
 Tested original R2-C vector paths in Arabic-first desktop and narrow-screen layouts, with provisional system-font Arabic labels. [Assessment](08-visual-identity/typography/C_BILINGUAL_RTL_LAYOUT_STRESS_TEST_V0.1.md). No Arabic wordmark, font pairing, icon or logo approved; no live UI verified. Attempted jetshop7/wossol-platform README on main returned 404. NEXT: verify actual app repository/branch, compare Arabic/Latin lockups, conduct merchant reading pilot.
+
+## 2026-10-25 — Bilingual C/B lockup test
+Original C and B Latin vectors compared with provisional Arabic وصول in three schematic layouts. C remains unapproved lead; B readability reference. No Arabic logo or final identity approved. Study: 08-visual-identity/typography/C_VS_B_BILINGUAL_LOCKUP_COMPARISON_V0.1.md. Next: two distinct Arabic wordmark treatments and merchant first-read testing.
