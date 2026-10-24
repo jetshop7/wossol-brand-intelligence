@@ -97,3 +97,5 @@
 - 2026-10-24: Constructed and committed two actual editable monochrome symbol+wordmark systems (C and B/C) and a critical review; both symbol routes rejected as generic, C typography retained for further work. No user design approval.
 
 - 2026-10-25: Evaluated three RTL-oriented monochrome visual grammar devices, rejected all as official brand devices, documented review and retained only an open-corner UI hypothesis.
+
+- 2026-10-25: Tested original C wordmark vector in schematic Arabic-first desktop and mobile layouts; documented missing real app UI evidence and unapproved bilingual typography questions.
