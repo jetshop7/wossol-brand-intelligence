@@ -127,3 +127,6 @@ User rejected the assistant's unwarranted suggestion that a new logo should spec
 
 ## 2026-10-24 — R2-C angular wordmark challenge
 [R2-B vs R2-C Letterform Comparison V0.3](08-visual-identity/logo/R2_B_VS_R2_C_LETTERFORM_COMPARISON_V0.3.md) documents materially different bespoke angular R2-C SVG, archived as R2_C_ANGULAR_CUSTOM_WORDMARK_V0.3.svg. R2-C is distinct in construction but too industrial; R2-B more readable but generic. Neither approved. Next: reconcile personality and legibility with real merchant perception checks rather than repeating superficial variants.
+
+## 2026-10-24 — R2 merchant perception test prepared
+[Protocol](11-validation/R2_WORDMARK_MERCHANT_PERCEPTION_TEST_PROTOCOL_V0.1.md) defines randomized, short first-read, personality and delayed-recall checks for R2-B vs R2-C. No actual merchants tested; 0 participant responses. Internal desk preference for B on legibility remains provisional. Next: gather responses before further logo iteration or approval.
