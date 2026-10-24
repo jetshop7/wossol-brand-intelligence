@@ -121,3 +121,6 @@ User rejected the assistant's unwarranted suggestion that a new logo should spec
 
 ## 2026-10-23 — Strategy-led logo design brief
 [Strategy-led Logo Design Brief V0.1](08-visual-identity/logo/STRATEGY_LED_LOGO_DESIGN_BRIEF_V0.1.md) sets three deliberately different routes: distinctive abstract signature, proprietary Wossol wordmark, transformable graphic unit. Avoid repeated literal arrows, doors, ribbons, grids. No artwork approved. Next: construct one precise editable monochrome prototype per route and assess with real-size exports before mockups.
+
+## 2026-10-24 — R2 wordmark craft
+[Letterform Craft V0.2](08-visual-identity/logo/R2_WORDMARK_LETTERFORM_CRAFT_V0.2.md) and R2_A_CUSTOM_WORDMARK_V0.2.svg / R2_B_CUSTOM_WORDMARK_V0.2.svg archived. Both legible but too generic; B a provisional craft challenger only. Next: materially distinct letter anatomy and optical rhythm, not more stroke-weight tweaks. No logo approved.
