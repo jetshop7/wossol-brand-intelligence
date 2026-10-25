@@ -170,3 +170,9 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Direction B — Arabic-First Capability board](08-visual-identity/graphic-system/DIRECTION_B_ARABIC_FIRST_CAPABILITY_BOARD_V0.1.svg) and [mobile navigation study](08-visual-identity/graphic-system/DIRECTION_B_ARABIC_FIRST_MOBILE_NAV_V0.1.svg) — editable Arabic-led/RTL wordmark and application tests; illustrative only.
 - PNG review renders accompany each SVG in the same folder. Shared Arabic-waw compact candidate remains unvalidated and is not an approved icon.
 - [Exact 36×36px icon A test](08-visual-identity/graphic-system/DIRECTION_A_CLEAR_CARRY_ICON_36PX_V0.1.svg) and [B test](08-visual-identity/graphic-system/DIRECTION_B_ARABIC_FIRST_ICON_36PX_V0.1.svg), with exact-size PNGs — identical underlying waw initial treatment; exact-size desk view still looks numeral-like without wordmark. Neither is approved.
+
+## Creative Refinement Round 2 — 2026-10-25
+- [Arabic owner report](08-visual-identity/ROUND2_CREATIVE_REFINEMENT_REPORT_AR_V0.1.md) — rejects both custom Arabic trials, prefers R3 over R2-C as Latin craft, retains A-first only as a hierarchy hypothesis, and requires owner/native-reader authorization.
+- [Wordmark and bilingual lockup board SVG](08-visual-identity/typography/ROUND2_FINAL_WORDMARK_AND_LOCKUP_BOARD_V0.1.svg) and PNG — actual editable custom paths, R2-C assessment, Arabic reference, rejected Arabic paths, R3 Latin, Latin-first and Arabic-first arrangements.
+- [Compact mark size-test board SVG](08-visual-identity/ROUND2_COMPACT_MARK_STRESS_TEST_V0.1.svg) and PNG — three materially different candidates, rendered at exact 24/36/48/72 px; none approved; candidate 02 only advances to native-reader testing.
+- [Arabic shaping reference board SVG](08-visual-identity/typography/ARABIC_REFERENCE_VS_CUSTOM_LETTERING_ROUND2_V0.1.svg) and PNG — reference live-font specimen versus original trials; not an adoption proposal.

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+<rect width="1200" height="700" fill="#F6F3EC"/>
+<text x="60" y="70" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172B3A">ARABIC LETTERFORM REFERENCE · ROUND 2 · WORKING STUDY</text>
+<text x="60" y="120" font-family="Arial,sans-serif" font-size="15" fill="#52616B">Correct word order and segmentation: left-to-right view = isolated ل · joined و + ص segment · isolated rightmost و.</text>
+<rect x="50" y="160" width="1100" height="200" rx="18" fill="#FFFFFF"/>
+<text x="80" y="205" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#52616B">ARABIC TYPESETTING · FOR ANATOMY / READABILITY REFERENCE ONLY</text>
+<text x="600" y="325" text-anchor="middle" direction="rtl" unicode-bidi="plaintext" font-family="Arabic Typesetting,serif" font-size="116" fill="#163C46">وصول</text>
+<rect x="50" y="390" width="1100" height="235" rx="18" fill="#FFFFFF"/>
+<text x="80" y="435" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#52616B">SEGMENT MAP — DO NOT USE AS FINAL LOGO</text>
+<rect x="170" y="475" width="145" height="105" rx="12" fill="#E0EBE5"/><text x="242" y="550" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#163C46">isolated lam</text>
+<rect x="400" y="475" width="355" height="105" rx="12" fill="#D4E2DD"/><text x="577" y="520" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#163C46">joined waw + sad</text><text x="577" y="548" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#52616B">single connected segment</text>
+<rect x="850" y="475" width="145" height="105" rx="12" fill="#E0EBE5"/><text x="922" y="550" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#163C46">isolated waw</text>
+<text x="575" y="660" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#52616B">W3C Arabic layout and Microsoft OpenType guidance reviewed · custom artwork must preserve recognizable anatomy.</text>
+</svg>
