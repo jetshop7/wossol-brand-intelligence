@@ -142,3 +142,6 @@ The files above are distinct evidence layers, not duplicate copies.
 - [V0.7 Compact S and Arabic Context](08-visual-identity/logo/COMPACT_S_CONTEXT_AND_ARABIC_PAIRING_V0.7.md) — targeted desk comparison, no approval.
 - [V0.8 Exact 36px Icon and Arabic Shaping QA](08-visual-identity/logo/EXACT_36PX_COMPACT_ICON_AND_ARABIC_SHAPING_QA_V0.8.md) — pixel-accurate icon exports and code-informed sidebar simulation; font-derived Arabic only.
 - [V0.8 S 36px SVG](08-visual-identity/logo/V08_S_36PX_DARK.svg) and [V0.8 W 36px SVG](08-visual-identity/logo/V08_W_36PX_DARK.svg) — experimental assets, neither approved.
+
+- [Original Arabic Lettering Construction V0.9](08-visual-identity/typography/ORIGINAL_ARABIC_LETTERING_CONSTRUCTION_V0.9.md) — manually constructed Arabic Bézier study, critical rejection of current optical quality, no logo approval.
+- [V0.9 Arabic Hand-Constructed SVG](08-visual-identity/typography/ARABIC_HAND_CONSTRUCTED_V09.svg) — editable original-path Arabic experiment; not production ready.
