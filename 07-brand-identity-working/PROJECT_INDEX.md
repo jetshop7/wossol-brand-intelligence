@@ -121,3 +121,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Arabic A Geometric + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_A_GEOMETRIC_WITH_C_V0.1.svg) and [Arabic B Humanist + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_B_HUMANIST_WITH_C_V0.1.svg) — editable exploratory vectors with live Arabic text; local outlined versions supplied separately.
 
 - [Merchant First-Read Pilot and Real UI Gate V0.1](11-validation/MERCHANT_FIRST_READ_PILOT_STIMULI_AND_REAL_UI_GATE_V0.1.md) — four blinded stimuli, counterbalanced order and empty results sheet delivered in conversation; real merchant shell evidence verified; zero participants.
+
+- [Offline Merchant First-Read Runner V0.1](11-validation/MERCHANT_FIRST_READ_OFFLINE_RUNNER_V0.1.md) — browser tool specification and test verification; executable HTML and ZIP supplied in conversation only, not stored in GitHub.
