@@ -162,3 +162,10 @@ The files above are distinct evidence layers, not duplicate copies.
 - [V1.7 Dual Aperture test](08-visual-identity/graphic-system/DUAL_APERTURE_SIGNATURE_TEST_V1.7.md) and [editable SVG board](08-visual-identity/graphic-system/V17_DUAL_APERTURE_TEST.svg) — original R2-C O-derived signature test, not approved.
 
 - [V1.8 Compact/Bilingual Gate](08-visual-identity/graphic-system/COMPACT_BILINGUAL_GATE_V1.8.md) and [editable SVG](08-visual-identity/graphic-system/V18_COMPACT_BILINGUAL_GATE.svg) — paired-O icon candidate REJECTED, no identity approval.
+
+## Complete identity directions — 2026-10-25
+- [Two Full Brand Identity Directions — Creative Review V0.1](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_CREATIVE_REVIEW_V0.1.md) — comparative evidence, previous-round audit, two system descriptions, application assessment, provisional recommendation, usage hypotheses and unresolved validation/legal gates. Neither direction is approved.
+- [Executive Report in Arabic V0.1](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_EXECUTIVE_REPORT_AR_V0.1.md) — Arabic owner-facing summary, assets, research limitations, comparison, recommendation and open gates.
+- [Direction A — Clear Carry board](08-visual-identity/graphic-system/DIRECTION_A_CLEAR_CARRY_BOARD_V0.1.svg) and [mobile navigation study](08-visual-identity/graphic-system/DIRECTION_A_CLEAR_CARRY_MOBILE_NAV_V0.1.svg) — editable Latin-led wordmark and application tests; illustrative only.
+- [Direction B — Arabic-First Capability board](08-visual-identity/graphic-system/DIRECTION_B_ARABIC_FIRST_CAPABILITY_BOARD_V0.1.svg) and [mobile navigation study](08-visual-identity/graphic-system/DIRECTION_B_ARABIC_FIRST_MOBILE_NAV_V0.1.svg) — editable Arabic-led/RTL wordmark and application tests; illustrative only.
+- PNG review renders accompany each SVG in the same folder. Shared Arabic-waw compact candidate remains unvalidated and is not an approved icon.

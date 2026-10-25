@@ -1,12 +1,12 @@
 # Brand Identity Project Status
 
 **Date:** 2026-10-25
-**Status:** UNDER_REVIEW — V1.8 REJECT PAIRED-O
+**Status:** UNDER_REVIEW — TWO FULL IDENTITY DIRECTIONS V0.1 READY FOR COMPARATIVE OWNER REVIEW
 **Repository:** jetshop7/wossol-brand-intelligence (PUBLIC)
-**Scope:** Full brand identity work; V1.3 design exploration, no visual system or logo approved.
+**Scope:** Full brand identity work; two V0.1 identity systems in comparative review, no visual system or logo approved.
 
 ## Current authoritative stage and next action (2026-10-25)
-V1.3 [graphic grammar cross-application test](08-visual-identity/graphic-system/GRAPHIC_GRAMMAR_CROSS_APPLICATION_TEST_V1.3.md) completed. A/Open Field REJECT; B/Reference Frame TEST only, not an ownable symbol; overall REFRAME. Three experimental SVGs committed. V1.2 remains the preceding bilingual architecture study. **Next:** develop and test distinctive identity behavior across Arabic/Latin hierarchy and realistic merchant-product constraints rather than S/W, arrows, or crop-mark icons. No logo/icon/palette approved. Historical status chronology below is preserved for audit.
+V1.8 [compact/bilingual gate](08-visual-identity/graphic-system/COMPACT_BILINGUAL_GATE_V1.8.md) rejected the paired-O compact candidate; no logo or icon is approved. The current [two-direction creative review](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_CREATIVE_REVIEW_V0.1.md) develops A/Clear Carry (Latin-led, existing R2-C wordmark) and B/Arabic-First Capability (Arabic-led, separate RTL system) through editable desktop, marketing and mobile applications. A is the assistant's provisional refinement lead only; B remains a live alternative; the shared initial-only waw avatar is an unresolved compact-signature gap. **Next:** owner review, then build and test a proprietary compact/wordmark relationship; obtain native Arabic review, typography licensing/contrast checks and a broader dated visual benchmark. No design is selected or approved. Historical status chronology below is preserved for audit.
 
 ## Confirmed by user
 - Hybrid model: Wossol as both commercial operating partner and merchant-controlled platform.
@@ -20,13 +20,14 @@ V1.3 [graphic grammar cross-application test](08-visual-identity/graphic-system/
 - 'Merchant-Led Progress' and 'Expanding Merchant Capability' are hypotheses, not approved essence.
 
 ## Current step
-Completed comparative essence assessment V0.4. Lead **assistant hypothesis**, not user-approved: expanding merchant capability to trade and lead. Merchant validation and audience segmentation remain pending.
+Completed two materially different full-system identity explorations in V0.1. Comparative recommendation: refine A first while preserving B as a genuine alternative. Both remain exploratory and share an unresolved, unvalidated compact mark. No identity elements have owner approval. Merchant interviews are optional under D-014; no audience validation is claimed.
 
 ## Next actions
-1. Review [Brand Essence Comparative Assessment V0.4](04-brand-strategy/BRAND_ESSENCE_COMPARATIVE_ASSESSMENT_V0.4.md); test its claims against merchant research and actual product capabilities.
-2. Run merchant discovery/positioning tests before final claims.
-3. Build naming strategy and evaluate the temporary Wossol name alongside alternatives.
-4. Update this status, decision log, index and changelog after substantive progress.
+1. Obtain owner feedback on [Two Full Brand Identity Directions V0.1](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_CREATIVE_REVIEW_V0.1.md); no direction or element is approved.
+2. Develop a distinctive compact-signature route and complete bilingual wordmark lockup; re-test sizes and light/dark behavior.
+3. Validate real Arabic/Latin type families, licensing, native Arabic copy, contrast and mobile responsive behavior.
+4. Expand the first-party competitor visual benchmark and complete legal trademark clearance before public identity rollout.
+5. Continue evidence-bounded positioning and capability work; do not turn schematic mockup copy or data into product claims.
 
 ## Evidence boundary
 Historical intelligence supports bounded connected workflows, scoped merchant agency, accountability and qualitative reduction of repeated work; broad market intelligence, universal control and guaranteed outcomes are not verified current claims.
@@ -199,3 +200,6 @@ V1.4 bilingual editorial prototype SVG and short review saved; generic hierarchy
 
 ## 2026-10-25 — V1.7 reconciliation and V1.8 compact/bilingual gate
 V1.7 paired-O remains archived as exploratory, and [V1.8 assessment](08-visual-identity/graphic-system/COMPACT_BILINGUAL_GATE_V1.8.md) with [SVG board](08-visual-identity/graphic-system/V18_COMPACT_BILINGUAL_GATE.svg) documents its compact/Arabic pairing shortcomings. Verdict: REJECT the paired-O compact icon candidate; no approved brand design. Next: genuinely new strategy-led creative territory and wider software visual benchmark. No production code changes.
+
+## 2026-10-25 — Two complete identity directions V0.1
+Produced two materially different wordmark-led systems: A/Clear Carry (Latin-led, existing R2-C wordmark) and B/Arabic-First Capability (Arabic-led, separate RTL hierarchy), each with an editable bilingual board, website/dashboard/social applications, and mobile navigation prototype. [Comparative critical review and provisional guidance](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_CREATIVE_REVIEW_V0.1.md) recommends A as a refinement lead only while keeping B live. Both share the same initial-only waw icon test and fail to resolve the compact-ownability/recognition gap; no design, claim, font, palette or logo is approved. Schematic data/UI, native Arabic review, type license, contrast, merchant validation and name clearance remain outstanding.

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+<title>Wossol identity direction A — Clear Carry — exploratory system board</title>
+<desc>Editable concept board with provisional bilingual wordmark, compact Arabic waw avatar test, merchant dashboard, prospective website, social post and palette. Not approved.</desc>
+<defs>
+  <style>
+    .sans{font-family:Segoe UI,Arial,sans-serif}.arabic{font-family:Segoe UI,Arial,sans-serif}
+    .ink{fill:#142B2B}.muted{fill:#64716D}.paper{fill:#F5F2EA}.white{fill:#FFFFFF}.lime{fill:#D9F064}
+    .label{font-size:13px;letter-spacing:2px;font-weight:700}.small{font-size:15px}.body{font-size:19px}.title{font-size:44px;font-weight:650;letter-spacing:-1.5px}
+  </style>
+</defs>
+<rect width="1600" height="1200" fill="#E7E7E0"/>
+<rect x="40" y="40" width="1520" height="1120" rx="26" fill="#F5F2EA"/>
+<text x="92" y="98" class="sans ink label">WOSSOL / وصول</text>
+<text x="1508" y="98" text-anchor="end" class="sans muted label">DIRECTION A · CLEAR CARRY · UNDER REVIEW · 25 OCT 2026</text>
+<line x1="92" y1="122" x2="1508" y2="122" stroke="#C9CDC4"/>
+
+<!-- Primary lockup -->
+<text x="100" y="174" class="sans muted label">PRIMARY WORDMARK · LATIN-LED</text>
+<g transform="translate(96 198) scale(1.18)" fill="#142B2B">
+  <path d="M12 20 H29 L42 77 L59 42 L70 42 L87 77 L100 20 H117 L98 101 H82 L64 67 L47 101 H30 Z"/>
+  <path fill-rule="evenodd" d="M143 48 H174 L188 61 V86 L174 100 H143 L129 86 V62 Z M149 61 L142 68 V81 L149 88 H168 L175 81 V67 L169 61 Z"/>
+  <path d="M207 49 H242 L249 61 H221 L217 66 L222 71 H238 L252 83 L252 90 L241 101 H207 L199 88 H232 L237 83 L232 78 H215 L201 66 L201 60 Z"/>
+  <path d="M267 49 H302 L309 61 H281 L277 66 L282 71 H298 L312 83 L312 90 L301 101 H267 L259 88 H292 L297 83 L292 78 H275 L261 66 L261 60 Z"/>
+  <path fill-rule="evenodd" d="M336 48 H367 L381 61 V86 L367 100 H336 L322 86 V62 Z M342 61 L335 68 V81 L342 88 H361 L368 81 V67 L362 61 Z"/>
+  <path d="M401 20 H416 V85 L423 88 H447 V101 H417 L401 91 Z"/>
+</g>
+<text x="745" y="275" text-anchor="end" direction="rtl" unicode-bidi="plaintext" class="arabic ink" font-size="70" font-weight="600">وصول</text>
+<text x="100" y="350" class="sans muted small">Original R2-C angular wordmark reused as a research lead; custom Arabic lettering is not supplied by this board.</text>
+
+<!-- Compact avatar test -->
+<rect x="1186" y="155" width="270" height="210" rx="18" fill="#FFFFFF" stroke="#D7D9D1"/>
+<text x="1212" y="188" class="sans muted label">COMPACT / APP ICON TEST</text>
+<rect x="1214" y="211" width="72" height="72" rx="18" fill="#142B2B"/>
+<text x="1250" y="265" text-anchor="middle" direction="rtl" unicode-bidi="plaintext" class="arabic lime" font-size="45" font-weight="650">و</text>
+<rect x="1304" y="229" width="36" height="36" rx="9" fill="#142B2B"/>
+<text x="1322" y="255" text-anchor="middle" direction="rtl" unicode-bidi="plaintext" class="arabic lime" font-size="24" font-weight="650">و</text>
+<text x="1213" y="317" class="sans muted small">Arabic initial only; legibility / recall</text>
+<text x="1213" y="340" class="sans muted small">unverified. Not the former arrow logo.</text>
+
+<!-- Thesis -->
+<rect x="92" y="389" width="1416" height="94" rx="18" fill="#142B2B"/>
+<text x="122" y="422" class="sans lime label">CREATIVE IDEA · WORDMARK AS THE SIGNATURE</text>
+<text x="122" y="458" class="sans white body">Let the bilingual name do the identifying; use calm editorial hierarchy to make complex work easier to scan.</text>
+
+<!-- Website application -->
+<rect x="92" y="510" width="830" height="360" rx="18" fill="#FFFFFF" stroke="#D7D9D1"/>
+<rect x="92" y="510" width="830" height="44" rx="18" fill="#ECEDE7"/>
+<circle cx="117" cy="532" r="5" fill="#B9BDB5"/><circle cx="136" cy="532" r="5" fill="#B9BDB5"/><circle cx="155" cy="532" r="5" fill="#B9BDB5"/>
+<text x="126" y="594" class="sans ink label">PROSPECTIVE WEBSITE · NOT A LIVE SITE</text>
+<text x="126" y="658" class="sans ink title">Commerce work,</text>
+<text x="126" y="708" class="sans ink title">kept in context.</text>
+<text x="126" y="752" class="sans muted body">A merchant operating workspace with selected</text>
+<text x="126" y="781" class="sans muted body">commerce and operational workflows.</text>
+<rect x="126" y="811" width="180" height="38" rx="19" fill="#D9F064"/>
+<text x="216" y="836" text-anchor="middle" class="sans ink small" font-weight="700">EXPLORE WORKFLOWS</text>
+<rect x="660" y="590" width="208" height="222" rx="14" fill="#F5F2EA"/>
+<text x="682" y="623" class="sans muted label">TODAY</text>
+<text x="682" y="664" class="sans ink" font-size="28" font-weight="650">Orders</text>
+<text x="682" y="697" class="sans muted small">Needs confirmation</text>
+<rect x="682" y="716" width="158" height="10" rx="5" fill="#D8DDD3"/><rect x="682" y="716" width="98" height="10" rx="5" fill="#142B2B"/>
+<text x="682" y="770" class="sans ink small" font-weight="650">Review activity</text>
+
+<!-- Dashboard application -->
+<rect x="950" y="510" width="558" height="360" rx="18" fill="#FFFFFF" stroke="#D7D9D1"/>
+<rect x="950" y="510" width="558" height="45" rx="18" fill="#142B2B"/>
+<text x="975" y="539" class="sans lime small" font-weight="700">WOSSOL</text>
+<text x="1482" y="539" text-anchor="end" class="sans white small">Workspace ▾</text>
+<rect x="950" y="555" width="144" height="315" fill="#F1F0E9"/>
+<rect x="968" y="577" width="108" height="34" rx="9" fill="#D9F064"/>
+<text x="985" y="600" class="sans ink small" font-weight="700">Overview</text>
+<text x="982" y="644" class="sans muted small">Orders</text><text x="982" y="681" class="sans muted small">Inventory</text><text x="982" y="718" class="sans muted small">Finance</text>
+<text x="1120" y="596" class="sans ink" font-size="23" font-weight="650">Good morning</text>
+<text x="1120" y="625" class="sans muted small">A current view of selected operations</text>
+<rect x="1120" y="650" width="160" height="92" rx="12" fill="#F5F2EA"/>
+<text x="1137" y="677" class="sans muted label">ORDERS</text><text x="1137" y="718" class="sans ink" font-size="28" font-weight="650">128</text>
+<rect x="1294" y="650" width="184" height="92" rx="12" fill="#F5F2EA"/>
+<text x="1311" y="677" class="sans muted label">COLLECTION REVIEW</text><text x="1311" y="718" class="sans ink" font-size="22" font-weight="650">12 items</text>
+<text x="1120" y="785" class="sans ink small" font-weight="650">Evidence stays separate from the summary.</text>
+<text x="1120" y="814" class="sans muted small">Counts and copy are schematic placeholders.</text>
+
+<!-- Social application -->
+<rect x="92" y="896" width="420" height="216" rx="18" fill="#D9F064"/>
+<rect x="112" y="916" width="34" height="34" rx="9" fill="#142B2B"/>
+<text x="129" y="941" text-anchor="middle" direction="rtl" unicode-bidi="plaintext" class="arabic lime" font-size="23" font-weight="650">و</text>
+<text x="158" y="940" class="sans ink small" font-weight="700">Wossol / وصول</text>
+<text x="122" y="1000" class="sans ink" font-size="27" font-weight="650">From order to</text>
+<text x="122" y="1033" class="sans ink" font-size="27" font-weight="650">what happens next.</text>
+<text x="122" y="1080" class="sans ink small">SOCIAL / PROMOTIONAL MOCKUP · COPY HYPOTHESIS</text>
+
+<!-- palette + system -->
+<rect x="548" y="896" width="960" height="216" rx="18" fill="#FFFFFF" stroke="#D7D9D1"/>
+<text x="576" y="934" class="sans muted label">PROVISIONAL COLOR &amp; TYPE SYSTEM</text>
+<rect x="578" y="956" width="98" height="58" rx="10" fill="#142B2B"/><text x="627" y="1040" text-anchor="middle" class="sans muted small">#142B2B</text>
+<rect x="695" y="956" width="98" height="58" rx="10" fill="#D9F064"/><text x="744" y="1040" text-anchor="middle" class="sans muted small">#D9F064</text>
+<rect x="812" y="956" width="98" height="58" rx="10" fill="#F5F2EA" stroke="#D7D9D1"/><text x="861" y="1040" text-anchor="middle" class="sans muted small">#F5F2EA</text>
+<rect x="929" y="956" width="98" height="58" rx="10" fill="#C2614B"/><text x="978" y="1040" text-anchor="middle" class="sans muted small">#C2614B</text>
+<text x="1080" y="980" class="sans ink" font-size="22" font-weight="650">Latin: humanist grotesk</text>
+<text x="1080" y="1014" class="sans muted body">Arabic: Naskh/humanist candidate</text>
+<text x="1080" y="1051" class="sans muted small">Use dark ink for long text; lime for focus only.</text>
+<text x="1080" y="1076" class="sans muted small">Font licensing / contrast / native reading unverified.</text>
+<text x="92" y="1140" class="sans muted small">DESK PROTOTYPE ONLY · No live-site, merchant, recognition, legal, font-license, or production validation.</text>
+<text x="1508" y="1140" text-anchor="end" class="sans muted label">A / 01</text>
+</svg>

@@ -139,3 +139,4 @@
 - 2026-10-25: V1.7 built paired O-contour candidate directly from original R2-C SVG, with reversed and compact size board; verdict TEST due generic ring risk and insufficient validation. No visual approval.
 
 - 2026-10-25: V1.8 created compact/RTL stress SVG and assessment; rejected V1.7 paired-O compact icon as weak at 36px and not a distinctive bilingual identity. No user approval.
+- 2026-10-25: Completed two materially different bilingual identity systems V0.1 (Latin-led Clear Carry and Arabic-first Capability) with editable desktop, marketing and mobile application assets, critical comparison, provisional usage guidance, official first-party benchmark notes and Arabic executive report. A is only a refinement lead; B remains an alternative. Shared initial-only waw avatar remains an unresolved, unvalidated compact mark. No identity approval, merchant validation, type-license or legal clearance claimed.
