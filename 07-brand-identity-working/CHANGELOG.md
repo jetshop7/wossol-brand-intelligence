@@ -111,3 +111,5 @@
 - 2026-10-25: Audited offline merchant runner and found V0.1 Latin-first bias and skipped Arabic comparison. Released and browser-tested V0.2 with balanced script order, both comparisons and response/recall gates; no participant data.
 
 - 2026-10-25: User authorized proceeding without merchant interviews; pilot now optional, full identity design resumes.
+
+- 2026-10-25: Built two full monochrome logo system prototypes with bilingual/sidebar and 24–128px icon checks. Archived vector icon sources; rejected both symbols as insufficiently distinctive and recommended continued C typography research.
