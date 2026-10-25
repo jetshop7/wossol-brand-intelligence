@@ -148,3 +148,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Arabic Anatomy Correction V1.0](08-visual-identity/typography/ARABIC_ANATOMY_CORRECTION_AND_BILINGUAL_QA_V1.0.md) — correct Arabic shaping reference, optical test and bilingual QA; no approval.
 
 - [Arabic Customization Stress Test V1.1](08-visual-identity/typography/ARABIC_CUSTOMIZATION_STRESS_TEST_V1.1.md) — correct Arabic typeface outlines compared with two rejected geometric cut treatments; local SVG/PNG package delivered, no logo approval.
+
+- [Bilingual Logo Architecture and Application QA V1.2](08-visual-identity/logo/BILINGUAL_LOGO_ARCHITECTURE_AND_APPLICATION_QA_V1.2.md) — Latin/Arabic primary, side-by-side bilingual, merchant shell and social/avatar gap; SVG/PNG board and 160/240/400px local ZIP; no approval.
