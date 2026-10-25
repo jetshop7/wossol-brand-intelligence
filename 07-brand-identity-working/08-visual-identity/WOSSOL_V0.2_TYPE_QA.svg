@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1480" viewBox="0 0 1800 1480">
+<title>Wossol V0.2 exact typography proof — local variable fonts</title>
+<desc>Static image rendered with included Inter 4.1 and Noto Sans Arabic 2.012 variable fonts. Shows Latin and Arabic hierarchy, mixed-script shaping and small interface labels. Not native-reader or live-browser validation.</desc>
+<defs><style>
+@font-face{font-family:WossolInter;src:url('fonts/Inter-4.1-Variable.ttf') format('truetype');font-weight:100 900}
+@font-face{font-family:WossolArabic;src:url('fonts/NotoSansArabic-2.012-Variable.ttf') format('truetype');font-weight:100 900}
+.bg{fill:#F7F6F0}.paper{fill:#fff}.ink{fill:#153B3A}.body{fill:#21302E}.muted{fill:#62716F}.lime{fill:#D7F06A}.night{fill:#0E2528}.line{stroke:#D4DDD7;stroke-width:2}.kicker{font:650 14px WossolInter,Arial,sans-serif;letter-spacing:1px}.h1{font:700 48px WossolInter,Arial,sans-serif;letter-spacing:-1px}.h2{font:650 32px WossolInter,Arial,sans-serif;letter-spacing:-.5px}.body16{font:400 16px WossolInter,Arial,sans-serif}.body14{font:450 14px WossolInter,Arial,sans-serif}.label12{font:650 12px WossolInter,Arial,sans-serif;letter-spacing:.5px}.ar32{font:550 32px WossolArabic,Arial,sans-serif}.ar20{font:450 20px WossolArabic,Arial,sans-serif}.ar16{font:450 16px WossolArabic,Arial,sans-serif}.ar13{font:450 13px WossolArabic,Arial,sans-serif}.mixed{font:450 18px WossolArabic,Arial,sans-serif}
+</style></defs>
+<rect width="1800" height="1480" class="bg"/>
+<rect x="48" y="48" width="1704" height="145" rx="22" class="night"/><text x="88" y="100" class="kicker" fill="#D7F06A">WOSSOL · TYPOGRAPHY QA · V0.2</text><text x="88" y="153" class="h2" fill="#fff">Exact local fonts · static vector rendering · no system-font substitution</text>
+<rect x="48" y="228" width="810" height="840" rx="22" class="paper line"/><text x="88" y="280" class="kicker ink">LATIN · INTER 4.1 VARIABLE · OPSZ / WEIGHT</text>
+<text x="88" y="365" class="h1 ink">International trade expertise.</text><text x="88" y="410" class="body14 muted">48 px display · fitted line · heading 1.17 rhythm</text>
+<text x="88" y="500" class="h2 ink">Professional relationships.</text><text x="88" y="543" class="body16 body">32 px heading / 40 px line rhythm; spaced punctuation kept plain.</text>
+<text x="88" y="627" class="body16 body">Wossol Export works across international trade and export.</text><text x="88" y="655" class="body16 body">0123456789 · AVATAR · Catalog / Favorites / Settings</text><text x="88" y="690" class="body14 muted">16 px body / 28 px line separation · mixed numerals and punctuation.</text>
+<line x1="88" y1="735" x2="818" y2="735" stroke="#E5EAE5" stroke-width="2"/><text x="88" y="795" class="kicker muted">SMALL LABEL — 12 PX</text><text x="88" y="840" class="label12 ink">INTERNATIONAL TRADE &amp; EXPORT · CONTACT US</text>
+<text x="88" y="920" class="body14 body">Handoff to product surfaces: preserve letter spacing on headings,</text><text x="88" y="946" class="body14 body">avoid tracking on paragraphs and dense product data.</text>
+<rect x="88" y="985" width="730" height="54" rx="10" fill="#153B3A"/><text x="118" y="1019" font-family="WossolInter" font-size="16" font-weight="650" fill="#fff">Contact Us</text><text x="754" y="1019" text-anchor="end" class="body14" fill="#D7F06A">Harbor / paper: 12.22:1</text>
+
+<rect x="888" y="228" width="864" height="840" rx="22" class="paper line"/><text x="928" y="280" class="kicker ink">ARABIC · NOTO SANS ARABIC 2.012 VARIABLE · RTL</text>
+<text x="1698" y="365" text-anchor="start" direction="rtl" unicode-bidi="plaintext" class="ar32 ink">خبرة في التجارة الدولية.</text><text x="928" y="410" class="body14 muted">32 px display · default Noto Arabic shaping · Arabic site hero string</text>
+<text x="1698" y="500" text-anchor="start" direction="rtl" unicode-bidi="plaintext" class="ar20 body">علاقات مهنية قوية. فرص أعمال حقيقية.</text><text x="928" y="543" class="body14 muted">20 px support copy · separated by generous baselines</text>
+<text x="1698" y="627" text-anchor="start" direction="rtl" unicode-bidi="plaintext" class="ar16 body">شركة جزائرية للتجارة الدولية والتصدير.</text><text x="928" y="672" class="body14 muted">16 px body specimen · 32 px line interval for Arabic</text>
+<line x1="928" y1="710" x2="1712" y2="710" stroke="#E5EAE5" stroke-width="2"/><text x="1698" y="777" text-anchor="start" direction="rtl" unicode-bidi="plaintext" class="mixed ink">وصول إكسبورت · Wossol Export · 2026</text><text x="928" y="815" class="body14 muted">Mixed Arabic / Latin / numerals · bidi placement remains a browser QA item.</text>
+<text x="1698" y="900" text-anchor="start" direction="rtl" unicode-bidi="plaintext" class="ar13 body">الأسواق الدولية · فرص الأعمال الدولية · تواصل معنا</text><text x="928" y="942" class="body14 muted">13 px nav labels: legible in raster proof at 1×; small Android/iOS checks pending.</text>
+<rect x="928" y="985" width="784" height="54" rx="10" fill="#153B3A"/><text x="1690" y="1020" text-anchor="start" direction="rtl" unicode-bidi="plaintext" class="ar16" fill="#fff">تواصل معنا</text><text x="950" y="1020" class="body14" fill="#D7F06A">Arabic CTA · 16 px</text>
+
+<rect x="48" y="1108" width="1704" height="300" rx="22" class="night"/><text x="88" y="1160" class="kicker" fill="#D7F06A">QA RESULT · CHECKED IN THE RENDERED PNG</text>
+<text x="88" y="1218" class="body16" fill="#fff">Inter and Noto Sans Arabic loaded from the bundled local TTF files; local font face vs Arial produced a different raster result.</text>
+<text x="88" y="1260" class="body16" fill="#fff">Arabic joins and shaping are visible at 32 / 20 / 16 / 13 px. No disconnected or missing glyph was observed in these specimens.</text>
+<text x="88" y="1302" class="body16" fill="#fff">Mixed-script direction, line metrics, actual Chromium rendering and native Arabic-reader acceptance are NOT validated by this static image.</text>
+<text x="88" y="1354" class="body14" fill="#B9CBC5">Sources and versions: included Inter 4.1 / Noto Sans Arabic 2.012 variable fonts; accompanying OFL notices are preserved in fonts/.</text>
+<text x="48" y="1450" class="kicker muted">TEST SPECIMENS USE PUBLIC-SITE ARABIC/ENGLISH COPY · FONT RENDERING IS REAL · PRODUCT RUNTIME BEHAVIOR IS NOT CLAIMED</text>
+</svg>

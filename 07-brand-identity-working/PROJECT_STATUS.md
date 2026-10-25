@@ -1,11 +1,14 @@
 # Brand Identity Project Status
 
 **Date:** 2026-10-25
-**Status:** UNDER_REVIEW — COMPLETE VISUAL IDENTITY PROPOSAL READY FOR OWNER REVIEW; NO IDENTITY APPROVED
+**Status:** UNDER_REVIEW — V0.2 REAL-PRODUCT APPLICATIONS AND TYPE QA COMPLETE; OWNER REVIEW REQUIRED; NO IDENTITY APPROVED
 **Repository:** jetshop7/wossol-brand-intelligence (PUBLIC)
 **Scope:** Latin WOSSOL wordmark and compact mark production; custom Arabic lettering is deferred, not rejected or approved.
 
-## Current authoritative stage and next action (2026-10-25)
+## Current authoritative stage and next action (2026-10-25 — V0.2)
+Completed [Visual Identity V0.2 Real-Product Validation](08-visual-identity/WOSSOL_V0.2_REAL_PRODUCT_VALIDATION_REPORT_AR.md), with editable product and marketing application boards, rendered previews, and typography proof. The source check used `jetshop7/wossol-app` `dev/private-catalog` at `4f20c18d964bbac383de8bf30c84344734ba3980` (read-only). The inspected product is Wossol Export with a public international-trade site, gated client catalog, and partner pricing workspace; no user-facing Orders or Inventory routes were found in the inspected route tree, and `/admin/marketing` is market-study/report tooling, not ad analytics. Boards are code-derived concepts, not runtime screenshots. Inter 4.1 and Noto Sans Arabic 2.012 are packaged with OFL notices for proposal rendering; browser font behavior and native Arabic readability remain unverified. The generic W fallback was rejected; no compact mark is approved. **Next:** owner resolves product/brand scope, existing app-logo compatibility, and whether to test the provisional A/Clear Stroke palette/type system further. No colors, fonts, logo, icon or application are approved.
+
+### Previous V0.1 stage (historical; superseded by V0.2 source validation)
 Completed the [Complete Visual Identity System Proposal V0.1](08-visual-identity/VISUAL_IDENTITY_EXECUTIVE_REPORT_AR_V0.1.md), with the editable [SVG board](08-visual-identity/WOSSOL_COMPLETE_VISUAL_IDENTITY_SYSTEM_V0.1.svg), rendered [PNG board](08-visual-identity/WOSSOL_COMPLETE_VISUAL_IDENTITY_SYSTEM_V0.1.png), and [concise usage guidelines](08-visual-identity/VISUAL_IDENTITY_GUIDELINES_V0.1.md). The proposal carries forward A / Clear Stroke as a provisional Latin-first wordmark, introduces the Evidence Thread / Open Record graphic grammar, tests a restrained palette and licensed type proposals, and shows six synthetic application concepts. **Next:** owner review of the concept, palette, type pairing, copy, and whether an independent compact mark is required; install and render exact proposed fonts, then conduct accessibility, product-truth and native-language checks before any deployment. No logo, icon, color system, font system, or applications are approved.
 
 Arabic custom lettering is deferred, not rejected or approved. The existing [Arabic Wordmark Specialist Handoff V0.1](08-visual-identity/typography/ARABIC_WORDMARK_SPECIALIST_HANDOFF_V0.1.md) remains preserved for a later phase. No custom Arabic candidate or native-reader validation is claimed.
@@ -28,12 +31,12 @@ V1.8 [compact/bilingual gate](08-visual-identity/graphic-system/COMPACT_BILINGUA
 - 'Merchant-Led Progress' and 'Expanding Merchant Capability' are hypotheses, not approved essence.
 
 ## Current step
-Complete visual identity proposal V0.1 is ready for owner review. A / Clear Stroke is a provisional Latin wordmark, not an approved logo; no standalone icon is approved, and the W avatar is a temporary prototype fallback only. Arabic custom lettering is deferred, not rejected or approved. Merchant research is not represented as having validated this proposal.
+V0.2 real-product applications and typography assets are ready for owner review. A / Clear Stroke remains provisional, not an approved logo. The generic W fallback was rejected as a distinctive mark; no standalone icon is approved. Arabic custom lettering is deferred, not rejected or approved. No merchant research is represented as validating this proposal.
 
 ## Next actions
-1. Obtain owner direction on the proposed visual principle, palette, Inter/Noto Sans Arabic pairing, provisional A wordmark, applications and whether a standalone compact mark is required.
-2. If authorized, install the exact fonts and rerender; validate application concepts against current product truth and real layouts before any production use.
-3. Complete native-language and accessibility review, actual-browser contrast/focus checks, typography packaging/license review and legal trademark clearance before public identity rollout.
+1. Obtain owner direction on product/brand scope, application of the current Wossol Export identity, provisional A wordmark, palette/type proposals, and evidence for any standalone compact-mark need.
+2. If authorized, test the V0.2 proposals against running product layouts and actual target devices; current application boards are not runtime captures.
+3. Complete native-language and browser accessibility review, actual focus/contrast checks, typography packaging/license confirmation and legal trademark clearance before public rollout.
 4. Keep Arabic custom lettering deferred. When resumed, use the saved specialist handoff and obtain native-reader assessment; do not present font specimens as custom lettering.
 5. Continue evidence-bounded positioning and capability work; do not turn schematic mockup copy or data into product claims.
 

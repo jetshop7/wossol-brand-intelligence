@@ -37,6 +37,12 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Complete Visual Identity System V0.1 — SVG](08-visual-identity/WOSSOL_COMPLETE_VISUAL_IDENTITY_SYSTEM_V0.1.svg) and [PNG preview](08-visual-identity/WOSSOL_COMPLETE_VISUAL_IDENTITY_SYSTEM_V0.1.png) — editable identity board and inspected render; provisional only.
 - [Visual Identity Guidelines V0.1](08-visual-identity/VISUAL_IDENTITY_GUIDELINES_V0.1.md) — palette/contrast, typography, graphic grammar, application and governance rules (UNDER_REVIEW).
 
+## Visual Identity V0.2 — Real-Product Validation & Production — 2026-10-25
+- [Arabic Validation Report V0.2](08-visual-identity/WOSSOL_V0.2_REAL_PRODUCT_VALIDATION_REPORT_AR.md) — pinned Product source state, truthful route/surface validation, typography/licensing and contrast limits, compact-mark decision, and owner gates (UNDER_REVIEW).
+- [Product Applications — SVG](08-visual-identity/WOSSOL_V0.2_PRODUCT_APPLICATIONS.svg) and [PNG](08-visual-identity/WOSSOL_V0.2_PRODUCT_APPLICATIONS.png) — editable code-derived concept for verified client and partner surfaces; not a runtime screenshot.
+- [Marketing Applications — SVG](08-visual-identity/WOSSOL_V0.2_MARKETING_APPLICATIONS.svg) and [PNG](08-visual-identity/WOSSOL_V0.2_MARKETING_APPLICATIONS.png) — proposed public, social, paid and profile applications using source-verified copy; not published assets.
+- [Typography QA — SVG](08-visual-identity/WOSSOL_V0.2_TYPE_QA.svg) and [PNG](08-visual-identity/WOSSOL_V0.2_TYPE_QA.png), with local font packages/license notices in [fonts](08-visual-identity/fonts/FONT_ASSET_README.md) — static proof only; browser and native-reader verification pending.
+
 ## Integrated Strategic / Creative Handoff
 - [Integrated Brand & Creative Brief V0.1](04-brand-strategy/INTEGRATED_BRAND_AND_CREATIVE_BRIEF_V0.1.md) — consolidated evidence-backed and hypothetical requirements for naming, architecture, visual concepts, applications and validation (UNDER_REVIEW).
 
