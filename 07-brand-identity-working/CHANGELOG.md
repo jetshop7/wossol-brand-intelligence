@@ -123,3 +123,5 @@
 - 2026-10-25: Reconciled missing V0.7 status entry; produced V0.8 pixel-accurate 36/72/144px S/W assets, code-informed shell simulation and corrected Arabic bidirectional shaping. No logo or custom Arabic approval.
 
 - 2026-10-25: Built first independent hand-drawn Arabic lettering SVG V0.9 and Latin C comparison, rendered 160/240/400px assets, documented legibility and optical deficiencies; no approval.
+
+- 2026-10-25: V1.0 corrected Arabic morphology using font-derived outlined reference, compared to rejected V0.9 and C Latin, rendered 160/240/400px sizes; retained REFINE status and honest font provenance.
