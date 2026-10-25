@@ -135,3 +135,6 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [Wordmark-First Bilingual Identity and Compact Gap V0.5](08-visual-identity/graphic-system/WORDMARK_FIRST_BILINGUAL_IDENTITY_AND_COMPACT_GAP_V0.5.md) — editorial EN/AR system, actual-size product slot, small-width render QA, critical refinement recommendation.
 - [V0.5 Compact Icon Requirement SVG](08-visual-identity/graphic-system/V05_COMPACT_ICON_REQUIREMENT_DIAGRAM.svg) — editable schematic of 280px/88px sidebar and temporary 36x36px W; not an approved icon.
+
+- [Compact Icon and Bilingual Optical Pairing V0.6](08-visual-identity/logo/COMPACT_ICON_AND_BILINGUAL_OPTICAL_PAIRING_V0.6.md) — S vs W at 24-88px and Arabic humanist vs Kufi optical desk comparison.
+- [V0.6 S Compact Icon SVG](08-visual-identity/logo/V06_S_FROM_C_COMPACT_ICON.svg) and [V0.6 W Compact Icon SVG](08-visual-identity/logo/V06_W_FROM_C_COMPACT_ICON.svg) — extracted from original C glyph paths; exploratory, not approved.
