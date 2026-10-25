@@ -138,3 +138,7 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [Compact Icon and Bilingual Optical Pairing V0.6](08-visual-identity/logo/COMPACT_ICON_AND_BILINGUAL_OPTICAL_PAIRING_V0.6.md) — S vs W at 24-88px and Arabic humanist vs Kufi optical desk comparison.
 - [V0.6 S Compact Icon SVG](08-visual-identity/logo/V06_S_FROM_C_COMPACT_ICON.svg) and [V0.6 W Compact Icon SVG](08-visual-identity/logo/V06_W_FROM_C_COMPACT_ICON.svg) — extracted from original C glyph paths; exploratory, not approved.
+
+- [V0.7 Compact S and Arabic Context](08-visual-identity/logo/COMPACT_S_CONTEXT_AND_ARABIC_PAIRING_V0.7.md) — targeted desk comparison, no approval.
+- [V0.8 Exact 36px Icon and Arabic Shaping QA](08-visual-identity/logo/EXACT_36PX_COMPACT_ICON_AND_ARABIC_SHAPING_QA_V0.8.md) — pixel-accurate icon exports and code-informed sidebar simulation; font-derived Arabic only.
+- [V0.8 S 36px SVG](08-visual-identity/logo/V08_S_36PX_DARK.svg) and [V0.8 W 36px SVG](08-visual-identity/logo/V08_W_36PX_DARK.svg) — experimental assets, neither approved.
