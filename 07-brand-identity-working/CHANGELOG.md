@@ -113,3 +113,5 @@
 - 2026-10-25: User authorized proceeding without merchant interviews; pilot now optional, full identity design resumes.
 
 - 2026-10-25: Built two full monochrome logo system prototypes with bilingual/sidebar and 24–128px icon checks. Archived vector icon sources; rejected both symbols as insufficiently distinctive and recommended continued C typography research.
+
+- 2026-10-25: Created graphic language V0.4 visual stress test (decision rail vs operational field), rejected both as generic signatures; next focus wordmark-first identity system.
