@@ -1,7 +1,7 @@
 # Brand Identity Project Status
 
 **Date:** 2026-10-25
-**Status:** UNDER_REVIEW — V1.6 REFRAME
+**Status:** UNDER_REVIEW — V1.8 REJECT PAIRED-O
 **Repository:** jetshop7/wossol-brand-intelligence (PUBLIC)
 **Scope:** Full brand identity work; V1.3 design exploration, no visual system or logo approved.
 
@@ -196,3 +196,6 @@ V1.4 bilingual editorial prototype SVG and short review saved; generic hierarchy
 
 ## 2026-10-25 — V1.6 distinctiveness gate
 [Assessment](08-visual-identity/graphic-system/SIGNATURE_DISTINCTIVENESS_GATE_V1.6.md) and [SVG board](08-visual-identity/graphic-system/V16_WORDMARK_ANCHORED_BILINGUAL_BOARD.svg) archived. Existing competitor landscape reviewed. Wordmark-anchored bilingual schematic tested conceptually; no independent signature established. REFRAME. Next: software-first visual benchmark and one distinctive multi-touchpoint signature with RTL/36px testing. No visual approval.
+
+## 2026-10-25 — V1.7 reconciliation and V1.8 compact/bilingual gate
+V1.7 paired-O remains archived as exploratory, and [V1.8 assessment](08-visual-identity/graphic-system/COMPACT_BILINGUAL_GATE_V1.8.md) with [SVG board](08-visual-identity/graphic-system/V18_COMPACT_BILINGUAL_GATE.svg) documents its compact/Arabic pairing shortcomings. Verdict: REJECT the paired-O compact icon candidate; no approved brand design. Next: genuinely new strategy-led creative territory and wider software visual benchmark. No production code changes.
