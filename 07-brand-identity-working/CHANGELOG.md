@@ -127,3 +127,5 @@
 - 2026-10-25: V1.0 corrected Arabic morphology using font-derived outlined reference, compared to rejected V0.9 and C Latin, rendered 160/240/400px sizes; retained REFINE status and honest font provenance.
 
 - 2026-10-25: V1.1 tested two Arabic font-derived geometric customizations against readable baseline; both rejected for damaged Arabic typographic integrity; reframed next step to bilingual system architecture.
+
+- 2026-10-25: Reconciled V1.1 status omission; V1.2 built and inspected full bilingual lockup/application SVG and PNG board, confirmed 36px icon gap and lack of proprietary bilingual cohesion; no identity approval.
