@@ -35,6 +35,8 @@ No concept yet clears the independent-recognition and ownability gate. W→O is 
 
 The board pairs each mark with its related wordmark at a shared baseline and compact scale. A is the clearest website-header sample; the large A/B/C specimens are presentation-size construction views. These are optical desk comparisons, not cross-device or user testing. Exact-size canvases are 24×24, 36×36, 48×48 and 72×72px, with consistent placement and no surrounding frame. The designs were visually inspected after SVG-to-PNG rendering and corrected where the first render showed overlapping terminals in C.
 
+Among the three pairings, C + W→O has the strongest conceptual relationship: the mark's continuous W-to-O move echoes the angular W and open O construction in C. However, C is rejected as the primary wordmark for weak ownability, so this is the strongest *relationship study*, not the strongest complete logo. A remains the clearest wordmark; its SS ligature is a weaker compact match. B + sculpted W is formally coherent but repeats a generic W initial.
+
 The logo remains monochrome, exploratory, and unapproved. There is no claim of native-reader or merchant validation. Colors, Arabic custom lettering, slogans, advertising and unrelated identity elements were outside this task. Arabic research and prior work remain preserved; custom Arabic development is deferred rather than rejected or approved.
 
 ## Owner approval requested
