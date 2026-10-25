@@ -49,3 +49,5 @@ Name Wossol/وصول is user-approved as the brand name for identity development
 | D-013 | User clarification | APPROVED AS DIRECTION | No requirement or preference for an Arabic-letterform logo; Wossol identity is internationally oriented and may use abstract symbol, Latin/other lettermark, or wordmark only when strategically justified | Do not infer logo script from old Arabic waw experiment; avoid prescribing any script or shape before evaluating concepts. |
 
 | D-010 | User process direction | APPROVED | ChatGPT leads the professional brand/visual identity process, critically challenges weak ideas and gives evidence-based recommendations; user retains major/final approvals | 2026-10-24. Full governance in BRAND_IDENTITY_MASTER_INSTRUCTIONS_V2.md; not approval of a logo, palette, font, or strategic positioning. |
+
+| D-014 | User process direction | APPROVED | Merchant interviews are optional because none are available; proceed with brand system using documented expert, technical and application checks | 2026-10-25; zero interviews; no logo approval. |
