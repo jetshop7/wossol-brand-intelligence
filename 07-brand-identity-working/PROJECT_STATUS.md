@@ -154,3 +154,6 @@ B2 Arabic terminal-cut variation was rejected in the preceding local desk test (
 
 ### Product brand-slot constraint verified
 wossol-platform main MerchantShell.tsx currently shows a temporary 36x36 W in both sidebar states and full text Wossol only expanded. CSS sidebar widths are 280px and 88px. This is a future compact-logo test gate, not approval of the placeholder W.
+
+## 2026-10-25 — Offline merchant first-read runner built and smoke-tested
+Created self-contained Arabic HTML runner embedding the four existing blind-code images, 3-second timed exposure, consent gate, balanced P01-P10 ordering, anonymized responses, comparisons, delayed recall, and local CSV export. Node syntax validation and Chromium Playwright UI smoke test passed (first exposure, automatic hiding, response capture and reveal). Tool/ZIP delivered in conversation, not persisted as executable in GitHub. [Runner study](11-validation/MERCHANT_FIRST_READ_OFFLINE_RUNNER_V0.1.md). No real merchant responses (n=0). NEXT: run with 6-10 actual merchants and analyze exported CSVs before new design rounds.
