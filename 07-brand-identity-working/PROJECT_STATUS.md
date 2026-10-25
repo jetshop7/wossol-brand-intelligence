@@ -1,11 +1,14 @@
 # Brand Identity Project Status
 
 **Date:** 2026-10-25
-**Status:** UNDER_REVIEW — V0.3 DUAL-THEME CREATIVE SYSTEM COMPLETE; OWNER REVIEW REQUIRED; NO IDENTITY APPROVED
+**Status:** UNDER_REVIEW — V0.4 WORDMARK / COMPACT-MARK GATE COMPLETE; NO COMPLETE LOGO SYSTEM CLEARS THE BAR; NO IDENTITY APPROVED
 **Repository:** jetshop7/wossol-brand-intelligence (PUBLIC)
 **Scope:** Latin-first visual identity, dual-theme system, and compact-mark review; custom Arabic lettering is deferred, not rejected or approved.
 
-## Current authoritative stage and next action (2026-10-25 — V0.3 dual-theme system)
+## Current authoritative stage and next action (2026-10-25 — V0.4 logo system)
+Completed the [V0.4 Arabic logo-system evaluation](08-visual-identity/WOSSOL_V0.4_LOGO_SYSTEM_EVALUATION_AR.md) and three editable comparison/application boards with inspected PNG renders. A1 is a narrowly refined Clear Stroke wordmark lead (second S plus adjacent O/L shifted 10 design units); it modestly opens the SS rhythm but does not establish distinctiveness or approval. Two wordmark-derived compact studies were tested at 16/24/36/48/72 px in Light and Dark and both rejected: C1 reads as a generic interrupted ring; C2 loses clarity and may read as a currency glyph. **No compact mark or complete logo system clears the current gate.** Use the full wordmark only in wide spaces for owner review; keep the actual product W explicitly temporary and do not replace or ship these studies. Light/Dark, Harbor/Night/Lime, Inter/Noto Sans Arabic, Clear Stroke, and Docket Stitch supporting grammar remain provisional. Dashboard artwork is conceptual and synthetic; no Product re-audit or modifications were made. **Next:** owner review of A1 as a temporary wordmark-only lead and whether to authorize a materially different compact-mark direction; no icon use pending owner approval and technical/user tests. No identity approval or trademark clearance.
+
+### Previous authoritative stage (V0.3 dual-theme system)
 Completed [V0.3 Creative Director Report (Arabic)](08-visual-identity/WOSSOL_V0.3_CREATIVE_DIRECTOR_REPORT_AR.md), five editable SVG boards with PNG previews, and [semantic theme tokens](08-visual-identity/WOSSOL_V0.3_SEMANTIC_TOKENS.md). The package proposes first-class Light and Dark themes for the same visual system, keeps Harbor/Night/Lime as the primary palette hypothesis, and compares one Atlas/Apricot alternative on identical dashboard and marketing compositions. Docket Stitch remains a supporting graphic-grammar hypothesis under review; the related standalone compact mark was **rejected** at desk scale (generic list/menu read), so the compact-mark decision remains open and the platform's temporary W must not be replaced by this candidate. Product applications are based on the V0.2-verified `wossol-platform` reference, `dev/wossol-integration` @ `3ed1386fa88496a2e80b5e144b14a198f6e1bc63`; no new product audit/runtime verification occurred and no product code was changed. Screen and campaign values are synthetic. **Next:** owner review of primary-vs-alternative palette and signature concept; any later compact-mark work needs a materially different concept. Runtime/device, accessibility/color-vision and Arabic/RTL QA remain open. No theme, logo, graphic signature, compact mark, font or identity is approved.
 
 ### Previous authoritative stage (V0.2 product source correction)
@@ -34,11 +37,11 @@ V1.8 [compact/bilingual gate](08-visual-identity/graphic-system/COMPACT_BILINGUA
 - 'Merchant-Led Progress' and 'Expanding Merchant Capability' are hypotheses, not approved essence.
 
 ## Current step
-V0.2 merchant-platform product and marketing applications are ready for owner review. A / Clear Stroke remains provisional, not an approved logo. The platform has an actual compact navigation placement currently filled by a temporary W; no standalone icon is approved. Arabic custom lettering is deferred, not rejected or approved. No merchant research is represented as validating this proposal. Export-oriented V0.2 assets are historical and out of scope for this merchant platform.
+V0.4's current recommendation is A1 / Clear Stroke as an unapproved wordmark-only lead for wide placements. Both new compact studies were rejected; the platform's existing W remains only a temporary placeholder. No complete logo system clears the current gate. Arabic custom lettering is deferred, not rejected or approved. No merchant research is represented as validating these proposals. Export-oriented V0.2 assets remain historical and out of scope for the merchant platform.
 
 ## Next actions
-1. Obtain owner direction on applying provisional A / Clear Stroke, palette and typography to the merchant platform; no visual element is approved.
-2. If authorized, test the actual collapsed-sidebar compact placement and V0.2 applications against running product layouts and target devices; current boards are not runtime captures.
+1. Obtain owner review of A1 only as a provisional wordmark and direction on whether to authorize a materially different compact-mark concept; no icon or visual element is approved.
+2. Before any use, test approved vectors in actual browser/device collapsed sidebar, favicon and app contexts; current boards are not runtime captures.
 3. Complete native-language and browser accessibility review, actual focus/contrast checks, typography packaging/license confirmation and legal trademark clearance before public rollout.
 4. Keep Arabic custom lettering deferred. When resumed, use the saved specialist handoff and obtain native-reader assessment; do not present font specimens as custom lettering.
 5. Continue evidence-bounded positioning and capability work; do not turn schematic mockup copy or data into product claims.

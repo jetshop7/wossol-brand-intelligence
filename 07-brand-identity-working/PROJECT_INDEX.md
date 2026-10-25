@@ -2,6 +2,13 @@
 
 **Updated:** 2026-10-25
 
+## Visual Identity V0.4 — logo-system refinement — 2026-10-25
+- [Arabic logo-system evaluation](08-visual-identity/WOSSOL_V0.4_LOGO_SYSTEM_EVALUATION_AR.md) — recommendation and rejection rationale; no complete system clears the current quality gate (UNDER_REVIEW).
+- [Wordmark A0/A1 comparison — SVG](08-visual-identity/logo/WOSSOL_V0.4_WORDMARK_REFINEMENT.svg) and [PNG](08-visual-identity/logo/WOSSOL_V0.4_WORDMARK_REFINEMENT.png) — single spacing refinement to the provisional Clear Stroke wordmark.
+- [Compact candidates and exact-size tests — SVG](08-visual-identity/logo/WOSSOL_V0.4_COMPACT_MARK_TESTS.svg) and [PNG](08-visual-identity/logo/WOSSOL_V0.4_COMPACT_MARK_TESTS.png) — two candidates at 16/24/36/48/72px in Light/Dark; both rejected, no icon winner.
+- [Wordmark family and merchant-dashboard application — SVG](08-visual-identity/logo/WOSSOL_V0.4_LOGO_FAMILY_AND_APPLICATIONS.svg) and [PNG](08-visual-identity/logo/WOSSOL_V0.4_LOGO_FAMILY_AND_APPLICATIONS.png) — provisional wide-use wordmark and conceptual UI application; synthetic data, temporary W explicitly not recommended.
+- Nothing is approved. The compact-mark gap remains open; Product was not re-audited or changed.
+
 ## Visual Identity V0.3 — Light & Dark system — 2026-10-25
 - [Arabic Creative Director Report](08-visual-identity/WOSSOL_V0.3_CREATIVE_DIRECTOR_REPORT_AR.md) — concise recommendation, limits, compact-mark verdict and owner gates (UNDER_REVIEW).
 - [Dual-theme system board — SVG](08-visual-identity/WOSSOL_V0.3_DUAL_THEME_SYSTEM.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_DUAL_THEME_SYSTEM.png) — paired Home specimens, semantic-role map, component states and accessibility notes.

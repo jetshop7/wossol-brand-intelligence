@@ -1,5 +1,11 @@
 # Brand Identity Changelog
 
+## 2026-10-25 — V0.4 wordmark and compact-mark gate
+- Refined the existing editable Clear Stroke wordmark by opening the second-S rhythm with one controlled spacing change; compared it directly with the existing paths and rendered Light/Dark and header-scale examples.
+- Created two genuinely different wordmark-derived compact studies (O counter aperture and S seam), tested both at nominal 16/24/36/48/72px across Light and Dark, and rejected both for genericity/readability. No compact winner or final lockup; no complete identity meets the V0.4 gate.
+- Added a provisional wide-wordmark family and source-bounded conceptual merchant dashboard application. Kept the current sidebar W labelled as a temporary product placeholder, with no replacement recommendation. Dashboard figures are synthetic; Product remains untouched and was not re-audited.
+- Rendered and visually inspected SVG/PNG boards, corrected caption/sizing layout defects, and recorded an Arabic evaluation and explicit owner-review gate. No identity element approved.
+
 ## 2026-10-25 — V0.3 dual-theme creative system
 - Produced a first-class Light/Dark identity proposal with editable semantic role/state tokens and paired dashboard specimens; compared primary Harbor/Night/Lime against one Atlas/Apricot alternative using matching dashboard and campaign compositions in both modes.
 - Developed Docket Stitch as an evidence-bounded selected-record graphic grammar and a related compact-mark candidate; rendered 24/36/48/72px tests in Light and Dark. Visual QA rejected the standalone compact candidate as a generic list/menu at 24/36px; compact-mark decision remains open, no product placeholder was replaced. Docket Stitch remains only a supporting-grammar hypothesis.
