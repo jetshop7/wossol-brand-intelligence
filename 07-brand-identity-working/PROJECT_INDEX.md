@@ -145,3 +145,4 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [Original Arabic Lettering Construction V0.9](08-visual-identity/typography/ORIGINAL_ARABIC_LETTERING_CONSTRUCTION_V0.9.md) — manually constructed Arabic Bézier study, critical rejection of current optical quality, no logo approval.
 - [V0.9 Arabic Hand-Constructed SVG](08-visual-identity/typography/ARABIC_HAND_CONSTRUCTED_V09.svg) — editable original-path Arabic experiment; not production ready.
+- [Arabic Anatomy Correction V1.0](08-visual-identity/typography/ARABIC_ANATOMY_CORRECTION_AND_BILINGUAL_QA_V1.0.md) — correct Arabic shaping reference, optical test and bilingual QA; no approval.
