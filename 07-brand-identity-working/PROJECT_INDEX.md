@@ -127,3 +127,6 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Offline Merchant Runner V0.2 QA and Protocol Corrections](11-validation/MERCHANT_FIRST_READ_OFFLINE_RUNNER_V0.2_QA_AND_PROTOCOL_CORRECTIONS.md) — fixes script-order confound, missing Arabic pairwise comparison, missing first-read and delayed-recall gates; V0.1 superseded for collection.
 
 - [Validation Without Merchant Access](11-validation/VALIDATION_WITHOUT_MERCHANT_ACCESS_V0.1.md) - D-014 process change and substitute QA gates.
+
+- [Two Logo Systems V0.3 Assessment](08-visual-identity/logo/TWO_FULL_LOGO_SYSTEMS_C_VS_BC_V0.3_ASSESSMENT.md) — C W-signature vs B/C counterform, both icons rejected as final; full local SVG/PNG package delivered.
+- [V0.3 A W icon source](08-visual-identity/logo/V03_A_C_W_SIGNATURE_ICON.svg) and [V0.3 B counterform icon source](08-visual-identity/logo/V03_B_BC_COUNTERFORMS_ICON.svg) — experimental archived SVGs, not approved.
