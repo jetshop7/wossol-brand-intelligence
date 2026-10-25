@@ -115,3 +115,5 @@
 - 2026-10-25: Built two full monochrome logo system prototypes with bilingual/sidebar and 24–128px icon checks. Archived vector icon sources; rejected both symbols as insufficiently distinctive and recommended continued C typography research.
 
 - 2026-10-25: Created graphic language V0.4 visual stress test (decision rail vs operational field), rejected both as generic signatures; next focus wordmark-first identity system.
+
+- 2026-10-25: Tested C wordmark-first bilingual editorial system V0.5 in SVG/PNG and real-code-informed sidebar schematic; corrected RTL text clipping, documented unresolved compact icon and archived diagram.
