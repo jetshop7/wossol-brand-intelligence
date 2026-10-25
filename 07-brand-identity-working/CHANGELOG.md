@@ -1,5 +1,10 @@
 # Brand Identity Changelog
 
+## 2026-10-25 — Primary Latin wordmark and compact-mark review V0.1
+- Created and rendered three original editable Latin wordmark constructions, three wordmark-derived compact-mark concepts, and three pairings in one comparison package; inspected website-header/presentation scales and exact 24/36/48/72px icon artboards.
+- Repaired visible SVG-to-PNG defects found during inspection. Recommended A for owner review as the clearest wordmark, rejected C and one compact concept, and held a new W→O continuous ligature for owner distinctiveness review. No logo is approved; wordmark-first is the current recommendation.
+- Updated project status and index to make Latin-first logo development the current priority. Arabic custom lettering is deferred, not rejected or approved; preserved prior Arabic work unchanged.
+
 ## 2026-10-17
 - Compared four Brand Essence candidates in V0.4 and selected a lead **assistant hypothesis**, not an approved decision; documented risks and validation plan.
 - Created isolated brand-identity working area in existing public intelligence repository.

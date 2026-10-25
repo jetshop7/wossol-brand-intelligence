@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1840" viewBox="0 0 1800 1840">
+<title>WOSSOL primary Latin wordmark and compact mark review V0.1</title>
+<desc>Three original editable Latin wordmark constructions and three derived compact mark concepts, rendered monochrome with actual-size compact tests. Exploratory, no identity approval.</desc>
+<defs>
+<style>.bg{fill:#E7E9E4}.paper{fill:#F5F2EA}.card{fill:#fff}.ink{fill:#142D31}.muted{fill:#65736f}.subtle{fill:#d8ded8}.title{font:700 15px Arial,sans-serif;letter-spacing:1.4px}.small{font:13px Arial,sans-serif}.body{font:16px Arial,sans-serif}.tag{font:700 12px Arial,sans-serif;letter-spacing:1.2px}</style>
+
+<!-- A / CLEAR STROKE: uppercase R3 re-construction; monoline curves, open rounded counters, a custom split-bowl S pair. -->
+<g id="wm-a" fill="none" stroke="#142D31" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M8 23 L30 101 Q33 111 42 111 L62 66 L82 111 Q91 111 94 101 L116 23"/>
+ <path d="M141 43 C141 19 190 19 190 43 V86 C190 110 141 110 141 86 Z"/>
+ <path d="M274 30 C254 17 221 21 221 42 C221 59 267 59 267 78 C267 101 237 111 213 94"/>
+ <path d="M335 30 C315 17 282 21 282 42 C282 59 328 59 328 78 C328 101 298 111 274 94"/>
+ <path d="M359 43 C359 19 408 19 408 43 V86 C408 110 359 110 359 86 Z"/>
+ <path d="M441 22 V101 Q441 111 452 111 H491"/>
+</g>
+
+<!-- B / COUNTERFORM: heavy but softened geometric construction; solid custom glyph silhouettes and expanded counters. -->
+<g id="wm-b" fill="#142D31" fill-rule="evenodd">
+ <path d="M0 20 H22 L42 75 L62 45 H76 L97 75 L117 20 H140 L110 120 H94 L69 83 L43 120 H28 Z"/>
+ <path d="M162 20 H226 Q243 20 243 38 V102 Q243 120 226 120 H162 Q145 120 145 102 V38 Q145 20 162 20 Z M170 42 Q164 42 164 49 V91 Q164 98 170 98 H218 Q224 98 224 91 V49 Q224 42 218 42 Z"/>
+ <path d="M345 30 Q327 18 300 21 Q270 24 270 48 Q270 68 307 73 Q326 76 326 87 Q326 100 304 101 Q285 101 269 89 L258 109 Q278 123 306 122 Q352 120 352 87 Q352 61 313 54 Q294 50 294 42 Q294 35 307 35 Q324 35 337 44 Z"/>
+ <path d="M430 30 Q412 18 385 21 Q355 24 355 48 Q355 68 392 73 Q411 76 411 87 Q411 100 389 101 Q370 101 354 89 L343 109 Q363 123 391 122 Q437 120 437 87 Q437 61 398 54 Q379 50 379 42 Q379 35 392 35 Q409 35 422 44 Z"/>
+ <path d="M456 20 H520 Q537 20 537 38 V102 Q537 120 520 120 H456 Q439 120 439 102 V38 Q439 20 456 20 Z M464 42 Q458 42 458 49 V91 Q458 98 464 98 H512 Q518 98 518 91 V49 Q518 42 512 42 Z"/>
+ <path d="M551 20 H577 V96 H626 V120 H551 Z"/>
+</g>
+
+<!-- C / EDITORIAL TERMINALS: custom high-contrast display construction; fine diagonals against sturdy stems, restrained wedge serifs. -->
+<g id="wm-c" fill="#142D31">
+ <path d="M0 20 H18 L35 78 L50 45 H63 L79 78 L96 20 H115 L91 116 H76 L56 76 L37 116 H22 Z M-5 20 H29 V28 H-5 Z M86 20 H120 V28 H86 Z M17 108 H46 V116 H17 Z M72 108 H101 V116 H72 Z"/>
+ <path fill-rule="evenodd" d="M143 20 H208 V29 H143 Z M143 111 H208 V120 H143 Z M157 20 H194 C208 20 215 29 215 43 V97 C215 111 208 120 194 120 H157 C143 120 136 111 136 97 V43 C136 29 143 20 157 20 Z M160 40 C155 40 153 43 153 49 V91 C153 97 155 100 160 100 H191 C196 100 198 97 198 91 V49 C198 43 196 40 191 40 Z"/>
+ <path d="M318 28 C301 17 281 19 267 24 L263 34 C284 26 301 27 308 37 C313 44 307 51 295 56 L275 65 C256 74 252 89 261 103 C271 119 296 123 319 110 L324 99 C304 110 286 108 279 99 C273 91 278 83 290 77 L310 67 C330 56 334 40 318 28 Z M259 20 H297 V28 H259 Z M292 111 H331 V120 H292 Z"/>
+ <path d="M405 28 C388 17 368 19 354 24 L350 34 C371 26 388 27 395 37 C400 44 394 51 382 56 L362 65 C343 74 339 89 348 103 C358 119 383 123 406 110 L411 99 C391 110 373 108 366 99 C360 91 365 83 377 77 L397 67 C417 56 421 40 405 28 Z M346 20 H384 V28 H346 Z M379 111 H418 V120 H379 Z"/>
+ <path fill-rule="evenodd" d="M437 20 H502 V29 H437 Z M437 111 H502 V120 H437 Z M451 20 H488 C502 20 509 29 509 43 V97 C509 111 502 120 488 120 H451 C437 120 430 111 430 97 V43 C430 29 437 20 451 20 Z M454 40 C449 40 447 43 447 49 V91 C447 97 449 100 454 100 H485 C490 100 492 97 492 91 V49 C492 43 490 40 485 40 Z"/>
+ <path d="M529 20 H548 V103 H596 V120 H529 Z M522 20 H557 V28 H522 Z M542 112 H604 V120 H542 Z"/>
+</g>
+
+<!-- Three compact marks, each derived from a different wordmark construction. No container is part of the mark. -->
+<!-- Spaced cleanup of B's paired S glyphs; source path used in final render, initial draft retained above only as construction note. -->
+<g id="wm-b-final" fill="#142D31" fill-rule="evenodd">
+ <path d="M0 20 H22 L42 75 L62 45 H76 L97 75 L117 20 H140 L110 120 H94 L69 83 L43 120 H28 Z"/>
+ <path d="M162 20 H226 Q243 20 243 38 V102 Q243 120 226 120 H162 Q145 120 145 102 V38 Q145 20 162 20 Z M170 42 Q164 42 164 49 V91 Q164 98 170 98 H218 Q224 98 224 91 V49 Q224 42 218 42 Z"/>
+ <path d="M345 30 C333 22 319 20 304 22 C278 24 270 34 270 48 C270 68 307 73 326 77 C338 80 339 91 330 97 C313 107 283 97 269 89 L258 109 C278 123 306 126 328 118 C344 112 352 101 352 87 C352 63 319 57 295 51 C286 49 283 44 288 39 C300 29 325 34 337 44 Z"/>
+ <path d="M457 30 C445 22 431 20 416 22 C390 24 382 34 382 48 C382 68 419 73 438 77 C450 80 451 91 442 97 C425 107 395 97 381 89 L370 109 C390 123 418 126 440 118 C456 112 464 101 464 87 C464 63 431 57 407 51 C398 49 395 44 400 39 C412 29 437 34 449 44 Z"/>
+ <path d="M488 20 H552 Q569 20 569 38 V102 Q569 120 552 120 H488 Q471 120 471 102 V38 Q471 20 488 20 Z M496 42 Q490 42 490 49 V91 Q490 98 496 98 H544 Q550 98 550 91 V49 Q550 42 544 42 Z"/>
+ <path d="M583 20 H609 V96 H658 V120 H583 Z"/>
+</g>
+<g id="wm-c-final" fill="none" stroke="#142D31" stroke-linecap="butt" stroke-linejoin="round">
+ <!-- Editorial contrast is carried by sturdy letter strokes and fine, separate terminal bars; no overlapping filled serifs. -->
+ <g stroke-width="16"><path d="M8 22 L30 104 L54 57 L78 104 L101 22"/><path d="M141 44 C141 17 193 17 193 44 V84 C193 111 141 111 141 84 Z"/><path d="M272 29 C250 15 220 20 216 40 C211 60 260 61 261 79 C262 101 231 110 208 93"/><path d="M367 29 C345 15 315 20 311 40 C306 60 355 61 356 79 C357 101 326 110 303 93"/><path d="M401 44 C401 17 453 17 453 44 V84 C453 111 401 111 401 84 Z"/><path d="M488 22 V104 H548"/></g>
+ <!-- O counter and the square stroke endings carry this direction; no detached serif bars. -->
+</g>
+<g id="mark-b-final" fill="#142D31" fill-rule="evenodd"><path d="M5 14 H22 L35 62 L47 39 H55 L68 62 L80 14 H97 L78 89 H64 L52 65 L39 89 H24 Z"/><path d="M43 71 L51 54 L60 71 L56 78 L51 71 L47 78 Z" fill="#fff"/></g>
+
+<g id="mark-a" fill="none" stroke="#142D31" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M23 27 C18 12 42 8 52 21 C66 39 35 47 25 58 C12 73 26 91 43 89 C57 88 64 80 69 70"/>
+ <path d="M45 16 C62 7 83 17 82 34 C81 47 67 53 56 61 C43 71 49 90 66 90 C79 90 86 81 88 70"/>
+</g>
+<g id="mark-b" fill="#142D31" fill-rule="evenodd">
+ <path d="M5 16 H25 L40 62 L52 40 H64 L78 62 L92 16 H112 L89 87 H73 L58 63 L43 87 H28 Z"/>
+ <path d="M48 71 L57 55 L67 71 L62 77 L57 71 L53 77 Z" fill="#fff"/>
+</g>
+<g id="mark-c" fill="none" stroke="#142D31" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+ <!-- New W-to-open-O single-stroke ligature; not a ring cut, arrow, frame, or plain initial. -->
+ <path d="M10 15 L24 78 L42 48 L59 78 L70 37 C74 20 94 22 94 41 V57 C94 76 76 83 66 70"/>
+</g>
+</defs>
+
+<rect width="1800" height="1840" class="bg"/><rect x="36" y="28" width="1728" height="1784" rx="24" class="paper"/>
+<text x="78" y="82" class="ink title">WOSSOL · PRIMARY LATIN LOGO + COMPACT MARK · EXPLORATORY V0.1</text><text x="1720" y="82" text-anchor="end" class="muted small">MONOCHROME VECTOR STUDY · NOT APPROVED</text>
+<text x="78" y="126" class="muted body">Three independent letter constructions; three compact directions. Same monochrome, no decorative mockups. Symbols have no container.</text>
+
+<text x="78" y="184" class="ink title">01 · LATIN WORDMARK CONSTRUCTIONS</text>
+<rect x="70" y="204" width="1660" height="178" rx="16" class="card"/><text x="98" y="237" class="ink tag">A · CLEAR STROKE / UPPERCASE R3 RECONSTRUCTION</text>
+<use href="#wm-a" transform="translate(125 250) scale(1.15)"/><text x="930" y="276" class="muted body">Round, open, easy to scan;</text><text x="930" y="302" class="muted body">S pair carries one cut-back echo.</text><text x="930" y="345" class="ink tag">RISK · friendly but still generic at a glance</text>
+
+<rect x="70" y="398" width="1660" height="178" rx="16" class="card"/><text x="98" y="431" class="ink tag">B · COUNTERFORM / SOFT PLANAR BLOCKS</text>
+<text x="930" y="470" class="muted body">Solid silhouettes, broadened O counters,</text><text x="930" y="496" class="muted body">custom S bowl and visible word rhythm.</text><text x="930" y="539" class="ink tag">RISK · weighty; S strokes feel inserted, not familial</text>
+<rect x="110" y="440" width="690" height="130" class="card"/><use href="#wm-b-final" transform="translate(125 440) scale(1.02)"/>
+
+<rect x="70" y="592" width="1660" height="178" rx="16" class="card"/><text x="98" y="625" class="ink tag">C · SQUARE-TERMINAL / ANGULAR DISPLAY</text>
+<text x="930" y="664" class="muted body">Firm stems, angular W, open S rhythm;</text><text x="930" y="690" class="muted body">a hard-edged counterpoint to round A.</text><text x="930" y="733" class="ink tag">REJECT · generic geometric feel; little ownable signature</text>
+<rect x="110" y="634" width="690" height="125" class="card"/><use href="#wm-c-final" transform="translate(125 634) scale(1.02)"/>
+
+<text x="78" y="824" class="ink title">02 · COMPACT MARKS · DERIVED FROM THE WORDMARK, NO FRAME OR BACKPLATE</text>
+<rect x="70" y="842" width="530" height="174" rx="16" class="card"/><text x="96" y="875" class="ink tag">01 · SS SHARED-SPINE LIGATURE</text><use href="#mark-a" transform="translate(108 885) scale(1.06)"/><text x="230" y="915" class="muted small">A signature from A's two S forms.</text><text x="230" y="941" class="muted small">At 24px it risks a generic wave/infinity.</text><text x="230" y="974" class="ink tag">TEST · RECOGNITION UNCERTAIN</text>
+<rect x="635" y="842" width="530" height="174" rx="16" class="card"/><text x="661" y="875" class="ink tag">02 · SCULPTED W / OPEN INNER NOTCH</text><use href="#mark-b-final" transform="translate(675 885) scale(1.06)"/><text x="795" y="915" class="muted small">B-family signature; no enclosure.</text><text x="795" y="941" class="muted small">Distinct counter helps, but W is crowded.</text><text x="795" y="974" class="ink tag">TEST · INITIAL MAY FEEL GENERIC</text>
+<rect x="1200" y="842" width="530" height="174" rx="16" class="card"/><text x="1226" y="875" class="ink tag">03 · W→O CONTINUOUS LIGATURE</text><use href="#mark-c" transform="translate(1240 885) scale(1.06)"/><text x="1360" y="915" class="muted small">One stroke flows from angular W into O.</text><text x="1360" y="941" class="muted small">Fresh derivation; may still feel generic.</text><text x="1360" y="974" class="ink tag">HOLD · TEST DISTINCTIVENESS</text>
+
+<text x="78" y="1044" class="ink title">03 · WORDMARK + MARK PAIRING / HEADER-SCALE CHECK</text>
+<rect x="70" y="1060" width="530" height="150" rx="16" class="card"/><text x="96" y="1088" class="ink tag">A PAIR · LINKED SS · REJECT</text><use href="#wm-a" transform="translate(190 1100) scale(.48)"/><use href="#mark-a" transform="translate(110 1105) scale(.62)"/>
+<rect x="635" y="1060" width="530" height="150" rx="16" class="card"/><text x="661" y="1088" class="ink tag">B PAIR · SCULPTED W · HOLD</text><use href="#wm-b-final" transform="translate(755 1100) scale(.48)"/><use href="#mark-b-final" transform="translate(675 1105) scale(.62)"/>
+<rect x="1200" y="1060" width="530" height="150" rx="16" class="card"/><text x="1226" y="1088" class="ink tag">C PAIR · W/O LIGATURE · HOLD</text><use href="#wm-c-final" transform="translate(1320 1100) scale(.48)"/><use href="#mark-c" transform="translate(1240 1105) scale(.62)"/>
+<text x="78" y="1252" class="ink title">04 · ACTUAL-SIZE STRESS TEST · ICON ARTBOARDS 24×24 / 36×36 / 48×48 / 72×72 PX</text>
+<text x="760" y="1290" text-anchor="middle" class="muted tag">24 px</text><text x="960" y="1290" text-anchor="middle" class="muted tag">36 px</text><text x="1160" y="1290" text-anchor="middle" class="muted tag">48 px</text><text x="1420" y="1290" text-anchor="middle" class="muted tag">72 px</text>
+<rect x="70" y="1306" width="1660" height="124" rx="14" class="card"/><text x="96" y="1335" class="ink tag">01 · SS</text><text x="96" y="1362" class="muted small">A · REJECT</text><use href="#mark-a" transform="translate(748 1327) scale(.24)"/><use href="#mark-a" transform="translate(942 1321) scale(.36)"/><use href="#mark-a" transform="translate(1136 1315) scale(.48)"/><use href="#mark-a" transform="translate(1384 1303) scale(.72)"/>
+<rect x="70" y="1444" width="1660" height="124" rx="14" class="card"/><text x="96" y="1473" class="ink tag">02 · W</text><text x="96" y="1500" class="muted small">B · HOLD</text><use href="#mark-b-final" transform="translate(748 1465) scale(.24)"/><use href="#mark-b-final" transform="translate(942 1459) scale(.36)"/><use href="#mark-b-final" transform="translate(1136 1453) scale(.48)"/><use href="#mark-b-final" transform="translate(1384 1441) scale(.72)"/>
+<rect x="70" y="1582" width="1660" height="124" rx="14" class="card"/><text x="96" y="1611" class="ink tag">03 · W→O LIGATURE</text><text x="96" y="1638" class="muted small">C · HOLD</text><use href="#mark-c" transform="translate(748 1603) scale(.24)"/><use href="#mark-c" transform="translate(942 1597) scale(.36)"/><use href="#mark-c" transform="translate(1136 1591) scale(.48)"/><use href="#mark-c" transform="translate(1384 1579) scale(.72)"/>
+
+<rect x="70" y="1730" width="1660" height="76" rx="14" fill="#142D31"/><text x="98" y="1762" fill="#D9F064" class="tag">DESK VERDICT · ADVANCE A FOR READABILITY; W→O IS THE FRESHEST MARK, STILL NEEDS OWNER DISTINCTIVENESS REVIEW.</text><text x="98" y="1787" fill="#fff" class="small">Recommendation: wordmark-first; do not ship a standalone mark yet. Arabic custom lettering remains deferred, not rejected or approved.</text>
+</svg>
