@@ -1,7 +1,7 @@
 # Brand Identity Project Status
 
 **Date:** 2026-10-25
-**Status:** UNDER_REVIEW — V1.5 REFRAME
+**Status:** UNDER_REVIEW — V1.6 REFRAME
 **Repository:** jetshop7/wossol-brand-intelligence (PUBLIC)
 **Scope:** Full brand identity work; V1.3 design exploration, no visual system or logo approved.
 
@@ -193,3 +193,6 @@ V1.1 rejected decorative Arabic cuts (report/index/changelog saved; previous sta
 
 ## 2026-10-25 — V1.4 and V1.5
 V1.4 bilingual editorial prototype SVG and short review saved; generic hierarchy is not a signature (REFRAME). V1.5 [choice-field report](08-visual-identity/graphic-system/CHOICE_FIELD_CROSS_TOUCHPOINT_V1.5.md) and [editable application SVG](08-visual-identity/graphic-system/V15_CHOICE_FIELD_APPLICATION.svg) committed. Cross-touchpoint selection logic tested as schematic marketing and Arabic-first operational panels. It is functional but generic; REFRAME, not APPROVE. Next: focused visual benchmark comparison followed by a genuinely distinctive bilingual signature test. No logo, icon, font or palette approved.
+
+## 2026-10-25 — V1.6 distinctiveness gate
+[Assessment](08-visual-identity/graphic-system/SIGNATURE_DISTINCTIVENESS_GATE_V1.6.md) and [SVG board](08-visual-identity/graphic-system/V16_WORDMARK_ANCHORED_BILINGUAL_BOARD.svg) archived. Existing competitor landscape reviewed. Wordmark-anchored bilingual schematic tested conceptually; no independent signature established. REFRAME. Next: software-first visual benchmark and one distinctive multi-touchpoint signature with RTL/36px testing. No visual approval.
