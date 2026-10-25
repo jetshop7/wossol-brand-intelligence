@@ -125,3 +125,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Offline Merchant First-Read Runner V0.1](11-validation/MERCHANT_FIRST_READ_OFFLINE_RUNNER_V0.1.md) — browser tool specification and test verification; executable HTML and ZIP supplied in conversation only, not stored in GitHub.
 
 - [Offline Merchant Runner V0.2 QA and Protocol Corrections](11-validation/MERCHANT_FIRST_READ_OFFLINE_RUNNER_V0.2_QA_AND_PROTOCOL_CORRECTIONS.md) — fixes script-order confound, missing Arabic pairwise comparison, missing first-read and delayed-recall gates; V0.1 superseded for collection.
+
+- [Validation Without Merchant Access](11-validation/VALIDATION_WITHOUT_MERCHANT_ACCESS_V0.1.md) - D-014 process change and substitute QA gates.
