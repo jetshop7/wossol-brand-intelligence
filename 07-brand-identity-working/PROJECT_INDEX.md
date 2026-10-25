@@ -153,3 +153,6 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [V1.3 Graphic Grammar Cross-Application Test](08-visual-identity/graphic-system/GRAPHIC_GRAMMAR_CROSS_APPLICATION_TEST_V1.3.md) — post-V1.2 paired grammar assessment; A rejected, B tested but not approved; overall REFRAME.
 - [V1.3 A Open Field SVG](08-visual-identity/graphic-system/V13_A_OPEN_FIELD.svg), [V1.3 B Reference Frame SVG](08-visual-identity/graphic-system/V13_B_REFERENCE_FRAME.svg), [V1.3 36px Compact Frame SVG](08-visual-identity/graphic-system/V13_COMPACT_FRAME_TEST.svg) — editable monochrome test assets, none an approved mark.
+
+- [V1.4 review](08-visual-identity/graphic-system/V14_REVIEW.md) and [editable bilingual hierarchy SVG](08-visual-identity/graphic-system/V14_BILINGUAL_INFORMATION_RHYTHM.svg) — REFRAME, not approved.
+- [V1.5 Choice Field assessment](08-visual-identity/graphic-system/CHOICE_FIELD_CROSS_TOUCHPOINT_V1.5.md) and [editable application SVG](08-visual-identity/graphic-system/V15_CHOICE_FIELD_APPLICATION.svg) — tested marketing/operational contrast; generic signature rejected.
