@@ -123,3 +123,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Merchant First-Read Pilot and Real UI Gate V0.1](11-validation/MERCHANT_FIRST_READ_PILOT_STIMULI_AND_REAL_UI_GATE_V0.1.md) — four blinded stimuli, counterbalanced order and empty results sheet delivered in conversation; real merchant shell evidence verified; zero participants.
 
 - [Offline Merchant First-Read Runner V0.1](11-validation/MERCHANT_FIRST_READ_OFFLINE_RUNNER_V0.1.md) — browser tool specification and test verification; executable HTML and ZIP supplied in conversation only, not stored in GitHub.
+
+- [Offline Merchant Runner V0.2 QA and Protocol Corrections](11-validation/MERCHANT_FIRST_READ_OFFLINE_RUNNER_V0.2_QA_AND_PROTOCOL_CORRECTIONS.md) — fixes script-order confound, missing Arabic pairwise comparison, missing first-read and delayed-recall gates; V0.1 superseded for collection.
