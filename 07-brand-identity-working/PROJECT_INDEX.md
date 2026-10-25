@@ -160,3 +160,5 @@ The files above are distinct evidence layers, not duplicate copies.
 - [V1.6 Signature Distinctiveness Gate](08-visual-identity/graphic-system/SIGNATURE_DISTINCTIVENESS_GATE_V1.6.md) and [editable SVG](08-visual-identity/graphic-system/V16_WORDMARK_ANCHORED_BILINGUAL_BOARD.svg) — existing competitor landscape comparison and bilingual layout prototype; REFRAME.
 
 - [V1.7 Dual Aperture test](08-visual-identity/graphic-system/DUAL_APERTURE_SIGNATURE_TEST_V1.7.md) and [editable SVG board](08-visual-identity/graphic-system/V17_DUAL_APERTURE_TEST.svg) — original R2-C O-derived signature test, not approved.
+
+- [V1.8 Compact/Bilingual Gate](08-visual-identity/graphic-system/COMPACT_BILINGUAL_GATE_V1.8.md) and [editable SVG](08-visual-identity/graphic-system/V18_COMPACT_BILINGUAL_GATE.svg) — paired-O icon candidate REJECTED, no identity approval.
