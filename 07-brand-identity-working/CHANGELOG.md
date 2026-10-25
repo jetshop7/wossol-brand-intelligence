@@ -1,5 +1,11 @@
 # Brand Identity Changelog
 
+## 2026-10-25 — V0.3 dual-theme creative system
+- Produced a first-class Light/Dark identity proposal with editable semantic role/state tokens and paired dashboard specimens; compared primary Harbor/Night/Lime against one Atlas/Apricot alternative using matching dashboard and campaign compositions in both modes.
+- Developed Docket Stitch as an evidence-bounded selected-record graphic grammar and a related compact-mark candidate; rendered 24/36/48/72px tests in Light and Dark. Visual QA rejected the standalone compact candidate as a generic list/menu at 24/36px; compact-mark decision remains open, no product placeholder was replaced. Docket Stitch remains only a supporting-grammar hypothesis.
+- Added source-grounded synthetic merchant UI (Home, Orders, Inventory, Analytics/Advertising), prospective landing/social/paid applications, and concise Arabic creative assessment. Product evidence comes from V0.2's `wossol-platform` integration reference; no fresh product re-audit or product code change.
+- Rendered and visually inspected all boards; synthetic data/copy and lack of runtime/native user testing are disclosed. Updated project status/index. No visual element is approved or published.
+
 ## 2026-10-25 — V0.2 Product source correction
 - Corrected the previous source-selection error: `wossol-platform`, not `wossol-app`, is the governed Product Source of Truth for the merchant platform. Selected `dev/wossol-integration` at remotely verified HEAD `3ed1386fa88496a2e80b5e144b14a198f6e1bc63` per Product `AGENTS.md`; explicitly did not call this a verified production deployment. The local Product checkout was on a separate Analytics feature branch with four uncommitted files and was not used as the baseline or modified.
 - Replaced Export-oriented application examples with editable/rendered merchant-platform boards covering current merchant navigation and key Orders, Products, Inventory, Customers, Advertising and Analytics screens plus other supported sections. Cross-checked with accepted Product intelligence and strategy; preserved provisional A / Clear Stroke, palette and type.

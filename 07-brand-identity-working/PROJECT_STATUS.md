@@ -1,11 +1,14 @@
 # Brand Identity Project Status
 
 **Date:** 2026-10-25
-**Status:** UNDER_REVIEW — V0.2 MERCHANT-PLATFORM SOURCE CORRECTION COMPLETE; OWNER REVIEW REQUIRED; NO IDENTITY APPROVED
+**Status:** UNDER_REVIEW — V0.3 DUAL-THEME CREATIVE SYSTEM COMPLETE; OWNER REVIEW REQUIRED; NO IDENTITY APPROVED
 **Repository:** jetshop7/wossol-brand-intelligence (PUBLIC)
-**Scope:** Latin WOSSOL wordmark and compact mark production; custom Arabic lettering is deferred, not rejected or approved.
+**Scope:** Latin-first visual identity, dual-theme system, and compact-mark review; custom Arabic lettering is deferred, not rejected or approved.
 
-## Current authoritative stage and next action (2026-10-25 — V0.2 source correction)
+## Current authoritative stage and next action (2026-10-25 — V0.3 dual-theme system)
+Completed [V0.3 Creative Director Report (Arabic)](08-visual-identity/WOSSOL_V0.3_CREATIVE_DIRECTOR_REPORT_AR.md), five editable SVG boards with PNG previews, and [semantic theme tokens](08-visual-identity/WOSSOL_V0.3_SEMANTIC_TOKENS.md). The package proposes first-class Light and Dark themes for the same visual system, keeps Harbor/Night/Lime as the primary palette hypothesis, and compares one Atlas/Apricot alternative on identical dashboard and marketing compositions. Docket Stitch remains a supporting graphic-grammar hypothesis under review; the related standalone compact mark was **rejected** at desk scale (generic list/menu read), so the compact-mark decision remains open and the platform's temporary W must not be replaced by this candidate. Product applications are based on the V0.2-verified `wossol-platform` reference, `dev/wossol-integration` @ `3ed1386fa88496a2e80b5e144b14a198f6e1bc63`; no new product audit/runtime verification occurred and no product code was changed. Screen and campaign values are synthetic. **Next:** owner review of primary-vs-alternative palette and signature concept; any later compact-mark work needs a materially different concept. Runtime/device, accessibility/color-vision and Arabic/RTL QA remain open. No theme, logo, graphic signature, compact mark, font or identity is approved.
+
+### Previous authoritative stage (V0.2 product source correction)
 Completed [V0.2 Product Source Correction](08-visual-identity/WOSSOL_V0.2_PRODUCT_SOURCE_CORRECTION_AR.md), with editable merchant-platform product and marketing application boards plus rendered previews. Correct source: `jetshop7/wossol-platform`, governance-selected `dev/wossol-integration`, remote HEAD `3ed1386fa88496a2e80b5e144b14a198f6e1bc63`. The former `wossol-app` / Export-oriented work is retained as labeled historical evidence outside merchant-platform scope and is superseded for Product validation. Current source confirms merchant routes for Orders, Products, Inventory, Customers, Advertising, Analytics and more; details are access/context-dependent. The collapsed shell uses a 36px placeholder W, so the previous “no compact placement” finding is corrected to an actual placement need; the W itself remains unapproved. Source boards are concepts, not runtime screenshots; production deployment is not verified. **Next:** owner review of applying provisional A / Clear Stroke and existing palette/type to the merchant platform, and authorization to validate the compact-mark placement against a running app. No identity element is approved.
 
 ### Previous V0.1 stage (historical; superseded by V0.2 source validation)

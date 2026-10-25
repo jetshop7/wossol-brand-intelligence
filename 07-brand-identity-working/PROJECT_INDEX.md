@@ -2,6 +2,16 @@
 
 **Updated:** 2026-10-25
 
+## Visual Identity V0.3 — Light & Dark system — 2026-10-25
+- [Arabic Creative Director Report](08-visual-identity/WOSSOL_V0.3_CREATIVE_DIRECTOR_REPORT_AR.md) — concise recommendation, limits, compact-mark verdict and owner gates (UNDER_REVIEW).
+- [Dual-theme system board — SVG](08-visual-identity/WOSSOL_V0.3_DUAL_THEME_SYSTEM.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_DUAL_THEME_SYSTEM.png) — paired Home specimens, semantic-role map, component states and accessibility notes.
+- [Product UI applications — SVG](08-visual-identity/WOSSOL_V0.3_PRODUCT_UI_APPLICATIONS.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_PRODUCT_UI_APPLICATIONS.png) — same Home in Light/Dark, Orders/Inventory, Analytics/Advertising; all example values are synthetic.
+- [Docket Stitch signature + compact test — SVG](08-visual-identity/WOSSOL_V0.3_SIGNATURE_AND_COMPACT_MARK.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_SIGNATURE_AND_COMPACT_MARK.png) — context-record graphic hypothesis and 24/36/48/72px tests in both modes; standalone compact candidate REJECTED as a generic list/menu read, compact-mark decision remains open.
+- [Marketing applications — SVG](08-visual-identity/WOSSOL_V0.3_MARKETING_APPLICATIONS.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_MARKETING_APPLICATIONS.png) — prospective landing page, social content and paid concept with claim boundaries.
+- [Controlled palette comparison — SVG](08-visual-identity/WOSSOL_V0.3_PALETTE_COMPARISON.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_PALETTE_COMPARISON.png) — primary Harbor/Night/Lime vs Atlas/Apricot on identical Light/Dark dashboard and campaign compositions.
+- [Semantic theme token specification](08-visual-identity/WOSSOL_V0.3_SEMANTIC_TOKENS.md) — mode roles, interaction states, components, data charts, selected contrast checks and QA gates.
+- No palette, theme implementation, wordmark, signature, compact mark or overall identity is approved. Product reference remains the V0.2 correction source; this phase did not re-audit or modify Product.
+
 | File | Role | Status |
 |---|---|---|
 | [README](README.md) | Entrypoint, boundaries and resume instructions | ACTIVE |
