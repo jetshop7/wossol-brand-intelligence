@@ -1,6 +1,6 @@
 # Brand Identity Project Index
 
-**Updated:** 2026-10-17
+**Updated:** 2026-10-25
 
 | File | Role | Status |
 |---|---|---|
@@ -150,3 +150,6 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Arabic Customization Stress Test V1.1](08-visual-identity/typography/ARABIC_CUSTOMIZATION_STRESS_TEST_V1.1.md) — correct Arabic typeface outlines compared with two rejected geometric cut treatments; local SVG/PNG package delivered, no logo approval.
 
 - [Bilingual Logo Architecture and Application QA V1.2](08-visual-identity/logo/BILINGUAL_LOGO_ARCHITECTURE_AND_APPLICATION_QA_V1.2.md) — Latin/Arabic primary, side-by-side bilingual, merchant shell and social/avatar gap; SVG/PNG board and 160/240/400px local ZIP; no approval.
+
+- [V1.3 Graphic Grammar Cross-Application Test](08-visual-identity/graphic-system/GRAPHIC_GRAMMAR_CROSS_APPLICATION_TEST_V1.3.md) — post-V1.2 paired grammar assessment; A rejected, B tested but not approved; overall REFRAME.
+- [V1.3 A Open Field SVG](08-visual-identity/graphic-system/V13_A_OPEN_FIELD.svg), [V1.3 B Reference Frame SVG](08-visual-identity/graphic-system/V13_B_REFERENCE_FRAME.svg), [V1.3 36px Compact Frame SVG](08-visual-identity/graphic-system/V13_COMPACT_FRAME_TEST.svg) — editable monochrome test assets, none an approved mark.
