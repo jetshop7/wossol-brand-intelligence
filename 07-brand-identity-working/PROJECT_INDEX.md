@@ -130,3 +130,5 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [Two Logo Systems V0.3 Assessment](08-visual-identity/logo/TWO_FULL_LOGO_SYSTEMS_C_VS_BC_V0.3_ASSESSMENT.md) — C W-signature vs B/C counterform, both icons rejected as final; full local SVG/PNG package delivered.
 - [V0.3 A W icon source](08-visual-identity/logo/V03_A_C_W_SIGNATURE_ICON.svg) and [V0.3 B counterform icon source](08-visual-identity/logo/V03_B_BC_COUNTERFORMS_ICON.svg) — experimental archived SVGs, not approved.
+
+- [Graphic Language A/B System Stress Test V0.4](08-visual-identity/graphic-system/GRAPHIC_LANGUAGE_A_B_SYSTEM_STRESS_TEST_V0.4.md) — two monochrome editorial/operational grammars tested in marketing and schematic dashboard contexts; neither approved, local SVG/PNG package delivered.
