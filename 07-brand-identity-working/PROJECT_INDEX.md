@@ -32,6 +32,11 @@ The files above are distinct evidence layers, not duplicate copies.
 ## Visual Identity Method and Audit
 - [Professional Brand & Visual Identity Method Audit V0.1](08-visual-identity/PROFESSIONAL_BRAND_IDENTITY_METHOD_AUDIT_V0.1.md) — agency evidence, end-to-end workflow, assessment of actual Wossol work and repair gates (UNDER_REVIEW).
 
+## Complete Visual Identity Proposal — 2026-10-25
+- [Arabic Executive Report V0.1](08-visual-identity/VISUAL_IDENTITY_EXECUTIVE_REPORT_AR_V0.1.md) — concise owner-facing decision brief and limitations (UNDER_REVIEW).
+- [Complete Visual Identity System V0.1 — SVG](08-visual-identity/WOSSOL_COMPLETE_VISUAL_IDENTITY_SYSTEM_V0.1.svg) and [PNG preview](08-visual-identity/WOSSOL_COMPLETE_VISUAL_IDENTITY_SYSTEM_V0.1.png) — editable identity board and inspected render; provisional only.
+- [Visual Identity Guidelines V0.1](08-visual-identity/VISUAL_IDENTITY_GUIDELINES_V0.1.md) — palette/contrast, typography, graphic grammar, application and governance rules (UNDER_REVIEW).
+
 ## Integrated Strategic / Creative Handoff
 - [Integrated Brand & Creative Brief V0.1](04-brand-strategy/INTEGRATED_BRAND_AND_CREATIVE_BRIEF_V0.1.md) — consolidated evidence-backed and hypothetical requirements for naming, architecture, visual concepts, applications and validation (UNDER_REVIEW).
 
