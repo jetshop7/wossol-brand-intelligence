@@ -1,9 +1,12 @@
 # Brand Identity Project Status
 
-**Date:** 2026-10-17
-**Status:** UNDER_REVIEW
+**Date:** 2026-10-25
+**Status:** UNDER_REVIEW — V1.3 GRAPHIC SYSTEM REFRAME
 **Repository:** jetshop7/wossol-brand-intelligence (PUBLIC)
-**Scope:** Brand strategy, personality, values, positioning, naming preparation; no logo/design yet.
+**Scope:** Full brand identity work; V1.3 design exploration, no visual system or logo approved.
+
+## Current authoritative stage and next action (2026-10-25)
+V1.3 [graphic grammar cross-application test](08-visual-identity/graphic-system/GRAPHIC_GRAMMAR_CROSS_APPLICATION_TEST_V1.3.md) completed. A/Open Field REJECT; B/Reference Frame TEST only, not an ownable symbol; overall REFRAME. Three experimental SVGs committed. V1.2 remains the preceding bilingual architecture study. **Next:** develop and test distinctive identity behavior across Arabic/Latin hierarchy and realistic merchant-product constraints rather than S/W, arrows, or crop-mark icons. No logo/icon/palette approved. Historical status chronology below is preserved for audit.
 
 ## Confirmed by user
 - Hybrid model: Wossol as both commercial operating partner and merchant-controlled platform.
