@@ -41,7 +41,7 @@ This round responds by using two different wordmark-led architectures and by mak
 **System hypothesis:**
 
 - **Logo architecture:** Latin-first WOSSOL from the existing R2-C angular custom wordmark, with وصول as an intact Arabic companion. The Arabic is live text from a system font in this board, not custom lettering or an optically completed lockup.
-- **Compact route:** Arabic waw in a dark rounded square, tested at 72px and 36px on the board. It is provisional, not custom, and not recognition-validated.
+- **Compact route:** Arabic waw in a dark rounded square, shown at 72px on the board and as a separately rendered, exact 36×36px PNG/SVG. It is provisional, not custom, and not recognition-validated; at 36px the looped glyph appears numeral-like without the accompanying wordmark.
 - **Palette proposal:** dark petrol `#142B2B`, electric lime `#D9F064`, warm paper `#F5F2EA`, and muted rust `#C2614B`. Lime is an accent hypothesis, not a chosen accessibility-safe action color.
 - **Typography proposal:** humanist grotesk for Latin and a readable Naskh/humanist Arabic companion. No family is selected; licensing, native-script rendering and actual size legibility remain unverified.
 - **Graphic/layout behavior:** high-contrast editorial hierarchy, generous warm-paper fields, dark navigation/anchor surfaces, lime used sparingly for focus. No repeatable proprietary graphic signature has passed a distinctiveness gate.
@@ -57,7 +57,7 @@ This round responds by using two different wordmark-led architectures and by mak
 **System hypothesis:**
 
 - **Logo architecture:** وصول is primary, WOSSOL is the Latin companion. The boards compare Arabic-first desktop presentation and a right-to-left mobile shell; the two words remain intact rather than being fused into an unsupported bilingual ligature.
-- **Compact route:** Arabic waw in a navy rounded square with gold detail, shown at 72px and 36px. This is the same initial concept as A in a different treatment, not a distinctive custom glyph; its small-size optical performance and recall are untested.
+- **Compact route:** Arabic waw in a navy rounded square with gold detail, shown at 72px on the board and as a separately rendered, exact 36×36px PNG/SVG. This is the same initial concept as A in a different treatment, not a distinctive custom glyph; the exact-size PNG similarly reads as a small looped/numeral-like mark without the wordmark. Recognition is untested.
 - **Palette proposal:** deep indigo `#1E316B`, clear blue `#B7D1FF`, warm sand `#F6F0E4`, and amber `#F2B84B`. These are comparative hypotheses; contrast and accessibility have not been verified.
 - **Typography proposal:** contemporary humanist Latin sans paired with a clear contemporary Arabic sans. Neither family is selected or license-checked; the Arabic word in the board is font-rendered reference text, not custom lettering.
 - **Graphic/layout behavior:** right-to-left information hierarchy is primary in Arabic applications, with intact Latin companion and localized alignment; blue carries structure, sand and amber add warmth. It relies on typographic hierarchy rather than a generic technology icon.
@@ -144,5 +144,6 @@ These rules are design hypotheses pending testing—not a released brand manual:
 - [Direction A mobile navigation — editable SVG](DIRECTION_A_CLEAR_CARRY_MOBILE_NAV_V0.1.svg) and [review PNG](DIRECTION_A_CLEAR_CARRY_MOBILE_NAV_V0.1.png)
 - [Direction B full board — editable SVG](DIRECTION_B_ARABIC_FIRST_CAPABILITY_BOARD_V0.1.svg) and [review PNG](DIRECTION_B_ARABIC_FIRST_CAPABILITY_BOARD_V0.1.png)
 - [Direction B mobile navigation — editable SVG](DIRECTION_B_ARABIC_FIRST_MOBILE_NAV_V0.1.svg) and [review PNG](DIRECTION_B_ARABIC_FIRST_MOBILE_NAV_V0.1.png)
+- [Direction A exact 36px icon test](DIRECTION_A_CLEAR_CARRY_ICON_36PX_V0.1.svg) / [PNG](DIRECTION_A_CLEAR_CARRY_ICON_36PX_V0.1.png) and [Direction B exact 36px icon test](DIRECTION_B_ARABIC_FIRST_ICON_36PX_V0.1.svg) / [PNG](DIRECTION_B_ARABIC_FIRST_ICON_36PX_V0.1.png)
 
 All assets are explorations dated 2026-10-25. The interface mockups are illustrative, not screenshots of Wossol Product. No new final decision is recorded by this report.
