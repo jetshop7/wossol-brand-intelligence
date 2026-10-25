@@ -156,3 +156,5 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [V1.4 review](08-visual-identity/graphic-system/V14_REVIEW.md) and [editable bilingual hierarchy SVG](08-visual-identity/graphic-system/V14_BILINGUAL_INFORMATION_RHYTHM.svg) — REFRAME, not approved.
 - [V1.5 Choice Field assessment](08-visual-identity/graphic-system/CHOICE_FIELD_CROSS_TOUCHPOINT_V1.5.md) and [editable application SVG](08-visual-identity/graphic-system/V15_CHOICE_FIELD_APPLICATION.svg) — tested marketing/operational contrast; generic signature rejected.
+
+- [V1.6 Signature Distinctiveness Gate](08-visual-identity/graphic-system/SIGNATURE_DISTINCTIVENESS_GATE_V1.6.md) and [editable SVG](08-visual-identity/graphic-system/V16_WORDMARK_ANCHORED_BILINGUAL_BOARD.svg) — existing competitor landscape comparison and bilingual layout prototype; REFRAME.
