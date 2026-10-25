@@ -132,3 +132,6 @@ The files above are distinct evidence layers, not duplicate copies.
 - [V0.3 A W icon source](08-visual-identity/logo/V03_A_C_W_SIGNATURE_ICON.svg) and [V0.3 B counterform icon source](08-visual-identity/logo/V03_B_BC_COUNTERFORMS_ICON.svg) — experimental archived SVGs, not approved.
 
 - [Graphic Language A/B System Stress Test V0.4](08-visual-identity/graphic-system/GRAPHIC_LANGUAGE_A_B_SYSTEM_STRESS_TEST_V0.4.md) — two monochrome editorial/operational grammars tested in marketing and schematic dashboard contexts; neither approved, local SVG/PNG package delivered.
+
+- [Wordmark-First Bilingual Identity and Compact Gap V0.5](08-visual-identity/graphic-system/WORDMARK_FIRST_BILINGUAL_IDENTITY_AND_COMPACT_GAP_V0.5.md) — editorial EN/AR system, actual-size product slot, small-width render QA, critical refinement recommendation.
+- [V0.5 Compact Icon Requirement SVG](08-visual-identity/graphic-system/V05_COMPACT_ICON_REQUIREMENT_DIAGRAM.svg) — editable schematic of 280px/88px sidebar and temporary 36x36px W; not an approved icon.
