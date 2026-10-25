@@ -1,7 +1,7 @@
 # Brand Identity Project Status
 
 **Date:** 2026-10-25
-**Status:** UNDER_REVIEW — V1.3 GRAPHIC SYSTEM REFRAME
+**Status:** UNDER_REVIEW — V1.5 REFRAME
 **Repository:** jetshop7/wossol-brand-intelligence (PUBLIC)
 **Scope:** Full brand identity work; V1.3 design exploration, no visual system or logo approved.
 
@@ -190,3 +190,6 @@ Rejected V0.9 hand-drawn Arabic for incorrect sad/join rhythm. Built properly sh
 
 ## 2026-10-25 — V1.1 reconciliation and V1.2 bilingual architecture
 V1.1 rejected decorative Arabic cuts (report/index/changelog saved; previous status update blocked). V1.2 executed actual SVG/PNG board of Latin-primary C, readable font-derived Arabic-primary, side-by-side bilingual lockup, code-informed merchant shell, Arabic header and unresolved social/avatar icon. Rendered and visually inspected; 160/240/400px lockup exports. Neither Arabic nor Latin pair forms a final distinctive identity; 36px mark unresolved. [V1.2 report](08-visual-identity/logo/BILINGUAL_LOGO_ARCHITECTURE_AND_APPLICATION_QA_V1.2.md). Local editable SVG/PNG ZIP delivered in conversation only. Recommendation REFINE; next strategic graphic concept and original independent compact-mark brief, not S/W or Arabic cut loops. No logo approval.
+
+## 2026-10-25 — V1.4 and V1.5
+V1.4 bilingual editorial prototype SVG and short review saved; generic hierarchy is not a signature (REFRAME). V1.5 [choice-field report](08-visual-identity/graphic-system/CHOICE_FIELD_CROSS_TOUCHPOINT_V1.5.md) and [editable application SVG](08-visual-identity/graphic-system/V15_CHOICE_FIELD_APPLICATION.svg) committed. Cross-touchpoint selection logic tested as schematic marketing and Arabic-first operational panels. It is functional but generic; REFRAME, not APPROVE. Next: focused visual benchmark comparison followed by a genuinely distinctive bilingual signature test. No logo, icon, font or palette approved.
