@@ -119,3 +119,5 @@
 - 2026-10-25: Tested C wordmark-first bilingual editorial system V0.5 in SVG/PNG and real-code-informed sidebar schematic; corrected RTL text clipping, documented unresolved compact icon and archived diagram.
 
 - 2026-10-25: Tested compact 36px S/W original C glyph icons and humanist/Kufi Arabic pairings (V0.6); archived report and editable icons; both remain unapproved.
+
+- 2026-10-25: Reconciled missing V0.7 status entry; produced V0.8 pixel-accurate 36/72/144px S/W assets, code-informed shell simulation and corrected Arabic bidirectional shaping. No logo or custom Arabic approval.
