@@ -105,3 +105,5 @@
 - 2026-10-25: Created and compared two Arabic typographic treatments paired with original C Latin wordmark; recommended B for refinement, no identity approval; archived two SVG prototypes and assessment.
 
 - 2026-10-25: Prepared blinded Latin/Arabic merchant first-read pilot pack and checked merchant shell structure against actual product repository. No participant responses or design approvals.
+
+- 2026-10-25: Implemented self-contained Arabic offline merchant pilot runner, verified consent, 3-second exposure and capture in Chromium; prepared anonymized CSV export. No participant data or final design approval.
