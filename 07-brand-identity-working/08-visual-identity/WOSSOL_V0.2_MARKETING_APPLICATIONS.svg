@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2400" height="3200" viewBox="0 0 2400 3200">
-<title>Wossol V0.2 marketing applications — concept based on current Wossol Export public-site language</title>
-<desc>Editable website, social post, paid-ad concept and company presentation cover based on verified Wossol Export public copy and navigation. Synthetic layouts and design proposal only; no testimonials, metrics or unsupported product capabilities.</desc>
+<title>Historical Export marketing study — out of scope for Wossol merchant platform</title>
+<desc>Preserved record of the earlier Wossol Export marketing source selection. This board does not represent the governed Wossol merchant platform.</desc>
 <defs>
  <style>
  @font-face{font-family:WossolInter;src:url('fonts/Inter-4.1-Variable.ttf') format('truetype');font-weight:100 900}
@@ -12,7 +12,7 @@
  <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0E2528"/><stop offset="1" stop-color="#153B3A"/></linearGradient>
  </defs>
 <rect width="2400" height="3200" class="bg"/>
-<text x="80" y="72" class="tiny muted">WOSSOL · MARKETING APPLICATIONS V0.2</text><text x="2320" y="72" text-anchor="end" class="tiny muted">PUBLIC COPY VERIFIED · VISUAL PROPOSAL / NOT PUBLISHED</text>
+<text x="80" y="72" class="tiny" fill="#B9553F">HISTORICAL EXPORT STUDY · OUT OF SCOPE FOR WOSSOL MERCHANT PLATFORM</text><text x="2320" y="72" text-anchor="end" class="tiny muted">PRESERVED FROM SOURCE-CORRECTION HISTORY</text>
 <rect x="64" y="105" width="2272" height="255" rx="25" class="night"/><use xlink:href="#wordmarkLight" transform="translate(112 153) scale(.8)"/>
 <text x="650" y="169" class="white h1">Trust, made visible.</text><text x="650" y="220" fill="#D7F06A" class="bodyt">An export brand expressed through clarity, relationships, and real trade opportunity.</text><text x="650" y="278" fill="#D8E3DE" class="small">Direction carries V0.1 A / Clear Stroke + Evidence Thread; all applications remain proposals.</text>
 

@@ -1,5 +1,10 @@
 # Brand Identity Changelog
 
+## 2026-10-25 — V0.2 Product source correction
+- Corrected the previous source-selection error: `wossol-platform`, not `wossol-app`, is the governed Product Source of Truth for the merchant platform. Selected `dev/wossol-integration` at remotely verified HEAD `3ed1386fa88496a2e80b5e144b14a198f6e1bc63` per Product `AGENTS.md`; explicitly did not call this a verified production deployment. The local Product checkout was on a separate Analytics feature branch with four uncommitted files and was not used as the baseline or modified.
+- Replaced Export-oriented application examples with editable/rendered merchant-platform boards covering current merchant navigation and key Orders, Products, Inventory, Customers, Advertising and Analytics screens plus other supported sections. Cross-checked with accepted Product intelligence and strategy; preserved provisional A / Clear Stroke, palette and type.
+- Corrected compact-mark finding: the current merchant shell contains a 36×36 temporary W in its collapsed sidebar; an actual compact placement exists, but the placeholder is not approved. Kept previous Export report/boards and relabeled them historical/out of scope. Updated status and index. No Product or `main` files changed; no identity approved.
+
 ## 2026-10-25 — Real-product validation and production V0.2
 - Completed source validation against `jetshop7/wossol-app` `dev/private-catalog` at `4f20c18d964bbac383de8bf30c84344734ba3980` (read-only). Added product and marketing SVG/PNG application boards, licensed local Inter/Noto Sans Arabic fonts and notices, and exact-font typography proof.
 - Grounded mockups in Wossol Export public, client-catalog and partner-pricing surfaces. Explicitly separated unlocated user-facing Orders/Inventory routes and the market-study admin marketing tool from mock screens/analytics claims. Rejected generic W as a distinctive compact mark.
