@@ -137,3 +137,5 @@
 - 2026-10-25: V1.6 reviewed existing competitor visual evidence, created bilingual wordmark-anchored schematic SVG and distinctiveness gate report. Generic layout alone failed identity recognition gate; REFRAME, no approval.
 
 - 2026-10-25: V1.7 built paired O-contour candidate directly from original R2-C SVG, with reversed and compact size board; verdict TEST due generic ring risk and insufficient validation. No visual approval.
+
+- 2026-10-25: V1.8 created compact/RTL stress SVG and assessment; rejected V1.7 paired-O compact icon as weak at 36px and not a distinctive bilingual identity. No user approval.
