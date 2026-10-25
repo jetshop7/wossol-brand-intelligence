@@ -176,3 +176,7 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Wordmark and bilingual lockup board SVG](08-visual-identity/typography/ROUND2_FINAL_WORDMARK_AND_LOCKUP_BOARD_V0.1.svg) and PNG — actual editable custom paths, R2-C assessment, Arabic reference, rejected Arabic paths, R3 Latin, Latin-first and Arabic-first arrangements.
 - [Compact mark size-test board SVG](08-visual-identity/ROUND2_COMPACT_MARK_STRESS_TEST_V0.1.svg) and PNG — three materially different candidates, rendered at exact 24/36/48/72 px; none approved; candidate 02 only advances to native-reader testing.
 - [Arabic shaping reference board SVG](08-visual-identity/typography/ARABIC_REFERENCE_VS_CUSTOM_LETTERING_ROUND2_V0.1.svg) and PNG — reference live-font specimen versus original trials; not an adoption proposal.
+
+## Focused Arabic wordmark specialist handoff — 2026-10-25
+- [Arabic Wordmark Specialist Handoff V0.1](08-visual-identity/typography/ARABIC_WORDMARK_SPECIALIST_HANDOFF_V0.1.md) — correct contextual anatomy/segmentation, two distinct custom lettering routes, R3 optical gate, source/licensing boundaries, size proof and native-reader requirements. Decision: no viable custom wordmark produced here; specialist handoff required.
+- [Reference pairing board SVG](08-visual-identity/typography/ARABIC_WORDMARK_SPECIALIST_REFERENCE_BOARD_V0.1.svg) and PNG — actual correctly shaped Naskh and Segoe UI reference samples with experimental R3 Latin paths. Reference comparison only; not custom wordmark candidates, and no font files embedded.

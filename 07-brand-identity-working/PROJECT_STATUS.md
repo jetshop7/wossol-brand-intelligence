@@ -1,11 +1,13 @@
 # Brand Identity Project Status
 
 **Date:** 2026-10-25
-**Status:** UNDER_REVIEW — ROUND 2 CRAFT STUDY COMPLETED; NO ARABIC WORDMARK OR COMPACT MARK PASSES
+**Status:** UNDER_REVIEW — ARABIC CUSTOM WORDMARK HANDOFF REQUIRED; NO CANDIDATE PASSES
 **Repository:** jetshop7/wossol-brand-intelligence (PUBLIC)
 **Scope:** Full brand identity work; two V0.1 identity systems in comparative review, no visual system or logo approved.
 
 ## Current authoritative stage and next action (2026-10-25)
+Focused [Arabic Wordmark Specialist Handoff V0.1](08-visual-identity/typography/ARABIC_WORDMARK_SPECIALIST_HANDOFF_V0.1.md) is complete. The reference board compares correctly shaped Naskh and sans Arabic specimens beside experimental R3 paths; it is explicitly not bespoke lettering. No production-ready Arabic candidate is claimed because this environment lacks a safe, professional editable-outline construction workflow for contextual Arabic glyphs. Next viable step: qualified Arabic lettering specialist produces two contextual vector routes to the saved brief, then native-reader test.
+
 Round 2 [Arabic report](08-visual-identity/ROUND2_CREATIVE_REFINEMENT_REPORT_AR_V0.1.md) records the fresh custom-path findings: R3 Clear Stroke is a better Latin craft base than R2-C; both original Arabic lettering trials fail; of three compact marks only the custom ṣād concept merits a native-reader test. The exact-size board is in [compact stress test](08-visual-identity/ROUND2_COMPACT_MARK_STRESS_TEST_V0.1.svg), and bilingual pairs are on [wordmark/lockup comparison](08-visual-identity/typography/ROUND2_FINAL_WORDMARK_AND_LOCKUP_BOARD_V0.1.svg). The round-1 A-first recommendation remains only a hierarchy hypothesis, not a direction selection. No logo is approved. **Next:** obtain a specialist Arabic lettering pass and native-reader test; test compact concept 02; ask owner to compare A/B hierarchy only after Arabic craft is stronger.
 
 V1.8 [compact/bilingual gate](08-visual-identity/graphic-system/COMPACT_BILINGUAL_GATE_V1.8.md) rejected the paired-O compact candidate; no logo or icon is approved. The current [two-direction creative review](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_CREATIVE_REVIEW_V0.1.md) develops A/Clear Carry (Latin-led, existing R2-C wordmark) and B/Arabic-First Capability (Arabic-led, separate RTL system) through editable desktop, marketing and mobile applications. A is the assistant's provisional refinement lead only; B remains a live alternative; the shared initial-only waw avatar remains an unresolved compact-signature gap, including in the exact-size 36×36px desk test. **Next:** owner review, then build and test a proprietary compact/wordmark relationship; obtain native Arabic review, typography licensing/contrast checks and a broader dated visual benchmark. No design is selected or approved. Historical status chronology below is preserved for audit.
@@ -22,11 +24,11 @@ V1.8 [compact/bilingual gate](08-visual-identity/graphic-system/COMPACT_BILINGUA
 - 'Merchant-Led Progress' and 'Expanding Merchant Capability' are hypotheses, not approved essence.
 
 ## Current step
-Completed Round 2 craft comparison: R3 Latin preferred for further refinement; both handcrafted Arabic trials rejected; compact mark 02 only advances to native-reader testing. Round-1 A-first is retained only as a hierarchy hypothesis; B remains untested against professionally redrawn Arabic. No identity elements have owner approval. Merchant interviews are optional under D-014; no audience validation is claimed.
+Completed focused Arabic anatomy and tooling assessment; specialist handoff is prepared with correct segmentation/joining, two lettering route briefs, R3 optical gates, and native-reader tests. No Arabic custom candidate, mark, or identity is approved. Round-1 A-first remains only a hierarchy hypothesis. Merchant interviews are optional under D-014; no audience validation is claimed.
 
 ## Next actions
-1. Commission or perform specialist Arabic contextual lettering refinement before further identity recommendation; no current Arabic custom path passes.
-2. Test compact candidate 02 with native Arabic readers; 01 is rejected and 03 held. Re-test 24/36/48/72px in real product contexts.
+1. Execute [Arabic Wordmark Specialist Handoff V0.1](08-visual-identity/typography/ARABIC_WORDMARK_SPECIALIST_HANDOFF_V0.1.md) with a qualified Arabic lettering designer; no current Arabic custom path passes.
+2. After contextual custom paths exist, test them with native Arabic readers and R3 at 24/36/48/72px and 160/240/400px lockups.
 3. Revisit A/B hierarchy after a credible bilingual wordmark exists; check R3 reduction/readability and real Arabic/Latin font licensing, contrast, RTL UI and mobile behavior.
 4. Expand the first-party competitor visual benchmark and complete legal trademark clearance before public identity rollout.
 5. Continue evidence-bounded positioning and capability work; do not turn schematic mockup copy or data into product claims.
