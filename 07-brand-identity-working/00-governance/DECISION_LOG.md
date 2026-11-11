@@ -52,4 +52,6 @@ Name Wossol/وصول is user-approved as the brand name for identity development
 
 | D-014 | User process direction | APPROVED | Merchant interviews are optional because none are available; proceed with brand system using documented expert, technical and application checks | 2026-10-25; zero interviews; no logo approval. |
 
-| D-015 | User decision | APPROVED — CREATIVE DIRECTION ONLY | Select **Custom W Mark — Refined** (Concept 02) as the WOSSOL logo direction, using the supplied 2026-11-06 Refined reference as primary. Previous logo recommendations are superseded for direction. | 2026-11-06. The SVG reconstruction is a technical interpretation of a low-resolution raster and remains pending owner visual approval. This decision does not approve production artwork, deployment, tagline, palette revision, or other applications. |
+| D-015 | User decision | SUPERSEDED / WITHDRAWN | Former Custom W Mark reconstruction direction and technical assets | Superseded by the owner's 2026-11-11 selection of a specific reference image in conversation; all prior reconstructed masters and logo studies in this repository are rejected. |
+
+| D-016 | User decision | APPROVED REFERENCE IMAGE ONLY | On 2026-11-11 the owner identified the final logo reference image in conversation as the sole visual reference | No verified vector master, production-ready asset pack, or other derivative is approved in this repository. Do not reuse prior logos. |
