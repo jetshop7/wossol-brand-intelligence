@@ -1,19 +1,16 @@
+> **2026-11-11 LOGO RESET:** All previous WOSSOL logo proposals, SVG/PNG marks, comparisons, and reconstructed masters were rejected and removed from active repository use. Do not use old logo references in this index or historical commits. The owner-selected source image exists only in the conversation, not as a verified repository master.
+
 # Brand Identity Project Index
 
 **Updated:** 2026-10-25
 
 ## Visual Identity V0.4 — logo-system refinement — 2026-10-25
-- [Arabic logo-system evaluation](08-visual-identity/WOSSOL_V0.4_LOGO_SYSTEM_EVALUATION_AR.md) — recommendation and rejection rationale; no complete system clears the current quality gate (UNDER_REVIEW).
-- [Wordmark A0/A1 comparison — SVG](08-visual-identity/logo/WOSSOL_V0.4_WORDMARK_REFINEMENT.svg) and [PNG](08-visual-identity/logo/WOSSOL_V0.4_WORDMARK_REFINEMENT.png) — single spacing refinement to the provisional Clear Stroke wordmark.
-- [Compact candidates and exact-size tests — SVG](08-visual-identity/logo/WOSSOL_V0.4_COMPACT_MARK_TESTS.svg) and [PNG](08-visual-identity/logo/WOSSOL_V0.4_COMPACT_MARK_TESTS.png) — two candidates at 16/24/36/48/72px in Light/Dark; both rejected, no icon winner.
-- [Wordmark family and merchant-dashboard application — SVG](08-visual-identity/logo/WOSSOL_V0.4_LOGO_FAMILY_AND_APPLICATIONS.svg) and [PNG](08-visual-identity/logo/WOSSOL_V0.4_LOGO_FAMILY_AND_APPLICATIONS.png) — provisional wide-use wordmark and conceptual UI application; synthetic data, temporary W explicitly not recommended.
 - Nothing is approved. The compact-mark gap remains open; Product was not re-audited or changed.
 
 ## Visual Identity V0.3 — Light & Dark system — 2026-10-25
 - [Arabic Creative Director Report](08-visual-identity/WOSSOL_V0.3_CREATIVE_DIRECTOR_REPORT_AR.md) — concise recommendation, limits, compact-mark verdict and owner gates (UNDER_REVIEW).
 - [Dual-theme system board — SVG](08-visual-identity/WOSSOL_V0.3_DUAL_THEME_SYSTEM.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_DUAL_THEME_SYSTEM.png) — paired Home specimens, semantic-role map, component states and accessibility notes.
 - [Product UI applications — SVG](08-visual-identity/WOSSOL_V0.3_PRODUCT_UI_APPLICATIONS.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_PRODUCT_UI_APPLICATIONS.png) — same Home in Light/Dark, Orders/Inventory, Analytics/Advertising; all example values are synthetic.
-- [Docket Stitch signature + compact test — SVG](08-visual-identity/WOSSOL_V0.3_SIGNATURE_AND_COMPACT_MARK.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_SIGNATURE_AND_COMPACT_MARK.png) — context-record graphic hypothesis and 24/36/48/72px tests in both modes; standalone compact candidate REJECTED as a generic list/menu read, compact-mark decision remains open.
 - [Marketing applications — SVG](08-visual-identity/WOSSOL_V0.3_MARKETING_APPLICATIONS.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_MARKETING_APPLICATIONS.png) — prospective landing page, social content and paid concept with claim boundaries.
 - [Controlled palette comparison — SVG](08-visual-identity/WOSSOL_V0.3_PALETTE_COMPARISON.svg) and [PNG](08-visual-identity/WOSSOL_V0.3_PALETTE_COMPARISON.png) — primary Harbor/Night/Lime vs Atlas/Apricot on identical Light/Dark dashboard and campaign compositions.
 - [Semantic theme token specification](08-visual-identity/WOSSOL_V0.3_SEMANTIC_TOKENS.md) — mode roles, interaction states, components, data charts, selected contrast checks and QA gates.
@@ -106,47 +103,30 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [A2 Adaptive Path Construction & Desk Test V0.1](08-visual-identity/A2_ADAPTIVE_PATH_CONSTRUCTION_AND_DESK_TEST_V0.1.md) — preliminary repeatability and illustrative size review; distinctiveness unproven (UNDER_REVIEW).
 
-- [Logo Concept Round 01 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_01_V0.1.md) — first new-logo concepts, critique, no approval; visual board remains in conversation.
 
-- [Logo Concept Round 02 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_02_V0.1.md) — compares open ribbons, modular cross, and custom Wossol wordmark; wordmark prioritized for development only.
 
-- [Logo Concept Round 03 V0.1](08-visual-identity/logo/LOGO_CONCEPT_ROUND_03_V0.1.md) — compares A/B/C/D; prioritize focused B/C logo craft rather than more decorative mockup boards.
 
-- [Logo Craft B/C Review V0.1](08-visual-identity/logo/LOGO_CRAFT_B_C_REVIEW_V0.1.md) — evaluates illustrated construction/size boards, prioritizes wordmark craft; not validated vector artwork.
 
-- [Custom Vector Wordmark C1/C2 V0.2](08-visual-identity/logo/WORDMARK_CUSTOM_VECTOR_C1_C2_V0.2.md) — editable SVG outlines and actual raster export study, assets remain conversation-local.
 
-- [Logo Round 04 Critical Review V0.1](08-visual-identity/logo/LOGO_ROUND_04_CRITICAL_REVIEW_V0.1.md) — rejected repeated ribbon symbols, retained wordmarks only as studies.
 
-- [Logo Round 05 Critical Review](08-visual-identity/logo/LOGO_ROUND_05_CRITICAL_REVIEW_V0.1.md) — compares gateway, infinity-like path, and two wordmarks; A/D exploratory only.
 
-- [A/C Competitor Evidence Comparison V0.1](08-visual-identity/logo/A_C_COMPETITOR_EVIDENCE_COMPARISON_V0.1.md) — uses existing competitor audits, rejects generic focus/offset symbols without asserting direct logo collision.
 
-- [Strategy-led Logo Design Brief V0.1](08-visual-identity/logo/STRATEGY_LED_LOGO_DESIGN_BRIEF_V0.1.md) — three distinct construction routes, explicit rejection gates and validation rules; no logo approved.
 
-- [Three-route Vector Prototypes Review V0.1](08-visual-identity/logo/THREE_ROUTE_VECTOR_PROTOTYPES_REVIEW_V0.1.md) — actual archived R1/R2/R3 SVG sources; R2 retained for typographic refinement only.
 
-- [R2 Wordmark Letterform Craft V0.2](08-visual-identity/logo/R2_WORDMARK_LETTERFORM_CRAFT_V0.2.md) — two archived custom SVG wordmarks R2-A/R2-B and critical comparison; neither approved.
 
 - [R2 Merchant Perception Test Protocol V0.1](11-validation/R2_WORDMARK_MERCHANT_PERCEPTION_TEST_PROTOCOL_V0.1.md) — ready-to-run qualitative pilot; no participant results yet.
 
 ## Project governance and recovery — 2026-10-24
 - [Brand Identity Master Instructions V2.0](00-governance/BRAND_IDENTITY_MASTER_INSTRUCTIONS_V2.md) — complete independent creative leadership, methodology, quality, GitHub and Wossol-specific operating rules.
 - [ChatGPT Project Entrypoint](00-governance/CHATGPT_PROJECT_ENTRYPOINT.md) — short mandatory read sequence and phase routing for cross-chat/account recovery.
-- [C vs B/C Logo System Direction](08-visual-identity/logo/LOGO_SYSTEM_DIRECTION_C_VS_BC_V0.1.md) — latest unapproved creative handoff.
 
 ## Logo system SVG prototypes — 2026-10-24
-- [C vs B/C vector system critical review](08-visual-identity/logo/LOGO_SYSTEM_C_VS_BC_VECTOR_PROTOTYPES_V0.1.md) — actual SVG prototype construction and rejection rationale; UNDER_REVIEW.
-- [C lockup SVG](08-visual-identity/logo/WOSSOL_C_lockup.svg), [C symbol SVG](08-visual-identity/logo/WOSSOL_C_symbol.svg) — experimental only.
-- [B/C lockup SVG](08-visual-identity/logo/WOSSOL_BC_lockup.svg), [B/C symbol SVG](08-visual-identity/logo/WOSSOL_BC_symbol.svg) — experimental only.
 
 - [RTL Graphic Grammar Comparison V0.1](08-visual-identity/graphic-system/RTL_GRAPHIC_GRAMMAR_COMPARISON_V0.1.md) — critical review of three schematic visual devices; none approved; local SVG/PNG delivered in conversation.
 
 - [C Bilingual RTL Layout Stress Test V0.1](08-visual-identity/typography/C_BILINGUAL_RTL_LAYOUT_STRESS_TEST_V0.1.md) — original C vector placed in schematic Arabic-first desktop/mobile; PNG and SVG provided in conversation, not live UI.
 
-- [C vs B Bilingual Lockup Comparison V0.1](08-visual-identity/typography/C_VS_B_BILINGUAL_LOCKUP_COMPARISON_V0.1.md) — Arabic/Latin comparison, under review; local editable SVG and PNG.
 
-- [Arabic Wordmark A/B Treatment Assessment](08-visual-identity/typography/ARABIC_WORDMARK_A_B_TREATMENT_ASSESSMENT_V0.1.md) — critical comparison, under review.
 - [Arabic A Geometric + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_A_GEOMETRIC_WITH_C_V0.1.svg) and [Arabic B Humanist + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_B_HUMANIST_WITH_C_V0.1.svg) — editable exploratory vectors with live Arabic text; local outlined versions supplied separately.
 
 - [Merchant First-Read Pilot and Real UI Gate V0.1](11-validation/MERCHANT_FIRST_READ_PILOT_STIMULI_AND_REAL_UI_GATE_V0.1.md) — four blinded stimuli, counterbalanced order and empty results sheet delivered in conversation; real merchant shell evidence verified; zero participants.
@@ -157,28 +137,16 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [Validation Without Merchant Access](11-validation/VALIDATION_WITHOUT_MERCHANT_ACCESS_V0.1.md) - D-014 process change and substitute QA gates.
 
-- [Two Logo Systems V0.3 Assessment](08-visual-identity/logo/TWO_FULL_LOGO_SYSTEMS_C_VS_BC_V0.3_ASSESSMENT.md) — C W-signature vs B/C counterform, both icons rejected as final; full local SVG/PNG package delivered.
-- [V0.3 A W icon source](08-visual-identity/logo/V03_A_C_W_SIGNATURE_ICON.svg) and [V0.3 B counterform icon source](08-visual-identity/logo/V03_B_BC_COUNTERFORMS_ICON.svg) — experimental archived SVGs, not approved.
 
 - [Graphic Language A/B System Stress Test V0.4](08-visual-identity/graphic-system/GRAPHIC_LANGUAGE_A_B_SYSTEM_STRESS_TEST_V0.4.md) — two monochrome editorial/operational grammars tested in marketing and schematic dashboard contexts; neither approved, local SVG/PNG package delivered.
 
-- [Wordmark-First Bilingual Identity and Compact Gap V0.5](08-visual-identity/graphic-system/WORDMARK_FIRST_BILINGUAL_IDENTITY_AND_COMPACT_GAP_V0.5.md) — editorial EN/AR system, actual-size product slot, small-width render QA, critical refinement recommendation.
-- [V0.5 Compact Icon Requirement SVG](08-visual-identity/graphic-system/V05_COMPACT_ICON_REQUIREMENT_DIAGRAM.svg) — editable schematic of 280px/88px sidebar and temporary 36x36px W; not an approved icon.
 
-- [Compact Icon and Bilingual Optical Pairing V0.6](08-visual-identity/logo/COMPACT_ICON_AND_BILINGUAL_OPTICAL_PAIRING_V0.6.md) — S vs W at 24-88px and Arabic humanist vs Kufi optical desk comparison.
-- [V0.6 S Compact Icon SVG](08-visual-identity/logo/V06_S_FROM_C_COMPACT_ICON.svg) and [V0.6 W Compact Icon SVG](08-visual-identity/logo/V06_W_FROM_C_COMPACT_ICON.svg) — extracted from original C glyph paths; exploratory, not approved.
 
-- [V0.7 Compact S and Arabic Context](08-visual-identity/logo/COMPACT_S_CONTEXT_AND_ARABIC_PAIRING_V0.7.md) — targeted desk comparison, no approval.
-- [V0.8 Exact 36px Icon and Arabic Shaping QA](08-visual-identity/logo/EXACT_36PX_COMPACT_ICON_AND_ARABIC_SHAPING_QA_V0.8.md) — pixel-accurate icon exports and code-informed sidebar simulation; font-derived Arabic only.
-- [V0.8 S 36px SVG](08-visual-identity/logo/V08_S_36PX_DARK.svg) and [V0.8 W 36px SVG](08-visual-identity/logo/V08_W_36PX_DARK.svg) — experimental assets, neither approved.
 
-- [Original Arabic Lettering Construction V0.9](08-visual-identity/typography/ORIGINAL_ARABIC_LETTERING_CONSTRUCTION_V0.9.md) — manually constructed Arabic Bézier study, critical rejection of current optical quality, no logo approval.
 - [V0.9 Arabic Hand-Constructed SVG](08-visual-identity/typography/ARABIC_HAND_CONSTRUCTED_V09.svg) — editable original-path Arabic experiment; not production ready.
 - [Arabic Anatomy Correction V1.0](08-visual-identity/typography/ARABIC_ANATOMY_CORRECTION_AND_BILINGUAL_QA_V1.0.md) — correct Arabic shaping reference, optical test and bilingual QA; no approval.
 
-- [Arabic Customization Stress Test V1.1](08-visual-identity/typography/ARABIC_CUSTOMIZATION_STRESS_TEST_V1.1.md) — correct Arabic typeface outlines compared with two rejected geometric cut treatments; local SVG/PNG package delivered, no logo approval.
 
-- [Bilingual Logo Architecture and Application QA V1.2](08-visual-identity/logo/BILINGUAL_LOGO_ARCHITECTURE_AND_APPLICATION_QA_V1.2.md) — Latin/Arabic primary, side-by-side bilingual, merchant shell and social/avatar gap; SVG/PNG board and 160/240/400px local ZIP; no approval.
 
 - [V1.3 Graphic Grammar Cross-Application Test](08-visual-identity/graphic-system/GRAPHIC_GRAMMAR_CROSS_APPLICATION_TEST_V1.3.md) — post-V1.2 paired grammar assessment; A rejected, B tested but not approved; overall REFRAME.
 - [V1.3 A Open Field SVG](08-visual-identity/graphic-system/V13_A_OPEN_FIELD.svg), [V1.3 B Reference Frame SVG](08-visual-identity/graphic-system/V13_B_REFERENCE_FRAME.svg), [V1.3 36px Compact Frame SVG](08-visual-identity/graphic-system/V13_COMPACT_FRAME_TEST.svg) — editable monochrome test assets, none an approved mark.
@@ -186,34 +154,21 @@ The files above are distinct evidence layers, not duplicate copies.
 - [V1.4 review](08-visual-identity/graphic-system/V14_REVIEW.md) and [editable bilingual hierarchy SVG](08-visual-identity/graphic-system/V14_BILINGUAL_INFORMATION_RHYTHM.svg) — REFRAME, not approved.
 - [V1.5 Choice Field assessment](08-visual-identity/graphic-system/CHOICE_FIELD_CROSS_TOUCHPOINT_V1.5.md) and [editable application SVG](08-visual-identity/graphic-system/V15_CHOICE_FIELD_APPLICATION.svg) — tested marketing/operational contrast; generic signature rejected.
 
-- [V1.6 Signature Distinctiveness Gate](08-visual-identity/graphic-system/SIGNATURE_DISTINCTIVENESS_GATE_V1.6.md) and [editable SVG](08-visual-identity/graphic-system/V16_WORDMARK_ANCHORED_BILINGUAL_BOARD.svg) — existing competitor landscape comparison and bilingual layout prototype; REFRAME.
 
 - [V1.7 Dual Aperture test](08-visual-identity/graphic-system/DUAL_APERTURE_SIGNATURE_TEST_V1.7.md) and [editable SVG board](08-visual-identity/graphic-system/V17_DUAL_APERTURE_TEST.svg) — original R2-C O-derived signature test, not approved.
 
-- [V1.8 Compact/Bilingual Gate](08-visual-identity/graphic-system/COMPACT_BILINGUAL_GATE_V1.8.md) and [editable SVG](08-visual-identity/graphic-system/V18_COMPACT_BILINGUAL_GATE.svg) — paired-O icon candidate REJECTED, no identity approval.
 
 ## Complete identity directions — 2026-10-25
 - [Two Full Brand Identity Directions — Creative Review V0.1](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_CREATIVE_REVIEW_V0.1.md) — comparative evidence, previous-round audit, two system descriptions, application assessment, provisional recommendation, usage hypotheses and unresolved validation/legal gates. Neither direction is approved.
 - [Executive Report in Arabic V0.1](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_EXECUTIVE_REPORT_AR_V0.1.md) — Arabic owner-facing summary, assets, research limitations, comparison, recommendation and open gates.
-- [Direction A — Clear Carry board](08-visual-identity/graphic-system/DIRECTION_A_CLEAR_CARRY_BOARD_V0.1.svg) and [mobile navigation study](08-visual-identity/graphic-system/DIRECTION_A_CLEAR_CARRY_MOBILE_NAV_V0.1.svg) — editable Latin-led wordmark and application tests; illustrative only.
-- [Direction B — Arabic-First Capability board](08-visual-identity/graphic-system/DIRECTION_B_ARABIC_FIRST_CAPABILITY_BOARD_V0.1.svg) and [mobile navigation study](08-visual-identity/graphic-system/DIRECTION_B_ARABIC_FIRST_MOBILE_NAV_V0.1.svg) — editable Arabic-led/RTL wordmark and application tests; illustrative only.
 - PNG review renders accompany each SVG in the same folder. Shared Arabic-waw compact candidate remains unvalidated and is not an approved icon.
-- [Exact 36×36px icon A test](08-visual-identity/graphic-system/DIRECTION_A_CLEAR_CARRY_ICON_36PX_V0.1.svg) and [B test](08-visual-identity/graphic-system/DIRECTION_B_ARABIC_FIRST_ICON_36PX_V0.1.svg), with exact-size PNGs — identical underlying waw initial treatment; exact-size desk view still looks numeral-like without wordmark. Neither is approved.
 
 ## Creative Refinement Round 2 — 2026-10-25
 - [Arabic owner report](08-visual-identity/ROUND2_CREATIVE_REFINEMENT_REPORT_AR_V0.1.md) — rejects both custom Arabic trials, prefers R3 over R2-C as Latin craft, retains A-first only as a hierarchy hypothesis, and requires owner/native-reader authorization.
-- [Wordmark and bilingual lockup board SVG](08-visual-identity/typography/ROUND2_FINAL_WORDMARK_AND_LOCKUP_BOARD_V0.1.svg) and PNG — actual editable custom paths, R2-C assessment, Arabic reference, rejected Arabic paths, R3 Latin, Latin-first and Arabic-first arrangements.
-- [Compact mark size-test board SVG](08-visual-identity/ROUND2_COMPACT_MARK_STRESS_TEST_V0.1.svg) and PNG — three materially different candidates, rendered at exact 24/36/48/72 px; none approved; candidate 02 only advances to native-reader testing.
 - [Arabic shaping reference board SVG](08-visual-identity/typography/ARABIC_REFERENCE_VS_CUSTOM_LETTERING_ROUND2_V0.1.svg) and PNG — reference live-font specimen versus original trials; not an adoption proposal.
 
 ## Focused Arabic wordmark specialist handoff — 2026-10-25
-- [Arabic Wordmark Specialist Handoff V0.1](08-visual-identity/typography/ARABIC_WORDMARK_SPECIALIST_HANDOFF_V0.1.md) — correct contextual anatomy/segmentation, two distinct custom lettering routes, R3 optical gate, source/licensing boundaries, size proof and native-reader requirements. Decision: no viable custom wordmark produced here; specialist handoff required.
-- [Reference pairing board SVG](08-visual-identity/typography/ARABIC_WORDMARK_SPECIALIST_REFERENCE_BOARD_V0.1.svg) and PNG — actual correctly shaped Naskh and Segoe UI reference samples with experimental R3 Latin paths. Reference comparison only; not custom wordmark candidates, and no font files embedded.
 
 ## Primary Latin wordmark & compact mark review — 2026-10-25
-- [Primary Latin Wordmark & Compact Mark Review V0.1](08-visual-identity/logo/PRIMARY_LATIN_WORDMARK_AND_COMPACT_MARK_REVIEW_V0.1.md) — critical owner-review assessment of three original Latin wordmark paths, three compact-mark concepts and three visual pairings. A is the clearest wordmark lead; C and one mark are rejected; the new W→O ligature is the freshest but still unapproved compact candidate. Recommends wordmark-first and no standalone mark for release yet.
-- [Editable comparison board SVG](08-visual-identity/logo/PRIMARY_WORDMARK_AND_COMPACT_MARK_REVIEW_V0.1.svg) and [rendered PNG](08-visual-identity/logo/PRIMARY_WORDMARK_AND_COMPACT_MARK_REVIEW_V0.1.png) — actual vector paths and visual comparisons, including exact 24/36/48/72px artboard tests and header/presentation-scale wordmarks. No design is approved. Arabic custom lettering is deferred, not rejected or approved.
 # WOSSOL Official Logo Master V1 — 2026-11-06
 - Owner-selected direction: **Concept 02 — Custom W Mark (Refined)**. Creative selection is recorded in `00-governance/DECISION_LOG.md` (D-015); vector master awaits owner visual approval.
-- [Asset manifest](08-visual-identity/official-logo-system/ASSET_MANIFEST.md), [comparison board PNG](08-visual-identity/official-logo-system/qa/WOSSOL_RECONSTRUCTION_QA_BOARD.png), [comparison board SVG](08-visual-identity/official-logo-system/qa/WOSSOL_RECONSTRUCTION_QA_BOARD.svg), and [Arabic QA report](08-visual-identity/official-logo-system/qa/RECONSTRUCTION_QA_REPORT_AR.md).
-- Editable masters and source references are contained in `08-visual-identity/official-logo-system/`. Prior logo recommendations are superseded for direction; historical studies were preserved. No applications beyond master reconstruction are authorized in this phase.
