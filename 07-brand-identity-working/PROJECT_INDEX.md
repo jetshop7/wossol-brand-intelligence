@@ -47,9 +47,6 @@ The files above are distinct evidence layers, not duplicate copies.
 - [Professional Brand & Visual Identity Method Audit V0.1](08-visual-identity/PROFESSIONAL_BRAND_IDENTITY_METHOD_AUDIT_V0.1.md) — agency evidence, end-to-end workflow, assessment of actual Wossol work and repair gates (UNDER_REVIEW).
 
 ## Complete Visual Identity Proposal — 2026-10-25
-- [Arabic Executive Report V0.1](08-visual-identity/VISUAL_IDENTITY_EXECUTIVE_REPORT_AR_V0.1.md) — concise owner-facing decision brief and limitations (UNDER_REVIEW).
-- [Complete Visual Identity System V0.1 — SVG](08-visual-identity/WOSSOL_COMPLETE_VISUAL_IDENTITY_SYSTEM_V0.1.svg) and [PNG preview](08-visual-identity/WOSSOL_COMPLETE_VISUAL_IDENTITY_SYSTEM_V0.1.png) — editable identity board and inspected render; provisional only.
-- [Visual Identity Guidelines V0.1](08-visual-identity/VISUAL_IDENTITY_GUIDELINES_V0.1.md) — palette/contrast, typography, graphic grammar, application and governance rules (UNDER_REVIEW).
 
 ## Visual Identity V0.2 — Source correction — 2026-10-25
 - [Merchant Platform Source Correction Report AR](08-visual-identity/WOSSOL_V0.2_PRODUCT_SOURCE_CORRECTION_AR.md) — authoritative branch/commit decision, route evidence map, product-intelligence cross-check, corrections and owner gates (UNDER_REVIEW).
@@ -124,10 +121,8 @@ The files above are distinct evidence layers, not duplicate copies.
 
 - [RTL Graphic Grammar Comparison V0.1](08-visual-identity/graphic-system/RTL_GRAPHIC_GRAMMAR_COMPARISON_V0.1.md) — critical review of three schematic visual devices; none approved; local SVG/PNG delivered in conversation.
 
-- [C Bilingual RTL Layout Stress Test V0.1](08-visual-identity/typography/C_BILINGUAL_RTL_LAYOUT_STRESS_TEST_V0.1.md) — original C vector placed in schematic Arabic-first desktop/mobile; PNG and SVG provided in conversation, not live UI.
 
 
-- [Arabic A Geometric + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_A_GEOMETRIC_WITH_C_V0.1.svg) and [Arabic B Humanist + C SVG](08-visual-identity/typography/WOSSOL_ARABIC_B_HUMANIST_WITH_C_V0.1.svg) — editable exploratory vectors with live Arabic text; local outlined versions supplied separately.
 
 - [Merchant First-Read Pilot and Real UI Gate V0.1](11-validation/MERCHANT_FIRST_READ_PILOT_STIMULI_AND_REAL_UI_GATE_V0.1.md) — four blinded stimuli, counterbalanced order and empty results sheet delivered in conversation; real merchant shell evidence verified; zero participants.
 
@@ -143,8 +138,6 @@ The files above are distinct evidence layers, not duplicate copies.
 
 
 
-- [V0.9 Arabic Hand-Constructed SVG](08-visual-identity/typography/ARABIC_HAND_CONSTRUCTED_V09.svg) — editable original-path Arabic experiment; not production ready.
-- [Arabic Anatomy Correction V1.0](08-visual-identity/typography/ARABIC_ANATOMY_CORRECTION_AND_BILINGUAL_QA_V1.0.md) — correct Arabic shaping reference, optical test and bilingual QA; no approval.
 
 
 
@@ -159,13 +152,9 @@ The files above are distinct evidence layers, not duplicate copies.
 
 
 ## Complete identity directions — 2026-10-25
-- [Two Full Brand Identity Directions — Creative Review V0.1](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_CREATIVE_REVIEW_V0.1.md) — comparative evidence, previous-round audit, two system descriptions, application assessment, provisional recommendation, usage hypotheses and unresolved validation/legal gates. Neither direction is approved.
-- [Executive Report in Arabic V0.1](08-visual-identity/graphic-system/TWO_IDENTITY_DIRECTIONS_EXECUTIVE_REPORT_AR_V0.1.md) — Arabic owner-facing summary, assets, research limitations, comparison, recommendation and open gates.
 - PNG review renders accompany each SVG in the same folder. Shared Arabic-waw compact candidate remains unvalidated and is not an approved icon.
 
 ## Creative Refinement Round 2 — 2026-10-25
-- [Arabic owner report](08-visual-identity/ROUND2_CREATIVE_REFINEMENT_REPORT_AR_V0.1.md) — rejects both custom Arabic trials, prefers R3 over R2-C as Latin craft, retains A-first only as a hierarchy hypothesis, and requires owner/native-reader authorization.
-- [Arabic shaping reference board SVG](08-visual-identity/typography/ARABIC_REFERENCE_VS_CUSTOM_LETTERING_ROUND2_V0.1.svg) and PNG — reference live-font specimen versus original trials; not an adoption proposal.
 
 ## Focused Arabic wordmark specialist handoff — 2026-10-25
 
